@@ -1,0 +1,105 @@
+\hypertarget{_g_interface_8h_source}{}\doxysection{GInterface.\+h}
+\label{_g_interface_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GInterface.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GInterface.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GINTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GINTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00005}00005 \textcolor{comment}{    File: GInterface.h}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00006}00006 \textcolor{comment}{    Purpose: The fundamental interface which all Gateware interfaces must adhere to at a minimum.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00008}00008 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00009}00009 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00010}00010 \textcolor{comment}{    Contributors: Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Release}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00016}00016 \textcolor{comment}{// Contains all defined elements shared among base interfaces.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}GCoreDefines.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00019}00019 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00021}00021     \textcolor{comment}{// The "{}I"{} namespace can be safely ignored by end users. I = ('I'nternal 'I'nterfaces \& 'I'mplementations)}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00022}00022     \textcolor{keyword}{namespace }I \textcolor{comment}{// Doxygen ignores this namespace.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00023}00023     \{}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00024}00024         \textcolor{comment}{// Base interface all Gateware interfaces must support at a minimum.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00025}00025         \textcolor{comment}{// The only purpose of this interface is to identify Gateware Objects, enable run-\/time polymorphisim.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00026}00026         \textcolor{keyword}{class }GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00027}00027         \{}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00028}00028             \textcolor{comment}{// All Gateware API interfaces contain no variables \& are pure virtual.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00029}00029         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00030}00030             \textcolor{keyword}{virtual} \string~GInterfaceInterface() = 0; \textcolor{comment}{// all interfaces must support vtables \& RTTI }}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00031}00031         \};}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00032}00032         \textcolor{keyword}{inline} GInterfaceInterface::\string~GInterfaceInterface() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00036}00036 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00037}00037 \textcolor{preprocessor}{\#include "{}../../Source/Core/GInterface/GInterface.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00039}00039 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00040}00040 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00041}00041 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00042}00042 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00043}00043 \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00044}00044     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00045}00045 \textcolor{comment}{        //! A Proximity class that can be used to safely store and access ANY Gateware object.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00046}00046 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00047}00047 \textcolor{comment}{        *   The only purpose of this proxy is to store Gateware Objects and enable run-\/time polymorphisim.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00048}00048 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00049}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{00049}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} final \textcolor{comment}{// Note to developers: this is a Proxy, what end users actually interact with. }}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00050}00050         : \textcolor{keyword}{public} I::GProxy<I::GInterfaceInterface, I::GInterfaceImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00051}00051         \{}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00052}00052         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00053}00053             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00054}00054 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00055}00055 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00056}00056 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00057}00057 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00058}00058         \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00059}00059 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00060}00060 \textcolor{comment}{            //! Alloctaes a GInterface }}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00061}00061 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00062}00062 \textcolor{comment}{            *   A GInterface has no real functionality on its own other than being able to be used to track object lifetime.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00063}00063 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00064}00064 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    This always succeeds. (unless you run out of memory)}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00065}00065 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00066}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a42b7b64c7e41b05e3a9a5629a6856794}{00066}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a42b7b64c7e41b05e3a9a5629a6856794}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00067}00067 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00068}00068 \textcolor{comment}{            //! Shares ownership of a Proxy (if possible).}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00069}00069 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00070}00070 \textcolor{comment}{            *   By default when proxies are copied they do not share ownership, this allows them to.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00071}00071 \textcolor{comment}{            *   After sharing, a Proxy retains shared ownership of memory.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00072}00072 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00073}00073 \textcolor{comment}{            *   \(\backslash\)returns GInterface An owned proxy, if this proxy does not own the object it will be invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00074}00074 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00075}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_abd779fa8304afb36b9f1c8f897b40a8c}{00075}}             \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_abd779fa8304afb36b9f1c8f897b40a8c}{Share}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00076}00076 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00077}00077 \textcolor{comment}{            //! Gives ownership of one Proxy to another (if possible).}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00078}00078 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00079}00079 \textcolor{comment}{            *   Allows a Proxy to yield its ownership to another Proxy.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00080}00080 \textcolor{comment}{            *   If a Proxy does not have ownership of its memory then it can not yield it.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00081}00081 \textcolor{comment}{            *   After a successful yield this Proxy will still retain access but not memory ownership. }}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00082}00082 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00083}00083 \textcolor{comment}{            *   \(\backslash\)returns GInterface Proxy owning internal memory or an invalid handle if it cannot be yielded.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00084}00084 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00085}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_ada67a040adb9755a631ae19eda3ebcbd}{00085}}             \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_ada67a040adb9755a631ae19eda3ebcbd}{Relinquish}}();}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00086}00086 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00087}00087 \textcolor{comment}{            //! Copies a Proxy while retaining it's ownership state.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00088}00088 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00089}00089 \textcolor{comment}{            *   Allows a Proxy to be Shared but unlike "{}Share()"{} it will not fail if the object is not owned.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00090}00090 \textcolor{comment}{            *   An unowned Proxy will transfer normally while an owned proxy will share ownership.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00091}00091 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00092}00092 \textcolor{comment}{            *   \(\backslash\)returns GInterface Proxy refrencing same object with same ownership model perserved.}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00093}00093 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00094}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a6e112efa1f87f7d3bf3f04cbc72f24ed}{00094}}             \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a6e112efa1f87f7d3bf3f04cbc72f24ed}{Mirror}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00095}00095 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00096}00096         \};}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{_g_interface_8h_source_l00099}00099 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GINTERFACE\_H}}
+
+\end{DoxyCode}

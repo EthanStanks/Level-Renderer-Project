@@ -1,0 +1,129 @@
+\hypertarget{_g_buffered_input_8h_source}{}\doxysection{GBuffered\+Input.\+h}
+\label{_g_buffered_input_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Input/GBufferedInput.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Input/GBufferedInput.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GBUFFEREDINPUT\_H}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GBUFFEREDINPUT\_H}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00005}00005 \textcolor{comment}{    File: GBufferedInput.h}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00006}00006 \textcolor{comment}{    Purpose: This Interface offers event based thread safe raw buffered input.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00007}00007 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00008}00008 \textcolor{comment}{    Author: Peter Farber}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Alexandr Kozyrev, Kai Huang, Ozzie Mercado, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00011}00011 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00012}00012 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00013}00013 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}../Core/GEventGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GInputDefines.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}../System/GWindow.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00019}00019 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00021}00021     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00023}00023         \textcolor{keyword}{class }GBufferedInputInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GEventGeneratorInterface}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00024}00024         \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00025}00025         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00026}00026             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00027}00027             \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00028}00028                 Invalid,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00029}00029                 KEYPRESSED,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00030}00030                 KEYRELEASED,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00031}00031                 BUTTONPRESSED,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00032}00032                 BUTTONRELEASED,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00033}00033                 MOUSEMOVE,}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00034}00034                 MOUSESCROLL}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00035}00035             \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00037}00037             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00038}00038             \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00039}00039                 \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00040}00040                 \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00041}00041                 \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00042}00042                 \textcolor{keywordtype}{int} screenX;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00043}00043                 \textcolor{keywordtype}{int} screenY;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00044}00044                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} keyMask;}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00045}00045             \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00046}00046         \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00050}00050 \textcolor{preprocessor}{\#include "{}../../Source/Input/GBufferedInput/GBufferedInput.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00051}00051 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00052}00052 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00053}00053 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00054}00054 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00055}00055 \textcolor{comment}{    //! The namespace to which all Gateware Input interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00056}\mbox{\hyperlink{namespace_g_w_1_1_i_n_p_u_t}{00056}} \textcolor{comment}{}    \textcolor{keyword}{namespace }INPUT}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00057}00057     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00058}00058 \textcolor{comment}{        //! A Multi-\/threaded buffered input library. Register with a GBufferedInput to receive mouse and keyboard events.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00059}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input}{00059}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input}{GBufferedInput}} final}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00060}00060             : \textcolor{keyword}{public} I::GProxy<I::GBufferedInputInterface, I::GBufferedInputImplementation, GW::SYSTEM::UNIVERSAL\_WINDOW\_HANDLE>}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00062}00062         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00063}00063             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00064}00064 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00065}00065 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input}{GBufferedInput}})}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00066}00066             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_a46981d0979691053118a39458a9eab8e}{Events}})}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00067}00067             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}})}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00069}00069             \textcolor{comment}{// reimplemented functions}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00070}00070             GATEWARE\_FUNCTION(Register)}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00071}00071             GATEWARE\_CONST\_FUNCTION(Observers)}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00072}00072             GATEWARE\_FUNCTION(Push)\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00073}00073 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00074}00074 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00075}00075             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00076}00076 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00077}00077 \textcolor{comment}{            //! Creates a GBufferedInput Object.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00078}00078 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00079}00079 \textcolor{comment}{            *   \(\backslash\)param [in] \_uwh Universal window handle}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00080}00080 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00081}00081 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT \_uwh.window is nullptr or \_uwh.display is nullptr.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00082}00082 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE could not make an BufferedInput Object.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00083}00083 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS no problems found.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00084}00084 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00085}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_ab6de151062a5c51b4089645d41caad75}{00085}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_ab6de151062a5c51b4089645d41caad75}{Create}}(\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW::SYSTEM::UNIVERSAL\_WINDOW\_HANDLE}} \_uwh);}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00086}00086             \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00087}00087 \textcolor{comment}{            //! Creates a GBufferedInput Object.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00088}00088 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00089}00089 \textcolor{comment}{            *   Initializes a handle to a window based on the void* data passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00090}00090 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00091}00091 \textcolor{comment}{            *   \(\backslash\)param [in] \_window GWindow}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00092}00092 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00093}00093 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT \_window is emptys.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00094}00094 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE could not make an BufferedInput Object.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00095}00095 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS no problems found.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00096}00096 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00097}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_a69bc35f5d5a69ab280bb7eff3a7b7d5a}{00097}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_a69bc35f5d5a69ab280bb7eff3a7b7d5a}{Create}}(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW::SYSTEM::GWindow}} \_window);}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00098}00098 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00099}00099 \textcolor{comment}{            //! Events generated by GBufferedInput. These messages are used to notify observers when tasks complete.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00100}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_a46981d0979691053118a39458a9eab8e}{00100}} \textcolor{comment}{}            \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_a46981d0979691053118a39458a9eab8e}{Events}} \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00101}00101                 Invalid,        \textcolor{comment}{//!< Invalid event. Should never be generated.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00102}00102                 KEYPRESSED,     \textcolor{comment}{//!< A key pressed event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00103}00103                 KEYRELEASED,    \textcolor{comment}{//!< A key released event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00104}00104                 BUTTONPRESSED,  \textcolor{comment}{//!< A Mouse/Pointer Button pressed event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00105}00105                 BUTTONRELEASED, \textcolor{comment}{//!< A Mouse/Pointer Button released event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00106}00106                 MOUSEMOVE,      \textcolor{comment}{//!< A Mouse/Pointer move event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00107}00107                 MOUSESCROLL     \textcolor{comment}{//!< A Mouse/Pointer scroll event.}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00108}00108             \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00109}00109 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00110}00110 \textcolor{comment}{            /*! EVENT\_DATA provided by GBufferedInput. See \(\backslash\)ref GInputCodes for list of keyMask defines. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00111}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a}{00111}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}} \{}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00112}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_aa3def74bc6bf80ecddc5529ffcd48ffc}{00112}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_aa3def74bc6bf80ecddc5529ffcd48ffc}{data}};               \textcolor{comment}{/*!< Data storing the key/button information. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00113}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_ad1dcc3c890ed96608e893252b80f704d}{00113}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_ad1dcc3c890ed96608e893252b80f704d}{x}};                 \textcolor{comment}{/*!< Window Mouse position x when event is sent. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00114}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_a40c938fb94c8a0908bfac85f62f71fc9}{00114}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_a40c938fb94c8a0908bfac85f62f71fc9}{y}};                 \textcolor{comment}{/*!< Window Mouse position y when event is sent. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00115}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_af3d4504c9b36f06a962b0aed6fa4d982}{00115}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_af3d4504c9b36f06a962b0aed6fa4d982}{screenX}};         \textcolor{comment}{/*!< Screen Mouse position x when event is sent. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00116}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_adfbabf0902d029c5571115771fb379a6}{00116}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_adfbabf0902d029c5571115771fb379a6}{screenY}};         \textcolor{comment}{/*!< Screen Mouse position y when event is sent. */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00117}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_aba540ab043d90612e6eb326221a56bfa}{00117}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_buffered_input_1_1_e_v_e_n_t___d_a_t_a_aba540ab043d90612e6eb326221a56bfa}{keyMask}};    \textcolor{comment}{/*!< Bit flags for (CapsLock, NumLock, ScrollLock, Shift, and Control). */}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00118}00118             \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00119}00119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00120}00120         \};}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00122}00122 \}}
+\DoxyCodeLine{\Hypertarget{_g_buffered_input_8h_source_l00123}00123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GBUFFEREDINPUT\_H}}
+
+\end{DoxyCode}

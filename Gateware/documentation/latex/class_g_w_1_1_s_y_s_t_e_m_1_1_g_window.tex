@@ -1,0 +1,597 @@
+\hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{}\doxysection{GW\+::SYSTEM\+::GWindow Class Reference}
+\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+
+
+{\ttfamily \#include $<$GWindow.\+h$>$}
+
+Inheritance diagram for GW\+::SYSTEM\+::GWindow\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.731067cm]{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{Events}} \{ \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a704bfa6c1ed5e479c8cfb5bdfc8cccda}{MINIMIZE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a7af98b3d657f545ebf5476f68cb5ce6f}{MAXIMIZE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a1acac8984c2139895dee3e8aa928de57}{RESIZE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139af7f93635f8e193a924ae4a691bb66b8f}{MOVE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a00b8cc9675bbfab99e5719fc3454fbdc}{DISPLAY\+\_\+\+CLOSED}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a349e16b498324e045792e604e21cd052}{EVENTS\+\_\+\+PROCESSED}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139ac39aa6dbe619bb8ef8187b00b686df6a}{DESTROY}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2d7548a2f9671c801293a64b9ecca207}{Create}} (int \+\_\+x, int \+\_\+y, int \+\_\+width, int \+\_\+height, \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}} \+\_\+style)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}{Process\+Window\+Events}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}{Reconfigure\+Window}} (int \+\_\+x, int \+\_\+y, int \+\_\+width, int \+\_\+height, \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}} \+\_\+style)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}{Set\+Window\+Name}} (const char $\ast$\+\_\+new\+Name)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}{Set\+Icon}} (int \+\_\+width, int \+\_\+height, const unsigned int $\ast$\+\_\+argb\+Pixels)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}{Move\+Window}} (int \+\_\+x, int \+\_\+y)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}{Resize\+Window}} (int \+\_\+width, int \+\_\+height)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}{Maximize}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}{Minimize}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}{Change\+Window\+Style}} (\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}} \+\_\+style)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}{Get\+Width}} (unsigned int \&\+\_\+out\+Width) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}{Get\+Height}} (unsigned int \&\+\_\+out\+Height) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}{Get\+Client\+Width}} (unsigned int \&\+\_\+out\+Client\+Width) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}{Get\+Client\+Height}} (unsigned int \&\+\_\+out\+Client\+Height) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}{GetX}} (unsigned int \&\+\_\+outX) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}{GetY}} (unsigned int \&\+\_\+outY) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}{Get\+Client\+Top\+Left}} (unsigned int \&\+\_\+outX, unsigned int \&\+\_\+outY) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}{Get\+Window\+Handle}} (\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW\+::\+SYSTEM\+::\+UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE}} \&\+\_\+out\+Universal\+Window\+Handle) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}{Is\+Fullscreen}} (bool \&\+\_\+out\+Is\+Fullscreen) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}{Is\+Focus}} (bool \&\+\_\+out\+Is\+Focus) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_window_8h_source_l00079}{79}} of file \mbox{\hyperlink{_g_window_8h_source}{GWindow.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!Events@{Events}}
+\index{Events@{Events}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{Events}{Events}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{GW\+::\+SYSTEM\+::\+GWindow\+::\+Events}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Events holds the possible events a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GWindow}} window can broadcast. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINIMIZE@{MINIMIZE}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!MINIMIZE@{MINIMIZE}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a704bfa6c1ed5e479c8cfb5bdfc8cccda}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a704bfa6c1ed5e479c8cfb5bdfc8cccda}} 
+MINIMIZE&Window was minimized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAXIMIZE@{MAXIMIZE}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!MAXIMIZE@{MAXIMIZE}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a7af98b3d657f545ebf5476f68cb5ce6f}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a7af98b3d657f545ebf5476f68cb5ce6f}} 
+MAXIMIZE&Window was maximized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESIZE@{RESIZE}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!RESIZE@{RESIZE}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a1acac8984c2139895dee3e8aa928de57}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a1acac8984c2139895dee3e8aa928de57}} 
+RESIZE&Window was resized in some way. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVE@{MOVE}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!MOVE@{MOVE}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139af7f93635f8e193a924ae4a691bb66b8f}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139af7f93635f8e193a924ae4a691bb66b8f}} 
+MOVE&Window was moved. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISPLAY\_CLOSED@{DISPLAY\_CLOSED}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!DISPLAY\_CLOSED@{DISPLAY\_CLOSED}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a00b8cc9675bbfab99e5719fc3454fbdc}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a00b8cc9675bbfab99e5719fc3454fbdc}} 
+DISPLAY\+\_\+\+CLOSED&Linux only message that is fired after XClose\+Display() but before XClose\+Window() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVENTS\_PROCESSED@{EVENTS\_PROCESSED}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!EVENTS\_PROCESSED@{EVENTS\_PROCESSED}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a349e16b498324e045792e604e21cd052}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139a349e16b498324e045792e604e21cd052}} 
+EVENTS\+\_\+\+PROCESSED&Notifies users that all queued window events have been processed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DESTROY@{DESTROY}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!DESTROY@{DESTROY}}}\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139ac39aa6dbe619bb8ef8187b00b686df6a}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139ac39aa6dbe619bb8ef8187b00b686df6a}} 
+DESTROY&Window was closed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_window_8h_source_l00130}{130}} of file \mbox{\hyperlink{_g_window_8h_source}{GWindow.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2d7548a2f9671c801293a64b9ecca207}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2d7548a2f9671c801293a64b9ecca207}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!Create@{Create}}
+\index{Create@{Create}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Create (\begin{DoxyParamCaption}\item[{int}]{\+\_\+x,  }\item[{int}]{\+\_\+y,  }\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height,  }\item[{\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}}}]{\+\_\+style }\end{DoxyParamCaption})}
+
+
+
+Creates a valid \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GWindow}} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+x} & X position of the window \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+y} & Y position of the window \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & Client width of the window \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & Client height of the window \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+style} & Style of the window. See \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GWindow\+Style}} for more info.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & This always succeeds. (unless you run out of memory) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!ProcessWindowEvents@{ProcessWindowEvents}}
+\index{ProcessWindowEvents@{ProcessWindowEvents}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{ProcessWindowEvents()}{ProcessWindowEvents()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Process\+Window\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Flushes and processes all messages from the window\textquotesingle{}s event queue. 
+
+This function is meant to be called once a frame in an application\textquotesingle{}s main loop. This function will break when all waiting messages have been processed and the event queue is empty.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid or is about to be invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The messages were successfully processed and removed \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!ReconfigureWindow@{ReconfigureWindow}}
+\index{ReconfigureWindow@{ReconfigureWindow}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{ReconfigureWindow()}{ReconfigureWindow()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Reconfigure\+Window (\begin{DoxyParamCaption}\item[{int}]{\+\_\+x,  }\item[{int}]{\+\_\+y,  }\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height,  }\item[{\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}}}]{\+\_\+style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gives the currently opened window the specified size, position and style. 
+
+If width and height are equal to or greater than the native resolution, the passed in GWindow\+Style will be overwritten to be the fullscreen version if it is not already. If position parameters are less than 0 then 0 will be used. If position parameters are greater than native resoultion, maximum native resolution parameters will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+x} & The x position on screen to place the top left corner of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+y} & The y position on screen to place the top left corner of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & The width to resize the client area of the window to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & The height to resize the client area of the window to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+style} & The style to give to the window. (see \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GWindow\+Style}} for style options)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!SetWindowName@{SetWindowName}}
+\index{SetWindowName@{SetWindowName}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{SetWindowName()}{SetWindowName()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Set\+Window\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the text displayed at the top bar of the window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+new\+Name} & The new name to give to the window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & The string passed in contains invalid characters or is null. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!SetIcon@{SetIcon}}
+\index{SetIcon@{SetIcon}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{SetIcon()}{SetIcon()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Set\+Icon (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height,  }\item[{const unsigned int $\ast$}]{\+\_\+argb\+Pixels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the icon displayed in the title bar of the window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & The width of the icon. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & The height of the icon. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+argb\+Pixels} & An array of ARGB formatted pixels that represent the new icon.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & One of the arguments is less than 1 or a nullptr \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window or pixel array is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!MoveWindow@{MoveWindow}}
+\index{MoveWindow@{MoveWindow}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{MoveWindow()}{MoveWindow()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Move\+Window (\begin{DoxyParamCaption}\item[{int}]{\+\_\+x,  }\item[{int}]{\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Repositions the top left corner of the window to the specified x and y coordinates on screen. 
+
+If position parameters are less than 0, then 0 will be used. If position parameters are greater than native resolution, maximum native resolution parameters will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+x} & The x position on screen to move the window to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+y} & The y position on screen to move the window to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!ResizeWindow@{ResizeWindow}}
+\index{ResizeWindow@{ResizeWindow}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{ResizeWindow()}{ResizeWindow()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Resize\+Window (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Resizes the currently opened window to the specified width and height. 
+
+If width and height are greater than the native resolution, the GWindow\+Style will be overwritten to be the fullscreen version if it is not already. If position parameters are less than 0 then 0 will be used. If position parameters are greater than native resoultion, maximum native resolution parameters will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & The width to resize the client area of the window to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & The height to resize the client area of the window to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!Maximize@{Maximize}}
+\index{Maximize@{Maximize}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{Maximize()}{Maximize()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Maximize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Maximize the currently opened window. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!Minimize@{Minimize}}
+\index{Minimize@{Minimize}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{Minimize()}{Minimize()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Minimize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Minimizes the currently opened window. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!ChangeWindowStyle@{ChangeWindowStyle}}
+\index{ChangeWindowStyle@{ChangeWindowStyle}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{ChangeWindowStyle()}{ChangeWindowStyle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Change\+Window\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW\+::\+SYSTEM\+::\+GWindow\+Style}}}]{\+\_\+style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the currently opened window\textquotesingle{}s style to the specified style. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+style} & The \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GWindow\+Style}} to change the window to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Width (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Width }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the width in pixels of the currently opened window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Width} & Width of the currently opened window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Height (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the height in pixels of the currently opened window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Height} & Height of the currently opened window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetClientWidth@{GetClientWidth}}
+\index{GetClientWidth@{GetClientWidth}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetClientWidth()}{GetClientWidth()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Client\+Width (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Client\+Width }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the client width in pixels of the currently opened window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Client\+Width} & Client width of the currently opened window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetClientHeight@{GetClientHeight}}
+\index{GetClientHeight@{GetClientHeight}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetClientHeight()}{GetClientHeight()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Client\+Height (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Client\+Height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the client height in pixels of the currently opened window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Client\+Height} & Client height of the currently opened window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetX@{GetX}}
+\index{GetX@{GetX}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetX()}{GetX()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+GetX (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+outX }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the X position in screen coordinates of the top left corner of the window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+outX} & X position in screen coordinates of the top left corner of the window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetY@{GetY}}
+\index{GetY@{GetY}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetY()}{GetY()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+GetY (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+outY }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the Y position in screen coordinates of the top left corner of the window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+outY} & Y position in screen coordinates of the top left corner of the window.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetClientTopLeft@{GetClientTopLeft}}
+\index{GetClientTopLeft@{GetClientTopLeft}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetClientTopLeft()}{GetClientTopLeft()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Client\+Top\+Left (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+outX,  }\item[{unsigned int \&}]{\+\_\+outY }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the location of the top-\/left corner of the client area of the window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+outX} & X location of the top-\/left corner of the client area. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+outY} & Y location of the top-\/left corner of the client area.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!GetWindowHandle@{GetWindowHandle}}
+\index{GetWindowHandle@{GetWindowHandle}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{GetWindowHandle()}{GetWindowHandle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Get\+Window\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW\+::\+SYSTEM\+::\+UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE}} \&}]{\+\_\+out\+Universal\+Window\+Handle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE}} containing castable void pointers to the platform specific window handle and display. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Universal\+Window\+Handle} & Contains information for handles\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!IsFullscreen@{IsFullscreen}}
+\index{IsFullscreen@{IsFullscreen}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{IsFullscreen()}{IsFullscreen()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Is\+Fullscreen (\begin{DoxyParamCaption}\item[{bool \&}]{\+\_\+out\+Is\+Fullscreen }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a bool specifying whether or not the currently opened window is fullscreen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Is\+Fullscreen} & True if fullscreen, false otherwise.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}} 
+\index{GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}!IsFocus@{IsFocus}}
+\index{IsFocus@{IsFocus}!GW::SYSTEM::GWindow@{GW::SYSTEM::GWindow}}
+\doxysubsubsection{\texorpdfstring{IsFocus()}{IsFocus()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GWindow\+::\+Is\+Focus (\begin{DoxyParamCaption}\item[{bool \&}]{\+\_\+out\+Is\+Focus }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a bool specifying whether or not the window has input focus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Is\+Focus} & True if in focus, false otherwise.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The window is invalid \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The operation is successful \\
+\hline
+\end{DoxyRetVals}

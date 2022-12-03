@@ -1,0 +1,61 @@
+\hypertarget{_g_system_defines_8h_source}{}\doxysection{GSystem\+Defines.\+h}
+\label{_g_system_defines_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GSystemDefines.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GSystemDefines.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GSYSTEMDEFINES\_H}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GSYSTEMDEFINES\_H}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00005}00005 \textcolor{comment}{    File: GSystemDefines.h}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00006}00006 \textcolor{comment}{    Purpose: Gateware system related defines or structs.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: Windows[(none)] Linux[(none)] Mac[(none)]}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00008}00008 \textcolor{comment}{    Author: Peter Farber}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Lari H. Norri, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00011}00011 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00012}00012 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00013}00013 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00015}00015 \textcolor{comment}{// Maximum thread pool size allocated by thread pool. Only actual available hardware thread count is used.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00016}00016 \textcolor{preprocessor}{\#define G\_MAX\_THREAD\_POOL\_SIZE      64}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00017}00017 \textcolor{comment}{// default amount of time in microseconds to nap threads that should release resources}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00018}00018 \textcolor{preprocessor}{\#define G\_THREAD\_DEFAULT\_SLEEP      5000}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00019}00019 \textcolor{comment}{// amount of time in microseconds below which daemons are spinlocked for launch}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00020}00020 \textcolor{preprocessor}{\#define G\_DAEMON\_LAUNCH\_THRESHOLD   100}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00021}00021 \textcolor{comment}{// amount of bytes gconcurrent uses to determine how many elements should be allocated per-\/thread in BranchParallel}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00022}00022 \textcolor{preprocessor}{\#define G\_CONCURRENT\_AUTO\_SECTION   131072}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00023}00023 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00024}00024 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00025}00025 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00026}00026 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00027}00027 \textcolor{comment}{    //! The namespace to which all Gateware library interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00028}00028 \textcolor{comment}{}    \textcolor{keyword}{namespace }SYSTEM}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00029}00029     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00030}00030 \textcolor{comment}{        /*! \(\backslash\)addtogroup SystemDefines}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00031}00031 \textcolor{comment}{        *  @\{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00032}00032 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00033}00033 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00034}00034 \textcolor{comment}{        /*! The structure used to pass into input libraries on all platforms. */}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00035}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{00035}}         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{UNIVERSAL\_WINDOW\_HANDLE}}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00036}00036         \{}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00037}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e_ae2626a78a5857d3da8698408088ac44a}{00037}}             \textcolor{keywordtype}{void}* \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e_ae2626a78a5857d3da8698408088ac44a}{window}}; \textcolor{comment}{/*!< Void pointer storing the window handle. You can cast this to your platform specific window handle like HWND. */}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00038}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e_a4c21bc5627c779031ba3b4ba4a267734}{00038}}             \textcolor{keywordtype}{void}* \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e_a4c21bc5627c779031ba3b4ba4a267734}{display}};   \textcolor{comment}{/*!< Void pointer storing the display handle. Currently only used on Linux, possibly other systems in the future. */}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00039}00039         \};}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00040}00040 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00041}00041 \textcolor{comment}{        //! GWindowStyle holds the possible types of window GWindow can create.}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00042}\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{00042}} \textcolor{comment}{}        \textcolor{keyword}{enum class} \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GWindowStyle}}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00043}00043         \{}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00044}00044             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071ad5ac768d1ee51601f115153f0f5e039c}{WINDOWEDBORDERED}},       \textcolor{comment}{//!< a standard window}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00045}00045             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071ab4a2425a77d8d66cb134170ecbaf4ddf}{WINDOWEDBORDERLESS}},       \textcolor{comment}{//!< window with no title bar or borders}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00046}00046             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071a5e5d2e082f1f91e46a31dbf0fa614eb7}{WINDOWEDLOCKED}},           \textcolor{comment}{//!< same as WINDOWEDBORDERED but with no maximize or resize options}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00047}00047             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071a53f85450b2d0eb8b81333f2048b8adb5}{FULLSCREENBORDERED}},       \textcolor{comment}{//!< as if you maximized a standard window}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00048}00048             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071a49d6a9c65f7c67a6d51afffe99f39555}{FULLSCREENBORDERLESS}},   \textcolor{comment}{//!< common for modern video games}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00049}00049             \mbox{\hyperlink{group___system_defines_ggad117891e556631f842625c348d36a071a43245b4788b59a22d5357a7146c06deb}{MINIMIZED}}              \textcolor{comment}{//!< as if you minimized a standard window}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00050}00050         \};}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00051}00051 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00052}00052 \textcolor{comment}{        /*! @\} */}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{_g_system_defines_8h_source_l00055}00055 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GSYSTEMDEFINES\_H}}
+
+\end{DoxyCode}

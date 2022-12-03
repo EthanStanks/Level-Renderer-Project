@@ -1,0 +1,105 @@
+\hypertarget{_g_logic_8h_source}{}\doxysection{GLogic.\+h}
+\label{_g_logic_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GLogic.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GLogic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GLOGIC\_H}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GLOGIC\_H}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00005}00005 \textcolor{comment}{    File: GLogic.h}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00006}00006 \textcolor{comment}{    Purpose: An interface that can be used to safely store/swap \& invoke custom logic.(Functor)  }}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00008}00008 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00009}00009 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00010}00010 \textcolor{comment}{    Contributors: N/A}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GThreadShared.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00017}00017 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00019}00019 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00021}00021     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00023}00023         \textcolor{keyword}{class }GLogicInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00024}00024         \{}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00025}00025         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00026}00026             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Assign(std::function<\textcolor{keywordtype}{void}()> \_newLogic) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Invoke() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00028}00028         \};}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00030}00030 \};}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00032}00032 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00033}00033 \textcolor{preprocessor}{\#include "{}../../Source/Core/GLogic/GLogic.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00034}00034 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00035}00035 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00036}00036 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00037}00037 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00038}00038 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00039}00039 \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00040}00040     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00041}00041 \textcolor{comment}{        //! A Proxy/Functor class that can be used to safely store and invoke stored routines/handlers. }}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00042}00042 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00043}00043 \textcolor{comment}{        *   The GLogic Interface stores and allows safe swapping of user logic (including GEvent handlers).}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00044}00044 \textcolor{comment}{        *   It combines the lifetime tracking of a GInterface(via Proxy) with the flexibility of std::function.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00045}00045 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00046}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{00046}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}} final}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00047}00047             : \textcolor{keyword}{public} I::GProxy<I::GLogicInterface, I::GLogicImplementation, std::function<void()>>}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00048}00048         \{}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00049}00049         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00050}00050             \textcolor{comment}{// procy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00051}00051 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00052}00052 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}})}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00053}00053             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}{Assign}})}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00054}00054             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{Invoke}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00055}00055 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00056}00056 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00057}00057             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00058}00058 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00059}00059 \textcolor{comment}{            //! Allocates \& Intializes a GLogic. }}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00060}00060 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00061}00061 \textcolor{comment}{            *   A GLogic is capable of storing and swapping an std::function which you can safely Invoke.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00062}00062 \textcolor{comment}{            *   During the function's invocation you are garunteed the Proxy will remain valid and the logic}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00063}00063 \textcolor{comment}{            *   will not be swapped or recursively overwritten.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00064}00064 \textcolor{comment}{            *   }}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00065}00065 \textcolor{comment}{            *   \(\backslash\)param  [in] \_logic     The function or lambda you wish to be invoked when Invoke() is called.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00066}00066 \textcolor{comment}{            *                           (optional can pass nullptr). May be invoked from a different thread.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00067}00067 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00068}00068 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The provided logic was stored within this Proxy. }}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00069}00069 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00070}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_aae7d313b10cf887f264e60896542b6d8}{00070}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_aae7d313b10cf887f264e60896542b6d8}{Create}}(std::function<\textcolor{keywordtype}{void}()> \_logic);}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00071}00071 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00072}00072 \textcolor{comment}{            //! Ovewrites the current logic assigned to this Proxy (if any)}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00073}00073 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00074}00074 \textcolor{comment}{            *   Assigns new user provided logic (nullptr[no logic] is a valid argument).}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00075}00075 \textcolor{comment}{            *   Cannot be done within provided logic as the class garuntees the logic}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00076}00076 \textcolor{comment}{            *   stack will remain valid for the duration of Invoke().}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00077}00077 \textcolor{comment}{            *   **Deadlocks will only be detected/prevented in Debug builds, check your logic for errors**}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00078}00078 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00079}00079 \textcolor{comment}{            *   \(\backslash\)param  [in] \_newLogic      The function or lambda you wish to overwrite the exsiting logic.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00080}00080 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00081}00081 \textcolor{comment}{            *   \(\backslash\)retval GReturn::DEADLOCK   You have attempted to modify the logic during it's own executetion.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00082}00082 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Stored logic was successfully overwritten.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00083}00083 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00084}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}{00084}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}{Assign}}(std::function<\textcolor{keywordtype}{void}()> \_newLogic) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00085}00085 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00086}00086 \textcolor{comment}{            //! Invokes the stored function/lamda from the current thread.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00087}00087 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00088}00088 \textcolor{comment}{            *   Calls the stored logic on this thread, during the invocation the logic and proxy will remian valid.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00089}00089 \textcolor{comment}{            *   During the operation Recursive calls are permitted but swapping the logic of your own proxy is not.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00090}00090 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00091}00091 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    No internal logic has been assigned to this GLogic.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00092}00092 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Function is valid and was called.}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00093}00093 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00094}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{00094}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{Invoke}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00095}00095 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00096}00096         \};}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{_g_logic_8h_source_l00099}00099 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GEVENTRECEIVER\_H}}
+
+\end{DoxyCode}

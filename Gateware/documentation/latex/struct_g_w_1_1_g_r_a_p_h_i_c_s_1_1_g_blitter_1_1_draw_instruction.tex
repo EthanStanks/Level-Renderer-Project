@@ -1,0 +1,115 @@
+\hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{}\doxysection{GW\+::GRAPHICS\+::GBlitter\+::Draw\+Instruction Struct Reference}
+\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+
+
+{\ttfamily \#include $<$GBlitter.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1d830edebfc82d49e115cf47acd0229e}{tile\+\_\+id}}
+\item 
+unsigned short \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2e873492f6d3a749604ecca1da2177c1}{flags}}
+\item 
+unsigned char \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_af41e2dcd60b0928352a973356a7d8f99}{layer}}
+\item 
+unsigned char \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a62ff9b40a11ce674e7592462dbc6fcf9}{stencil}}
+\item 
+float \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1b05d2c653e4f4fd44bdbd52e96f9f12}{t}} \mbox{[}3\mbox{]}
+\item 
+float \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2342648c50dc03a9ce611515970ff788}{m}} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\item 
+float \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_ae9110d54d4be2ee168fd1a642d163278}{p}} \mbox{[}2\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a9ea71002c2d6815520c1960aa66d7c21}{pad}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct containing the data for a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}} tile drawing operation. Specifies which tile to draw, the location to draw it to, and any transformations to apply during drawing. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00217}{217}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1d830edebfc82d49e115cf47acd0229e}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1d830edebfc82d49e115cf47acd0229e}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!tile\_id@{tile\_id}}
+\index{tile\_id@{tile\_id}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{tile\_id}{tile\_id}}
+{\footnotesize\ttfamily unsigned int GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::tile\+\_\+id}
+
+
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00219}{219}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2e873492f6d3a749604ecca1da2177c1}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2e873492f6d3a749604ecca1da2177c1}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!flags@{flags}}
+\index{flags@{flags}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned short GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::flags}
+
+Index of tile to be drawn. (0x\+FFFFFFFF is considered invalid.) 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00220}{220}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_af41e2dcd60b0928352a973356a7d8f99}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_af41e2dcd60b0928352a973356a7d8f99}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!layer@{layer}}
+\index{layer@{layer}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{layer}{layer}}
+{\footnotesize\ttfamily unsigned char GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::layer}
+
+Bitflags indicating which \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092a}{Draw\+Options}} to apply. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00221}{221}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a62ff9b40a11ce674e7592462dbc6fcf9}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a62ff9b40a11ce674e7592462dbc6fcf9}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!stencil@{stencil}}
+\index{stencil@{stencil}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{stencil}{stencil}}
+{\footnotesize\ttfamily unsigned char GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::stencil}
+
+Layer to draw tile to. Used for sorting even if USE\+\_\+\+SOURCE\+\_\+\+LAYERS flag is on. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00222}{222}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1b05d2c653e4f4fd44bdbd52e96f9f12}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a1b05d2c653e4f4fd44bdbd52e96f9f12}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!t@{t}}
+\index{t@{t}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily float GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::t\mbox{[}3\mbox{]}}
+
+Stencil value to draw tile with if USE\+\_\+\+SOURCE\+\_\+\+STENCILS flag is off. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00223}{223}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2342648c50dc03a9ce611515970ff788}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a2342648c50dc03a9ce611515970ff788}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!m@{m}}
+\index{m@{m}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily float GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::m\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}}
+
+x/y/z translation. z value is used to dynamically adjust the layer to draw to. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00224}{224}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_ae9110d54d4be2ee168fd1a642d163278}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_ae9110d54d4be2ee168fd1a642d163278}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!p@{p}}
+\index{p@{p}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily float GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::p\mbox{[}2\mbox{]}}
+
+2x2 row-\/major transformation matrix. Only used if USE\+\_\+\+TRANSFORMATIONS flag is on. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00225}{225}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a9ea71002c2d6815520c1960aa66d7c21}\label{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction_a9ea71002c2d6815520c1960aa66d7c21}} 
+\index{GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}!pad@{pad}}
+\index{pad@{pad}!GW::GRAPHICS::GBlitter::DrawInstruction@{GW::GRAPHICS::GBlitter::DrawInstruction}}
+\doxysubsubsection{\texorpdfstring{pad}{pad}}
+{\footnotesize\ttfamily unsigned char GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Instruction\+::pad\mbox{[}4\mbox{]}}
+
+Pivot (Fixed point to apply transformations about). Relative to top-\/left corner of tile. Only used if USE\+\_\+\+TRANSFORMATIONS flag is on. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00226}{226}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+

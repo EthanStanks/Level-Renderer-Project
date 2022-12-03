@@ -1,0 +1,322 @@
+\hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{}\doxysection{GW\+::GRAPHICS\+::GRaster\+Surface Class Reference}
+\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+
+
+{\ttfamily \#include $<$GRaster\+Surface.\+h$>$}
+
+Inheritance diagram for GW\+::GRAPHICS\+::GRaster\+Surface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.851240cm]{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_acc4f92bfc3e71232b07c9af5e0c7e733}{Create}} (\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}} \+\_\+g\+Window)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}{Clear}} (unsigned int \+\_\+xrgb\+Color)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}{Update\+Surface}} (const unsigned int $\ast$\+\_\+xrgb\+Pixels, unsigned int \+\_\+num\+Pixels)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}{Update\+Surface\+Subset}} (const unsigned int $\ast$\+\_\+xrgb\+Pixels, unsigned short \+\_\+num\+Rows, unsigned short \+\_\+row\+Width, unsigned short \+\_\+row\+Stride, unsigned short \+\_\+destX, unsigned short \+\_\+destY)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}{Smart\+Update\+Surface}} (const unsigned int $\ast$\+\_\+xrgb\+Pixels, unsigned int \+\_\+num\+Pixels, unsigned short \+\_\+row\+Width, unsigned int \+\_\+draw\+Option\+Flags)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}{Lock\+Update\+Buffer\+Write}} (unsigned int $\ast$$\ast$\+\_\+out\+Memory\+Buffer, unsigned short \&\+\_\+out\+Width, unsigned short \&\+\_\+out\+Height)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}{Lock\+Update\+Buffer\+Read}} (const unsigned int $\ast$$\ast$\+\_\+out\+Memory\+Buffer, unsigned short \&\+\_\+out\+Width, unsigned short \&\+\_\+out\+Height)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}{Unlock\+Update\+Buffer\+Write}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}{Unlock\+Update\+Buffer\+Read}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}{Present}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_raster_surface_8h_source_l00048}{48}} of file \mbox{\hyperlink{_g_raster_surface_8h_source}{GRaster\+Surface.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_acc4f92bfc3e71232b07c9af5e0c7e733}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_acc4f92bfc3e71232b07c9af5e0c7e733}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!Create@{Create}}
+\index{Create@{Create}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}}}]{\+\_\+g\+Window }\end{DoxyParamCaption})}
+
+
+
+Allocates and initializes a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRaster\+Surface}}. 
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRaster\+Surface}} proxy which enables you to draw pixel data to a window.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+g\+Window} & An existing GWindow object to bind the surface to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & An invalid GWindow was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRaster\+Surface}} created successfully, ready to draw to window. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!Clear@{Clear}}
+\index{Clear@{Clear}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+xrgb\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clears the surface to the specified color. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+xrgb\+Color} & The color to clear the surface to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The surface was cleared. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!UpdateSurface@{UpdateSurface}}
+\index{UpdateSurface@{UpdateSurface}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{UpdateSurface()}{UpdateSurface()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Update\+Surface (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$}]{\+\_\+xrgb\+Pixels,  }\item[{unsigned int}]{\+\_\+num\+Pixels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draws a raster to the surface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+xrgb\+Pixels} & The raster to draw to the surface. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Pixels} & The number of pixels in the raster.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Raster was nullptr and/or pixel count was greater than surface pixel count. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Pixel data was drawn to the surface. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!UpdateSurfaceSubset@{UpdateSurfaceSubset}}
+\index{UpdateSurfaceSubset@{UpdateSurfaceSubset}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{UpdateSurfaceSubset()}{UpdateSurfaceSubset()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Update\+Surface\+Subset (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$}]{\+\_\+xrgb\+Pixels,  }\item[{unsigned short}]{\+\_\+num\+Rows,  }\item[{unsigned short}]{\+\_\+row\+Width,  }\item[{unsigned short}]{\+\_\+row\+Stride,  }\item[{unsigned short}]{\+\_\+destX,  }\item[{unsigned short}]{\+\_\+destY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draws raster data to a rectangular subset region of the surface. 
+
+Notes\+: To draw a subset region from source data, pass \&source\+Pixels\mbox{[}sourceX + (sourceY $\ast$ source\+Width)\mbox{]} as \+\_\+xrgb\+Pixels and source\+Width as \+\_\+row\+Stride.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+xrgb\+Pixels} & The start of the raster data to draw to the surface. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Rows} & The number of rows in the subset region. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+row\+Width} & The width of each row in the subset region. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+row\+Stride} & The pixel stride length between rows in the subset region. (Pass 0 to use \+\_\+row\+Width as stride.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+destX} & The x coordinate in the surface to draw to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+destY} & The y coordinate in the surface to draw to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Raster was nullptr, row count was \texorpdfstring{$<$}{<} 1, row width was \texorpdfstring{$<$}{<} 1, and/or row stride was less than row width. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Pixel data was drawn to the surface. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & The region to draw was entirely outside the surface\textquotesingle{}s bounds, so drawing was unnecessary. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!SmartUpdateSurface@{SmartUpdateSurface}}
+\index{SmartUpdateSurface@{SmartUpdateSurface}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{SmartUpdateSurface()}{SmartUpdateSurface()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Smart\+Update\+Surface (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$}]{\+\_\+xrgb\+Pixels,  }\item[{unsigned int}]{\+\_\+num\+Pixels,  }\item[{unsigned short}]{\+\_\+row\+Width,  }\item[{unsigned int}]{\+\_\+draw\+Option\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Processes pixel data from a raster and draws it to the surface in the manner specified by draw option bitflags. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+xrgb\+Pixels} & The raster to draw to the surface. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Pixels} & The number of pixels in the raster. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+row\+Width} & The width of each row in the raster. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+draw\+Option\+Flags} & A bit flag set specifying how to process the pixel data before drawing.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Raster was nullptr, pixel count was greater than surface pixel count, raster width was greater than surface width, and/or conflicting bit flags were passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Pixel data was drawn to the surface. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!LockUpdateBufferWrite@{LockUpdateBufferWrite}}
+\index{LockUpdateBufferWrite@{LockUpdateBufferWrite}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{LockUpdateBufferWrite()}{LockUpdateBufferWrite()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Lock\+Update\+Buffer\+Write (\begin{DoxyParamCaption}\item[{unsigned int $\ast$$\ast$}]{\+\_\+out\+Memory\+Buffer,  }\item[{unsigned short \&}]{\+\_\+out\+Width,  }\item[{unsigned short \&}]{\+\_\+out\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Locks drawing to surface and gives access to internal memory for writing. 
+
+Blocks reading and writing access until unlocked.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Memory\+Buffer} & A pointer to the internal memory array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Width} & The width of the internal memory array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Height} & The height of the internal memory array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Memory buffer pointer was nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & A write lock was already active. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Access was given to internal memory and reading/writing was blocked. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!LockUpdateBufferRead@{LockUpdateBufferRead}}
+\index{LockUpdateBufferRead@{LockUpdateBufferRead}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{LockUpdateBufferRead()}{LockUpdateBufferRead()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Lock\+Update\+Buffer\+Read (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$$\ast$}]{\+\_\+out\+Memory\+Buffer,  }\item[{unsigned short \&}]{\+\_\+out\+Width,  }\item[{unsigned short \&}]{\+\_\+out\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Locks drawing to surface and gives access to internal memory for reading. 
+
+Blocks reading and writing access until unlocked.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Memory\+Buffer} & A pointer to the internal memory array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Width} & The width of the internal memory array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Height} & The height of the internal memory array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Memory buffer pointer was nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & A read lock was already active. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Access was given to internal memory and reading/writing was blocked. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!UnlockUpdateBufferWrite@{UnlockUpdateBufferWrite}}
+\index{UnlockUpdateBufferWrite@{UnlockUpdateBufferWrite}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{UnlockUpdateBufferWrite()}{UnlockUpdateBufferWrite()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Unlock\+Update\+Buffer\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Releases a write lock and reallows drawing to surface. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Reading/writing was unblocked. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & No write locks were active. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!UnlockUpdateBufferRead@{UnlockUpdateBufferRead}}
+\index{UnlockUpdateBufferRead@{UnlockUpdateBufferRead}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{UnlockUpdateBufferRead()}{UnlockUpdateBufferRead()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Unlock\+Update\+Buffer\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Releases a read lock and reallows drawing to surface. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure. This should not happen, please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Reading/writing was unblocked. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & No read locks were active. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}} 
+\index{GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}!Present@{Present}}
+\index{Present@{Present}!GW::GRAPHICS::GRasterSurface@{GW::GRAPHICS::GRasterSurface}}
+\doxysubsubsection{\texorpdfstring{Present()}{Present()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GRaster\+Surface\+::\+Present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draws the surface to the window. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & The associated GWindow was deallocated and the surface is now invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & The surface failed to draw to the window. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The surface was drawn to the window. \\
+\hline
+\end{DoxyRetVals}

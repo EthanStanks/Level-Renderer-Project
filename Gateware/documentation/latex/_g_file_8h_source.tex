@@ -1,0 +1,386 @@
+\hypertarget{_g_file_8h_source}{}\doxysection{GFile.\+h}
+\label{_g_file_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GFile.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GFile.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GFILE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GFILE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00005}00005 \textcolor{comment}{    File: GFile.h}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that handles both binary and textual file io and directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: Windows[(none)] Linux[(none)] Mac[(none)] }}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00008}00008 \textcolor{comment}{    Authors: Justin W. Parks, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Lari H. Norri, Anthony G. Balsamo, Kai Huang, Alexander Clemmons}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00011}00011 \textcolor{comment}{    Asynchronous: Yes[X] No[]}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../Core/GInterface.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00020}00020     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00022}00022         \textcolor{keyword}{class }GFileInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00023}00023         \{}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00024}00024         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00025}00025             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} OpenBinaryRead(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00026}00026             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} OpenBinaryWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} AppendBinaryWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00028}00028             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} OpenTextRead(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00029}00029             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} OpenTextWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} AppendTextWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00031}00031             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Write(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_inData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numBytes) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00032}00032             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Read(\textcolor{keywordtype}{char}* \_outData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numBytes) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00033}00033             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} WriteLine(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_inData) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00034}00034             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ReadLine(\textcolor{keywordtype}{char}* \_outData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_outDataSize, \textcolor{keywordtype}{char} \_delimiter) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00035}00035             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} CloseFile() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00036}00036             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} FlushFile() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00037}00037             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetCurrentWorkingDirectory(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_dir) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00038}00038             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetCurrentWorkingDirectory(\textcolor{keywordtype}{char}* \_outDir, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_dirSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00039}00039             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetDirectorySize(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00040}00040             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetSubDirectorySize(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00041}00041             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetFilesFromDirectory(\textcolor{keywordtype}{char}* \_outFiles[], \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numFiles, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_fileNameSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00042}00042             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetFoldersFromDirectory(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numsubDir, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_subDirNameSize, \textcolor{keywordtype}{char}* \_outsubDir[]) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00043}00043             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetFileSize(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00044}00044             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Seek(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_seekFrom, \textcolor{keywordtype}{int} \_amount, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCurrPos) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00045}00045         \};}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00047}00047 \};}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00049}00049 \textcolor{preprocessor}{\#include "{}../../Source/System/GFile/GFile.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00050}00050 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00051}00051 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00052}00052 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00053}00053 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00054}00054 \textcolor{comment}{    //! The namespace to which all Gateware library interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00055}00055 \textcolor{comment}{}    \textcolor{keyword}{namespace }SYSTEM}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00056}00056     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00057}00057 \textcolor{comment}{        //! Cross platform FileIO/Directory handling.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00058}00058 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00059}00059 \textcolor{comment}{        *   Handles file input/output operations, as well as directory information and file information.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00060}00060 \textcolor{comment}{        *   GFile inherits directly from GMultiThreaded, therefore its implementation must be thread safe.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00061}00061 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00062}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{00062}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} final }
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00063}00063             : \textcolor{keyword}{public} I::GProxy<I::GFileInterface, I::GFileImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00064}00064         \{}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00065}00065             \textcolor{comment}{// All Gateware API interfaces contain no variables \& are pure virtual.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00066}00066         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00067}00067             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00068}00068 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00069}00069 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00070}00070             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2744359d5d258b1b59d139101c6809ce}{OpenBinaryRead}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00071}00071             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a8d5f335bbc6f7c6d798ed27718aa2347}{OpenBinaryWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00072}00072             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a63311236692181f99fd393fe8e1ca9fc}{AppendBinaryWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00073}00073             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac3ece72ce30e4d1a1c426c53a7a8354a}{OpenTextRead}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00074}00074             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_aebd3e32736b994c0296b7575ab0a2759}{OpenTextWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00075}00075             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a72e40b3234a2384738d8db6e958f4782}{AppendTextWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00076}00076             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9906414c159e9f1156b5ff6ad511c31}{Write}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00077}00077             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a1aaa026cba3d37abaaa2b408cd5d322d}{Read}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00078}00078             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a7c57570575c63ae98f71232660d1b911}{WriteLine}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00079}00079             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9e072091ffe55f2f7697cb1d3eaec79}{ReadLine}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00080}00080             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae661d107c461145bb095dcfc76519f54}{CloseFile}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00081}00081             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae3105b637ef87af268722a696b8657a9}{FlushFile}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00082}00082             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ab28d2e7ecf3ac893df88603e5448561a}{SetCurrentWorkingDirectory}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00083}00083             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a6853b717e838d1b3a54f22449a37d764}{GetCurrentWorkingDirectory}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00084}00084             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac2de86bf6cf61455577efc47277ecb94}{GetDirectorySize}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00085}00085             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acc4ee43526890c982a03d88764d9e84d}{GetSubDirectorySize}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00086}00086             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae062d19f84d120adea94756d1d26e41e}{GetFilesFromDirectory}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00087}00087             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acf4a5d97fa0bc17db9c7c7de2f9db6a0}{GetFoldersFromDirectory}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00088}00088             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2f4cba2dad96fa4c894545f43fee64b5}{GetFileSize}})}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00089}00089             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a234eca58005cb2a7a04e3ae37ae2a408}{Seek}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00090}00090 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00091}00091 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00092}00092             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00093}00093 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00094}00094 \textcolor{comment}{            //!Creates a GFile Object.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00095}00095 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00096}00096 \textcolor{comment}{            *   The GFile created by this function will have its current working directory defaulted to}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00097}00097 \textcolor{comment}{            *   the directory where the program was ran from. Call SetCurrentWorkingDirectory to change it.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00098}00098 \textcolor{comment}{            *   No file will be opened in creation of GFile. Call an Open function to open one.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00099}00099 \textcolor{comment}{            *   Created GFile object will have its reference count initialized to one.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00100}00100 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00101}00101 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  GFile could not be created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00102}00102 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Gfile successfully created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00103}00103 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00104}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a3cf9b4ae8993dec7c8c0c8d1246ac7b1}{00104}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a3cf9b4ae8993dec7c8c0c8d1246ac7b1}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00105}00105 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00106}00106 \textcolor{comment}{            //! Opens a file for binary read.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00107}00107 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00108}00108 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00109}00109 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00110}00110 \textcolor{comment}{            *   If the file is not found in the current working directory, the function will fail.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00111}00111 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00112}00112 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00113}00113 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FILE\_NOT\_FOUND  File could not be found.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00115}00115 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A null pointer was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00116}00116 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already opened.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00117}00117 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00118}00118 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00119}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2744359d5d258b1b59d139101c6809ce}{00119}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2744359d5d258b1b59d139101c6809ce}{OpenBinaryRead}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00120}00120 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00121}00121 \textcolor{comment}{            //! Opens a file for binary write with truncation.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00122}00122 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00123}00123 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00124}00124 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00125}00125 \textcolor{comment}{            *   If the file is not found in the current working directory, the file will be created in}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00126}00126 \textcolor{comment}{            *   the current working directory. File can now be read from with Read().}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00127}00127 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00128}00128 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00129}00129 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00130}00130 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00131}00131 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already open or file could not be found/created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00132}00132 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00133}00133 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00134}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a8d5f335bbc6f7c6d798ed27718aa2347}{00134}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a8d5f335bbc6f7c6d798ed27718aa2347}{OpenBinaryWrite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00135}00135 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00136}00136 \textcolor{comment}{            //! Opens a file for binary write with append.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00137}00137 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00138}00138 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00139}00139 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00140}00140 \textcolor{comment}{            *   If the file is not found in the current working directory, the file will be created in}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00141}00141 \textcolor{comment}{            *   the current working directory. File can now be written to with Write().}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00142}00142 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00143}00143 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00144}00144 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00145}00145 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00146}00146 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already open or the file could not be found/created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00147}00147 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00148}00148 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00149}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a63311236692181f99fd393fe8e1ca9fc}{00149}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a63311236692181f99fd393fe8e1ca9fc}{AppendBinaryWrite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00150}00150 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00151}00151 \textcolor{comment}{            //! Opens a file for text read.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00152}00152 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00153}00153 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00154}00154 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00155}00155 \textcolor{comment}{            *   If the file is not found in the current working directory, the function will fail.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00156}00156 \textcolor{comment}{            *   File can now be written to with Write().}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00157}00157 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00158}00158 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00159}00159 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00160}00160 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FILE\_NOT\_FOUND  File could not be found.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00161}00161 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00162}00162 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00163}00163 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00164}00164 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00165}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac3ece72ce30e4d1a1c426c53a7a8354a}{00165}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac3ece72ce30e4d1a1c426c53a7a8354a}{OpenTextRead}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00166}00166 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00167}00167 \textcolor{comment}{            //! Opens a file for text write with truncation.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00168}00168 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00169}00169 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00170}00170 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00171}00171 \textcolor{comment}{            *   If the file is not found in the current working directory, the file will be created in}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00172}00172 \textcolor{comment}{            *   the current working directory. File can now be read from with Read().}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00173}00173 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00174}00174 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00175}00175 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00176}00176 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00177}00177 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already open or the file could not be found/created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00178}00178 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00179}00179 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00180}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_aebd3e32736b994c0296b7575ab0a2759}{00180}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_aebd3e32736b994c0296b7575ab0a2759}{OpenTextWrite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00181}00181 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00182}00182 \textcolor{comment}{            //! Opens a file for text write with append.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00183}00183 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00184}00184 \textcolor{comment}{            *   The file name passed into the function should be passed like it is a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00185}00185 \textcolor{comment}{            *   The function will look in the current working directory for the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00186}00186 \textcolor{comment}{            *   If the file is not found in the current working directory, the file will be created in}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00187}00187 \textcolor{comment}{            *   the current working directory. File can now be written to with Write().}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00188}00188 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00189}00189 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file name of the file to open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00190}00190 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00191}00191 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00192}00192 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is already open or the file could not be found/created.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00193}00193 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully opened the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00194}00194 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00195}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a72e40b3234a2384738d8db6e958f4782}{00195}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a72e40b3234a2384738d8db6e958f4782}{AppendTextWrite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00196}00196 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00197}00197 \textcolor{comment}{            //! Writes binary data to the currently opened file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00198}00198 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00199}00199 \textcolor{comment}{            *   Will append or truncate file based on what mode the currently}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00200}00200 \textcolor{comment}{            *   opened file was opened with.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00201}00201 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00202}00202 \textcolor{comment}{            *   \(\backslash\)param [in] \_inData The data to write out to file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00203}00203 \textcolor{comment}{            *   \(\backslash\)param [in] \_numBytes The number of bytes to write out to the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00204}00204 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00205}00205 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  Either a nullptr was passed in or a size of 0 bytes was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00206}00206 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either a file is not open or the write failed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00207}00207 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully wrote out the data.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00208}00208 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00209}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9906414c159e9f1156b5ff6ad511c31}{00209}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9906414c159e9f1156b5ff6ad511c31}{Write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_inData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numBytes) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00210}00210 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00211}00211 \textcolor{comment}{            //! Reads binary from the currently opened file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00212}00212 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00213}00213 \textcolor{comment}{            *   Reads binary data and stores it into a char* until the byte limit}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00214}00214 \textcolor{comment}{            *   is reached.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00215}00215 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00216}00216 \textcolor{comment}{            *   \(\backslash\)param [out] \_outData The variable to store the read in bytes.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00217}00217 \textcolor{comment}{            *   \(\backslash\)param [in] \_numBytes The number of bytes to read in from the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00218}00218 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00219}00219 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT A byte size of 0 was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00220}00220 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either file is not open or read failed. \_outData will be null.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00221}00221 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successful read.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00222}00222 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00223}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a1aaa026cba3d37abaaa2b408cd5d322d}{00223}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a1aaa026cba3d37abaaa2b408cd5d322d}{Read}}(\textcolor{keywordtype}{char}* \_outData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numBytes) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00224}00224 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00225}00225 \textcolor{comment}{            //! Writes text to the currently opened file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00226}00226 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00227}00227 \textcolor{comment}{            *   Will append or truncate file based on what mode the currently}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00228}00228 \textcolor{comment}{            *   opened file was opened with.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00229}00229 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00230}00230 \textcolor{comment}{            *   \(\backslash\)param [in] \_inData Null terminated string to write out.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00231}00231 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00232}00232 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00233}00233 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either file is not open or read failed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00234}00234 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successful write.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00235}00235 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00236}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a7c57570575c63ae98f71232660d1b911}{00236}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a7c57570575c63ae98f71232660d1b911}{WriteLine}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_inData) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00237}00237 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00238}00238 \textcolor{comment}{            //! Reads text to the currently opened file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00239}00239 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00240}00240 \textcolor{comment}{            *   Reads text from the current file until either the size is}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00241}00241 \textcolor{comment}{            *   reached or delimiter is reached.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00242}00242 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00243}00243 \textcolor{comment}{            *   \(\backslash\)param [out] \_outData Null terminated string to write out.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00244}00244 \textcolor{comment}{            *   \(\backslash\)param [in] \_outDataSize The size of \_outData.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00245}00245 \textcolor{comment}{            *   \(\backslash\)param [in] \_delimiter The delimiter to stop reading at.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00246}00246 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00247}00247 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  Either a nullptr was passed in or the size request is 0.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00248}00248 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either file is not open or read failed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00249}00249 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successful read.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00250}00250 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00251}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9e072091ffe55f2f7697cb1d3eaec79}{00251}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae9e072091ffe55f2f7697cb1d3eaec79}{ReadLine}}(\textcolor{keywordtype}{char}* \_outData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_outDataSize, \textcolor{keywordtype}{char} \_delimiter) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00252}00252 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00253}00253 \textcolor{comment}{            //! Flushes and closes the current file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00254}00254 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00255}00255 \textcolor{comment}{            *   \(\backslash\)retval FAILURE  A file is not currently open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00256}00256 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS  File successfully flushed and closed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00257}00257 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00258}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae661d107c461145bb095dcfc76519f54}{00258}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae661d107c461145bb095dcfc76519f54}{CloseFile}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00259}00259 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00260}00260 \textcolor{comment}{            //! Flushes the current file from memory to disk.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00261}00261 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00262}00262 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  A file is not currently open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00263}00263 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  File successfully flushed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00264}00264 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00265}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae3105b637ef87af268722a696b8657a9}{00265}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae3105b637ef87af268722a696b8657a9}{FlushFile}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00266}00266 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00267}00267 \textcolor{comment}{            //! Changes the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00268}00268 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00269}00269 \textcolor{comment}{            *   This sets the directory we will look into with any of the Open functions or other directory functions.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00270}00270 \textcolor{comment}{            *   Paths that are not relative to the directory the program was ran from should be passed in as absolute paths.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00271}00271 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00272}00272 \textcolor{comment}{            *   \(\backslash\)param [in] \_dir An absolute path to the directory to set as the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00273}00273 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00274}00274 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FILE\_NOT\_FOUND  The directory could not be found.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00275}00275 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00276}00276 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Failed to open directory (Could be because it was not found).}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00277}00277 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully set the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00278}00278 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00279}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ab28d2e7ecf3ac893df88603e5448561a}{00279}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ab28d2e7ecf3ac893df88603e5448561a}{SetCurrentWorkingDirectory}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_dir) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00280}00280 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00281}00281 \textcolor{comment}{            //! Retrieves the absolute path of the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00282}00282 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00283}00283 \textcolor{comment}{            *   This is the directory we will look into for any file Open commands.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00284}00284 \textcolor{comment}{            *   This is by Windows standard guaranteed to be 255 or less.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00285}00285 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00286}00286 \textcolor{comment}{            *   \(\backslash\)param [out] \_outDir An absolute path to the directory to set as the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00287}00287 \textcolor{comment}{            *   \(\backslash\)param [in] \_dirSize The size of \_outDir.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00288}00288 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00289}00289 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT  A nullptr was passed in or the size is 0.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00290}00290 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  The current working directory is invalid or \_outDir was not big enough. \_outDir will be null.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00291}00291 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successfully obtained the working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00292}00292 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00293}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a6853b717e838d1b3a54f22449a37d764}{00293}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a6853b717e838d1b3a54f22449a37d764}{GetCurrentWorkingDirectory}}(\textcolor{keywordtype}{char}* \_outDir, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_dirSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00294}00294 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00295}00295 \textcolor{comment}{            //! Gets the number of files in the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00296}00296 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00297}00297 \textcolor{comment}{            *   \(\backslash\)param [out] \_outSize The number of files in the directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00298}00298 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00299}00299 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either currently working directory is invalid or count failed. \_outSize will be -\/1.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00300}00300 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successfully counted the files in the directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00301}00301 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00302}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac2de86bf6cf61455577efc47277ecb94}{00302}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ac2de86bf6cf61455577efc47277ecb94}{GetDirectorySize}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00303}00303 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00304}00304 \textcolor{comment}{            //! Gets the number of files in the current working subdirectory}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00305}00305 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00306}00306 \textcolor{comment}{            *   \(\backslash\)param [out] \_outSize The number of files in the subdirectory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00307}00307 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00308}00308 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either currently working directory is invalid or count failed. \_outSize will be -\/1.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00309}00309 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successfully counted the files in the directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00310}00310 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00311}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acc4ee43526890c982a03d88764d9e84d}{00311}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acc4ee43526890c982a03d88764d9e84d}{GetSubDirectorySize}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00312}00312 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00313}00313 \textcolor{comment}{            //! Gets the names of all files in the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00314}00314 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00315}00315 \textcolor{comment}{            *   This function will retrieve just the file names and extensions.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00316}00316 \textcolor{comment}{            *   Any Open function using these names will assume the files are in the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00317}00317 \textcolor{comment}{            *   Any change of the current working directory will make the names generated by this function}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00318}00318 \textcolor{comment}{            *   invalid until called again.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00319}00319 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00320}00320 \textcolor{comment}{            *   \(\backslash\)param [out] \_outFiles Stores the names of the files retrieved.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00321}00321 \textcolor{comment}{            *   \(\backslash\)param [in] \_numFiles The number of files.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00322}00322 \textcolor{comment}{            *   \(\backslash\)param [in] \_fileNameSize The size of the file names.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00323}00323 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00324}00324 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either current working directory is invalid or obtaining file names failed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00325}00325 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successfully retrieved the file names.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00326}00326 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00327}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae062d19f84d120adea94756d1d26e41e}{00327}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_ae062d19f84d120adea94756d1d26e41e}{GetFilesFromDirectory}}(\textcolor{keywordtype}{char}* \_outFiles[], \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numFiles, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_fileNameSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00328}00328 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00329}00329 \textcolor{comment}{            //! Gets the names of all folders/sub-\/directories in the current working directory.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00330}00330 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00331}00331 \textcolor{comment}{            *   This function will retrieve just the folders/sub-\/directories names.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00332}00332 \textcolor{comment}{            *   Any change of the current working directory will make the names generated by this function}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00333}00333 \textcolor{comment}{            *   invalid until called again.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00334}00334 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00335}00335 \textcolor{comment}{            *   \(\backslash\)param [in] \_numsubDir The number of sub-\/directories.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00336}00336 \textcolor{comment}{            *   \(\backslash\)param [in] \_subDirNameSize The size of the sub-\/directories names.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00337}00337 \textcolor{comment}{            *   \(\backslash\)param [out] \_outsubDir Stores the names of the sub-\/directories retrieved.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00338}00338 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00339}00339 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  Either current working directory is invalid or obtaining sub-\/directories names failed.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00340}00340 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Successfully retrieved the folders/sub-\/directories names.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00341}00341 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00342}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acf4a5d97fa0bc17db9c7c7de2f9db6a0}{00342}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_acf4a5d97fa0bc17db9c7c7de2f9db6a0}{GetFoldersFromDirectory}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numsubDir, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_subDirNameSize, \textcolor{keywordtype}{char}* \_outsubDir[]) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00343}00343 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00344}00344 \textcolor{comment}{            //! Gets the size of the specified file in bytes.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00345}00345 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00346}00346 \textcolor{comment}{            *   The filename passed into this function should be passed as a relative path.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00347}00347 \textcolor{comment}{            *   This function will assume the file passed in is in the current working directory}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00348}00348 \textcolor{comment}{            *   and will look for it there.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00349}00349 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00350}00350 \textcolor{comment}{            *   \(\backslash\)param [in] \_file The file to get the size of.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00351}00351 \textcolor{comment}{            *   \(\backslash\)param [out] \_outSize will store the size of the file.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00352}00352 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00353}00353 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FILE\_NOT\_FOUND     Could not locate the file. Check that the current working directory is valid.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00354}00354 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS            Successfully retrieved the file size.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00355}00355 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00356}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2f4cba2dad96fa4c894545f43fee64b5}{00356}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a2f4cba2dad96fa4c894545f43fee64b5}{GetFileSize}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} \_file, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00357}00357 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00358}00358 \textcolor{comment}{            //! Seeks to a location in the file from a given starting point.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00359}00359 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00360}00360 \textcolor{comment}{            *   This function will seek to a new location starting from \_seekFrom and moving \_amount bytes. If \_seekFrom}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00361}00361 \textcolor{comment}{            *   is set to -\/1, the function will start from whatever position it is currently in. \_outCurrPos will be set}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00362}00362 \textcolor{comment}{            *   to the new offset when the function completes (esentially \_seekFrom + \_amount). This function will fail}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00363}00363 \textcolor{comment}{            *   and return GReturn::FILE\_FOUND\_FOUND if there is no file currently open. If \_seekFrom + \_amount is less than 0 or}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00364}00364 \textcolor{comment}{            *   greater than the file size, this means you are trying to seek past the beginning or end of the file and}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00365}00365 \textcolor{comment}{            *   the function will return GReturn::INVALID\_ARGUMENT.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00366}00366 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00367}00367 \textcolor{comment}{            *   \(\backslash\)param [in] \_seekFrom The byte location to start seeking from. -\/1 (0xFFFFFFFF) seeks from your current position.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00368}00368 \textcolor{comment}{            *   \(\backslash\)param [in] \_amount The amount of bytes to traverse either forwards or backwards.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00369}00369 \textcolor{comment}{            *   \(\backslash\)param [out] \_outCurrPos The offset of the file pointer relative to the begining of the file after the seek is complete}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00370}00370 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00371}00371 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FILE\_NOT\_FOUND     There is no file currently open.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00372}00372 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   One or more arguments were invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00373}00373 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS            Successfully seeked.}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00374}00374 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00375}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a234eca58005cb2a7a04e3ae37ae2a408}{00375}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file_a234eca58005cb2a7a04e3ae37ae2a408}{Seek}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_seekFrom, \textcolor{keywordtype}{int} \_amount, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCurrPos) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00376}00376 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00377}00377         \};}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00378}00378     \}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00379}00379 \}}
+\DoxyCodeLine{\Hypertarget{_g_file_8h_source_l00380}00380 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GFILE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,133 @@
+\hypertarget{_g_thread_shared_8h_source}{}\doxysection{GThread\+Shared.\+h}
+\label{_g_thread_shared_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GThreadShared.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GThreadShared.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GTHREADSHARED\_H}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GTHREADSHARED\_H}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00005}00005 \textcolor{comment}{    File: GThreadShared.h}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00006}00006 \textcolor{comment}{    Purpose: Identify a Gateware interface which supports(if possible) asynchronus resource access across multiple threads.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00008}00008 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00009}00009 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00010}00010 \textcolor{comment}{    Contributors: Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Release}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GInterface.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00020}00020     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00022}00022         \textcolor{comment}{// An interface which supports safe resource access from multiple threads.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00023}00023         \textcolor{comment}{// Gateware Developers: Use private inheritance(containment) if you do not wish to allow external locks. (recommended)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00024}00024         \textcolor{keyword}{class }GThreadSharedInterface : \textcolor{keyword}{virtual} \textcolor{keyword}{public} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00026}00026         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} LockAsyncRead() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00028}00028             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UnlockAsyncRead() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00029}00029             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} LockSyncWrite() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UnlockSyncWrite() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00031}00031         \};}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00035}00035 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00036}00036 \textcolor{preprocessor}{\#include "{}../../Source/Core/GThreadShared/GThreadShared.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00037}00037 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00038}00038 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00039}00039 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00040}00040 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00041}00041 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00042}00042 \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00043}00043     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00044}00044 \textcolor{comment}{        //! A Proxy class that can be used to lock \& unlock an asynchronus resource.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00045}00045 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00046}00046 \textcolor{comment}{        *   Proxy to a base class that can efficiently lock and unlock resources for Gateware developers.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00047}00047 \textcolor{comment}{        *   Most end users should note that most Gateware thread safe interfaces will privately inherit this interface.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00048}00048 \textcolor{comment}{        *   This means that casting these Proxys to this base Proxy will fail. This is intended behavior by the designer.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00049}00049 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00050}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared}{00050}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared}{GThreadShared}} final}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00051}00051             : \textcolor{keyword}{public} I::GProxy<I::GThreadSharedInterface, I::GThreadSharedImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00052}00052         \{}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00053}00053         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00054}00054             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00055}00055 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00056}00056 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared}{GThreadShared}})}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00057}00057             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_ac997d4babd1131db2e266ae81cbfe026}{LockAsyncRead}})}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00058}00058             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a37496feb2182a0991dbd01137a33193d}{UnlockAsyncRead}})}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00059}00059             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a7c4bd80838ef1953e1c1c9af9b8a4138}{LockSyncWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00060}00060             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a6f895d663ced3beb6eeb4407b11ca94c}{UnlockSyncWrite}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00061}00061 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00062}00062 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00063}00063 \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00064}00064 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00065}00065 \textcolor{comment}{            //! Creates a valid GThreadShared Object. }}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00066}00066 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00067}00067 \textcolor{comment}{            *   GThreadShared can be thought of as an std::mutex that is potentially optimized per-\/platform.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00068}00068 \textcolor{comment}{            *   While mainly used internally by Gateware you can also make use of this to efficiently protect resources.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00069}00069 \textcolor{comment}{            *   End users should be aware that due to internal performance considerations error checking is only provided}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00070}00070 \textcolor{comment}{            *   when compiling in DEBUG modes. Non-\/SUCCESS Results from this interface should be used to temporarily find}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00071}00071 \textcolor{comment}{            *   logical threading errors and should not be used as final logic conditions in RELEASE code.(ex:DEADLOCK)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00072}00072 \textcolor{comment}{            *   We(and suggest you) handle things like deadlock prevention at a higher level to not degrade threading perf.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00073}00073 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00074}00074 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    This always succeeds. (unless you run out of memory)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00075}00075 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00076}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_ab3b1f1e036efeb7f0b90c56bd7a662e1}{00076}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_ab3b1f1e036efeb7f0b90c56bd7a662e1}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00077}00077 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00078}00078 \textcolor{comment}{            //! Locks a resource for Reading. (prevents writes from other threads)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00079}00079 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00080}00080 \textcolor{comment}{            *   Prevents other threads from writing data to a resource while you access it. (you should NOT modify it)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00081}00081 \textcolor{comment}{            *   Use the UnlockAsyncRead function as soon as you are done to prevent processing delays.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00082}00082 \textcolor{comment}{            *   If a resource is currently locked for writing, this operation will block until it is free.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00083}00083 \textcolor{comment}{            *   **In Release builds this function is not error checked and will always return SUCCESS**}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00084}00084 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00085}00085 \textcolor{comment}{            *   \(\backslash\)retval GReturn::DEADLOCK  A recursive lock was detected by thsis thread which already had a read/write lock.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00086}00086 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS   Succesfully locked resource for asynchronus reads. (if supported by the platform)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00087}00087 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00088}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_ac997d4babd1131db2e266ae81cbfe026}{00088}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_ac997d4babd1131db2e266ae81cbfe026}{LockAsyncRead}}() \textcolor{keyword}{const} = 0; \textcolor{comment}{// operation will wait for writes but not block other reads }}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00089}00089 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00090}00090 \textcolor{comment}{            //! Unlocks a resource that is currently locked for reading. (potentially allows writes from other threads)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00091}00091 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00092}00092 \textcolor{comment}{            *   Releases a resource once you have finished accessing it. (Again... do NOT modify the resource in question)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00093}00093 \textcolor{comment}{            *   Use the LockAsyncRead function before calling this function.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00094}00094 \textcolor{comment}{            *   If a resource is currently locked for writing, this operation will block until it is free.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00095}00095 \textcolor{comment}{            *   **In Release builds this function is not error checked and will always return SUCCESS**}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00096}00096 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00097}00097 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE  The resource was not locked by this thread for reading.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00098}00098 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully unlocked resource.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00099}00099 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00100}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a37496feb2182a0991dbd01137a33193d}{00100}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a37496feb2182a0991dbd01137a33193d}{UnlockAsyncRead}}() \textcolor{keyword}{const} = 0; \textcolor{comment}{// operation will no longer block write access}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00101}00101 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00102}00102 \textcolor{comment}{            //! Locks a resource for writing.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00103}00103 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00104}00104 \textcolor{comment}{            *   Prevents other threads from reading and/or writing data from/to a resource.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00105}00105 \textcolor{comment}{            *   Use the UnlockSyncWrite function as soon as you are done to prevent processing delays.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00106}00106 \textcolor{comment}{            *   **In Release builds this function is not error checked and will always return SUCCESS**}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00107}00107 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00108}00108 \textcolor{comment}{            *   \(\backslash\)retval GReturn::DEADLOCK A recursive lock was detected by a thread which already had a read/write lock.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00109}00109 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS  Succesfully locked resource for writing.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00110}00110 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00111}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a7c4bd80838ef1953e1c1c9af9b8a4138}{00111}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a7c4bd80838ef1953e1c1c9af9b8a4138}{LockSyncWrite}}() = 0; \textcolor{comment}{// operation will wait for all reads to complete and then block further reads}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00112}00112 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00113}00113 \textcolor{comment}{            //! Unlocks a resource once you have finished writing to it. (re-\/enable reads)}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00114}00114 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00115}00115 \textcolor{comment}{            *   Allows other threads to read and/or write data from/to a resource after editing.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00116}00116 \textcolor{comment}{            *   Use the LockSyncWrite function before calling this function.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00117}00117 \textcolor{comment}{            *   **In Release builds this function is not error checked and will always return SUCCESS**}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00118}00118 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00119}00119 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The resource was not locked by this thread for writing.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00120}00120 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS Succesfully unlocked a resource.}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00121}00121 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00122}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a6f895d663ced3beb6eeb4407b11ca94c}{00122}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_thread_shared_a6f895d663ced3beb6eeb4407b11ca94c}{UnlockSyncWrite}}() = 0; \textcolor{comment}{// operation will release resource for subsequent writes \& async reads }}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00123}00123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00124}00124         \};}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00126}00126 \}}
+\DoxyCodeLine{\Hypertarget{_g_thread_shared_8h_source_l00127}00127 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GTHREADSHARED\_H}}
+
+\end{DoxyCode}

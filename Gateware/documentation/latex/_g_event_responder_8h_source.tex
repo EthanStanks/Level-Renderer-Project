@@ -1,0 +1,128 @@
+\hypertarget{_g_event_responder_8h_source}{}\doxysection{GEvent\+Responder.\+h}
+\label{_g_event_responder_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventResponder.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventResponder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GEVENTRESPONDER\_H}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GEVENTRESPONDER\_H}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00005}00005 \textcolor{comment}{    File: GEventResponder.h}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00006}00006 \textcolor{comment}{    Purpose: An interface that will immediately respond to GEvents posted by a GEventGenerator.  }}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00008}00008 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00009}00009 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00010}00010 \textcolor{comment}{    Contributors: N/A}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GLogic.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00020}00020     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00022}00022         \textcolor{keyword}{class }GEventResponderInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GLogicInterface}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00023}00023         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00024}00024         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00025}00025             \textcolor{comment}{// Let the compiler know that we intend to use the base class methods}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00026}00026             \textcolor{comment}{// and also override them with an additional parameters.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00027}00027             \textcolor{keyword}{using }GLogicInterface::Assign; \textcolor{comment}{// enables "{}eventless"{} response if desired}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00028}00028             \textcolor{keyword}{using }GLogicInterface::Invoke; \textcolor{comment}{// A GResponder Invoke with no GEvent will have a dummy event provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00029}00029             \textcolor{comment}{// new methods (overrides)}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Assign(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const} GEvent\&)> \_newEventHandler) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00031}00031             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Invoke(\textcolor{keyword}{const} GEvent\& \_incomingEvent) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00032}00032         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00034}00034 \};}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00036}00036 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00037}00037 \textcolor{preprocessor}{\#include "{}../../Source/Core/GEventResponder/GEventResponder.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00039}00039 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00040}00040 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00041}00041 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00042}00042 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00043}00043 \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00044}00044     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00045}00045 \textcolor{comment}{        //! A Proxy/Functor class that can be used to immediately respond to a GEventGenerator's events. }}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00046}00046 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00047}00047 \textcolor{comment}{        *   The GEventResponder proxy stores and allows safe swapping of GEvent handlers.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00048}00048 \textcolor{comment}{        *   It will immediately react to any GEventGenerator it is Registered to that posts a GEvent.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00049}00049 \textcolor{comment}{        *   Essentially this is a specialized version of GLogic designed for conveinent interception of events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00050}00050 \textcolor{comment}{        *   **NOTE: GEventResponder is a replacement interface to GEventReceiver which is deprecated.**}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00051}00051 \textcolor{comment}{        *   \(\backslash\)code\{.cpp\}}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00052}00052 \textcolor{comment}{        *       GEventResponder observer;}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00053}00053 \textcolor{comment}{        *       // Provide the logic for processing a GEvent you care about.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00054}00054 \textcolor{comment}{        *       observer.Create([](const GEvent\& g) \{ }}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00055}00055 \textcolor{comment}{        *           GEventGenerator::Events e; // substitute the generator type you care about}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00056}00056 \textcolor{comment}{        *           GEventGenerator::EVENT\_DATA d; // substitute the event data you care about}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00057}00057 \textcolor{comment}{        *           // Determine if the incoming event contains the data you are interested in.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00058}00058 \textcolor{comment}{        *           if (+g.Read(e,d)) // if you are interested in multiple events consider using a switch below}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00059}00059 \textcolor{comment}{        *               if (e == GEventGenerator::Events::NON\_EVENT) // substiute actual event}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00060}00060 \textcolor{comment}{        *                   std::cout << d.noData; // substitute actual data}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00061}00061 \textcolor{comment}{        *       \});}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00062}00062 \textcolor{comment}{        *       someEventGenerator.Register(observer);}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00063}00063 \textcolor{comment}{        *   \(\backslash\)endcode}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00064}00064 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00065}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{00065}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEventResponder}} final}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00066}00066             : \textcolor{keyword}{public} I::GProxy<I::GEventResponderInterface, I::GEventResponderImplementation, std::function<void(const GEvent\&)>>}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00067}00067         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00068}00068         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00069}00069             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00070}00070 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00071}00071 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEventResponder}})}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00072}00072             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}{Assign}})}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00073}00073             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}{Invoke}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00074}00074 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00075}00075 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00076}00076             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00077}00077 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00078}00078 \textcolor{comment}{            //! Allocates \& Intializes a GEventResponder. }}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00079}00079 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00080}00080 \textcolor{comment}{            *   A GEventResponder is capable of receiving and reacting to events created by GEventGenerators.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00081}00081 \textcolor{comment}{            *   You can use this class whenever there is a Gateware class that spawns events you wish to know about.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00082}00082 \textcolor{comment}{            *   A GEventResponder may be Registered to multiple GEventGenerators. (see: GEventGenerator::Register())}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00083}00083 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00084}00084 \textcolor{comment}{            *   \(\backslash\)param  [in] \_eventHandler  The function or lambda you wish to be invoked when an event is received.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00085}00085 \textcolor{comment}{            *                               (optional can pass nullptr). May be invoked from different threads.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00086}00086 \textcolor{comment}{            *                               If you need to receive messages on a specific thread consider GEventCache instead.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00087}00087 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00088}00088 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The responder was intialized with the handler provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00089}00089 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00090}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a14771b0601b0de8c3785ae9cb721983f}{00090}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a14771b0601b0de8c3785ae9cb721983f}{Create}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\&)> \_eventHandler);}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00091}00091 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00092}00092 \textcolor{comment}{            //! Ovewrites the current event handler assigned to this Proxy (if any)}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00093}00093 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00094}00094 \textcolor{comment}{            *   Assigns new user provided logic (nullptr[no logic] is a valid argument).}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00095}00095 \textcolor{comment}{            *   Cannot be done within provided logic as the class garuntees the logic}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00096}00096 \textcolor{comment}{            *   stack will remain valid for the duration of Invoke().}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00097}00097 \textcolor{comment}{            *   **Deadlocks will only be detected/prevented in Debug builds, check your logic for errors**}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00098}00098 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00099}00099 \textcolor{comment}{            *   \(\backslash\)param  [in] \_newEventHandler   The function or lambda you wish to recieve all new events with.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00100}00100 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00101}00101 \textcolor{comment}{            *   \(\backslash\)retval GReturn::DEADLOCK   You have attempted to modify the logic during it's own executetion.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00102}00102 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Stored logic was successfully overwritten.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00103}00103 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00104}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}{00104}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}{Assign}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\&)> \_newEventHandler) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00105}00105 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00106}00106 \textcolor{comment}{            //! Invokes the stored function/lamda event handler from the current thread.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00107}00107 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00108}00108 \textcolor{comment}{            *   Calls the stored handler on this thread, during the invocation the logic and proxy will remian valid.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00109}00109 \textcolor{comment}{            *   During the operation Recursive calls are permitted but swapping the handler of your own proxy is not.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00110}00110 \textcolor{comment}{            *   In general you will not call this routine directly, rather the provided GEventGenerator will call this.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00111}00111 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00112}00112 \textcolor{comment}{            *   \(\backslash\)param  [in] \_incomingEvent     The GEvent you want the GResponder to respond to.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00113}00113 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    No internal logic has been assigned to this GEventResponder.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00115}00115 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Handler is valid and was called.}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00116}00116 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00117}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}{00117}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}{Invoke}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\& \_incomingEvent) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00118}00118 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00119}00119         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{_g_event_responder_8h_source_l00122}00122 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GEVENTRESPONDER\_H}}
+
+\end{DoxyCode}

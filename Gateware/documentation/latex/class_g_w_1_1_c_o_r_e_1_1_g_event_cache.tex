@@ -1,0 +1,275 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{}\doxysection{GW\+::CORE\+::GEvent\+Cache Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+
+
+{\ttfamily \#include $<$GEvent\+Cache.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GEvent\+Cache\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a7df9dc331828b6ec440f3daff7e69348}{Create}} (unsigned int \+\_\+cache\+Size)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}{Append}} (const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+in\+Event)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}{Waiting}} (unsigned int \&\+\_\+out\+Count) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop}} (\mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+out\+Event)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}{Peek}} (unsigned int \+\_\+event\+Index, \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+out\+Event) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}{Max}} (unsigned int \&\+\_\+out\+Capacity) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}{Missed}} (unsigned int \&\+\_\+out\+Count) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{Clear}} ()=0
+\item 
+{\footnotesize template$<$class event\+Type , typename event\+Data $>$ }\\\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}{Find}} (event\+Type \+\_\+check, bool \+\_\+remove, event\+Data \&\+\_\+out\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores all events produced by an interface derived from \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}} that you are Registered to. $\ast$$\ast$\+NOTE\+: \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} is a replacement proxy to \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}} which is deprecated.$\ast$$\ast$ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{GEventCache myCache;}
+\DoxyCodeLine{myCache.Create( 32 ); \textcolor{comment}{// can hold up to 32 unique GEvents, try to keep this as small as needed}}
+\DoxyCodeLine{someEventGenerator.Register(myCache);}
+\DoxyCodeLine{\textcolor{comment}{// ... some recurring function or thread where you wish to process waiting events ...}}
+\DoxyCodeLine{GEvent g; }
+\DoxyCodeLine{\textcolor{keywordflow}{while} (+myCache.Pop(g)) \textcolor{comment}{// if you wait too long to process events the oldest ones may be lost.}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{GEventGenerator::Events}} e; \textcolor{comment}{// substitute the generator type you care about}}
+\DoxyCodeLine{    GEventGenerator::EVENT\_DATA d; \textcolor{comment}{// substitute the event data you care about}}
+\DoxyCodeLine{    \textcolor{comment}{// Determine if the "{}Pop"{}ed event contains the data you are intrested in.}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (+g.Read(e,d)) \textcolor{comment}{// if you are interested in multiple events consider using a switch below}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (e == \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}{GEventGenerator::Events::NON\_EVENT}}) \textcolor{comment}{// substitute actual event}}
+\DoxyCodeLine{            std::cout << d.noData; \textcolor{comment}{// substitute actual data}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_g_event_cache_8h_source_l00070}{70}} of file \mbox{\hyperlink{_g_event_cache_8h_source}{GEvent\+Cache.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a7df9dc331828b6ec440f3daff7e69348}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a7df9dc331828b6ec440f3daff7e69348}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Create (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+cache\+Size }\end{DoxyParamCaption})}
+
+
+
+Allocates \& Intializes a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}}. 
+
+A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} is capable of receiving and storing events created by any \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. You can use this class whenever there is a Gateware class that spawns events you wish record. Unlike \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} the \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} is designed to save multiple events up to a limit defined by you. If you need to process events on a specific thread, you can use this class to delay processing until a safe time to do so. Just make sure there is adequate capcity in the Cache, and \char`\"{}\+Pop\char`\"{} them off when ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+cache\+Size} & The maximum amount of GEvents that can be retained by this instance. (must be \texorpdfstring{$>$}{>} 0) Exceeding this amount without processing a message will cause the oldest to missed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & A valid Cache Capacity \texorpdfstring{$>$}{>} 0 must be provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Allocation has failed, you don\textquotesingle{}t have enough memory. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The cache was succesfully allocated, you can now Register it to GEvent\+Generators. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Append@{Append}}
+\index{Append@{Append}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Append (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+in\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Appends an event to the cache, and increases number of waiting events. 
+
+Generally end users can ignore this function as it is invoked by a registered \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+in\+Event} & The \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} you wish to store in the Cache. If the Cache is already full of waiting (unpopped) events then the oldest one falls off the front.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The event was appended to this receiver. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Waiting@{Waiting}}
+\index{Waiting@{Waiting}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Waiting()}{Waiting()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Waiting (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Count }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reports how many events have not yet been processed. 
+
+Use this to check if any events are currently waiting for you.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Count} & The number of waiting events. (use \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop()}} or \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{Clear()}} to remove them)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Reports the current amount of waiting events. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Pop@{Pop}}
+\index{Pop@{Pop}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+out\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Grabs a waiting event if one is available. Oldest first. 
+
+If waiting is non-\/zero this operation will extract an event and reduce the number of waiting events. After a successful \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop()}} the number of waiting event will be reduced by 1.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event} & The most recent event that needs to be processed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & There were no waiting events that needed processing. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Successfully pulled a waiting event from the Queue. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Peek@{Peek}}
+\index{Peek@{Peek}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Peek (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+event\+Index,  }\item[{\mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+out\+Event }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Examines but does not remove a waiting event if one is available based on it\textquotesingle{}s historical index. 
+
+Used to examine the \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}}\textquotesingle{}s current backlog.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+event\+Index} & (OPTIONAL) The event you wish to examine from 0 to \char`\"{}\+Waiting\char`\"{}-\/1, with 0 being the oldest item in the Cache. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event} & A copy of the event at \textquotesingle{}\+\_\+event\+Index\textquotesingle{} waiting it\textquotesingle{}s turn to be processed. (\+\_\+event\+Index defaults to 0)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & The provided \+\_\+event\+Index was out of bounds. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & There were no waiting events that could be inspected. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Successfully copied a waiting event from the Queue. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Max@{Max}}
+\index{Max@{Max}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Max (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Capacity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reports the Maximum amount of Events that this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} instance can record. 
+
+This returns the same number that is passed to the \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} \char`\"{}\+Create\char`\"{} function. Any events recorded while the Queue is at capcity will cause the oldest event to be lost. Whenever an Event is replaced without processing, it will increase the internal \char`\"{}\+Missed\char`\"{} count.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Capacity} & The maximum capacity of this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The maximum capacity was successfully reported. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Missed@{Missed}}
+\index{Missed@{Missed}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Missed()}{Missed()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Missed (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Count }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reports how many events were not processed before they were replaced. 
+
+If an event was not processed via \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop()}}, \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{Clear()}}, or \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}{Find()}} and ends up being replaced it will increase the internal event miss count. Use this operation to see how many events have been lost. $\ast$$\ast$\+NOTE\+: Never want to miss an event? consdiering using \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} or directly registering a callback.$\ast$$\ast$
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Count} & Number of events that were not processed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Reports the current amount of missed events. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Clear@{Clear}}
+\index{Clear@{Clear}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes any \& all waiting events without processing them. 
+
+All pending events are removed. The internal missed event count will not be reset. NOTE\+: Though you cannot reset the internal miss count it is possible to track it\textquotesingle{}s change.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & There were no waiting events, nothing was cleared. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & All waiting events were removed successfully. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}} 
+\index{GW::CORE::GEventCache@{GW::CORE::GEventCache}!Find@{Find}}
+\index{Find@{Find}!GW::CORE::GEventCache@{GW::CORE::GEventCache}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily template$<$class event\+Type , typename event\+Data $>$ \\
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Cache\+::\+Find (\begin{DoxyParamCaption}\item[{event\+Type}]{\+\_\+check,  }\item[{bool}]{\+\_\+remove,  }\item[{event\+Data \&}]{\+\_\+out\+Data }\end{DoxyParamCaption})}
+
+
+
+Finds a specific Event/\+Data\+Chunk and optionally can remove it and/or return the associated data. 
+
+A conveinence function that can be used instead of \char`\"{}\+Pop/\+Peek\char`\"{} to search waiting events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+check} & The specific enum of the event you are looking for, can also be a specific bit of data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+remove} & Should the function remove the waiting event if it is found? true == Pop, false == Peek \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Data} & (OPTIONAL) Returns the data block associated with the event if found.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No Event or Data was present matching the provided Query. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Operation successfully found and/or removed the event/data in question. \\
+\hline
+\end{DoxyRetVals}

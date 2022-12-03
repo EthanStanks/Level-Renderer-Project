@@ -1,0 +1,842 @@
+\hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{}\doxysection{GW\+::GRAPHICS\+::GVulkan\+Surface Class Reference}
+\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+
+
+{\ttfamily \#include $<$GVulkan\+Surface.\+h$>$}
+
+Inheritance diagram for GW\+::GRAPHICS\+::GVulkan\+Surface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.536351cm]{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_1_1_g_vulkan_surface_query_info}{GVulkan\+Surface\+Query\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8}{Events}} \{ \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8ae3be68bfbc65b0cfaa33ad7dc6d50d7d}{REBUILD\+\_\+\+PIPELINE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8a6e21f495512b34ee70d3e2a9b03ed4b5}{RELEASE\+\_\+\+RESOURCES}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7d8eaa13d7aafc8e2bf616059c153546}{Create}} (\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}} \+\_\+gwindow, unsigned long long \+\_\+init\+Mask)
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1e12398ecc50dd3a32570500deba6843}{Create}} (\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}} \+\_\+gwindow, unsigned long long \+\_\+init\+Mask, unsigned int \+\_\+layer\+Count, const char $\ast$$\ast$\+\_\+layers, unsigned int \+\_\+instance\+Extension\+Count, const char $\ast$$\ast$\+\_\+instance\+Extensions, unsigned int \+\_\+device\+Extension\+Count, const char $\ast$$\ast$\+\_\+device\+Extensions, bool \+\_\+all\+Physical\+Device\+Features)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab8ef2cdcd0a2d044a7406ed9c74dd7bb}{Get\+Aspect\+Ratio}} (float \&\+\_\+out\+Ratio) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a31d8a1551ca1ec24205062fe46eb0528}{Get\+Swapchain\+Image\+Count}} (unsigned int \&\+\_\+out\+Image\+Count) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a90e2b3bd73b5162a60cb78e15562c921}{Get\+Swapchain\+Current\+Image}} (unsigned int \&\+\_\+out\+Image\+Index) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a515f846b2beaf8558456d03ffafc5bb3}{Get\+Queue\+Family\+Indices}} (unsigned int \&\+\_\+out\+Graphics\+Index, unsigned int \&\+\_\+out\+Present\+Index) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a74a7af6ea9355a6b200e2f039181a8f3}{Get\+Graphics\+Queue}} (void $\ast$$\ast$\+\_\+out\+Vk\+Queue) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a430dea507e639b75ae53940f8c0be47a}{Get\+Present\+Queue}} (void $\ast$$\ast$\+\_\+out\+Vk\+Queue) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_adaf0752260969979f08f68f1bd0f5133}{Get\+Swapchain\+Image}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Image) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a767908c64ac0717121409a37f39af85b}{Get\+Swapchain\+View}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Image\+View) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ac51515fa4b5f303991c884823db4eecf}{Get\+Swapchain\+Framebuffer}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Framebuffer) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a0e093e3c05418839ca52ebb811770778}{Get\+Swapchain\+Depth\+Buffer\+Image}} (const int \+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Depth\+Image) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1259bf0558246d2a8d75c2d00101bd10}{Get\+Swapchain\+Depth\+Buffer\+View}} (const int \+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Depth\+View) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5bf31906c9dc7da5bea611e598b4efe2}{Get\+Instance}} (void $\ast$$\ast$\+\_\+out\+Vk\+Instance) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9314947fe5ae95dfdbbb8e0c60b670ba}{Get\+Surface}} (void $\ast$$\ast$\+\_\+out\+Vk\+Surface\+KHR) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab0a72275fe1d555587220964bd41d7e4}{Get\+Physical\+Device}} (void $\ast$$\ast$\+\_\+out\+Vk\+Physical\+Device) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9fb2bb3a648eeac3afbc09ede88dacda}{Get\+Device}} (void $\ast$$\ast$\+\_\+out\+Vk\+Device) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4fcae5fb671b48943e201cd7ec9930a9}{Get\+Command\+Pool}} (void $\ast$$\ast$\+\_\+out\+Vk\+Command\+Pool) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a138b205be45e8fd88df7b0e05fa1063a}{Get\+Swapchain}} (void $\ast$$\ast$\+\_\+out\+Vk\+Swapchain\+KHR) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a2284e99e65b576800cdd26bede81637b}{Get\+Render\+Pass}} (void $\ast$$\ast$\+\_\+out\+Render\+Pass) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a669ef38dfd1fa0cf6b754bffe55cb9e3}{Get\+Command\+Buffer}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Command\+Buffer) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5d4527ce174dfb51bde1684757971b05}{Get\+Image\+Available\+Semaphore}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Semaphore) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a905e00476b48df852a012cf1e45fb524}{Get\+Render\+Finished\+Semaphore}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Semaphore) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4c095e50f4a97a25ae452e9fcae695ad}{Get\+Render\+Fence}} (const int \&\+\_\+index, void $\ast$$\ast$\+\_\+out\+Vk\+Fence) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7594e6cf3cfc24e2197dc5b1e403bb02}{Start\+Frame}} (const unsigned int \&\+\_\+clear\+Count, void $\ast$\+\_\+vk\+Clear\+Values)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_afbf8e8d3934bf0030c8a595fcf0aa4c0}{End\+Frame}} (const bool \&\+\_\+v\+Sync)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_vulkan_surface_8h_source_l00091}{91}} of file \mbox{\hyperlink{_g_vulkan_surface_8h_source}{GVulkan\+Surface.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!Events@{Events}}
+\index{Events@{Events}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{Events}{Events}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8}{GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Events}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Events generated by \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}}. These messages are used to notify \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}}\textquotesingle{}s observers whenever the swapchain is required to be rebuilt. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REBUILD\_PIPELINE@{REBUILD\_PIPELINE}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!REBUILD\_PIPELINE@{REBUILD\_PIPELINE}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8ae3be68bfbc65b0cfaa33ad7dc6d50d7d}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8ae3be68bfbc65b0cfaa33ad7dc6d50d7d}} 
+REBUILD\+\_\+\+PIPELINE&Vk\+Swapchain\+KHR has been destroyedand pipelines must be rebuilt to accomodate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASE\_RESOURCES@{RELEASE\_RESOURCES}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!RELEASE\_RESOURCES@{RELEASE\_RESOURCES}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8a6e21f495512b34ee70d3e2a9b03ed4b5}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a08023093707c5e54bc5b6ec56b8c65e8a6e21f495512b34ee70d3e2a9b03ed4b5}} 
+RELEASE\+\_\+\+RESOURCES&Internal Vulkan resources are about to be destroyed.\+Destroy any child objects. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_vulkan_surface_8h_source_l00197}{197}} of file \mbox{\hyperlink{_g_vulkan_surface_8h_source}{GVulkan\+Surface.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7d8eaa13d7aafc8e2bf616059c153546}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7d8eaa13d7aafc8e2bf616059c153546}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!Create@{Create}}
+\index{Create@{Create}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}}}]{\+\_\+gwindow,  }\item[{unsigned long long}]{\+\_\+init\+Mask }\end{DoxyParamCaption})}
+
+
+
+Creates and outputs a new \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object. 
+
+Initializes a handle to a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object with an existing GWindow. The created \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object will have its reference count initialized to one and register as a listener to the provided GWindow object.
+
+This function accepts a bit mask that can hold supported GGraphics\+Init\+Options, which will be taken into account when creating the context. To ignore this mask, simply pass in 0 when calling this function and the context will be created with default settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+gwindow} & A pointer to an existing GWindow object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+init\+Mask} & The bit mask that can hold special initialization options.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+gwindow is invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object was not created. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object was successfully created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1e12398ecc50dd3a32570500deba6843}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1e12398ecc50dd3a32570500deba6843}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!Create@{Create}}
+\index{Create@{Create}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}}}]{\+\_\+gwindow,  }\item[{unsigned long long}]{\+\_\+init\+Mask,  }\item[{unsigned int}]{\+\_\+layer\+Count,  }\item[{const char $\ast$$\ast$}]{\+\_\+layers,  }\item[{unsigned int}]{\+\_\+instance\+Extension\+Count,  }\item[{const char $\ast$$\ast$}]{\+\_\+instance\+Extensions,  }\item[{unsigned int}]{\+\_\+device\+Extension\+Count,  }\item[{const char $\ast$$\ast$}]{\+\_\+device\+Extensions,  }\item[{bool}]{\+\_\+all\+Physical\+Device\+Features }\end{DoxyParamCaption})}
+
+
+
+Creates and outputs a new \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object, along with giving more control to add extensions and layers. 
+
+Initializes a handle to a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object with an existing GWindow. The created \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object will have its reference count initialized to one and register as a listener to the provided GWindow object.
+
+This function accepts a bit mask that can hold supported GGraphics\+Init\+Options, which will be taken into account when creating the context. To ignore this mask, simply pass in 0 when calling this function and the context will be created with default settings.
+
+This function accepts 6 additional parameters. This allows the ability to add additional functionality to your vulkan surface. This include additional debugging layers and additional extensions based on what your GPU can do.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+gwindow} & A pointer to an existing GWindow object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+init\+Mask} & The bit mask that can hold special initialization options. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer\+Count} & The count on how many layers you are providing to the vulkan instance. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layers} & The list of Validation Layers to enable within the vulkan instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+instance\+Extension\+Count} & The count on how many instance extensions you are providing to the vulkan instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+instance\+Extensions} & The list of Instance Extensions to enable within the vulkan instance \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+device\+Extension\+Count} & The count on how many device extensions you are providing to the vulkan logical device \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+device\+Extensions} & The list of device extensions to enable within the vulkan logical device \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+all\+Physical\+Device\+Features} & Bool if you want to enable all supported features of your GPU\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+gwindow is invalid, or there is a bad match of \char`\"{}count\char`\"{} and layers/extension provided (ex\+: 1 count but no layer/extension, or 0 count yet a layer/extension was sent.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object was not created. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}} object was successfully created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab8ef2cdcd0a2d044a7406ed9c74dd7bb}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab8ef2cdcd0a2d044a7406ed9c74dd7bb}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{float \&}]{\+\_\+out\+Ratio }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the aspect ratio for the current window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Ratio} & will return the calculated aspect ratio.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No active GWindow exists to calculate an aspect ratio from. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The current aspect ratio was calculated and returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a31d8a1551ca1ec24205062fe46eb0528}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a31d8a1551ca1ec24205062fe46eb0528}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainImageCount@{GetSwapchainImageCount}}
+\index{GetSwapchainImageCount@{GetSwapchainImageCount}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainImageCount()}{GetSwapchainImageCount()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Image\+Count (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Image\+Count }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the size of the Swapchain\textquotesingle{}s Buffers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Image\+Count} & will return the amount of images the swap chain contains.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The current swap chain\textquotesingle{}s image count was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a90e2b3bd73b5162a60cb78e15562c921}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a90e2b3bd73b5162a60cb78e15562c921}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainCurrentImage@{GetSwapchainCurrentImage}}
+\index{GetSwapchainCurrentImage@{GetSwapchainCurrentImage}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainCurrentImage()}{GetSwapchainCurrentImage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Current\+Image (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Image\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the swap chain\textquotesingle{}s current index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Image\+Index} & will return the current index in the system.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The current swap chain\textquotesingle{}s image count was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a515f846b2beaf8558456d03ffafc5bb3}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a515f846b2beaf8558456d03ffafc5bb3}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetQueueFamilyIndices@{GetQueueFamilyIndices}}
+\index{GetQueueFamilyIndices@{GetQueueFamilyIndices}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetQueueFamilyIndices()}{GetQueueFamilyIndices()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Queue\+Family\+Indices (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Graphics\+Index,  }\item[{unsigned int \&}]{\+\_\+out\+Present\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the Queue Family Indices for both Graphics and Present Queue. Used for Swapchain (and others) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Graphics\+Index} & will return the index that belongs to the graphics queue \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Present\+Index} & return the index that belongs to the present queue\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Queue\+Indices is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The index count is greater than 0 and returned along with the Queue Indices \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a74a7af6ea9355a6b200e2f039181a8f3}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a74a7af6ea9355a6b200e2f039181a8f3}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetGraphicsQueue@{GetGraphicsQueue}}
+\index{GetGraphicsQueue@{GetGraphicsQueue}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetGraphicsQueue()}{GetGraphicsQueue()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Graphics\+Queue (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Queue }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Queue for Graphic Queue List. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Queue} & Will contain the address of the Vk\+Queue for graphics queue list.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Graphics\+Queue parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan graphics queue exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a430dea507e639b75ae53940f8c0be47a}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a430dea507e639b75ae53940f8c0be47a}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetPresentQueue@{GetPresentQueue}}
+\index{GetPresentQueue@{GetPresentQueue}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetPresentQueue()}{GetPresentQueue()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Present\+Queue (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Queue }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Queue for Present Queue List. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Queue} & Will contain the address of the Vk\+Queue for present queue list.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Present\+Queue parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No present queue exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan present queue exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_adaf0752260969979f08f68f1bd0f5133}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_adaf0752260969979f08f68f1bd0f5133}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainImage@{GetSwapchainImage}}
+\index{GetSwapchainImage@{GetSwapchainImage}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainImage()}{GetSwapchainImage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Image (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Image for swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). $\ast$$\ast$\+NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index.$\ast$$\ast$ \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Image} & Will contain the address of the swap chain\textquotesingle{}s image.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range (x \texorpdfstring{$<$}{<} -\/1, x \texorpdfstring{$>$}{>}= image\+\_\+count). \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No Swapchain or Swapchain image exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan swap chain images exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a767908c64ac0717121409a37f39af85b}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a767908c64ac0717121409a37f39af85b}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainView@{GetSwapchainView}}
+\index{GetSwapchainView@{GetSwapchainView}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainView()}{GetSwapchainView()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+View (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Image\+View }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Image\+View for the swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). $\ast$$\ast$\+NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index.$\ast$$\ast$ \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Image\+View} & Will contain the address of the swap chain\textquotesingle{}s image view.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No Swapchain or Swapchain image view exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan swap chain image views exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ac51515fa4b5f303991c884823db4eecf}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ac51515fa4b5f303991c884823db4eecf}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainFramebuffer@{GetSwapchainFramebuffer}}
+\index{GetSwapchainFramebuffer@{GetSwapchainFramebuffer}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainFramebuffer()}{GetSwapchainFramebuffer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Framebuffer (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Framebuffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Frame\+Buffer for the swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). $\ast$$\ast$\+NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index.$\ast$$\ast$ \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Framebuffer} & Will contain the address of the swap chain\textquotesingle{}s frame buffers.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Frame\+Buffer parameter is nullptr or index is out of range. ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ) is the valid range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No Swapchain or Framebuffer exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a0e093e3c05418839ca52ebb811770778}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a0e093e3c05418839ca52ebb811770778}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainDepthBufferImage@{GetSwapchainDepthBufferImage}}
+\index{GetSwapchainDepthBufferImage@{GetSwapchainDepthBufferImage}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainDepthBufferImage()}{GetSwapchainDepthBufferImage()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Depth\+Buffer\+Image (\begin{DoxyParamCaption}\item[{const int}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Depth\+Image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the Depth Buffer image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Depth\+Image} & will return the address of the Instance.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Instance parameter is nullptr \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan Instance exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1259bf0558246d2a8d75c2d00101bd10}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a1259bf0558246d2a8d75c2d00101bd10}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchainDepthBufferView@{GetSwapchainDepthBufferView}}
+\index{GetSwapchainDepthBufferView@{GetSwapchainDepthBufferView}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchainDepthBufferView()}{GetSwapchainDepthBufferView()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain\+Depth\+Buffer\+View (\begin{DoxyParamCaption}\item[{const int}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Depth\+View }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the Depth Buffer view. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Depth\+Image} & will return the address of the Instance.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Instance parameter is nullptr \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan Instance exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5bf31906c9dc7da5bea611e598b4efe2}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5bf31906c9dc7da5bea611e598b4efe2}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Instance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Instance} & will return the address of the Instance.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Instance parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan Instance exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9314947fe5ae95dfdbbb8e0c60b670ba}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9314947fe5ae95dfdbbb8e0c60b670ba}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSurface@{GetSurface}}
+\index{GetSurface@{GetSurface}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSurface()}{GetSurface()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Surface (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Surface\+KHR }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Surface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Surface\+KHR} & will return the address of the Surface.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Surface\+KHR parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan Surface exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab0a72275fe1d555587220964bd41d7e4}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_ab0a72275fe1d555587220964bd41d7e4}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetPhysicalDevice@{GetPhysicalDevice}}
+\index{GetPhysicalDevice@{GetPhysicalDevice}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetPhysicalDevice()}{GetPhysicalDevice()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Physical\+Device (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Physical\+Device }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current physical device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Physical\+Device} & will return the address of the physical device.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Physical\+Device parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan physical device exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9fb2bb3a648eeac3afbc09ede88dacda}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a9fb2bb3a648eeac3afbc09ede88dacda}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetDevice@{GetDevice}}
+\index{GetDevice@{GetDevice}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetDevice()}{GetDevice()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Device (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Device }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Vk\+Device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Device} & Will contain the address of the logical device.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Device parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan logical device exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4fcae5fb671b48943e201cd7ec9930a9}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4fcae5fb671b48943e201cd7ec9930a9}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetCommandPool@{GetCommandPool}}
+\index{GetCommandPool@{GetCommandPool}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetCommandPool()}{GetCommandPool()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Command\+Pool (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Command\+Pool }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Command Pool. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Command\+Pool} & Will contain the address of the Command Pool.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Vk\+Command\+Pool parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan Command Pool exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a138b205be45e8fd88df7b0e05fa1063a}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a138b205be45e8fd88df7b0e05fa1063a}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetSwapchain@{GetSwapchain}}
+\index{GetSwapchain@{GetSwapchain}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchain()}{GetSwapchain()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Swapchain (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Swapchain\+KHR }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Swapchain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Swapchain\+KHR} & Will contain the address of the swap chain.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain parameter is nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Vulkan swap chain exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a2284e99e65b576800cdd26bede81637b}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a2284e99e65b576800cdd26bede81637b}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetRenderPass@{GetRenderPass}}
+\index{GetRenderPass@{GetRenderPass}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetRenderPass()}{GetRenderPass()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Render\+Pass (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Render\+Pass }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Renderpass for the swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Render\+Pass} & Will contain the address of the Renderpass.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range. ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ) is the valid range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a669ef38dfd1fa0cf6b754bffe55cb9e3}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a669ef38dfd1fa0cf6b754bffe55cb9e3}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetCommandBuffer@{GetCommandBuffer}}
+\index{GetCommandBuffer@{GetCommandBuffer}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetCommandBuffer()}{GetCommandBuffer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Command\+Buffer (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Command\+Buffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current Command Buffer for the swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Command\+Buffer} & Will contain the address of the Command Buffers.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range. ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ) is the valid range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5d4527ce174dfb51bde1684757971b05}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a5d4527ce174dfb51bde1684757971b05}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetImageAvailableSemaphore@{GetImageAvailableSemaphore}}
+\index{GetImageAvailableSemaphore@{GetImageAvailableSemaphore}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetImageAvailableSemaphore()}{GetImageAvailableSemaphore()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Image\+Available\+Semaphore (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Semaphore }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the Semaphore for the swap chain. This Semaphore is designed to signal based on the availability of the Swapchain\textquotesingle{}s image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Semaphore} & Will contain the address of the swap chain\textquotesingle{}s frame buffers.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range (x \texorpdfstring{$<$}{<} -\/1, x \texorpdfstring{$>$}{>}= image\+\_\+count). \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a905e00476b48df852a012cf1e45fb524}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a905e00476b48df852a012cf1e45fb524}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetRenderFinishedSemaphore@{GetRenderFinishedSemaphore}}
+\index{GetRenderFinishedSemaphore@{GetRenderFinishedSemaphore}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetRenderFinishedSemaphore()}{GetRenderFinishedSemaphore()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Render\+Finished\+Semaphore (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Semaphore }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the Semaphore for the swap chain. This Semaphore is designed to signal based on when the rendering has finished. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Semaphore} & Will contain the address of the swap chain\textquotesingle{}s frame buffers.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range (x \texorpdfstring{$<$}{<} -\/1, x \texorpdfstring{$>$}{>}= image\+\_\+count). \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4c095e50f4a97a25ae452e9fcae695ad}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a4c095e50f4a97a25ae452e9fcae695ad}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!GetRenderFence@{GetRenderFence}}
+\index{GetRenderFence@{GetRenderFence}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{GetRenderFence()}{GetRenderFence()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Get\+Render\+Fence (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+index,  }\item[{void $\ast$$\ast$}]{\+\_\+out\+Vk\+Fence }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the Fence for the swap chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+index} & will determine what swap chain image the user requests. Valid Index Range\+: ( -\/1 \texorpdfstring{$<$}{<}= x \texorpdfstring{$<$}{<} image\+\_\+count ). NOTE\+: sending -\/1 as a parameter will send you the current object based on Gateware\textquotesingle{}s current index. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Vk\+Fence} & Will contain the address of the swap chain\textquotesingle{}s frame buffers.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+out\+Swapchain\+Image parameter is nullptr or index is out of range (x \texorpdfstring{$<$}{<} -\/1, x \texorpdfstring{$>$}{>}= image\+\_\+count). \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan frame buffers exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7594e6cf3cfc24e2197dc5b1e403bb02}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_a7594e6cf3cfc24e2197dc5b1e403bb02}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!StartFrame@{StartFrame}}
+\index{StartFrame@{StartFrame}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{StartFrame()}{StartFrame()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+Start\+Frame (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{\+\_\+clear\+Count,  }\item[{void $\ast$}]{\+\_\+vk\+Clear\+Values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Setups the command buffer and begins the render pass. \mbox{[}commands\+: vk\+Begin\+Command\+Buffer -\/\texorpdfstring{$>$}{>} vk\+Cmd\+Begin\+Render\+Pass\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+clear\+Count} & is the count for the amount of \char`\"{}\+Vk\+Clear\+Color\char`\"{} being passed in the \+\_\+vk\+Clear\+Color parameter. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+vk\+Clear\+Values} & is the values for the Vk\+Clear\+Color.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+vk\+Clear\+Color is nullptr while \+\_\+vkclear\+Count is \texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Failed to begin command buffer. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Vulkan has begin its Render Pass. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_afbf8e8d3934bf0030c8a595fcf0aa4c0}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface_afbf8e8d3934bf0030c8a595fcf0aa4c0}} 
+\index{GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}!EndFrame@{EndFrame}}
+\index{EndFrame@{EndFrame}!GW::GRAPHICS::GVulkanSurface@{GW::GRAPHICS::GVulkanSurface}}
+\doxysubsubsection{\texorpdfstring{EndFrame()}{EndFrame()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GVulkan\+Surface\+::\+End\+Frame (\begin{DoxyParamCaption}\item[{const bool \&}]{\+\_\+v\+Sync }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ends the Command Buffer and Presents the command to the swapchain. \mbox{[}commands\+: vk\+Cmd\+End\+Render\+Pass -\/\texorpdfstring{$>$}{>} vk\+End\+Command\+Buffer\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+v\+Sync} & will enable or disable vsync when presenting to the swapchain. NOTE\+: The swapchain is destroyed and re-\/created when changing the vsync.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a3bf692e6ba8bddcabc1590f43bc08536}{GReturn\+::\+PREMATURE\+\_\+\+DEALLOCATION}}} & All Vulkan Objects fails to exist due to GWindow being destroyed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & This can come from the following\+: Start\+Frame has not been called or did not return SUCCESS, vk\+End\+Command\+Buffer has failed, vk\+Queue\+Submit has failed, vk\+Queue\+Present\+KHR has failed, or failed to recreate swapchain due to vsync change. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The swapchain has successfully present what was given to it. \\
+\hline
+\end{DoxyRetVals}

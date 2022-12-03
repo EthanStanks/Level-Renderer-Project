@@ -1,0 +1,293 @@
+\hypertarget{_g_audio_8h_source}{}\doxysection{GAudio.\+h}
+\label{_g_audio_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GAudio.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GAudio.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GAUDIO\_H}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GAUDIO\_H}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00005}00005 \textcolor{comment}{    File: GAudio.h}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that handles sounds and music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[XAudio2] linux[Pulseaudio] apple[AVFoundation], GFile, AUDIO, SYSTEM}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00008}00008 \textcolor{comment}{    Author: TJay Cargle, Alexandr Kozyrev (new architecture)}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Jacob Pendleton, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00011}00011 \textcolor{comment}{    Asynchronous: Yes}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../Core/GEventGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00019}\mbox{\hyperlink{namespace_g_w}{00019}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00021}00021     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00023}00023         \textcolor{keyword}{class }GAudioInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GEventGeneratorInterface}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00024}00024         \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00025}00025         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00026}00026             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00027}00027             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00028}00028                 DESTROY,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00029}00029                 PLAY\_SOUNDS,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00030}00030                 PAUSE\_SOUNDS,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00031}00031                 RESUME\_SOUNDS,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00032}00032                 STOP\_SOUNDS,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00033}00033                 PLAY\_MUSIC,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00034}00034                 PAUSE\_MUSIC,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00035}00035                 RESUME\_MUSIC,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00036}00036                 STOP\_MUSIC,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00037}00037                 MASTER\_VOLUME\_CHANGED,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00038}00038                 SOUNDS\_VOLUME\_CHANGED,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00039}00039                 MUSIC\_VOLUME\_CHANGED,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00040}00040                 SOUND\_CHANNEL\_VOLUMES\_CHANGED,}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00041}00041                 MUSIC\_CHANNEL\_VOLUMES\_CHANGED}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00042}00042             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00044}00044             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00045}00045             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00046}00046                 \textcolor{keywordtype}{float} channelVolumes[6];}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00047}00047                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numOfChannels;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00048}00048             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00050}00050             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetMasterVolume(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00051}00051             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetGlobalSoundVolume(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00052}00052             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetGlobalMusicVolume(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00053}00053             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetSoundsChannelVolumes(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00054}00054             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetMusicChannelVolumes(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00055}00055             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} PlaySounds() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00056}00056             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} PauseSounds() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00057}00057             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ResumeSounds() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00058}00058             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} StopSounds() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00059}00059             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} PlayMusic() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00060}00060             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} PauseMusic() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00061}00061             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ResumeMusic() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00062}00062             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} StopMusic() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00063}00063         \};}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00067}00067 \textcolor{preprocessor}{\#include "{}../../Source/Audio/GAudio/GAudio.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00069}00069 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00070}00070 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00071}00071 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00072}00072 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00073}00073 \textcolor{comment}{    //! The namespace to which all Gateware audio libraries must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00074}\mbox{\hyperlink{namespace_g_w_1_1_a_u_d_i_o}{00074}} \textcolor{comment}{}    \textcolor{keyword}{namespace }AUDIO}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00075}00075     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00076}00076 \textcolor{comment}{        //! A Gateware interface that handles sounds and music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00077}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{00077}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} final }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00078}00078             : \textcolor{keyword}{public} I::GProxy<I::GAudioInterface, I::GAudioImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00079}00079         \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00080}00080             \textcolor{comment}{// All Gateware API interfaces contain no variables \& are pure virtual.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00081}00081         \textcolor{keyword}{public}:\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00082}00082 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00083}00083 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00084}00084             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4d73263ecce0031b22d3d705fd020594}{Events}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00085}00085             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00086}00086             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a34fb1be1551ce0e73bdb439e8d7ffcfa}{SetMasterVolume}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00087}00087             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a6ef79689db1bd226f8cecc8650ac7b43}{SetGlobalSoundVolume}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00088}00088             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a0c9f9d63e8746cd0ad05d5ff7a39aeb8}{SetGlobalMusicVolume}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00089}00089             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a8970773198f16526f092b7f00f514bee}{SetSoundsChannelVolumes}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00090}00090             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4c5ecedfed30e96aa190b91691552be1}{SetMusicChannelVolumes}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00091}00091             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aad39146789f971efd672ec9fc3325242}{PlaySounds}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00092}00092             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a2408c18540848bc95597480d3df92a71}{PauseSounds}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00093}00093             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_accfa6584931c57e15e3f7f109bcdec3b}{ResumeSounds}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00094}00094             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af0d5d8e2516c41e8135ff64d35ee049e}{StopSounds}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00095}00095             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a239416e538b9b97636f2ef1318a7b3ad}{PlayMusic}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00096}00096             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a1cabf995a63003aa82a673f3089c928a}{PauseMusic}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00097}00097             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af51b6d7c57c43a00b58ace22606f1b7c}{ResumeMusic}})}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00098}00098             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aa3990132789dc5e1ca544a935df1d0c1}{StopMusic}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00099}00099 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00100}00100 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00101}00101             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00102}00102 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00103}00103 \textcolor{comment}{            //! Creates a GAudio proxy}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00104}00104 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00105}00105 \textcolor{comment}{            *   Creates a GAudio proxy which can be used to control GSound/GMusic.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00106}00106 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00107}00107 \textcolor{comment}{            *  \(\backslash\)retval FAILURE Internal objects could not be created.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00108}00108 \textcolor{comment}{            *  \(\backslash\)retval SUCCESS Successfully created the proxy.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00109}00109 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00110}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_ab701f751e957b794015670f0abd2f061}{00110}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_ab701f751e957b794015670f0abd2f061}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00111}00111 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00112}00112 \textcolor{comment}{            //! Events generated by GAudio}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00113}00113 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00114}00114 \textcolor{comment}{            *   These messages are sent when GAudio functions are called (including destructor).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00115}00115 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00116}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4d73263ecce0031b22d3d705fd020594}{00116}}             \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4d73263ecce0031b22d3d705fd020594}{Events}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00117}00117             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00118}00118                 DESTROY, \textcolor{comment}{//!< GAudio destructor was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00119}00119                 PLAY\_SOUNDS, \textcolor{comment}{//!< PlaySounds was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00120}00120                 PAUSE\_SOUNDS, \textcolor{comment}{//!< PauseSounds was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00121}00121                 RESUME\_SOUNDS, \textcolor{comment}{//!< ResumeSounds was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00122}00122                 STOP\_SOUNDS, \textcolor{comment}{//!< StopSounds was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00123}00123                 PLAY\_MUSIC, \textcolor{comment}{//!< PlayMusic was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00124}00124                 PAUSE\_MUSIC, \textcolor{comment}{//!< PauseMusic was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00125}00125                 RESUME\_MUSIC, \textcolor{comment}{//!< ResumeMusic was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00126}00126                 STOP\_MUSIC, \textcolor{comment}{//!< StopMusic was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00127}00127                 MASTER\_VOLUME\_CHANGED, \textcolor{comment}{//!< SetMasterVolume was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00128}00128                 SOUNDS\_VOLUME\_CHANGED, \textcolor{comment}{//!< SetGlobalSoundVolume was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00129}00129                 MUSIC\_VOLUME\_CHANGED, \textcolor{comment}{//!< SetGlobalMusicVolume was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00130}00130                 SOUND\_CHANNEL\_VOLUMES\_CHANGED, \textcolor{comment}{//!< SetSoundsChannelVolumes was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00131}00131                 MUSIC\_CHANNEL\_VOLUMES\_CHANGED \textcolor{comment}{//!< SetMusicChannelVolumes was called}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00132}00132             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00133}00133 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00134}00134 \textcolor{comment}{            /*! EVENT\_DATA holds information about volume channels */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00135}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a}{00135}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00136}00136             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00137}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a_aaf22f556ea5fe3c501025545bfa50df8}{00137}}                 \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a_aaf22f556ea5fe3c501025545bfa50df8}{channelVolumes}}[6]; \textcolor{comment}{/*!< Array of per-\/channel volumes (size of 6 to support every case), used to transfer channel volume ratios/master volumes */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00138}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a_a0a2cfb9389a84b9c7c25495a4517da3f}{00138}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio_1_1_e_v_e_n_t___d_a_t_a_a0a2cfb9389a84b9c7c25495a4517da3f}{numOfChannels}}; \textcolor{comment}{/*!< Used to pass the information of channelVolumes size when used in ChannelVolumes functions */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00139}00139             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00140}00140 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00141}00141 \textcolor{comment}{            //! Sets Master Volume for all sounds and music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00142}00142 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00143}00143 \textcolor{comment}{            * Sends the event to all existing sounds and music to update the current volume with a new master volume.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00144}00144 \textcolor{comment}{            *   \(\backslash\)param [in] \_value The output master volume to be set.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00145}00145 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00146}00146 \textcolor{comment}{            *   \(\backslash\)retval FAILURE \_newVolume is less than Zero.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00147}00147 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00148}00148 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00149}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a34fb1be1551ce0e73bdb439e8d7ffcfa}{00149}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a34fb1be1551ce0e73bdb439e8d7ffcfa}{SetMasterVolume}}(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00150}00150 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00151}00151 \textcolor{comment}{            //! Sets Global Sound Volume for all sounds.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00152}00152 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00153}00153 \textcolor{comment}{            * Sends the event to all existing sounds to update the current volume with a new Global Sound Volume (ratio similar to master volume but only for sounds).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00154}00154 \textcolor{comment}{            *   \(\backslash\)param [in] \_value The output global sound volume to be set.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00155}00155 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00156}00156 \textcolor{comment}{            *   \(\backslash\)retval FAILURE \_newVolume is less than Zero.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00157}00157 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00158}00158 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00159}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a6ef79689db1bd226f8cecc8650ac7b43}{00159}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a6ef79689db1bd226f8cecc8650ac7b43}{SetGlobalSoundVolume}}(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00160}00160 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00161}00161 \textcolor{comment}{            //! Sets Global Sound Volume for all music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00162}00162 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00163}00163 \textcolor{comment}{            * Sends the event to all existing music to update the current volume with a new Global Music Volume (ratio similar to master volume but only for music).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00164}00164 \textcolor{comment}{            *   \(\backslash\)param [in] \_value The output global music volume to be set.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00165}00165 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00166}00166 \textcolor{comment}{            *   \(\backslash\)retval FAILURE \_newVolume is less than Zero.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00167}00167 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00168}00168 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00169}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a0c9f9d63e8746cd0ad05d5ff7a39aeb8}{00169}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a0c9f9d63e8746cd0ad05d5ff7a39aeb8}{SetGlobalMusicVolume}}(\textcolor{keywordtype}{float} \_value) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00170}00170 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00171}00171 \textcolor{comment}{            //! Sets Master Volume for all sounds for specific speakers (per channel).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00172}00172 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00173}00173 \textcolor{comment}{            * The volume ratio in \_values for \_numChannels amount of channels.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00174}00174 \textcolor{comment}{            * Sends the event to all existing sounds to update volumes in each channel with new master volume ratios per EACH channel passed up to \_numChannels.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00175}00175 \textcolor{comment}{            * If you attempt to set the volume of an output your hardware does not support, it will be ignored.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00176}00176 \textcolor{comment}{            * Generally should be used with 2 (stereo) or 6 channels (5.1).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00177}00177 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00178}00178 \textcolor{comment}{            * Channels: Supports up to 6 channels AKA 5.1 Audio:}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00179}00179 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00180}00180 \textcolor{comment}{            *       INDEX[0] = Left,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00181}00181 \textcolor{comment}{            *       INDEX[1] = Right,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00182}00182 \textcolor{comment}{            *       INDEX[2] = Front Center,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00183}00183 \textcolor{comment}{            *       INDEX[3] = LFE,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00184}00184 \textcolor{comment}{            *       INDEX[4] = Rear Left,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00185}00185 \textcolor{comment}{            *       INDEX[5] = Rear Right,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00186}00186 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00187}00187 \textcolor{comment}{            *   \(\backslash\)param [in] \_values The array of volumes per channel (size MUST match the passed in \_numChannels)}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00188}00188 \textcolor{comment}{            *   \(\backslash\)param [in] \_numChannels The number of channels affected.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00189}00189 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00190}00190 \textcolor{comment}{            *   \(\backslash\)retval INVALID\_ARGUMENT \_numChannels is less than 0 or greater than 6, or \_values is NULL.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00191}00191 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00192}00192 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00193}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a8970773198f16526f092b7f00f514bee}{00193}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a8970773198f16526f092b7f00f514bee}{SetSoundsChannelVolumes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00194}00194 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00195}00195 \textcolor{comment}{            //! Sets Master Volume for all music for specific speakers (per channel).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00196}00196 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00197}00197 \textcolor{comment}{            * The volume ratio in \_values for \_numChannels amount of channels.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00198}00198 \textcolor{comment}{            * Sends the event to all existing music to update volumes in each channel with new master volume ratios per EACH channel passed up to \_numChannels.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00199}00199 \textcolor{comment}{            * If you attempt to set the volume of an output your hardware does not support, it will be ignored.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00200}00200 \textcolor{comment}{            * Generally should be used with 2 (stereo) or 6 channels (5.1).}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00201}00201 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00202}00202 \textcolor{comment}{            * Channels: Supports up to 6 channels AKA 5.1 Audio:}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00203}00203 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00204}00204 \textcolor{comment}{            *       INDEX[0] = Left,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00205}00205 \textcolor{comment}{            *       INDEX[1] = Right,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00206}00206 \textcolor{comment}{            *       INDEX[2] = Front Center,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00207}00207 \textcolor{comment}{            *       INDEX[3] = LFE,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00208}00208 \textcolor{comment}{            *       INDEX[4] = Rear Left,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00209}00209 \textcolor{comment}{            *       INDEX[5] = Rear Right,}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00210}00210 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00211}00211 \textcolor{comment}{            *   \(\backslash\)param [in] \_values The array of volumes per channel (size MUST match the passed in \_numChannels)}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00212}00212 \textcolor{comment}{            *   \(\backslash\)param [in] \_numChannels The number of channels affected.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00213}00213 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00214}00214 \textcolor{comment}{            *   \(\backslash\)retval INVALID\_ARGUMENT \_numChannels is less than 0 or greater than 6, or \_values is NULL.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00215}00215 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00216}00216 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00217}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4c5ecedfed30e96aa190b91691552be1}{00217}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a4c5ecedfed30e96aa190b91691552be1}{SetMusicChannelVolumes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00218}00218 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00219}00219 \textcolor{comment}{            //! Plays all sounds.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00220}00220 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00221}00221 \textcolor{comment}{            *   Sends the event to call each created sound's play function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00222}00222 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00223}00223 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00224}00224 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00225}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aad39146789f971efd672ec9fc3325242}{00225}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aad39146789f971efd672ec9fc3325242}{PlaySounds}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00226}00226 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00227}00227 \textcolor{comment}{            //! Pauses all sounds.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00228}00228 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00229}00229 \textcolor{comment}{            *   Sends the event to call each created sound's pause function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00230}00230 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00231}00231 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00232}00232 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00233}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a2408c18540848bc95597480d3df92a71}{00233}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a2408c18540848bc95597480d3df92a71}{PauseSounds}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00234}00234 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00235}00235 \textcolor{comment}{            //!  Resumes all paused sounds.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00236}00236 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00237}00237 \textcolor{comment}{            *   Sends the event to call each created sound's and music resume function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00238}00238 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00239}00239 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00240}00240 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00241}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_accfa6584931c57e15e3f7f109bcdec3b}{00241}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_accfa6584931c57e15e3f7f109bcdec3b}{ResumeSounds}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00242}00242 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00243}00243 \textcolor{comment}{            //! Stops all paused/playing sounds.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00244}00244 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00245}00245 \textcolor{comment}{            *   Sends the event to call each created sound's stop function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00246}00246 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00247}00247 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00248}00248 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00249}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af0d5d8e2516c41e8135ff64d35ee049e}{00249}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af0d5d8e2516c41e8135ff64d35ee049e}{StopSounds}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00250}00250 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00251}00251 \textcolor{comment}{            //! Plays all music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00252}00252 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00253}00253 \textcolor{comment}{            *   Sends the event to call each created music play function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00254}00254 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00255}00255 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00256}00256 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00257}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a239416e538b9b97636f2ef1318a7b3ad}{00257}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a239416e538b9b97636f2ef1318a7b3ad}{PlayMusic}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00258}00258 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00259}00259 \textcolor{comment}{            //! Pauses all music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00260}00260 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00261}00261 \textcolor{comment}{            *   Sends the event to call each created music pause function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00262}00262 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00263}00263 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00264}00264 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00265}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a1cabf995a63003aa82a673f3089c928a}{00265}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_a1cabf995a63003aa82a673f3089c928a}{PauseMusic}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00266}00266 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00267}00267 \textcolor{comment}{            //!  Resumes all paused music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00268}00268 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00269}00269 \textcolor{comment}{            *   Sends the event to call each created music resume function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00270}00270 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00271}00271 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00272}00272 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00273}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af51b6d7c57c43a00b58ace22606f1b7c}{00273}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_af51b6d7c57c43a00b58ace22606f1b7c}{ResumeMusic}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00274}00274 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00275}00275 \textcolor{comment}{            //! Stops all paused/playing music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00276}00276 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00277}00277 \textcolor{comment}{            *   Sends the event to call each created music stop function.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00278}00278 \textcolor{comment}{            *   \(\backslash\)retval FAILURE A sound or Music returned FAILURE}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00279}00279 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00280}00280 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00281}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aa3990132789dc5e1ca544a935df1d0c1}{00281}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio_aa3990132789dc5e1ca544a935df1d0c1}{StopMusic}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00282}00282 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00283}00283         \}; }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00284}00284     \}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00285}00285 \}}
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00286}00286 }
+\DoxyCodeLine{\Hypertarget{_g_audio_8h_source_l00287}00287 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GAUDIO\_H}}
+
+\end{DoxyCode}

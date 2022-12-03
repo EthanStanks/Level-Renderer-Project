@@ -1,0 +1,284 @@
+\hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{}\doxysection{GW\+::AUDIO\+::GMusic Class Reference}
+\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music}\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+
+
+{\ttfamily \#include $<$GMusic.\+h$>$}
+
+Inheritance diagram for GW\+::AUDIO\+::GMusic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_a_u_d_i_o_1_1_g_music}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a64111a599d5620b6875114d21244175e}{Create}} (const char $\ast$\+\_\+path, \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GW\+::\+AUDIO\+::\+GAudio}} \+\_\+audio, float \+\_\+volume=1.\+0f)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}{Set\+Channel\+Volumes}} (const float $\ast$\+\_\+values, unsigned int \+\_\+num\+Channels)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}{Set\+Volume}} (float \+\_\+new\+Volume)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}{Play}} (bool \+\_\+loop=false)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}{Pause}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}{Resume}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}{Stop}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}{Get\+Source\+Channels}} (unsigned int \&\+\_\+out\+Channel\+Num) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}{Get\+Output\+Channels}} (unsigned int \&\+\_\+out\+Channel\+Num) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}{is\+Playing}} (bool \&\+\_\+out\+Bool) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_music_8h_source_l00051}{51}} of file \mbox{\hyperlink{_g_music_8h_source}{GMusic.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a64111a599d5620b6875114d21244175e}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a64111a599d5620b6875114d21244175e}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!Create@{Create}}
+\index{Create@{Create}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+path,  }\item[{\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GW\+::\+AUDIO\+::\+GAudio}}}]{\+\_\+audio,  }\item[{float}]{\+\_\+volume = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+
+
+Fills out a \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}} with data from provided .wav file. 
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}} to return, attempts to initialize internal variables, and loads header information from .wav file for setup. Supports 16/32 bit uncompressed CD-\/quality .WAV format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+path} & A char array to the .wav path. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+audio} & A pointer to the \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+volume} & (OPTIONAL) parameter to set music volume (set to 1 by default).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & \+\_\+path is a nullptr, \+\_\+audio is an EMPTY\+\_\+\+PROXY, or \+\_\+volume is outside of 0.\+0f to 1.\+0f range. \\
+\hline
+{\em FAILURE} & An error occurred during loading of header information, internal objects could not be created (On Windows these are the source voice and submix voice, on other platforms this is all in \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound}{GSound}}\textquotesingle{}s init), or failed to initialize internal variables. See Below for Platform
+\begin{DoxyItemize}
+\item On Linux + pa\+\_\+main\+\_\+loop or pa\+\_\+context could not be created, pa\+\_\+context could not be connected, pa\+\_\+channel\+\_\+map could not be created, pa\+\_\+stream could not be created, or pa\+\_\+stream could not be connected.
+\item On Mac + Av\+Audio\+Player\+Node could not be created or Av\+Audio\+PCMBuffers could not be initialized 
+\end{DoxyItemize}\\
+\hline
+{\em SUCCESS} & None of the above errors occurred. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!SetChannelVolumes@{SetChannelVolumes}}
+\index{SetChannelVolumes@{SetChannelVolumes}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{SetChannelVolumes()}{SetChannelVolumes()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Set\+Channel\+Volumes (\begin{DoxyParamCaption}\item[{const float $\ast$}]{\+\_\+values,  }\item[{unsigned int}]{\+\_\+num\+Channels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to set the output volume for the specified number of outputs to the passed in values. 
+
+The amount of values in \+\_\+values that will be used is based on \+\_\+num\+Channels. If you attempt to set the volume of an output your hardware does not support, it will be ignored. Automatically applies all the master volume ratios.
+
+Channels\+: Supports up to 6 channels AKA 5.\+1 Audio\+:
+
+INDEX\mbox{[}0\mbox{]} = Left, INDEX\mbox{[}1\mbox{]} = Right, INDEX\mbox{[}2\mbox{]} = Front Center, INDEX\mbox{[}3\mbox{]} = LFE, INDEX\mbox{[}4\mbox{]} = Rear Left, INDEX\mbox{[}5\mbox{]} = Rear Right,
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+values} & The output volumes to be set. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Channels} & The number of channels affected.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \+\_\+num\+Channels is less than 1, internal object encountered an error which could occur if \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s number of outputs changed during runtime, \+\_\+values is NULL, or \+\_\+values tried to read garbage data -\/ (\+\_\+num\+Channels \texorpdfstring{$>$}{>} amount of values in \+\_\+values) \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!SetVolume@{SetVolume}}
+\index{SetVolume@{SetVolume}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{SetVolume()}{SetVolume()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Set\+Volume (\begin{DoxyParamCaption}\item[{float}]{\+\_\+new\+Volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to change the overall volume. 
+
+Automatically applies all the master volume ratios.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+new\+Volume} & The output volume to be set.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} has not filled out this object with \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s function\+: \char`\"{}\+Create\+Music\+Stream\char`\"{}, \+\_\+new\+Volume is less than Zero, or internal object encountered an error. Unlikely to occur if \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s \char`\"{}\+Create\+Music\+Stream\char`\"{} did not return an error upon filling out this object. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!Play@{Play}}
+\index{Play@{Play}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Play (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+loop = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to start a music stream. 
+
+Currently only supports .wav files. Upon Succession will launch a new thread that will continuously read in audio data from file.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} has not filled out this object with \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s function\+: \char`\"{}\+Create\+Music\+Stream\char`\"{}, specified .wav file could not be found or encountered an error upon reading in data (This happens when \char`\"{}\+Create\+Music\+Stream\char`\"{} fills out data), or internal object encountered an error. Unlikely to occur if \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s \char`\"{}\+Create\+Music\+Stream\char`\"{} did not return an error upon filling out this object. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!Pause@{Pause}}
+\index{Pause@{Pause}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to pause a currently playing music stream. 
+
+Currently only supports .wav files. If a stream is currently paused, will not attempt to pause playback without returning an error.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+loop} & (OPTIONAL) Bool for whether or not should play looping.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} has not filled out this object with \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s function\+: \char`\"{}\+Create\+Music\+Stream\char`\"{}, specified .wav file could not be found or encountered an error upon reading in data (This happens when \char`\"{}\+Create\+Music\+Stream\char`\"{} fills out data), or internal object encountered an error. Unlikely to occur if \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s \char`\"{}\+Create\+Music\+Stream\char`\"{} did not return an error upon filling out this object. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!Resume@{Resume}}
+\index{Resume@{Resume}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to resume a currently paused music stream. 
+
+Currently only supports .wav files. If a music stream is currently playing, will not attempt to play file without returning an error.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & If internal object encounters an error. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!Stop@{Stop}}
+\index{Stop@{Stop}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to stop playback of a music stream and reset it to beginning for future use. 
+
+Currently only supports .wav files. Tells the previously launched thread to stop, calls join on it, and resets thread for future use. Will attempt to completely stop playback regardless of whether or not music is playing or paused.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & If internal object encounters an error. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!GetSourceChannels@{GetSourceChannels}}
+\index{GetSourceChannels@{GetSourceChannels}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{GetSourceChannels()}{GetSourceChannels()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Get\+Source\+Channels (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Channel\+Num }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stores the .wav files internal amount of channels the sound was recorded with into the passed in unsigned int. 
+
+This value is read and stored upon creation of \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Channel\+Num} & The unsigned int which will be stored with the value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} has not filled out this object with \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s function\+: \char`\"{}\+Create\+Music\+Stream\char`\"{}. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!GetOutputChannels@{GetOutputChannels}}
+\index{GetOutputChannels@{GetOutputChannels}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{GetOutputChannels()}{GetOutputChannels()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::\+Get\+Output\+Channels (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Channel\+Num }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stores the number of specified outputs into the passed in unsigned int. 
+
+This value is obtained from G\+\_\+\+NUM\+\_\+\+OF\+\_\+\+OUTPUTS macro. By default the number of output channels is 6 unless \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} was created with a different amount (Currently Linux set to 2).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Channel\+Num} & The unsigned int which will be stored with the value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}} has not filled out this object with \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GAudio}}\textquotesingle{}s function\+: \char`\"{}\+Create\+Music\+Stream\char`\"{}. \\
+\hline
+{\em SUCCESS} & Successfully ran without running into any of the above issues. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}} 
+\index{GW::AUDIO::GMusic@{GW::AUDIO::GMusic}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!GW::AUDIO::GMusic@{GW::AUDIO::GMusic}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GMusic\+::is\+Playing (\begin{DoxyParamCaption}\item[{bool \&}]{\+\_\+out\+Bool }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fills out the passed in bool with information as to if the music stream is playing or not. 
+
+\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}} internally keeps track of whether or not it playing via the launched thread, as well as the Start/\+Pause/\+Resume/\+Stop functions.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Bool} & The bool which will be stored with the value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SUCCESS} & Always, boolean passed in will tell you if music is playing or not. \\
+\hline
+\end{DoxyRetVals}

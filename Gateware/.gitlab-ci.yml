@@ -1,0 +1,25 @@
+stages:
+    - release
+    - trigger_remote_pipelines
+
+linux_create_release:
+    stage: release
+    tags:
+        - Mint
+    rules:
+        - if: $CI_COMMIT_TAG
+    script:
+        - echo "creating a release!"
+    release:
+        tag_name: '$CI_COMMIT_TAG'
+        description: '$CI_COMMIT_TAG'
+
+linux_trigger_GTemplates:
+    stage: trigger_remote_pipelines
+    tags:
+        - Mint
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+          when: on_success
+    script:
+        - 'curl --request POST --form token=$TRIGGER_GTEMPLATES_PIPELINE --form ref=master "https://gitlab.com/api/v4/projects/16815960/trigger/pipeline"'

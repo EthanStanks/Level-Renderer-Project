@@ -1,0 +1,125 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{}\doxysection{GW\+::CORE\+::GEvent\+Queue Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}\index{GW::CORE::GEventQueue@{GW::CORE::GEventQueue}}
+
+
+{\ttfamily \#include $<$GEvent\+Queue.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GEvent\+Queue\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.426752cm]{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a4778621e392d4fb4d612d61b6ca3d002}{Create}} (unsigned int \+\_\+max\+Size, \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{CORE\+::\+GEvent\+Generator}} \+\_\+event\+Source, const std\+::function$<$ void()$>$ \+\_\+callback)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a933ce6de8849c5066a53b90eb0c5f5fc}{Peek}} (unsigned int \+\_\+event\+Index, \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+out\+Event) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_ad4699b87add4ac35055e9dc0add49b43}{Max}} (unsigned int \&\+\_\+out\+Capacity) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Receives and stores all events produced by an interface derived from \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. You must provide the Event\+Queue a maximum storage capcity as the underying container is a circular quque. Accepts an std\+::function$<$void()$>$ as the callback function/lambda for flexibility. Use std\+::bind to supply your own arguments to your callback, the only restriction is the void return type. Because all events are captured (assuming adequate storage) you may process events later when ready to do so. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MyEventQueue.Create( 16, MyEventGenerator, \textcolor{keyword}{nullptr}); \textcolor{comment}{// if you only need the last event, use GEventResponder}}
+\DoxyCodeLine{GEvent g; }
+\DoxyCodeLine{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{GEventGenerator::Events}} e; \textcolor{comment}{// replace with desired Generator}}
+\DoxyCodeLine{GEventGenerator::EVENT\_DATA d; }
+\DoxyCodeLine{\textcolor{keywordflow}{while}(+MyEventQueue.Pop(g)) \textcolor{comment}{// later, possibly in main loop...}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(+g.Read(e,d))}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(e == \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}{GEventGenerator::Events::NON\_EVENT}}) \textcolor{comment}{// replace with actual event}}
+\DoxyCodeLine{            std::cout << d.noData; \textcolor{comment}{// replace with actual data}}
+
+\end{DoxyCode}
+ \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]$\ast$$\ast$\+Replaced by \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GW\+::\+CORE\+::\+GEvent\+Cache}}.$\ast$$\ast$ \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_g_event_queue_8h_source_l00064}{64}} of file \mbox{\hyperlink{_g_event_queue_8h_source}{GEvent\+Queue.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a4778621e392d4fb4d612d61b6ca3d002}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a4778621e392d4fb4d612d61b6ca3d002}} 
+\index{GW::CORE::GEventQueue@{GW::CORE::GEventQueue}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GEventQueue@{GW::CORE::GEventQueue}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Queue\+::\+Create (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+max\+Size,  }\item[{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{CORE\+::\+GEvent\+Generator}}}]{\+\_\+event\+Source,  }\item[{const std\+::function$<$ void()$>$}]{\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Allocates \& Intializes a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}}. 
+
+A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}} is capable of receiving and reacting to events created by a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. You can use this class whenever there is a Gateware class that spawns events you wish to know about. Unlike \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_receiver}{GEvent\+Receiver}} the \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}} is capable of storing multiple events up to a limit defined by you. If you need to process events on a specific thread, you can use this class to delay processing until a safe time to do so. Just make sure there is adequate capcity in the Queue, and \char`\"{}\+Pop\char`\"{} them off when ready.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+max\+Size} & The maximum amount of messages that can be retained by this instance. (must be \texorpdfstring{$>$}{>} 0) Exceeding this amount without processing a message will cause the oldest to be missed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+event\+Source} & The \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}} you wish to receive messages from. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+callback} & The function or lambda you wish to be invoked when an event is received. (optional, can pass nullptr). May be invoked from a different thread. To ensure you receive messages on a specific thread, just use \char`\"{}\+Pop/\+Peek\char`\"{} instead.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a87206a3a3609ea2ad8b2ee552bce14b0}{GReturn\+::\+UNEXPECTED\+\_\+\+RESULT}}} & Internal API failure, should not happen please report this. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & A valid \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}} and Queue Capacity \texorpdfstring{$>$}{>} 0 must be provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The receiver was correctly bound and registered to the generator provided. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a933ce6de8849c5066a53b90eb0c5f5fc}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a933ce6de8849c5066a53b90eb0c5f5fc}} 
+\index{GW::CORE::GEventQueue@{GW::CORE::GEventQueue}!Peek@{Peek}}
+\index{Peek@{Peek}!GW::CORE::GEventQueue@{GW::CORE::GEventQueue}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Queue\+::\+Peek (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+event\+Index,  }\item[{\mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+out\+Event }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Examines but does not remove a waiting event if one is available based on it\textquotesingle{}s historical index. 
+
+Same operation as \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_a933ce6de8849c5066a53b90eb0c5f5fc}{Peek()}} in \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_receiver}{GEvent\+Receiver}} but can also be used to examine the Queue\textquotesingle{}s current backlog.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+event\+Index} & The event you wish to examine from 0 to \char`\"{}\+Waiting\char`\"{}-\/1, with 0 being the most recent. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event} & A copy of the event at \+\_\+event\+Index waiting it\textquotesingle{}s turn to be processed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & The provided \+\_\+event\+Index was out of bounds. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & There were no waiting events that could be inspected. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Successfully copied a waiting event from the Queue. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_ad4699b87add4ac35055e9dc0add49b43}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_queue_ad4699b87add4ac35055e9dc0add49b43}} 
+\index{GW::CORE::GEventQueue@{GW::CORE::GEventQueue}!Max@{Max}}
+\index{Max@{Max}!GW::CORE::GEventQueue@{GW::CORE::GEventQueue}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Queue\+::\+Max (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Capacity }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reports the Maximum amount of Events that this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}} instance can record. 
+
+This returns the same number that is passed to the \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_queue}{GEvent\+Queue}} \char`\"{}\+Create\char`\"{} function. Any events recorded while the Queue is at capcity will cause the oldest event to be lost. Whenever an Event is replaced without processing, it will increase the internal \char`\"{}\+Missed\char`\"{} count.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Capacity} & The maximum capacity of the Event Queue.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The maximum capacity was successfully reported. \\
+\hline
+\end{DoxyRetVals}

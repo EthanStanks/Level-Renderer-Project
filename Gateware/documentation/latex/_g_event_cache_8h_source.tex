@@ -1,0 +1,209 @@
+\hypertarget{_g_event_cache_8h_source}{}\doxysection{GEvent\+Cache.\+h}
+\label{_g_event_cache_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventCache.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventCache.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GEVENTCACHE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GEVENTCACHE\_H}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00003}00003 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00004}00004 \textcolor{comment}{    File: GEventCache.h}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00005}00005 \textcolor{comment}{    Purpose: A Gateware interface that allows recording of GEvents from a GEventGenerator for later processing.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00006}00006 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00007}00007 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00008}00008 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00009}00009 \textcolor{comment}{    Contributors: N/A}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00011}00011 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00012}00012 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00013}00013 \textcolor{comment}{*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}GThreadShared.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00017}00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00019}00019     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00020}00020     \{}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00021}00021         \textcolor{keyword}{class }GEventCacheInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00023}00023         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00024}00024             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Append(\textcolor{keyword}{const} GEvent\& \_inEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00025}00025             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Waiting(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00026}00026             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Pop(GEvent\& \_outEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Peek(GEvent\& \_outEvent) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00028}00028             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Peek(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_eventIndex, GEvent\& \_outEvent) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00029}00029             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Max(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outSize) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Missed(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00031}00031             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Clear() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00032}00032             \textcolor{keyword}{template}<\textcolor{keyword}{class} eventType>}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00033}00033             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Find(eventType \_check, \textcolor{keywordtype}{bool} \_remove);}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00034}00034             \textcolor{keyword}{template}<\textcolor{keyword}{class} eventType, \textcolor{keyword}{typename} eventData>}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00035}00035             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Find(eventType \_check, \textcolor{keywordtype}{bool} \_remove, eventData\& \_outData);}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00036}00036         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00038}00038 \};}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00040}00040 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00041}00041 \textcolor{preprocessor}{\#include "{}../../Source/Core/GEventCache/GEventCache.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00042}00042 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00043}00043 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00044}00044 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00045}00045 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00046}00046 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00047}\mbox{\hyperlink{namespace_g_w_1_1_c_o_r_e}{00047}} \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00048}00048     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00049}00049 \textcolor{comment}{        //! A Proxy class that can be used to record and playback GEvents captured from GEventGenerators. }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00050}00050 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00051}00051 \textcolor{comment}{        *   Stores all events produced by an interface derived from GEventGenerator that you are Registered to.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00052}00052 \textcolor{comment}{        *   **NOTE: GEventCache is a replacement proxy to GEventQueue which is deprecated.** }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00053}00053 \textcolor{comment}{        *   \(\backslash\)code\{.cpp\}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00054}00054 \textcolor{comment}{        *       GEventCache myCache;}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00055}00055 \textcolor{comment}{        *       myCache.Create( 32 ); // can hold up to 32 unique GEvents, try to keep this as small as needed}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00056}00056 \textcolor{comment}{        *       someEventGenerator.Register(myCache);}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00057}00057 \textcolor{comment}{        *       // ... some recurring function or thread where you wish to process waiting events ...}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00058}00058 \textcolor{comment}{        *       GEvent g; }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00059}00059 \textcolor{comment}{        *       while (+myCache.Pop(g)) // if you wait too long to process events the oldest ones may be lost.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00060}00060 \textcolor{comment}{        *       \{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00061}00061 \textcolor{comment}{        *           GEventGenerator::Events e; // substitute the generator type you care about}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00062}00062 \textcolor{comment}{        *           GEventGenerator::EVENT\_DATA d; // substitute the event data you care about}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00063}00063 \textcolor{comment}{        *           // Determine if the "{}Pop"{}ed event contains the data you are intrested in.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00064}00064 \textcolor{comment}{        *           if (+g.Read(e,d)) // if you are interested in multiple events consider using a switch below}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00065}00065 \textcolor{comment}{        *               if (e == GEventGenerator::Events::NON\_EVENT) // substitute actual event}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00066}00066 \textcolor{comment}{        *                   std::cout << d.noData; // substitute actual data}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00067}00067 \textcolor{comment}{        *       \}}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00068}00068 \textcolor{comment}{        *   \(\backslash\)endcode}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00069}00069 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00070}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{00070}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEventCache}} final}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00071}00071             : \textcolor{keyword}{public} I::GProxy<I::GEventCacheInterface, I::GEventCacheImplementation, unsigned int> \textcolor{comment}{// cache size}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00072}00072         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00073}00073         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00074}00074             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00075}00075 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00076}00076 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEventCache}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00077}00077             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}{Append}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00078}00078             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}{Waiting}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00079}00079             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00080}00080             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}{Peek}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00081}00081             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}{Max}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00082}00082             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}{Missed}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00083}00083             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{Clear}})}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00084}00084             GATEWARE\_TEMPLATE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}{Find}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00085}00085 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00086}00086 \textcolor{comment}{}            }
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00087}00087             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00088}00088 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00089}00089 \textcolor{comment}{            //! Allocates \& Intializes a GEventCache. }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00090}00090 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00091}00091 \textcolor{comment}{            *   A GEventCache is capable of receiving and storing events created by any GEventGenerator.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00092}00092 \textcolor{comment}{            *   You can use this class whenever there is a Gateware class that spawns events you wish record.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00093}00093 \textcolor{comment}{            *   Unlike GEventResponder the GEventCache is designed to save multiple events up to a limit defined by you.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00094}00094 \textcolor{comment}{            *   If you need to process events on a specific thread, you can use this class to delay processing until}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00095}00095 \textcolor{comment}{            *   a safe time to do so. Just make sure there is adequate capcity in the Cache, and "{}Pop"{} them off when ready.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00096}00096 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00097}00097 \textcolor{comment}{            *   \(\backslash\)param [in] \_cacheSize      The maximum amount of GEvents that can be retained by this instance. (must be > 0)}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00098}00098 \textcolor{comment}{            *                               Exceeding this amount without processing a message will cause the oldest to missed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00099}00099 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00100}00100 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   A valid Cache Capacity > 0 must be provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00101}00101 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    Allocation has failed, you don't have enough memory.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00102}00102 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The cache was succesfully allocated, you can now Register it to GEventGenerators.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00103}00103 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00104}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a7df9dc331828b6ec440f3daff7e69348}{00104}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a7df9dc331828b6ec440f3daff7e69348}{Create}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_cacheSize);}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00105}00105 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00106}00106 \textcolor{comment}{            //! Appends an event to the cache, and increases number of waiting events.   }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00107}00107 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00108}00108 \textcolor{comment}{            *   Generally end users can ignore this function as it is invoked by a registered GEventGenerator.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00109}00109 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00110}00110 \textcolor{comment}{            *   \(\backslash\)param [in] \_inEvent    The GEvent you wish to store in the Cache. If the Cache is already full of}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00111}00111 \textcolor{comment}{            *                           waiting (unpopped) events then the oldest one falls off the front.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00112}00112 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00113}00113 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The event was appended to this receiver.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00114}00114 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00115}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}{00115}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a485ac1b8015ba354eadac442c7135ec5}{Append}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\& \_inEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00116}00116 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00117}00117 \textcolor{comment}{            //! Reports how many events have not yet been processed.  }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00118}00118 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00119}00119 \textcolor{comment}{            *   Use this to check if any events are currently waiting for you.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00120}00120 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00121}00121 \textcolor{comment}{            *   \(\backslash\)param [out] \_outCount The number of waiting events. (use Pop() or Clear() to remove them)}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00122}00122 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00123}00123 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Reports the current amount of waiting events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00124}00124 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00125}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}{00125}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a65f6b95972207187f311d51259337b51}{Waiting}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00126}00126 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00127}00127 \textcolor{comment}{            //! Grabs a waiting event if one is available. Oldest first. }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00128}00128 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00129}00129 \textcolor{comment}{            *   If waiting is non-\/zero this operation will extract an event and reduce the number of waiting events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00130}00130 \textcolor{comment}{            *   After a successful Pop() the number of waiting event will be reduced by 1.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00131}00131 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00132}00132 \textcolor{comment}{            *   \(\backslash\)param [out] \_outEvent The most recent event that needs to be processed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00133}00133 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00134}00134 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    There were no waiting events that needed processing.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00135}00135 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Successfully pulled a waiting event from the Queue.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00136}00136 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00137}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{00137}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a818b27478fa7db1ed6e59ce6538cd87a}{Pop}}(\mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\& \_outEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00138}00138 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00139}00139 \textcolor{comment}{            //! Examines but does not remove a waiting event if one is available based on it's historical index. }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00140}00140 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00141}00141 \textcolor{comment}{            *   Used to examine the GEventCache's current backlog.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00142}00142 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00143}00143 \textcolor{comment}{            *   \(\backslash\)param [in] \_eventIndex (OPTIONAL) The event you wish to examine from 0 to "{}Waiting"{}-\/1, with 0 being the oldest item in the Cache.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00144}00144 \textcolor{comment}{            *   \(\backslash\)param [out] \_outEvent A copy of the event at '\_eventIndex' waiting it's turn to be processed. (\_eventIndex defaults to 0)}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00145}00145 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00146}00146 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   The provided \_eventIndex was out of bounds.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00147}00147 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    There were no waiting events that could be inspected.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00148}00148 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Successfully copied a waiting event from the Queue.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00149}00149 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00150}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}{00150}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a43003b772e07e51a2c207ff4635d1a09}{Peek}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_eventIndex, \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\& \_outEvent) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00151}00151 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00152}00152 \textcolor{comment}{            //! Reports the Maximum amount of Events that this GEventCache instance can record.  }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00153}00153 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00154}00154 \textcolor{comment}{            *   This returns the same number that is passed to the GEventCache "{}Create"{} function.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00155}00155 \textcolor{comment}{            *   Any events recorded while the Queue is at capcity will cause the oldest event to be lost.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00156}00156 \textcolor{comment}{            *   Whenever an Event is replaced without processing, it will increase the internal "{}Missed"{} count.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00157}00157 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00158}00158 \textcolor{comment}{            *   \(\backslash\)param [out] \_outCapacity   The maximum capacity of this GEventCache.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00159}00159 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00160}00160 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The maximum capacity was successfully reported.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00161}00161 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00162}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}{00162}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a98c7316b978bed280c384a2f82af6f45}{Max}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCapacity) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00163}00163 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00164}00164 \textcolor{comment}{            //! Reports how many events were not processed before they were replaced.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00165}00165 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00166}00166 \textcolor{comment}{            *   If an event was not processed via Pop(), Clear(), or Find() and ends up being replaced}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00167}00167 \textcolor{comment}{            *   it will increase the internal event miss count. Use this operation to see how many events have been lost.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00168}00168 \textcolor{comment}{            *   **NOTE: Never want to miss an event? consdiering using GEventResponder or directly registering a callback.**}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00169}00169 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00170}00170 \textcolor{comment}{            *   \(\backslash\)param [out] \_outCount Number of events that were not processed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00171}00171 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00172}00172 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Reports the current amount of missed events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00173}00173 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00174}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}{00174}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a31de9fd0e70ffba1d9fb165ca2789b39}{Missed}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00175}00175 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00176}00176 \textcolor{comment}{            //! Removes any \& all waiting events without processing them.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00177}00177 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00178}00178 \textcolor{comment}{            *   All pending events are removed. The internal missed event count will not be reset.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00179}00179 \textcolor{comment}{            *   NOTE: Though you cannot reset the internal miss count it is possible to track it's change.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00180}00180 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00181}00181 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    There were no waiting events, nothing was cleared.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00182}00182 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    All waiting events were removed successfully.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00183}00183 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00184}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{00184}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a67b520e7280a2ff39bbea0edb3114b75}{Clear}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00185}00185 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00186}00186 \textcolor{comment}{            //! Finds a specific Event/DataChunk and optionally can remove it and/or return the associated data. }}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00187}00187 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00188}00188 \textcolor{comment}{            *   A conveinence function that can be used instead of "{}Pop/Peek"{} to search waiting events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00189}00189 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00190}00190 \textcolor{comment}{            *   \(\backslash\)param [in] \_check  The specific enum of the event you are looking for, can also be a specific bit of data.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00191}00191 \textcolor{comment}{            *   \(\backslash\)param [in] \_remove Should the function remove the waiting event if it is found? true == Pop, false == Peek}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00192}00192 \textcolor{comment}{            *   \(\backslash\)param [out] \_outData (OPTIONAL) Returns the data block associated with the event if found.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00193}00193 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00194}00194 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    No Event or Data was present matching the provided Query.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00195}00195 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    Operation successfully found and/or removed the event/data in question.}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00196}00196 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00197}00197             \textcolor{keyword}{template}<\textcolor{keyword}{class} eventType, \textcolor{keyword}{typename} eventData>}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00198}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}{00198}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache_a5a6f9d670b46f423b476bde3edc88fb9}{Find}}(eventType \_check, \textcolor{keywordtype}{bool} \_remove, eventData\& \_outData);}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00199}00199 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00200}00200         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00201}00201     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00202}00202 \}}
+\DoxyCodeLine{\Hypertarget{_g_event_cache_8h_source_l00203}00203 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GEVENTCACHE\_H}}
+
+\end{DoxyCode}

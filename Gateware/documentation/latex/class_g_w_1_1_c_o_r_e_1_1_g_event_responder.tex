@@ -1,0 +1,116 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{}\doxysection{GW\+::CORE\+::GEvent\+Responder Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}\index{GW::CORE::GEventResponder@{GW::CORE::GEventResponder}}
+
+
+{\ttfamily \#include $<$GEvent\+Responder.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GEvent\+Responder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.597718cm]{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a14771b0601b0de8c3785ae9cb721983f}{Create}} (std\+::function$<$ void(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&)$>$ \+\_\+event\+Handler)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}{Assign}} (std\+::function$<$ void(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&)$>$ \+\_\+new\+Event\+Handler)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}{Invoke}} (const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+incoming\+Event) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} proxy stores and allows safe swapping of \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} handlers. It will immediately react to any \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}} it is Registered to that posts a \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}. Essentially this is a specialized version of \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}} designed for conveinent interception of events. $\ast$$\ast$\+NOTE\+: \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} is a replacement interface to \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_receiver}{GEvent\+Receiver}} which is deprecated.$\ast$$\ast$ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{GEventResponder observer;}
+\DoxyCodeLine{\textcolor{comment}{// Provide the logic for processing a GEvent you care about.}}
+\DoxyCodeLine{observer.Create([](\textcolor{keyword}{const} GEvent\& g) \{ }
+\DoxyCodeLine{    \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{GEventGenerator::Events}} e; \textcolor{comment}{// substitute the generator type you care about}}
+\DoxyCodeLine{    GEventGenerator::EVENT\_DATA d; \textcolor{comment}{// substitute the event data you care about}}
+\DoxyCodeLine{    \textcolor{comment}{// Determine if the incoming event contains the data you are interested in.}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (+g.Read(e,d)) \textcolor{comment}{// if you are interested in multiple events consider using a switch below}}
+\DoxyCodeLine{        if (e == \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}{GEventGenerator::Events::NON\_EVENT}}) \textcolor{comment}{// substiute actual event}}
+\DoxyCodeLine{            std::cout << d.noData; \textcolor{comment}{// substitute actual data}}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{someEventGenerator.Register(observer);}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_g_event_responder_8h_source_l00065}{65}} of file \mbox{\hyperlink{_g_event_responder_8h_source}{GEvent\+Responder.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a14771b0601b0de8c3785ae9cb721983f}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a14771b0601b0de8c3785ae9cb721983f}} 
+\index{GW::CORE::GEventResponder@{GW::CORE::GEventResponder}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GEventResponder@{GW::CORE::GEventResponder}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Responder\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&)$>$}]{\+\_\+event\+Handler }\end{DoxyParamCaption})}
+
+
+
+Allocates \& Intializes a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}}. 
+
+A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} is capable of receiving and reacting to events created by GEvent\+Generators. You can use this class whenever there is a Gateware class that spawns events you wish to know about. A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} may be Registered to multiple GEvent\+Generators. (see\+: \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}{GEvent\+Generator\+::\+Register()}})
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+event\+Handler} & The function or lambda you wish to be invoked when an event is received. (optional can pass nullptr). May be invoked from different threads. If you need to receive messages on a specific thread consider \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} instead.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The responder was intialized with the handler provided. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a486f42468291c7b6ff23fb7105fff935}} 
+\index{GW::CORE::GEventResponder@{GW::CORE::GEventResponder}!Assign@{Assign}}
+\index{Assign@{Assign}!GW::CORE::GEventResponder@{GW::CORE::GEventResponder}}
+\doxysubsubsection{\texorpdfstring{Assign()}{Assign()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Responder\+::\+Assign (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&)$>$}]{\+\_\+new\+Event\+Handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ovewrites the current event handler assigned to this Proxy (if any) 
+
+Assigns new user provided logic (nullptr\mbox{[}no logic\mbox{]} is a valid argument). Cannot be done within provided logic as the class garuntees the logic stack will remain valid for the duration of \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}{Invoke()}}. $\ast$$\ast$\+Deadlocks will only be detected/prevented in Debug builds, check your logic for errors$\ast$$\ast$
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+new\+Event\+Handler} & The function or lambda you wish to recieve all new events with.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a8f35b656de87c54e18710fc94d73a614}{GReturn\+::\+DEADLOCK}}} & You have attempted to modify the logic during it\textquotesingle{}s own executetion. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Stored logic was successfully overwritten. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_responder_a96485ebdcfddb9c3e15e3b9c1556f995}} 
+\index{GW::CORE::GEventResponder@{GW::CORE::GEventResponder}!Invoke@{Invoke}}
+\index{Invoke@{Invoke}!GW::CORE::GEventResponder@{GW::CORE::GEventResponder}}
+\doxysubsubsection{\texorpdfstring{Invoke()}{Invoke()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Responder\+::\+Invoke (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+incoming\+Event }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Invokes the stored function/lamda event handler from the current thread. 
+
+Calls the stored handler on this thread, during the invocation the logic and proxy will remian valid. During the operation Recursive calls are permitted but swapping the handler of your own proxy is not. In general you will not call this routine directly, rather the provided \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}} will call this.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+incoming\+Event} & The \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} you want the GResponder to respond to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No internal logic has been assigned to this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}}. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Handler is valid and was called. \\
+\hline
+\end{DoxyRetVals}

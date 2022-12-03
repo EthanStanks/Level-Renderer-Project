@@ -1,0 +1,124 @@
+\hypertarget{struct_g_w_1_1_g_event}{}\doxysection{GW\+::GEvent Struct Reference}
+\label{struct_g_w_1_1_g_event}\index{GW::GEvent@{GW::GEvent}}
+
+
+{\ttfamily \#include $<$GCore\+Defines.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class enumT , typename dataT $>$ }\\\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{struct_g_w_1_1_g_event_a33493e7fa4b57b2e62d21f324ca7ec42}{Write}} (const enumT \&\+\_\+event\+Enum\+Value, const dataT \&\+\_\+event\+Data)
+\item 
+{\footnotesize template$<$class enumT , typename dataT $>$ }\\\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{struct_g_w_1_1_g_event_a6b9042ee012bf81178a3e40708931991}{Read}} (enumT \&\+\_\+out\+Event\+ID, dataT \&\+\_\+out\+Event\+Data) const
+\item 
+{\footnotesize template$<$class enum\+Or\+DataT $>$ }\\\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{struct_g_w_1_1_g_event_a443bf2cefed64acde11f1ec67d67a7bf}{Read}} (enum\+Or\+DataT \&\+\_\+out\+Event\+Or\+Data) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This struct is how GEvent\+Generators communicate custom Events to any GEvent\+Receiver who registers themselves to the object. This struct alongside std\+::function/std\+::bind is used to circumvent the traditional derivation based observer model. You can think of \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} as a less-\/robust and more specialized version of std\+::any. (we currently only target c++11) 
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00419}{419}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_g_w_1_1_g_event_a33493e7fa4b57b2e62d21f324ca7ec42}\label{struct_g_w_1_1_g_event_a33493e7fa4b57b2e62d21f324ca7ec42}} 
+\index{GW::GEvent@{GW::GEvent}!Write@{Write}}
+\index{Write@{Write}!GW::GEvent@{GW::GEvent}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily template$<$class enumT , typename dataT $>$ \\
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GEvent\+::\+Write (\begin{DoxyParamCaption}\item[{const enumT \&}]{\+\_\+event\+Enum\+Value,  }\item[{const dataT \&}]{\+\_\+event\+Data }\end{DoxyParamCaption})}
+
+
+
+Allows writing of any enum class \& raw data to a \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} while retaining internal type hashes.(typeerasure) 
+
+DEVNOTE\+: Written event data must be \texorpdfstring{$<$}{<}= to (G\+\_\+\+MESSAGE\+\_\+\+BLOCK\+\_\+\+SIZE -\/ 16) -\/ sizeof(chosen enum class type). Only base type enums \& raw data streams (C style structs) may be written as data (POD Plain Old Data) Each stored type may not exceed 255 bytes for size verification/offset reasons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+event\+Enum\+Value} & Enum used to represent which event has occured.(any simple POD enum valid) \\
+\hline
+{\em \+\_\+event\+Data} & Extra data that acompanies this event.(any small POD works here)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SUCCESS} & Valid types were provided and the event data was successfully embedded. \\
+\hline
+{\em UNEXPECTED\+\_\+\+RESULT} & Encoded type matched the provided type hash but does not match its size in bytes. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00456}{456}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_event_a6b9042ee012bf81178a3e40708931991}\label{struct_g_w_1_1_g_event_a6b9042ee012bf81178a3e40708931991}} 
+\index{GW::GEvent@{GW::GEvent}!Read@{Read}}
+\index{Read@{Read}!GW::GEvent@{GW::GEvent}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class enumT , typename dataT $>$ \\
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GEvent\+::\+Read (\begin{DoxyParamCaption}\item[{enumT \&}]{\+\_\+out\+Event\+ID,  }\item[{dataT \&}]{\+\_\+out\+Event\+Data }\end{DoxyParamCaption}) const}
+
+
+
+Safely extract G\+::\+Events and G\+::\+EVENT\+\_\+\+DATA from a GEvent\+Generator if you know what type of information you need. 
+
+Once your GEvent\+Receiver has responded to an event and is receiving a \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}, you can use this operation to safely extract information about a specific event. Not only can you establish which event was generated, you can also receive detailed information about the event if that event contains additional data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event\+ID} & Variable used to capture which event has occured.(See interface docs) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event\+Data} & Variable used to capture incoming data from an event.(See interface docs)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SUCCESS} & The proper types were provided and the event data was successfully extracted. \\
+\hline
+{\em FAILURE} & This \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} was never intialized with any event data. (Dataless Event) \\
+\hline
+{\em INVALID\+\_\+\+ARGUMENT} & Provided template data types do NOT match internally stored hashes for this event. \\
+\hline
+{\em MEMORY\+\_\+\+CORRUPTION} & Encoded type matched the provided type hash but does not match its size in bytes. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00499}{499}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_g_event_a443bf2cefed64acde11f1ec67d67a7bf}\label{struct_g_w_1_1_g_event_a443bf2cefed64acde11f1ec67d67a7bf}} 
+\index{GW::GEvent@{GW::GEvent}!Read@{Read}}
+\index{Read@{Read}!GW::GEvent@{GW::GEvent}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class enum\+Or\+DataT $>$ \\
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GEvent\+::\+Read (\begin{DoxyParamCaption}\item[{enum\+Or\+DataT \&}]{\+\_\+out\+Event\+Or\+Data }\end{DoxyParamCaption}) const}
+
+
+
+Safely extract G\+::\+Events and G\+::\+EVENT\+\_\+\+DATA from a GEvent\+Generator if you know what type of information you need. 
+
+Once your GEvent\+Receiver has responded to an event and is receiving a \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}, you can use this operation to safely extract information about a specific event. Not only can you establish which event was generated, you can also receive detailed information about the event if that event contains additional data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Event\+Or\+Data} & Variable used to capture incoming data or event ID from an event.(See interface docs)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SUCCESS} & A proper type was provided and the information was successfully extracted. \\
+\hline
+{\em FAILURE} & This \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} was never intialized with any information. (Uninitialized Event) \\
+\hline
+{\em INVALID\+\_\+\+ARGUMENT} & Provided template data type does NOT match any internal stored hash for this event. \\
+\hline
+{\em MEMORY\+\_\+\+CORRUPTION} & Encoded type matched the provided type hash but does not match its size in bytes. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00542}{542}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+

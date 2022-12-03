@@ -1,0 +1,188 @@
+\hypertarget{_g_event_generator_8h_source}{}\doxysection{GEvent\+Generator.\+h}
+\label{_g_event_generator_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventGenerator.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Core/GEventGenerator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GEVENTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GEVENTGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00005}00005 \textcolor{comment}{    File: GEventGenerator.h}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that enables broadcasting of custom GEvents to potential subscribers.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00008}00008 \textcolor{comment}{    Asynchronus: YES}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00009}00009 \textcolor{comment}{    Author: Lari H. Norri}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00010}00010 \textcolor{comment}{    Contributors: Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GEventCache.h"{}} \textcolor{comment}{// can store and examine GEvents for later processing  }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}GEventResponder.h"{}} \textcolor{comment}{// contains user defined logic for handling a GEvent}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00019}00019 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00021}00021     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00023}00023         \textcolor{comment}{// The GEventGenerator Interface is capable of notifying end users of various events that occur during runtime.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00024}00024         \textcolor{comment}{// This interface supports asynchronus addition, removal \& notification of observer interfaces}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00025}00025         \textcolor{keyword}{class }GEventGeneratorInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00026}00026         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00027}00027             \textcolor{comment}{// All Gateware API interfaces contain no variables \& are pure virtual.     }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00028}00028         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00029}00029             \textcolor{comment}{// For API consistency all Gateware "{}Event Generators"{} must have an event list called "{}Events"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00030}00030             \textcolor{comment}{// They can be values other than integer (eg: floats) but must be POD (plain old data)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00031}00031             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00032}00032             \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00033}00033                 NON\_EVENT}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00034}00034             \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00035}00035             \textcolor{comment}{// For API consistency all Gateware "{}Event Generators"{} must have an event struct called "{}EVENT\_DATA"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00036}00036             \textcolor{comment}{// All contined values must be POD (plain old data) and fit within a GEvent data block}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00037}00037             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00038}00038             \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00039}00039                 std::nullptr\_t noData;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00040}00040             \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00042}00042             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Register(CORE::GEventCache \_recorder) = 0; \textcolor{comment}{// Overloads registration for GEventCache}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00043}00043             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Register(CORE::GEventResponder \_responder) = 0; \textcolor{comment}{// Overloads registration for GEventResponders}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00044}00044             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Register(CORE::GInterface \_observer, \textcolor{keywordtype}{void}(*\_callback)(\textcolor{keyword}{const} GEvent\&, CORE::GInterface\&)) = 0; \textcolor{comment}{// Linking to an event generator this way is very specific, use GEventResponder for a more flexible option}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00045}00045             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Deregister(CORE::GInterface \_observer) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00046}00046             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Observers(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00047}00047             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Push(\textcolor{keyword}{const} GEvent\& \_newEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00048}00048         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00050}00050 \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00052}00052 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00053}00053 \textcolor{preprocessor}{\#include "{}../../Source/Core/GEventGenerator/GEventGenerator.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00054}00054 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00055}00055 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00056}00056 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00057}00057 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00058}00058 \textcolor{comment}{    //! The core namespace to which all Gateware fundamental interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00059}00059 \textcolor{comment}{}    \textcolor{keyword}{namespace }CORE}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00060}00060     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00061}00061 \textcolor{comment}{        //! A Proximity class that can be used to broadcast GEvents to GEventReceivers. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00062}00062 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00063}00063 \textcolor{comment}{        *   Can be used as a handle to any derived generator type.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00064}00064 \textcolor{comment}{        *   You can also use this Proxy to push custom events to create your own messaging system.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00065}00065 \textcolor{comment}{        *   Any Registered observers are not filtered so be careful to add them only once otherwise }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00066}00066 \textcolor{comment}{        *   they will receive duplicate events.(you can use Deregister() as a detection filter if needed) }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00067}00067 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00068}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{00068}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEventGenerator}} final}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00069}00069             : \textcolor{keyword}{public} I::GProxy<I::GEventGeneratorInterface, I::GEventGeneratorImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00070}00070         \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00071}00071         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00072}00072             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00073}00073 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00074}00074 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEventGenerator}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00075}00075             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{Events}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00076}00076             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00077}00077             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}{Register}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00078}00078             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}{Deregister}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00079}00079             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}{Observers}})}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00080}00080             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}{Push}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00081}00081 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00082}00082 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00083}00083             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00084}00084 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00085}00085 \textcolor{comment}{            //! Creates an GEventGenerator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00086}00086 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00087}00087 \textcolor{comment}{            *   This proxy is a general implementation of how Gateware communicates events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00088}00088 \textcolor{comment}{            *   If you would like to create your own communication system, you can use this object to spawn a GEvent.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00089}00089 \textcolor{comment}{            *   This Proxy is meant to be used with GEventCache and GEventResponder. (however both are optional)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00090}00090 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00091}00091 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    This always succeeds. (unless you run out of memory)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00092}00092 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00093}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a05f5ef11b70cb8b01b074fe609cedec1}{00093}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a05f5ef11b70cb8b01b074fe609cedec1}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00094}00094 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00095}00095 \textcolor{comment}{            //! A sample event enum, all event generators have them.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00096}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{00096}} \textcolor{comment}{}            \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{Events}} \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00097}00097                 NON\_EVENT \textcolor{comment}{//!< An example event, not actually used.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00098}00098             \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00099}00099 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00100}00100 \textcolor{comment}{            /*! A sample event data packet, all event generators have them. */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00101}\mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a}{00101}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}} \{}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00102}\mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a_a49e8f2451f7d866f09af625f23414fca}{00102}}                 std::nullptr\_t \mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a_a49e8f2451f7d866f09af625f23414fca}{noData}}; \textcolor{comment}{/*!< An example of event data, not actually used */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00103}00103             \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00104}00104 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00105}00105 \textcolor{comment}{            //! Enables limited storage of all events pushed by this GEventGenerator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00106}00106 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00107}00107 \textcolor{comment}{            *   Links a GEventCache to save any event Pushed by this generator for later processing.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00108}00108 \textcolor{comment}{            *   This is useful when you need to process the events of this generator but don't want to handle them}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00109}00109 \textcolor{comment}{            *   immediately on the thread that caused them to occur. An INVALID GEventCache will automatically be removed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00110}00110 \textcolor{comment}{            *   The Generator will respect the ownership granted (if any) by the provided Proxy. (ex: Share/Relinquish)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00111}00111 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00112}00112 \textcolor{comment}{            *   \(\backslash\)param [in] \_recorder   The GEventCache you wish to record any events generated by this instance.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00113}00113 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   An empty/expired proxy was provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00115}00115 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The provided GEventCache proxy will Append any new events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00116}00116 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00117}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}{00117}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}{Register}}(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{CORE::GEventCache}} \_recorder) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00118}00118 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00119}00119 \textcolor{comment}{            //! Enables immediate interchangable response to events pushed by this GEventGenerator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00120}00120 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00121}00121 \textcolor{comment}{            *   Links a GEventResponder to react to any event Pushed by this generator for immediate processing.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00122}00122 \textcolor{comment}{            *   You may swap the internal logic of GEventResponder. An INVALID GEventCache will automatically be removed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00123}00123 \textcolor{comment}{            *   The Generator will respect the ownership granted (if any) by the provided Proxy. (ex: Share/Relinquish)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00124}00124 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00125}00125 \textcolor{comment}{            *   \(\backslash\)param [in] \_responder  The GEventResponder you need to react to all events generated by this instance.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00126}00126 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00127}00127 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   An empty/expired proxy was provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00128}00128 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The provided GEventCache proxy will Append any new events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00129}00129 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00130}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a2abae4b860f8a447c576f350abdcbbf6}{00130}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a2abae4b860f8a447c576f350abdcbbf6}{Register}}(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{CORE::GEventResponder}} \_responder) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00131}00131 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00132}00132 \textcolor{comment}{            //! Listen for all events pushed by this GEventGenerator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00133}00133 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00134}00134 \textcolor{comment}{            *   Links a specific static function callback to be triggered on any event pushed to this generator.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00135}00135 \textcolor{comment}{            *   A GInterface is required to control the lifetime of the linked function. Sharing will make it permanent.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00136}00136 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00137}00137 \textcolor{comment}{            *   \(\backslash\)param [in] \_observer   Any valid Gateware Proxy object, used to control the lifetime of this listener.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00138}00138 \textcolor{comment}{            *   \(\backslash\)param [in] \_callback   Static callback function that accepts a reference to the GEvent \& active observer.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00139}00139 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00140}00140 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   An empty/expired proxy or null callback were provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00141}00141 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The provided callback and proxy object will be informed of any new events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00142}00142 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00143}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a1053b01e1a428e4dd2f3906d8b5b678e}{00143}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a1053b01e1a428e4dd2f3906d8b5b678e}{Register}}(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE::GInterface}} \_observer, \textcolor{keywordtype}{void}(*\_callback)(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\&, \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE::GInterface}}\&)) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00144}00144 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00145}00145 \textcolor{comment}{            //! Prematurely removes an observer from this GEventGenerator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00146}00146 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00147}00147 \textcolor{comment}{            *   Generally end users don't need to call this routine as any expired proxy is automatically removed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00148}00148 \textcolor{comment}{            *   Only the first occurance of an observer will be removed if it has been registered multiple times.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00149}00149 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00150}00150 \textcolor{comment}{            *   \(\backslash\)param [in] \_observer   Any valid Gateware proxy that was previously registered.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00151}00151 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00152}00152 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   An empty/expired proxy was provided.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00153}00153 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE    Could not find the observer specified, nothing was removed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00154}00154 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The provided proxy will no longer receive GEvents from this class.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00155}00155 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00156}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}{00156}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}{Deregister}}(\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE::GInterface}} \_observer) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00157}00157 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00158}00158 \textcolor{comment}{            //! Returns the amount of proxies observing this generator. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00159}00159 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00160}00160 \textcolor{comment}{            *   Counts the amount of valid proxies which have been registered to receive events from this system.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00161}00161 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00162}00162 \textcolor{comment}{            *   \(\backslash\)param [out] \_outCount The number of valid proxies registered to receive events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00163}00163 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00164}00164 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    This operation will always succeed.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00165}00165 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00166}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}{00166}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}{Observers}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outCount) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00167}00167 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00168}00168 \textcolor{comment}{            //! Push a new GEvent to all registered \& valid listeners. }}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00169}00169 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00170}00170 \textcolor{comment}{            *   Broadcasts a new event to all proxy objects who are actively observing this Event Generator.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00171}00171 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00172}00172 \textcolor{comment}{            *   \(\backslash\)param [in] \_newEvent   The GEvent you want all listeners to receive. (first come first serve)}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00173}00173 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00174}00174 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    The event was successfully delivered to all non-\/empty proxies.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00175}00175 \textcolor{comment}{            *   \(\backslash\)retval GReturn::REDUNDANT  There is no one currently registered to listen for these events.}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00176}00176 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00177}\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}{00177}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}{Push}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}\& \_newEvent) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00178}00178 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00179}00179         \};}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00180}00180     \}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00181}00181 \}}
+\DoxyCodeLine{\Hypertarget{_g_event_generator_8h_source_l00182}00182 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GEVENTGENERATOR\_H}}
+
+\end{DoxyCode}

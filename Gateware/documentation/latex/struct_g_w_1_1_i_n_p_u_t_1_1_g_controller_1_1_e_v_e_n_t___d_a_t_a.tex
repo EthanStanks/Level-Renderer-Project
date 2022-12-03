@@ -1,0 +1,81 @@
+\hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{}\doxysection{GW\+::INPUT\+::GController\+::EVENT\+\_\+\+DATA Struct Reference}
+\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+
+
+{\ttfamily \#include $<$GController.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ad091b5c4b541c35c9cd76bafdf0d453c}{controller\+Index}}
+\item 
+\mbox{\hyperlink{namespace_g_w_1_1_i_n_p_u_t_a71953016d06d4a92ad420eb5500b328e}{GW\+::\+INPUT\+::\+GController\+Type}} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ae77ee7d7f5f9f04126678e24b1f51d85}{controller\+ID}}
+\item 
+int \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a758549bcf2127ed2ff45c7c336ee08a4}{input\+Code}}
+\item 
+float \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_aa3409e62073cb7eb86934d7d8d5be974}{input\+Value}}
+\item 
+int \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a1438542a238e100599c20eb538aff580}{is\+Connected}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}} holds the information about a controller event. See \mbox{\hyperlink{group___g_controller_codes}{GController\+Codes}} for a list of input\+Code defines.
+
+If the corresponding event is an Input Event input\+Code and input\+Value will contain the input code and value respectively for the detected input. If the corresponding event is an Connection event input\+Code and input\+Value will be 0. is\+Connected will be 0 for false and 1 for true. 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00135}{135}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ad091b5c4b541c35c9cd76bafdf0d453c}\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ad091b5c4b541c35c9cd76bafdf0d453c}} 
+\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}!controllerIndex@{controllerIndex}}
+\index{controllerIndex@{controllerIndex}!GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{controllerIndex}{controllerIndex}}
+{\footnotesize\ttfamily int GW\+::\+INPUT\+::\+GController\+::\+EVENT\+\_\+\+DATA\+::controller\+Index}
+
+The Controller index where the event took place 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00137}{137}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ae77ee7d7f5f9f04126678e24b1f51d85}\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ae77ee7d7f5f9f04126678e24b1f51d85}} 
+\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}!controllerID@{controllerID}}
+\index{controllerID@{controllerID}!GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{controllerID}{controllerID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_g_w_1_1_i_n_p_u_t_a71953016d06d4a92ad420eb5500b328e}{GW\+::\+INPUT\+::\+GController\+Type}} GW\+::\+INPUT\+::\+GController\+::\+EVENT\+\_\+\+DATA\+::controller\+ID}
+
+The Controller ID of the controller that sent the event 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00138}{138}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a758549bcf2127ed2ff45c7c336ee08a4}\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a758549bcf2127ed2ff45c7c336ee08a4}} 
+\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}!inputCode@{inputCode}}
+\index{inputCode@{inputCode}!GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{inputCode}{inputCode}}
+{\footnotesize\ttfamily int GW\+::\+INPUT\+::\+GController\+::\+EVENT\+\_\+\+DATA\+::input\+Code}
+
+The Code repsenting the Detected input 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00139}{139}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_aa3409e62073cb7eb86934d7d8d5be974}\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_aa3409e62073cb7eb86934d7d8d5be974}} 
+\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}!inputValue@{inputValue}}
+\index{inputValue@{inputValue}!GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{inputValue}{inputValue}}
+{\footnotesize\ttfamily float GW\+::\+INPUT\+::\+GController\+::\+EVENT\+\_\+\+DATA\+::input\+Value}
+
+The value of the detected input 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00140}{140}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a1438542a238e100599c20eb538aff580}\label{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a1438542a238e100599c20eb538aff580}} 
+\index{GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!GW::INPUT::GController::EVENT\_DATA@{GW::INPUT::GController::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{isConnected}{isConnected}}
+{\footnotesize\ttfamily int GW\+::\+INPUT\+::\+GController\+::\+EVENT\+\_\+\+DATA\+::is\+Connected}
+
+Value indicating whether the controller is connected 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00141}{141}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+

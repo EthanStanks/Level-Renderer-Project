@@ -1,0 +1,705 @@
+\hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{}\doxysection{GW\+::GRAPHICS\+::GBlitter Class Reference}
+\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+
+
+{\ttfamily \#include $<$GBlitter.\+h$>$}
+
+Inheritance diagram for GW\+::GRAPHICS\+::GBlitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092a}{Draw\+Options}} \{ \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa9284d7d835ee3859a0540359cc259c58}{ROTATE}} = 0x0001
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aab4016f9576301347c5b640bc42bf9634}{MIRROR\+\_\+\+VERTICAL}} = 0x0002
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa34c725f9b2c2822037edfd2cf273596b}{MIRROR\+\_\+\+HORIZONTAL}} = 0x0004
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa0e722ea3f10c2fa8ed6be198303a76f0}{IGNORE\+\_\+\+SOURCE\+\_\+\+COLORS}} = 0x0008
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa40f468b51e8c598c493d8a8a6a807a1e}{USE\+\_\+\+SOURCE\+\_\+\+LAYERS}} = 0x0010
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aac7303c859203adb4b477fd983331b8db}{USE\+\_\+\+SOURCE\+\_\+\+STENCILS}} = 0x0020
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa48c0d89fe5b3b175f6ebf04d0d4cb6b5}{USE\+\_\+\+MASKING}} = 0x0040
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa921759955a115dddd1fdfd55c9a82f8c}{USE\+\_\+\+TRANSFORMATIONS}} = 0x0080
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aaa8afb5f867e51c01b31932a135aea7b4}{USE\+\_\+\+TRANSPARENCY}} = 0x0100
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a1cb143e1e2d8ec89c3115526cb1f5349}{Create}} (unsigned short \+\_\+width, unsigned short \+\_\+height)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24337e98907825931ccfe1c5a9d88114}{Load\+Source}} (const char $\ast$\+\_\+colors\+Filepath, const char $\ast$\+\_\+layers\+Filepath, const char $\ast$\+\_\+stencils\+Filepath, unsigned short \&\+\_\+out\+Index)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04d494b026cfc2f4263ae840c2e09bb3}{Import\+Source}} (const unsigned int $\ast$\+\_\+colors, const unsigned char $\ast$\+\_\+layers, const unsigned char $\ast$\+\_\+stencils, unsigned short \+\_\+width, unsigned short \+\_\+height, unsigned short \+\_\+pixel\+Offset, unsigned short \+\_\+row\+Pixel\+Stride, unsigned short \&\+\_\+out\+Index)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4f72868706cc9cf3b3883529c56203ad}{Import\+Source\+Complex}} (const unsigned int $\ast$\+\_\+colors, unsigned short \+\_\+color\+Byte\+Stride, unsigned short \+\_\+color\+Row\+Byte\+Stride, const unsigned char $\ast$\+\_\+layers, unsigned short \+\_\+layer\+Byte\+Stride, unsigned short \+\_\+layer\+Row\+Byte\+Stride, const unsigned char $\ast$\+\_\+stencils, unsigned short \+\_\+stencil\+Byte\+Stride, unsigned short \+\_\+stencil\+Row\+Byte\+Stride, unsigned short \+\_\+width, unsigned short \+\_\+height, unsigned short \&\+\_\+out\+Index)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a80ba06c804ebb8b2dfd101ddd95b986d}{Define\+Tiles}} (const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}} $\ast$\+\_\+tile\+Definitions, const unsigned int \+\_\+num\+Tiles, unsigned int $\ast$\+\_\+out\+Indices)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a6bf81c5a60a53dc8586b69b95e42ede3}{Set\+Tile\+Mask\+Values}} (unsigned int $\ast$\+\_\+tile\+Indices, unsigned int \+\_\+num\+Tiles, unsigned int \+\_\+mask\+Color, unsigned char \+\_\+mask\+Layer, unsigned char \+\_\+mask\+Stencil)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a2edde7a7de2ffbc9f0508cef0ce390eb}{Discard\+Sources}} (unsigned short $\ast$\+\_\+source\+Indices, unsigned short \+\_\+num\+Sources)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04c40953afc0cd44455333155f523598}{Discard\+Tiles}} (unsigned int $\ast$\+\_\+tile\+Indices, unsigned int \+\_\+num\+Tiles)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a73b05eb2f5a9735d32a55256a920bac6}{Clear}} (unsigned int \+\_\+color, unsigned char \+\_\+layer, unsigned char \+\_\+stencil)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a498cef84a73e8e6955dc9ff9032fe57c}{Clear\+Color}} (unsigned int \+\_\+color)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4e887ccffbb380c3610628cee63243a6}{Clear\+Layer}} (unsigned char \+\_\+layer)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24f54a4691690650f23fd8b12416f731}{Clear\+Stencil}} (unsigned char \+\_\+stencil)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_ae7cc3b9c51d1cb2d4bf75299714aee3b}{Draw\+Deferred}} (const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} $\ast$\+\_\+draw\+Instructions, const unsigned short \+\_\+num\+Draws)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a92fe461e36ff537f4f950f6c893cae62}{Draw\+Immediate}} (const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} $\ast$\+\_\+draw\+Instructions, const unsigned short \+\_\+num\+Draws)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aa42643bbe07189c33ae45f8d57588f49}{Flush}} ()=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}{Export\+Result}} (bool \+\_\+flush, unsigned short \+\_\+width, unsigned short \+\_\+height, unsigned short \+\_\+pixel\+Offset, unsigned short \+\_\+row\+Pixel\+Stride, unsigned int $\ast$\+\_\+out\+Colors, unsigned char $\ast$\+\_\+out\+Layers, unsigned char $\ast$\+\_\+out\+Stencils)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}{Export\+Result\+Complex}} (bool \+\_\+flush, unsigned short \+\_\+color\+Byte\+Stride, unsigned short \+\_\+color\+Row\+Byte\+Stride, unsigned short \+\_\+layer\+Byte\+Stride, unsigned short \+\_\+layer\+Row\+Byte\+Stride, unsigned short \+\_\+stencil\+Byte\+Stride, unsigned short \+\_\+stencil\+Row\+Byte\+Stride, unsigned short \+\_\+width, unsigned short \+\_\+height, unsigned int $\ast$\+\_\+out\+Colors, unsigned char $\ast$\+\_\+out\+Layers, unsigned char $\ast$\+\_\+out\+Stencils)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a81bd45a4c23658d01fe3d05d5ea88c40}{GBlitter\+Default\+Tile\+Definition}}
+\item 
+const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a545e1d5c6732d90432c352fa276ca8a5}{GBlitter\+Default\+Draw\+Instruction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00137}{137}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092a}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092a}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DrawOptions@{DrawOptions}}
+\index{DrawOptions@{DrawOptions}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DrawOptions}{DrawOptions}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092a}{GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Options}}}
+
+Tile drawing options supported by \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}}. Bitflags indicating which transformations should be applied to a tile during drawing. Notes\+: Eight basic orientations are available using combinations of the ROTATE, MIRROR\+\_\+\+VERTICAL, and MIRROR\+\_\+\+HORIZONTAL flags (all rotation angles are clockwise; \char`\"{}inverse\char`\"{} indicates mirroring about the tile\textquotesingle{}s local y axis)\+: 0$\ast$ = 0 0$\ast$ inverse = MIRROR\+\_\+\+HORIZONTAL 90$\ast$ = ROTATE 90$\ast$ inverse = ROTATE $\vert$ MIRROR\+\_\+\+VERTICAL 180$\ast$ = MIRROR\+\_\+\+VERTICAL $\vert$ MIRROR\+\_\+\+HORIZONTAL 180$\ast$ inverse = MIRROR\+\_\+\+VERTICAL 270$\ast$ = ROTATE $\vert$ MIRROR\+\_\+\+VERTICAL $\vert$ MIRROR\+\_\+\+HORIZONTAL 270$\ast$ inverse = ROTATE $\vert$ MIRROR\+\_\+\+HORIZONTAL \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROTATE@{ROTATE}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ROTATE@{ROTATE}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa9284d7d835ee3859a0540359cc259c58}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa9284d7d835ee3859a0540359cc259c58}} 
+ROTATE&Indicates that a tile should be rotated 90 degrees clockwise. (Only used by non-\/transformed instructions.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIRROR\_VERTICAL@{MIRROR\_VERTICAL}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!MIRROR\_VERTICAL@{MIRROR\_VERTICAL}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aab4016f9576301347c5b640bc42bf9634}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aab4016f9576301347c5b640bc42bf9634}} 
+MIRROR\+\_\+\+VERTICAL&Indicates that a tile should be flipped in the y axis. (Only used by non-\/transformed instructions.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIRROR\_HORIZONTAL@{MIRROR\_HORIZONTAL}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!MIRROR\_HORIZONTAL@{MIRROR\_HORIZONTAL}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa34c725f9b2c2822037edfd2cf273596b}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa34c725f9b2c2822037edfd2cf273596b}} 
+MIRROR\+\_\+\+HORIZONTAL&Indicates that a tile should be flipped in the x axis. (Only used by non-\/transformed instructions.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IGNORE\_SOURCE\_COLORS@{IGNORE\_SOURCE\_COLORS}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!IGNORE\_SOURCE\_COLORS@{IGNORE\_SOURCE\_COLORS}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa0e722ea3f10c2fa8ed6be198303a76f0}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa0e722ea3f10c2fa8ed6be198303a76f0}} 
+IGNORE\+\_\+\+SOURCE\+\_\+\+COLORS&Indicates that per-\/pixel color values from source should NOT be used. (I.\+E., only layer and/or stencil data from tile should be drawn to the canvas.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_SOURCE\_LAYERS@{USE\_SOURCE\_LAYERS}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!USE\_SOURCE\_LAYERS@{USE\_SOURCE\_LAYERS}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa40f468b51e8c598c493d8a8a6a807a1e}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa40f468b51e8c598c493d8a8a6a807a1e}} 
+USE\+\_\+\+SOURCE\+\_\+\+LAYERS&Indicates that per-\/pixel layer values from source should be used. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_SOURCE\_STENCILS@{USE\_SOURCE\_STENCILS}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!USE\_SOURCE\_STENCILS@{USE\_SOURCE\_STENCILS}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aac7303c859203adb4b477fd983331b8db}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aac7303c859203adb4b477fd983331b8db}} 
+USE\+\_\+\+SOURCE\+\_\+\+STENCILS&Indicates that per-\/pixel stencil values from source should be used. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_MASKING@{USE\_MASKING}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!USE\_MASKING@{USE\_MASKING}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa48c0d89fe5b3b175f6ebf04d0d4cb6b5}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa48c0d89fe5b3b175f6ebf04d0d4cb6b5}} 
+USE\+\_\+\+MASKING&Indicates that key-\/value bitmasking should be applied to a tile. Affects color, layer, and stencil data. (Opaque/transparent. Slightly less efficient than no transparency.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_TRANSFORMATIONS@{USE\_TRANSFORMATIONS}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!USE\_TRANSFORMATIONS@{USE\_TRANSFORMATIONS}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa921759955a115dddd1fdfd55c9a82f8c}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aa921759955a115dddd1fdfd55c9a82f8c}} 
+USE\+\_\+\+TRANSFORMATIONS&Indicates that the transformation matrix and pivot should be applied to a tile. Note\+: Transformations use screen axes (I.\+E., -\/y is up, +y is down), NOT mathematical axes (ie, -\/y is down, +y is up). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_TRANSPARENCY@{USE\_TRANSPARENCY}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!USE\_TRANSPARENCY@{USE\_TRANSPARENCY}}}\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aaa8afb5f867e51c01b31932a135aea7b4}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aee7a22bad28e30f1d75c2d6752d3092aaa8afb5f867e51c01b31932a135aea7b4}} 
+USE\+\_\+\+TRANSPARENCY&Indicates that alpha-\/channel color blending should be applied to a tile. Affects color data. (Semi-\/transparency. Significantly less efficient than no transparency or bitmasking. Overuse will reduce performance.) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00177}{177}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a1cb143e1e2d8ec89c3115526cb1f5349}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a1cb143e1e2d8ec89c3115526cb1f5349}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!Create@{Create}}
+\index{Create@{Create}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Create (\begin{DoxyParamCaption}\item[{unsigned short}]{\+\_\+width,  }\item[{unsigned short}]{\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Allocates and initializes a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}}. 
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}} proxy which enables you to draw tiles of pixel data to an offscreen canvas.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & The width of the blitter\textquotesingle{}s canvas, in pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & The height of the blitter\textquotesingle{}s canvas, in pixels.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Width and/or height was zero. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}} created successfully. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24337e98907825931ccfe1c5a9d88114}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24337e98907825931ccfe1c5a9d88114}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!LoadSource@{LoadSource}}
+\index{LoadSource@{LoadSource}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{LoadSource()}{LoadSource()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Load\+Source (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+colors\+Filepath,  }\item[{const char $\ast$}]{\+\_\+layers\+Filepath,  }\item[{const char $\ast$}]{\+\_\+stencils\+Filepath,  }\item[{unsigned short \&}]{\+\_\+out\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Loads and stores a read-\/only raster source to define tiles from. 
+
+Use this function to load source data from files directly. All types of data are optional, but at least one must be used for a source to be valid. All images used must have the same dimensions. Greyscale (especially with no alpha channel) is recommended for layer/stencil data since the filesize will be significantly smaller. If a file does not contain an alpha channel, the alpha values will be set to maximum. Supported file types\+: TGA (Targa) Supported color formats\+:
+\begin{DoxyItemize}
+\item 8 bits-\/per-\/pixel greyscale (Luminance) \mbox{[}TGA documentation refers to this as black-\/and-\/white\mbox{]}
+\item 16 bits-\/per-\/pixel greyscale with transparency (Alpha-\/\+Luminance) \mbox{[}TGA documentation refers to this as black-\/and-\/white\mbox{]}
+\item 24 bits-\/per-\/pixel RGB color (Red-\/\+Green-\/\+Blue) \mbox{[}TGA documentation refers to this as true-\/color\mbox{]}
+\item 32 bits-\/per-\/pixel RGB color with transparency (Alpha-\/\+Red-\/\+Green-\/\+Blue) \mbox{[}TGA documentation refers to this as true-\/color\mbox{]}
+\item 8 bits-\/per-\/pixel indexed color (Look-\/\+Up Table) \mbox{[}TGA documentation refers to this as color-\/mapped\mbox{]} -- Only 24-\/bit palette entries and 8-\/bit palette indices are supported. -- Be sure all colors in the palette are opaque, otherwise the palette will be read incorrectly. Maximum dimensions supported\+: 65,535 x 65,535 (TGA files do not support anything larger than this, so attempting to export a TGA larger than this will corrupt the data. The library is not able to detect if this has happened except at exact multiples of 65,536 in either dimension.) Maximum sources supported\+: 65,535
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+colors\+Filepath} & (OPTIONAL) Path to the file to load color values from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layers\+Filepath} & (OPTIONAL) Path to the file to load layer values from. Only the red channel will be used if file is in a color format. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencils\+Filepath} & (OPTIONAL) Path to the file to load stencil values from. Only the red channel will be used if file is in a color format. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Index} & Index of the stored source.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & All filepaths were nullptr, one or more filepaths do not contain a file extension, or two or more images\textquotesingle{} dimensions did not match. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & GFile proxy could not be created to read files or image data could not be read from a file. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617acd54d99c8efb3c2db794197045f5b83c}{GReturn\+::\+FILE\+\_\+\+NOT\+\_\+\+FOUND}}} & One or more filepaths do not point to a valid file. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617aad7e3cfdd56d166a8b33ddc7563b61aa}{GReturn\+::\+FORMAT\+\_\+\+UNSUPPORTED}}} & One or more filepaths contains an extension that is not supported. (See supported file types above.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ab2a458b4cd30043189c97da3172fbc53}{GReturn\+::\+FEATURE\+\_\+\+UNSUPPORTED}}} & One or more files has image format features that are not supported. (Make sure file settings are correct when exporting; See supported file types above.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a92c30de24509d2778c9515bab375d253}{GReturn\+::\+IGNORED}}} & Maximum number of sources would be exceeded. (Consider combining sources together. If you need more than the maximum, you need to optimize.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Source was loaded and stored. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04d494b026cfc2f4263ae840c2e09bb3}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04d494b026cfc2f4263ae840c2e09bb3}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ImportSource@{ImportSource}}
+\index{ImportSource@{ImportSource}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ImportSource()}{ImportSource()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Import\+Source (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$}]{\+\_\+colors,  }\item[{const unsigned char $\ast$}]{\+\_\+layers,  }\item[{const unsigned char $\ast$}]{\+\_\+stencils,  }\item[{unsigned short}]{\+\_\+width,  }\item[{unsigned short}]{\+\_\+height,  }\item[{unsigned short}]{\+\_\+pixel\+Offset,  }\item[{unsigned short}]{\+\_\+row\+Pixel\+Stride,  }\item[{unsigned short \&}]{\+\_\+out\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copies and stores a raster source to define tiles from. 
+
+Use this function to import source data generated at runtime or loaded manually. All types of data are optional, but at least one must be used for a source to be valid. If multiple data arrays are passed, all of them must have the same offset and stride. If you need more flexibility, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4f72868706cc9cf3b3883529c56203ad}{Import\+Source\+Complex}}. Maximum dimensions supported\+: 65,535 x 65,535 Maximum sources supported\+: 65,535 Colors are in ARGB format, with 8 bits per pixel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+colors} & (OPTIONAL) Array of color data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layers} & (OPTIONAL) Array of layer data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil} & (OPTIONAL) Array of stencil data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & Width of source, in pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & Height of source, in pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+pixel\+Offset} & Number of pixels to ignore at the start of the array(s). \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+row\+Pixel\+Stride} & Distance between rows, in pixels. (May be greater than width due to padding; Pass 0 to use width as stride.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Index} & Index of the stored source.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & All input arrays were nullptr, width and/or height was zero, or nonzero stride less than width was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a92c30de24509d2778c9515bab375d253}{GReturn\+::\+IGNORED}}} & Maximum number of sources would be exceeded. (Consider combining sources together. If you need more than the maximum, you need to optimize.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Source data was imported and stored. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4f72868706cc9cf3b3883529c56203ad}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4f72868706cc9cf3b3883529c56203ad}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ImportSourceComplex@{ImportSourceComplex}}
+\index{ImportSourceComplex@{ImportSourceComplex}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ImportSourceComplex()}{ImportSourceComplex()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Import\+Source\+Complex (\begin{DoxyParamCaption}\item[{const unsigned int $\ast$}]{\+\_\+colors,  }\item[{unsigned short}]{\+\_\+color\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+color\+Row\+Byte\+Stride,  }\item[{const unsigned char $\ast$}]{\+\_\+layers,  }\item[{unsigned short}]{\+\_\+layer\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+layer\+Row\+Byte\+Stride,  }\item[{const unsigned char $\ast$}]{\+\_\+stencils,  }\item[{unsigned short}]{\+\_\+stencil\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+stencil\+Row\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+width,  }\item[{unsigned short}]{\+\_\+height,  }\item[{unsigned short \&}]{\+\_\+out\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copies and stores a raster source to define tiles from. 
+
+Use this function to import data generated at runtime or loaded manually. All types of data are optional, but at least one must be used for a source to be valid. If you do not need the flexibility of this function or you do not know how to use it, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04d494b026cfc2f4263ae840c2e09bb3}{Import\+Source}}. Maximum dimensions supported\+: 65,535 x 65,535 Maximum sources supported\+: 65,535 Colors are in ARGB format, with 8 bits per pixel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+colors} & (OPTIONAL) Array of color data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+color\+Byte\+Stride} & (OPTIONAL) Distance between color values, in bytes. (Pass 0 if colors are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+color\+Row\+Byte\+Stride} & (OPTIONAL) Distance between rows of color data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+color\+Byte\+Stride if used. (Pass 0 if colors are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layers} & (OPTIONAL) Array of layer data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer\+Byte\+Stride} & (OPTIONAL) Distance between layer values, in bytes. (Pass 0 if layers are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer\+Row\+Byte\+Stride} & (OPTIONAL) Distance between rows of layer data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+layer\+Byte\+Stride if used. (Pass 0 if layers are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencils} & (OPTIONAL) Array of stencil data to import from. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil\+Byte\+Stride} & (OPTIONAL) Distance between stencil values, in bytes. (Pass 0 if stencils are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil\+Row\+Byte\+Stride} & (OPTIONAL) Distance between rows of stencil data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+stencil\+Byte\+Stride if used. (Pass 0 if stencils are not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & Width of source, in pixels. Any input arrays must be at least this wide. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & Height of source, in pixels. Any input arrays must be at least this tall. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Index} & Index of the stored source.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & All input arrays were nullptr, width and/or height was zero, a used stride value was zero, or a used item stride value greater than the corresponding row stride value was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a92c30de24509d2778c9515bab375d253}{GReturn\+::\+IGNORED}}} & Maximum number of sources would be exceeded. (Consider combining sources together. If you need more than the maximum, you need to optimize.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Source data was imported and stored. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a80ba06c804ebb8b2dfd101ddd95b986d}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a80ba06c804ebb8b2dfd101ddd95b986d}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DefineTiles@{DefineTiles}}
+\index{DefineTiles@{DefineTiles}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DefineTiles()}{DefineTiles()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Define\+Tiles (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}} $\ast$}]{\+\_\+tile\+Definitions,  }\item[{const unsigned int}]{\+\_\+num\+Tiles,  }\item[{unsigned int $\ast$}]{\+\_\+out\+Indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stores tile definitions and returns indices for drawing. 
+
+Maximum tiles supported\+: 4,294,967,295
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+tile\+Definitions} & Array of tile definitions. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Tiles} & Number of definitions in the array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Indices} & List of tile indices to use for drawing. (Create this yourself and pass it to the function.)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+tile\+Definitions was nullptr, \+\_\+out\+Indices was nullptr, \+\_\+num\+Tiles was zero, or an invalid definition was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a92c30de24509d2778c9515bab375d253}{GReturn\+::\+IGNORED}}} & Maximum number of tiles would be exceeded. (Check your code for runaway loops generating tiles. No project should EVER need even REMOTELY close to the maximum number.) \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Tiles were defined successfully. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a6bf81c5a60a53dc8586b69b95e42ede3}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a6bf81c5a60a53dc8586b69b95e42ede3}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!SetTileMaskValues@{SetTileMaskValues}}
+\index{SetTileMaskValues@{SetTileMaskValues}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{SetTileMaskValues()}{SetTileMaskValues()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Set\+Tile\+Mask\+Values (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{\+\_\+tile\+Indices,  }\item[{unsigned int}]{\+\_\+num\+Tiles,  }\item[{unsigned int}]{\+\_\+mask\+Color,  }\item[{unsigned char}]{\+\_\+mask\+Layer,  }\item[{unsigned char}]{\+\_\+mask\+Stencil }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the mask color, layer, and stencil values for all tiles specified. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+tile\+Indices} & Array of indices indicating which tiles to set values for. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Tiles} & Number of indices in the array. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+mask\+Color} & Color value to store as all tiles\textquotesingle{} color mask value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+mask\+Layer} & Layer value to store as all tiles\textquotesingle{} layer mask value. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+mask\+Stencil} & Stencil value to store as all tiles\textquotesingle{} stencil mask value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+tile\+Indices was nullptr, \+\_\+tile\+Indices contains invalid indices, \+\_\+num\+Tiles was zero, or \+\_\+num\+Tiles was greater than the number of tiles in memory. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Mask values were set for all tiles specified. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a2edde7a7de2ffbc9f0508cef0ce390eb}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a2edde7a7de2ffbc9f0508cef0ce390eb}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DiscardSources@{DiscardSources}}
+\index{DiscardSources@{DiscardSources}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DiscardSources()}{DiscardSources()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Discard\+Sources (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{\+\_\+source\+Indices,  }\item[{unsigned short}]{\+\_\+num\+Sources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Unloads sources from memory and removes them from the source list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+source\+Indices} & Array of indices indicating which sources to discard. \\
+\hline
+ & {\em \mbox{[}in\mbox{[}} & \+\_\+num\+Sources Number of indices in the array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+source\+Indices was nullptr, \+\_\+source\+Indices contains invalid indices, \+\_\+num\+Sources was zero, or \+\_\+num\+Sources was greater than the number of sources in memory. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Sources were unloaded and source indices no longer refer to valid sources. (Be sure to also discard any tiles that were defined in discarded sources.) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04c40953afc0cd44455333155f523598}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a04c40953afc0cd44455333155f523598}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DiscardTiles@{DiscardTiles}}
+\index{DiscardTiles@{DiscardTiles}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DiscardTiles()}{DiscardTiles()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Discard\+Tiles (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{\+\_\+tile\+Indices,  }\item[{unsigned int}]{\+\_\+num\+Tiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Unloads tiles from memory and removes them from the tile list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+tile\+Indices} & Array of indices indicating which tiles to discard. \\
+\hline
+ & {\em \mbox{[}in\mbox{[}} & \+\_\+num\+Tiles Number of indices in the array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+tile\+Indices was nullptr, \+\_\+tile\+Indices contains invalid indices, \+\_\+num\+Tiles was zero, or \+\_\+num\+Tiles was greater than the number of tiles in memory. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Tiles were unloaded and tile indices no longer refer to valid tiles. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a73b05eb2f5a9735d32a55256a920bac6}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a73b05eb2f5a9735d32a55256a920bac6}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!Clear@{Clear}}
+\index{Clear@{Clear}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+color,  }\item[{unsigned char}]{\+\_\+layer,  }\item[{unsigned char}]{\+\_\+stencil }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clears the blitter\textquotesingle{}s canvas to a color, layer, and stencil value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+color} & The color value to clear to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer} & The layer value to clear to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil} & The stencil value to clear to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Blitter\textquotesingle{}s canvas was cleared. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a498cef84a73e8e6955dc9ff9032fe57c}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a498cef84a73e8e6955dc9ff9032fe57c}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ClearColor@{ClearColor}}
+\index{ClearColor@{ClearColor}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ClearColor()}{ClearColor()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Clear\+Color (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clears the blitter\textquotesingle{}s canvas to a color value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+color} & The color value to clear to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Blitter\textquotesingle{}s canvas was cleared. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4e887ccffbb380c3610628cee63243a6}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a4e887ccffbb380c3610628cee63243a6}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ClearLayer@{ClearLayer}}
+\index{ClearLayer@{ClearLayer}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ClearLayer()}{ClearLayer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Clear\+Layer (\begin{DoxyParamCaption}\item[{unsigned char}]{\+\_\+layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clears the blitter\textquotesingle{}s canvas to a layer value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+layer} & The layer value to clear to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Blitter\textquotesingle{}s canvas was cleared. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24f54a4691690650f23fd8b12416f731}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a24f54a4691690650f23fd8b12416f731}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ClearStencil@{ClearStencil}}
+\index{ClearStencil@{ClearStencil}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ClearStencil()}{ClearStencil()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Clear\+Stencil (\begin{DoxyParamCaption}\item[{unsigned char}]{\+\_\+stencil }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clears the blitter\textquotesingle{}s canvas to a stencil value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil} & The stencil value to clear to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Blitter\textquotesingle{}s canvas was cleared. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_ae7cc3b9c51d1cb2d4bf75299714aee3b}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_ae7cc3b9c51d1cb2d4bf75299714aee3b}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DrawDeferred@{DrawDeferred}}
+\index{DrawDeferred@{DrawDeferred}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DrawDeferred()}{DrawDeferred()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Deferred (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} $\ast$}]{\+\_\+draw\+Instructions,  }\item[{const unsigned short}]{\+\_\+num\+Draws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Takes a list of draw instructions and stores them for later drawing to the canvas. 
+
+Call \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aa42643bbe07189c33ae45f8d57588f49}{Flush}} or pass true for \+\_\+flush in \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}{Export\+Result}} or \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}{Export\+Result\+Complex}} to draw all deferred instructions to the canvas. If too many deferred instructions are in the blitter, portions of the canvas may run out of room and any additional instructions to those portions will be discarded. Under normal usage, this will not be an issue. If it does happen, flush instructions to the result more often or use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a92fe461e36ff537f4f950f6c893cae62}{Draw\+Immediate}} instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+draw\+Instructions} & Array of draw instructions. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Instructions} & Number of instructions in the array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Number of instructions was zero or an invalid instruction was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Instructions were stored for later drawing. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a92fe461e36ff537f4f950f6c893cae62}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a92fe461e36ff537f4f950f6c893cae62}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!DrawImmediate@{DrawImmediate}}
+\index{DrawImmediate@{DrawImmediate}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{DrawImmediate()}{DrawImmediate()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Draw\+Immediate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} $\ast$}]{\+\_\+draw\+Instructions,  }\item[{const unsigned short}]{\+\_\+num\+Draws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Takes a list of draw instructions and draws them to the canvas immediately. 
+
+Any unflushed instructions queued with Draw\+Deferred will be discarded. Unlike \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_ae7cc3b9c51d1cb2d4bf75299714aee3b}{Draw\+Deferred}}, if enough instructions are passed to fill portions of the canvas, they will be sorted and drawn in batches to ensure that they are all drawn and the result is correct. The number of instructions that need to be passed for this to be necessary is very high, and this function does not allow instructions to be stored for later drawing. This function is also more expensive, and will run slightly slower because of it. If you are not passing enough instructions to cause visual artifacts or you need the flexibility to queue instructions multiple times before flushing, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_ae7cc3b9c51d1cb2d4bf75299714aee3b}{Draw\+Deferred}} instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+draw\+Instructions} & Array of draw instructions. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+num\+Instructions} & Number of instructions in the array.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Number of instructions was zero or an invalid instruction was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Instructions were drawn to the canvas. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aa42643bbe07189c33ae45f8d57588f49}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_aa42643bbe07189c33ae45f8d57588f49}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!Flush@{Flush}}
+\index{Flush@{Flush}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{Flush()}{Flush()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Flushes any outstanding draw instructions to the result immediately. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & No draw instructions were outstanding. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Outstanding draw instructions were flushed to the result. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ExportResult@{ExportResult}}
+\index{ExportResult@{ExportResult}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ExportResult()}{ExportResult()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Export\+Result (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+flush,  }\item[{unsigned short}]{\+\_\+width,  }\item[{unsigned short}]{\+\_\+height,  }\item[{unsigned short}]{\+\_\+pixel\+Offset,  }\item[{unsigned short}]{\+\_\+row\+Pixel\+Stride,  }\item[{unsigned int $\ast$}]{\+\_\+out\+Colors,  }\item[{unsigned char $\ast$}]{\+\_\+out\+Layers,  }\item[{unsigned char $\ast$}]{\+\_\+out\+Stencils }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copies the rendered result to output buffer(s). 
+
+All output buffers are optional, but at least one must be provided for the function to succeed. The Complex variant runs slower than this one, so if performance is more important than flexibility, use this function instead of \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}{Export\+Result\+Complex}}. If multiple output buffers are passed, all of them must have the same offset and stride. If you need more flexibility, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}{Export\+Result\+Complex}}. Output buffers do NOT have to be the same size as the blitter\textquotesingle{}s canvas. The result will fill whatever space is available and leave any excess untouched. However, all arrays provided must have room for at least \+\_\+height rows of \+\_\+width items. Note that this means that even if an array has more room than this, these dimensions are the maximum that will be copied by this function. Therefore, if you need different amounts of different types of data, call this function multiple times with different output buffers and dimensions.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+flush} & Whether any outstanding draw instructions should be flushed to the result before it is exported. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & The width of the output buffer(s), in pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & The height of the output buffer(s), in pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+pixel\+Offset} & The number of pixels to ignore at the start of the buffer(s). \\
+\hline
+ & {\em \mbox{[}in\mbox{[}} & \+\_\+row\+Pixel\+Stride The distance between rows, in pixels. (May be greater than width due to padding; Pass 0 to use width as stride.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Colors} & (OPTIONAL) Array of color data to export into. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Layers} & (OPTIONAL) Array of layer data to export into. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Stencils} & (OPTIONAL) Array of stencil data to export into. (Pass nullptr if not needed.)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & All output buffers were nullptr, width and/or height was zero, or nonzero stride less than width was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Result data was copied into the output buffer(s). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a8aeca0e92ab752c4d139879a498569a6}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!ExportResultComplex@{ExportResultComplex}}
+\index{ExportResultComplex@{ExportResultComplex}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{ExportResultComplex()}{ExportResultComplex()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+Export\+Result\+Complex (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+flush,  }\item[{unsigned short}]{\+\_\+color\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+color\+Row\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+layer\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+layer\+Row\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+stencil\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+stencil\+Row\+Byte\+Stride,  }\item[{unsigned short}]{\+\_\+width,  }\item[{unsigned short}]{\+\_\+height,  }\item[{unsigned int $\ast$}]{\+\_\+out\+Colors,  }\item[{unsigned char $\ast$}]{\+\_\+out\+Layers,  }\item[{unsigned char $\ast$}]{\+\_\+out\+Stencils }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Copies the rendered result to output buffer(s). 
+
+All output buffers are optional, but at least one must be provided for the function to succeed. If you do not need the flexibility of this function or you do not know how to use it, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}{Export\+Result}}. The standard variant runs faster than this one, so if performance is more important than flexibility, use \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_af67954afd9b4bf951773f44dbce22f33}{Export\+Result}} instead of this function. Output buffers do NOT have to be the same size as the blitter\textquotesingle{}s canvas. The result will fill whatever space is available and leave any excess untouched. However, all arrays provided must have room for at least \+\_\+height rows of \+\_\+width items. Note that this means that even if an array has more room than this, these dimensions are the maximum that will be copied by this function. Therefore, if you need different amounts of different types of data, call this function multiple times with different output buffers and dimensions.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+flush} & Whether any outstanding draw instructions should be flushed to the result before it is exported. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+color\+Byte\+Stride} & Distance between color values, in bytes. (Pass 0 if color buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+color\+Row\+Byte\+Stride} & Distance between rows of color data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+color\+Byte\+Stride if used. (Pass 0 if color buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer\+Byte\+Stride} & Distance between layer values, in bytes. (Pass 0 if layer buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+layer\+Row\+Byte\+Stride} & Distance between rows of layer data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+layer\+Byte\+Stride if used. (Pass 0 if layer buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil\+Byte\+Stride} & Distance between stencil values, in bytes. (Pass 0 if stencil buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+stencil\+Row\+Byte\+Stride} & Distance between rows of stencil data, in bytes. Must be \texorpdfstring{$>$}{>}= \+\_\+width $\ast$ \+\_\+stencil\+Byte\+Stride if used. (Pass 0 if stencil buffer is not used.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+width} & Width of output buffer(s), in pixels. All output arrays must be at least this wide. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+height} & Height of output buffer(s), in pixels. All output arrays must be at least this tall. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Colors} & (OPTIONAL) Array of color data to export into. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Layers} & (OPTIONAL) Array of layer data to export into. (Pass nullptr if not needed.) \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Stencils} & (OPTIONAL) Array of stencil data to export into. (Pass nullptr if not needed.)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & All output arrays were nullptr, width and/or height was zero, a used stride value was zero, or a used item stride value greater than the corresponding row stride value was passed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Result data was copied into the output buffer(s). \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a81bd45a4c23658d01fe3d05d5ea88c40}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a81bd45a4c23658d01fe3d05d5ea88c40}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!GBlitterDefaultTileDefinition@{GBlitterDefaultTileDefinition}}
+\index{GBlitterDefaultTileDefinition@{GBlitterDefaultTileDefinition}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{GBlitterDefaultTileDefinition}{GBlitterDefaultTileDefinition}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+GBlitter\+Default\+Tile\+Definition}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                0xFFFF,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0x00000000,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0}
+\DoxyCodeLine{            \}}
+
+\end{DoxyCode}
+Default uninitialized \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_tile_definition}{Tile\+Definition}} values. Can be used to \char`\"{}zero out\char`\"{} a tile before setting the relevant values. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00204}{204}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a545e1d5c6732d90432c352fa276ca8a5}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_a545e1d5c6732d90432c352fa276ca8a5}} 
+\index{GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}!GBlitterDefaultDrawInstruction@{GBlitterDefaultDrawInstruction}}
+\index{GBlitterDefaultDrawInstruction@{GBlitterDefaultDrawInstruction}!GW::GRAPHICS::GBlitter@{GW::GRAPHICS::GBlitter}}
+\doxysubsubsection{\texorpdfstring{GBlitterDefaultDrawInstruction}{GBlitterDefaultDrawInstruction}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} GW\+::\+GRAPHICS\+::\+GBlitter\+::\+GBlitter\+Default\+Draw\+Instruction}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                0xFFFFFFFF,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                0,}
+\DoxyCodeLine{                \{ 0, 0, 0 \},}
+\DoxyCodeLine{                \{ \{ 1, 0 \}, \{ 0, 1 \} \},}
+\DoxyCodeLine{                \{ 0, 0 \}}
+\DoxyCodeLine{            \}}
+
+\end{DoxyCode}
+Default uninitialized \mbox{\hyperlink{struct_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter_1_1_draw_instruction}{Draw\+Instruction}} values. Can be used to \char`\"{}zero out\char`\"{} a draw instruction before setting the relevant values. 
+
+Definition at line \mbox{\hyperlink{_g_blitter_8h_source_l00230}{230}} of file \mbox{\hyperlink{_g_blitter_8h_source}{GBlitter.\+h}}.
+

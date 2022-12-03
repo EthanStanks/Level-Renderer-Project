@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\FSLogo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\VShader3D.hlsl" />
+    <None Include="F:\School\Dev4\Project Repo\Level-Renderer-Project\Code\PShader3D.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{AA6C99A7-8D5F-3125-A258-6F576B81D3C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C1FAA0D4-A59A-37DE-81D2-354BE94A8E46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

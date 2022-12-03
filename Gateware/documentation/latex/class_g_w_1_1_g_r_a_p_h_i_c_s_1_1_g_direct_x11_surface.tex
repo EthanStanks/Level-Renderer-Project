@@ -1,0 +1,215 @@
+\hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{}\doxysection{GW\+::GRAPHICS\+::GDirect\+X11\+Surface Class Reference}
+\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+
+
+{\ttfamily \#include $<$GDirect\+X11\+Surface.\+h$>$}
+
+Inheritance diagram for GW\+::GRAPHICS\+::GDirect\+X11\+Surface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.464052cm]{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aded5f8e915037bce6f4870a5a209cd7b}{Create}} (\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}} \+\_\+gwindow, unsigned long long \+\_\+init\+Mask)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a294423c31c0ffc067f39239d4c8b46d5}{Get\+Aspect\+Ratio}} (float \&\+\_\+out\+Ratio) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aec7542d00d9510db20feb82c9293bebe}{Get\+Device}} (void $\ast$$\ast$\+\_\+out\+Device) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab6ae71ec552de5dfb0cb1a4e7c34868d}{Get\+Immediate\+Context}} (void $\ast$$\ast$\+\_\+out\+Context) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a0c2f7246bda43cef26c77d8f1ebb16e0}{Get\+Swapchain}} (void $\ast$$\ast$\+\_\+out\+Swapchain) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a07f69ef55a07c678c47a108dd19300c4}{Get\+Render\+Target\+View}} (void $\ast$$\ast$\+\_\+out\+Render\+Target) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab88fd9fa0ddeabe3032c8ac893223c50}{Get\+Depth\+Stencil\+View}} (void $\ast$$\ast$\+\_\+out\+Depth\+Stencil\+View) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_direct_x11_surface_8h_source_l00043}{43}} of file \mbox{\hyperlink{_g_direct_x11_surface_8h_source}{GDirect\+X11\+Surface.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aded5f8e915037bce6f4870a5a209cd7b}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aded5f8e915037bce6f4870a5a209cd7b}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!Create@{Create}}
+\index{Create@{Create}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}}}]{\+\_\+gwindow,  }\item[{unsigned long long}]{\+\_\+init\+Mask }\end{DoxyParamCaption})}
+
+
+
+Creates and outputs a new \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}} object. 
+
+Initializes a handle to a \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}} object with an existing GWindow. The created \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}} object will have its reference count initialized to one and register as a listener to the provided GWindow object.
+
+This function accepts a bit mask that can hold supported \textquotesingle{}GGraphics\+Init\+Options\textquotesingle{}, which will be taken into account when creating the context. To ignore this mask, simply pass in 0 when calling this function and the context will be created with default settings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+gwindow} & A pointer to an existing GWindow object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+init\+Mask} & The bit mask that can hold special initialization options.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+gwindow is invalid. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}} object was not created. \+\_\+out\+Surface will be null. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}} object was successfully created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a294423c31c0ffc067f39239d4c8b46d5}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a294423c31c0ffc067f39239d4c8b46d5}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{float \&}]{\+\_\+out\+Ratio }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the aspect ratio for the current window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Ratio} & Will contain the calculated aspect ratio.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No active GWindow exists to calculate an aspect ratio from. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The current aspect ratio was calculated and returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aec7542d00d9510db20feb82c9293bebe}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_aec7542d00d9510db20feb82c9293bebe}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetDevice@{GetDevice}}
+\index{GetDevice@{GetDevice}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetDevice()}{GetDevice()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Device (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Device }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current ID3\+D11\+Device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Device} & Will contain the address of the device.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No device exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Direct\+X11 device exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab6ae71ec552de5dfb0cb1a4e7c34868d}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab6ae71ec552de5dfb0cb1a4e7c34868d}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetImmediateContext@{GetImmediateContext}}
+\index{GetImmediateContext@{GetImmediateContext}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetImmediateContext()}{GetImmediateContext()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Immediate\+Context (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Context }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current ID3\+D11\+Device\+Context. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Context} & Will contain the address of the context.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No context exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Direct\+X11 contexts exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a0c2f7246bda43cef26c77d8f1ebb16e0}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a0c2f7246bda43cef26c77d8f1ebb16e0}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetSwapchain@{GetSwapchain}}
+\index{GetSwapchain@{GetSwapchain}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetSwapchain()}{GetSwapchain()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Swapchain (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Swapchain }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current IDXGISwap\+Chain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Swapchain} & Will contain the address of the swap chain.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No swap chain exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Direct\+X11 swap chain exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a07f69ef55a07c678c47a108dd19300c4}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_a07f69ef55a07c678c47a108dd19300c4}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetRenderTargetView@{GetRenderTargetView}}
+\index{GetRenderTargetView@{GetRenderTargetView}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetRenderTargetView()}{GetRenderTargetView()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Render\+Target\+View (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Render\+Target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current ID3\+D11\+Render\+Target\+View. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Render\+Target} & Will contain the address of the render target view.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No render target view exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Direct\+X11 render target view exists and was returned. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab88fd9fa0ddeabe3032c8ac893223c50}\label{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface_ab88fd9fa0ddeabe3032c8ac893223c50}} 
+\index{GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}!GetDepthStencilView@{GetDepthStencilView}}
+\index{GetDepthStencilView@{GetDepthStencilView}!GW::GRAPHICS::GDirectX11Surface@{GW::GRAPHICS::GDirectX11Surface}}
+\doxysubsubsection{\texorpdfstring{GetDepthStencilView()}{GetDepthStencilView()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+GRAPHICS\+::\+GDirect\+X11\+Surface\+::\+Get\+Depth\+Stencil\+View (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{\+\_\+out\+Depth\+Stencil\+View }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the address of the current ID3\+D11\+Depth\+Stencil\+View. 
+
+A Depth Stencil View will only be created if requested as a special option when the \textquotesingle{}Initialize\textquotesingle{} method is called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Depth\+Stencil\+View} & Will contain the address of the depth stencil view.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & A Direct\+X11 depth stencil view exists and was returned. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No depth stencil view exists to retrieve. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty. \\
+\hline
+\end{DoxyRetVals}

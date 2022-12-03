@@ -1,0 +1,119 @@
+\hypertarget{group___operators}{}\doxysection{Operators}
+\label{group___operators}\index{Operators@{Operators}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___operators_ga555afa9e1cf5bf0e971d5ade089087e7}{G\+\_\+\+PASS}}(\+\_\+greturn\+\_\+)~(static\+\_\+cast$<$int$>$(\+\_\+greturn\+\_\+) $>$ 0)
+\item 
+\#define \mbox{\hyperlink{group___operators_ga073044fdc45cc5147393f088d56ebc7b}{G\+\_\+\+FAIL}}(\+\_\+greturn\+\_\+)~(static\+\_\+cast$<$int$>$(\+\_\+greturn\+\_\+) $<$ 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group___operators_ga485e0ff64a524066fd91c07e8ce409ec}{GW\+::operator+}} (const \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \&\&\+\_\+rvalue)
+\item 
+bool \mbox{\hyperlink{group___operators_ga88254010245aaddb6ac8460a27800907}{GW\+::operator-\/}} (const \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \&\&\+\_\+rvalue)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___operators_ga555afa9e1cf5bf0e971d5ade089087e7}\label{group___operators_ga555afa9e1cf5bf0e971d5ade089087e7}} 
+\index{Operators@{Operators}!G\_PASS@{G\_PASS}}
+\index{G\_PASS@{G\_PASS}!Operators@{Operators}}
+\doxysubsubsection{\texorpdfstring{G\_PASS}{G\_PASS}}
+{\footnotesize\ttfamily \#define G\+\_\+\+PASS(\begin{DoxyParamCaption}\item[{}]{\+\_\+greturn\+\_\+ }\end{DoxyParamCaption})~(static\+\_\+cast$<$int$>$(\+\_\+greturn\+\_\+) $>$ 0)}
+
+
+
+Macro used to determine if a function succeeded. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+greturn\+\_\+} & The GReturn value to check.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & GReturn value passed in was a success code. \\
+\hline
+{\em false} & GReturn value passed in was a failure code. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00071}{71}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+\mbox{\Hypertarget{group___operators_ga073044fdc45cc5147393f088d56ebc7b}\label{group___operators_ga073044fdc45cc5147393f088d56ebc7b}} 
+\index{Operators@{Operators}!G\_FAIL@{G\_FAIL}}
+\index{G\_FAIL@{G\_FAIL}!Operators@{Operators}}
+\doxysubsubsection{\texorpdfstring{G\_FAIL}{G\_FAIL}}
+{\footnotesize\ttfamily \#define G\+\_\+\+FAIL(\begin{DoxyParamCaption}\item[{}]{\+\_\+greturn\+\_\+ }\end{DoxyParamCaption})~(static\+\_\+cast$<$int$>$(\+\_\+greturn\+\_\+) $<$ 1)}
+
+
+
+Macro used to determine if a function has failed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+greturn\+\_\+} & The GReturn value to check.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & GReturn value passed in was a failure code. \\
+\hline
+{\em false} & GReturn value passed in was a success code. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00080}{80}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___operators_ga485e0ff64a524066fd91c07e8ce409ec}\label{group___operators_ga485e0ff64a524066fd91c07e8ce409ec}} 
+\index{Operators@{Operators}!operator+@{operator+}}
+\index{operator+@{operator+}!Operators@{Operators}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily bool GW\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \&\&}]{\+\_\+rvalue }\end{DoxyParamCaption})}
+
+Allows Gateware users to use the prefix \char`\"{}+\char`\"{} operator as shorthand for calling the G\+\_\+\+PASS Macro. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_g_w_1_1_s_y_s_t_e_m}{GW::SYSTEM}} GWindow win;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (+win.Create()) \{}
+\DoxyCodeLine{    \textcolor{comment}{// do cool stuff}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{comment}{// abort program}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00107}{107}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+
+\mbox{\Hypertarget{group___operators_ga88254010245aaddb6ac8460a27800907}\label{group___operators_ga88254010245aaddb6ac8460a27800907}} 
+\index{Operators@{Operators}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Operators@{Operators}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily bool GW\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \&\&}]{\+\_\+rvalue }\end{DoxyParamCaption})}
+
+Allows Gateware users to use the prefix \char`\"{}-\/\char`\"{} operator as shorthand for calling the G\+\_\+\+FAIL Macro. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespace_g_w_1_1_s_y_s_t_e_m}{GW::SYSTEM}} GWindow win;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (-\/win.Create()) \{}
+\DoxyCodeLine{    \textcolor{comment}{// abort program}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{comment}{// do cool stuff}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_g_core_defines_8h_source_l00119}{119}} of file \mbox{\hyperlink{_g_core_defines_8h_source}{GCore\+Defines.\+h}}.
+

@@ -1,0 +1,55 @@
+\hypertarget{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a}{}\doxysection{GW\+::SYSTEM\+::GConcurrent\+::EVENT\+\_\+\+DATA Struct Reference}
+\label{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a}\index{GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}}
+
+
+{\ttfamily \#include $<$GConcurrent.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_aa00307553cce13e83d3b3cf5a59d60ac}{task\+Submission\+Index}}
+\item 
+unsigned long long \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a2a5e3524db439d78bb90d1ec65aa6453}{microseconds\+Elapsed}}
+\item 
+unsigned int \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a9aecf23715c0d9f4af4cdc1d4b5a8405}{completion\+Range}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}} provided by \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent}{GConcurrent}}. 
+
+Definition at line \mbox{\hyperlink{_g_concurrent_8h_source_l00101}{101}} of file \mbox{\hyperlink{_g_concurrent_8h_source}{GConcurrent.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_aa00307553cce13e83d3b3cf5a59d60ac}\label{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_aa00307553cce13e83d3b3cf5a59d60ac}} 
+\index{GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}!taskSubmissionIndex@{taskSubmissionIndex}}
+\index{taskSubmissionIndex@{taskSubmissionIndex}!GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{taskSubmissionIndex}{taskSubmissionIndex}}
+{\footnotesize\ttfamily unsigned long long GW\+::\+SYSTEM\+::\+GConcurrent\+::\+EVENT\+\_\+\+DATA\+::task\+Submission\+Index}
+
+Identifies a task based on increasing submission order. (ALWAYS VALID) 
+
+Definition at line \mbox{\hyperlink{_g_concurrent_8h_source_l00102}{102}} of file \mbox{\hyperlink{_g_concurrent_8h_source}{GConcurrent.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a2a5e3524db439d78bb90d1ec65aa6453}\label{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a2a5e3524db439d78bb90d1ec65aa6453}} 
+\index{GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}!microsecondsElapsed@{microsecondsElapsed}}
+\index{microsecondsElapsed@{microsecondsElapsed}!GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{microsecondsElapsed}{microsecondsElapsed}}
+{\footnotesize\ttfamily unsigned long long GW\+::\+SYSTEM\+::\+GConcurrent\+::\+EVENT\+\_\+\+DATA\+::microseconds\+Elapsed}
+
+How long it took for the reported TASK to complete (queue time inclusive). NOTE\+: \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_a9402fcf08b745b49b7ac315749b49410aaf8823b98f8294fe38dc0269f1739e02}{Events\+::\+PARALLEL\+\_\+\+SECTION\+\_\+\+COMPLETE}} does NOT factor in queue wait times. 
+
+Definition at line \mbox{\hyperlink{_g_concurrent_8h_source_l00103}{103}} of file \mbox{\hyperlink{_g_concurrent_8h_source}{GConcurrent.\+h}}.
+
+\mbox{\Hypertarget{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a9aecf23715c0d9f4af4cdc1d4b5a8405}\label{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_1_1_e_v_e_n_t___d_a_t_a_a9aecf23715c0d9f4af4cdc1d4b5a8405}} 
+\index{GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}!completionRange@{completionRange}}
+\index{completionRange@{completionRange}!GW::SYSTEM::GConcurrent::EVENT\_DATA@{GW::SYSTEM::GConcurrent::EVENT\_DATA}}
+\doxysubsubsection{\texorpdfstring{completionRange}{completionRange}}
+{\footnotesize\ttfamily unsigned int GW\+::\+SYSTEM\+::\+GConcurrent\+::\+EVENT\+\_\+\+DATA\+::completion\+Range\mbox{[}2\mbox{]}}
+
+Reports what section of a parallel operation was completed \mbox{[}start,end\mbox{]}. NOTE\+: For \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_concurrent_a9402fcf08b745b49b7ac315749b49410a74124942fd510cf90e28272d350c6edf}{Events\+::\+SINGULAR\+\_\+\+TASK\+\_\+\+COMPLETE}}, this is always 0-\/1. 
+
+Definition at line \mbox{\hyperlink{_g_concurrent_8h_source_l00104}{104}} of file \mbox{\hyperlink{_g_concurrent_8h_source}{GConcurrent.\+h}}.
+

@@ -1,0 +1,268 @@
+\hypertarget{_g_controller_8h_source}{}\doxysection{GController.\+h}
+\label{_g_controller_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Input/GController.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Input/GController.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GCONTROLLER\_H}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GCONTROLLER\_H}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00005}00005 \textcolor{comment}{    File: GController.h}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface handles controller input and provides disconnection and connection events}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00007}00007 \textcolor{comment}{    Author: Devin Wright}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00008}00008 \textcolor{comment}{    Contributors: Chris Kennedy, Kai Huang, Lari Norri, Ozzie Mercado, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00009}00009 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00010}00010 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00011}00011 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00012}00012 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}../Core/GEventGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}GInputDefines.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00017}00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00019}00019     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00020}00020     \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00021}00021         \textcolor{keyword}{class }GControllerInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GEventGeneratorInterface}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00023}00023         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00024}00024             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00025}00025             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00026}00026                 \textcolor{keywordtype}{int} controllerIndex;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00027}00027                 \mbox{\hyperlink{namespace_g_w_1_1_i_n_p_u_t_a71953016d06d4a92ad420eb5500b328e}{GW::INPUT::GControllerType}} controllerID;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00028}00028                 \textcolor{keywordtype}{int} inputCode;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00029}00029                 \textcolor{keywordtype}{float} inputValue;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00030}00030                 \textcolor{keywordtype}{int} isConnected;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00031}00031             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00033}00033             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00034}00034             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00035}00035                 CONTROLLERBUTTONVALUECHANGED,}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00036}00036                 CONTROLLERAXISVALUECHANGED, }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00037}00037                 CONTROLLERCONNECTED,        }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00038}00038                 CONTROLLERDISCONNECTED      }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00039}00039             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00041}00041             \textcolor{keyword}{enum class} DeadZoneTypes}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00042}00042             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00043}00043                 DEADZONESQUARE,}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00044}00044                 DEADZONECIRCLE}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00045}00045             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00047}00047             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetState(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{int} \_inputCode, \textcolor{keywordtype}{float}\& \_outState) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00048}00048             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} IsConnected(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{bool}\& \_outIsConnected) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00049}00049             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetMaxIndex(\textcolor{keywordtype}{int}\& \_outMax) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00050}00050             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetNumConnected(\textcolor{keywordtype}{int}\& \_outConnectedCount) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00051}00051             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetDeadZone(DeadZoneTypes \_type, \textcolor{keywordtype}{float} \_deadzonePercentage) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00052}00052             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} StartVibration(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{float} \_pan, \textcolor{keywordtype}{float} \_duration, \textcolor{keywordtype}{float} \_strength) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00053}00053             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} IsVibrating(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{bool}\& \_outIsVibrating) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00054}00054             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} StopVibration(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00055}00055             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} StopAllVibrations() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00056}00056         \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00060}00060 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00061}00061 \textcolor{preprocessor}{\#include "{}../../Source/Input/GController/GController.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00062}00062 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00063}00063 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00064}00064 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00065}00065 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00066}00066 \textcolor{comment}{    //! The INPUT namespace to which all Gateware input interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00067}00067 \textcolor{comment}{}    \textcolor{keyword}{namespace }INPUT}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00068}00068     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00069}00069 \textcolor{comment}{        //! A multi-\/threaded controller input library.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00070}00070 \textcolor{comment}{}\textcolor{comment}{        /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00071}00071 \textcolor{comment}{        *   This library can be used to poll the current state of connected controllers.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00072}00072 \textcolor{comment}{        *   The controllers are assigned indices in a array for the lifetime that they are connected.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00073}00073 \textcolor{comment}{        *   It also provides events for controller connections and disconnections,}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00074}00074 \textcolor{comment}{        *   which a GListener can be writen to receive.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00075}00075 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00076}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{00076}}         \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}} final}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00077}00077             : \textcolor{keyword}{public} I::GProxy<I::GControllerInterface, I::GControllerImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00078}00078         \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00079}00079         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00080}00080             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00081}00081 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00082}00082 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00083}00083             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}{Events}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00084}00084             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00085}00085             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{DeadZoneTypes}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00086}00086             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}{GetState}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00087}00087             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}{IsConnected}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00088}00088             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}{GetMaxIndex}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00089}00089             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}{GetNumConnected}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00090}00090             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}{SetDeadZone}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00091}00091             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}{StartVibration}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00092}00092             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}{IsVibrating}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00093}00093             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}{StopVibration}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00094}00094             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}{StopAllVibrations}});}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00096}00096             \textcolor{comment}{// reimplemented functions}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00097}00097             GATEWARE\_FUNCTION(Register);}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00098}00098             GATEWARE\_CONST\_FUNCTION(Observers);}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00099}00099             GATEWARE\_FUNCTION(Push);\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00100}00100 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00101}00101 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00102}00102             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00103}00103 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00104}00104 \textcolor{comment}{            //! Creates a new GController object}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00105}00105 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00106}00106 \textcolor{comment}{            *   Initializes a handle to a GController object.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00107}00107 \textcolor{comment}{            *   Created GController object will have its reference count initialized to one.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00108}00108 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00109}00109 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS GController was successfully created}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00110}00110 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00111}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a4828658b15d525473b626fbd37bac43c}{00111}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a4828658b15d525473b626fbd37bac43c}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00112}00112 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00113}00113 \textcolor{comment}{            //! GControllerEvents holds the possible events that can be sent from GController}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00114}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}{00114}} \textcolor{comment}{}            \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}{Events}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00115}00115             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00116}00116                 CONTROLLERBUTTONVALUECHANGED,       \textcolor{comment}{//!< Input event for button value change}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00117}00117                 CONTROLLERAXISVALUECHANGED,         \textcolor{comment}{//!< Input event for axis value changed}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00118}00118                 CONTROLLERCONNECTED,                \textcolor{comment}{//!< Connection event for a controller being connected}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00119}00119                 CONTROLLERDISCONNECTED              \textcolor{comment}{//!< Connection event for a controller being disconnected}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00120}00120             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00121}00121 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00122}00122 \textcolor{comment}{            //! GControllerDeadzoneTypes holds the diffrent type of deadzone calculations}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00123}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{00123}} \textcolor{comment}{}            \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{DeadZoneTypes}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00124}00124             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00125}00125                 DEADZONESQUARE, \textcolor{comment}{//!< Calulates the deadzone of x and y separately}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00126}00126                 DEADZONECIRCLE  \textcolor{comment}{//!< Calulates the deadzone of x and y as a single magnitude}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00127}00127             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00128}00128 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00129}00129 \textcolor{comment}{            /*! EVENT\_DATA holds the information about a controller event. See \(\backslash\)ref GControllerCodes for a list of inputCode defines.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00130}00130 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00131}00131 \textcolor{comment}{            *   If the corresponding event is an Input Event inputCode and inputValue will contain the input code and value}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00132}00132 \textcolor{comment}{            *   respectively for the detected input. If the corresponding event is an Connection event inputCode and inputValue will be 0.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00133}00133 \textcolor{comment}{            *   isConnected will be 0 for false and 1 for true.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00134}00134 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00135}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{00135}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00136}00136             \{}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00137}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ad091b5c4b541c35c9cd76bafdf0d453c}{00137}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ad091b5c4b541c35c9cd76bafdf0d453c}{controllerIndex}};                         \textcolor{comment}{/*!< The Controller index where the event took place */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00138}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ae77ee7d7f5f9f04126678e24b1f51d85}{00138}}                 \mbox{\hyperlink{namespace_g_w_1_1_i_n_p_u_t_a71953016d06d4a92ad420eb5500b328e}{GW::INPUT::GControllerType}} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_ae77ee7d7f5f9f04126678e24b1f51d85}{controllerID}};      \textcolor{comment}{/*!<  The Controller ID of the controller that sent the event */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00139}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a758549bcf2127ed2ff45c7c336ee08a4}{00139}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a758549bcf2127ed2ff45c7c336ee08a4}{inputCode}};                                 \textcolor{comment}{/*!< The Code repsenting the Detected input */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00140}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_aa3409e62073cb7eb86934d7d8d5be974}{00140}}                 \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_aa3409e62073cb7eb86934d7d8d5be974}{inputValue}};                             \textcolor{comment}{/*!< The value of the detected input */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00141}\mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a1438542a238e100599c20eb538aff580}{00141}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a_a1438542a238e100599c20eb538aff580}{isConnected}};                             \textcolor{comment}{/*!< Value indicating whether the controller is connected */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00142}00142             \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00143}00143 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00144}00144 \textcolor{comment}{            //! Used to poll the current state of a button or axis on a controller}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00145}00145 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00146}00146 \textcolor{comment}{            *   Use an Inputcode to check the state of a button or axis on the controller}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00147}00147 \textcolor{comment}{            *   at the selected index. If a button is being checked the \_outState will be 0 for}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00148}00148 \textcolor{comment}{            *   up and 1 for down. If a axis is being checked the \_outState will be between -\/1 and 1 inclusively.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00149}00149 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00150}00150 \textcolor{comment}{            *   \(\backslash\)param [in] \_controllerIndex The controller index to check}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00151}00151 \textcolor{comment}{            *   \(\backslash\)param [in] \_inputCode The input code for the button/axis to check}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00152}00152 \textcolor{comment}{            *   \(\backslash\)param [out] \_outState A reference to a float to store the state.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00153}00153 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00154}00154 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   Ether \_controllerIndex is out of range or \_inputCode is invaild.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00155}00155 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE            No controller is connected at the chosen index.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00156}00156 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY        The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00157}00157 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS            The button/axis state was was successfully stored in the out-\/param}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00158}00158 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00159}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}{00159}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}{GetState}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{int} \_inputCode, \textcolor{keywordtype}{float}\& \_outState) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00160}00160 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00161}00161 \textcolor{comment}{            //! Used to check if a controller is connected at a specified index}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00162}00162 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00163}00163 \textcolor{comment}{            *   \(\backslash\)param [in] \_controllerIndex The controller index to check.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00164}00164 \textcolor{comment}{            *   \(\backslash\)param [out] \_outIsConnected A reference to a bool to store whether a controller is at the index.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00165}00165 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00166}00166 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   \_controllerIndex was out of range.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00167}00167 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY        The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00168}00168 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS            The out-\/param was successfully filled out}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00169}00169 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00170}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}{00170}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}{IsConnected}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{bool}\& \_outIsConnected) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00171}00171 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00172}00172 \textcolor{comment}{            //! Outputs the max index of the array of controllers.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00173}00173 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00174}00174 \textcolor{comment}{            *   The controllers will be stored in a constant array where the size of the array}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00175}00175 \textcolor{comment}{            *   is the maxium amnout of supported controllers.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00176}00176 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00177}00177 \textcolor{comment}{            *   \(\backslash\)param [out] \_outMax A reference to a int to store the max index.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00178}00178 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00179}00179 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY    The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00180}00180 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS        The max index was successfully stored in the out-\/param}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00181}00181 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00182}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}{00182}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}{GetMaxIndex}}(\textcolor{keywordtype}{int}\& \_outMax) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00183}00183 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00184}00184 \textcolor{comment}{            //! Outputs the number of controllers connected}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00185}00185 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00186}00186 \textcolor{comment}{            *   The number returned will be how many controllers are currently stored in the}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00187}00187 \textcolor{comment}{            *   controller array.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00188}00188 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00189}00189 \textcolor{comment}{            *   \(\backslash\)param [out] \_outConnectedCount A reference to a int to store the count of connected controllers}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00190}00190 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00191}00191 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY    The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00192}00192 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS        The count of connected controllers was successfully stored in the out-\/param}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00193}00193 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00194}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}{00194}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}{GetNumConnected}}(\textcolor{keywordtype}{int}\& \_outConnectedCount) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00195}00195 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00196}00196 \textcolor{comment}{            //! Set how the stick deadzones should be calculated}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00197}00197 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00198}00198 \textcolor{comment}{            *   Default deadzone is \_type = DEADZONESQUARE, \_deadzonePercentage = .2f}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00199}00199 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00200}00200 \textcolor{comment}{            *   \(\backslash\)param [in] \_type Specifies the dead zone calculation to be used.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00201}00201 \textcolor{comment}{            *   \(\backslash\)param [in] \_deadzonePercentage The size of the deadzone.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00202}00202 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00203}00203 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT   \_deadzonePercentage is invaild}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00204}00204 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY        The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00205}00205 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS            The deadzone was set to the new parameters}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00206}00206 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00207}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}{00207}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}{SetDeadZone}}(\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{DeadZoneTypes}} \_type, \textcolor{keywordtype}{float} \_deadzonePercentage) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00208}00208 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00209}00209 \textcolor{comment}{            //! Start vibration in selected controller}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00210}00210 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00211}00211 \textcolor{comment}{            *   This will not replace a currently running vibration, the previous vibration must end or be stopped first.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00212}00212 \textcolor{comment}{            *   Controllers have diffrent start up times and strengths this method does not account for this.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00213}00213 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00214}00214 \textcolor{comment}{            *   \(\backslash\)param [in] \_controllerIndex The controller to vibrate.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00215}00215 \textcolor{comment}{            *   \(\backslash\)param [in] \_pan -\/1 to 1 ratio where -\/1 is full left motor, 1 is full right motor.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00216}00216 \textcolor{comment}{            *   \(\backslash\)param [in] \_duration In seconds how long the vibration will run.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00217}00217 \textcolor{comment}{            *   \(\backslash\)param [in] \_strength 0 to 1 ratio of how strong the vibration will be.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00218}00218 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00219}00219 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FEATURE\_UNSUPPORTED    Vibration for the current controller type is not supported.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00220}00220 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT       One or more arguments are out of range.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00221}00221 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE                Controller is currently vibrating.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00222}00222 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY            The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00223}00223 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                The vibration has been started in the selected controller.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00224}00224 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00225}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}{00225}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}{StartVibration}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{float} \_pan, \textcolor{keywordtype}{float} \_duration, \textcolor{keywordtype}{float} \_strength) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00226}00226 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00227}00227 \textcolor{comment}{            //! Used to check if a controller is currently vibrating}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00228}00228 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00229}00229 \textcolor{comment}{            *   \(\backslash\)param [in] \_controllerIndex The controller index to check.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00230}00230 \textcolor{comment}{            *   \(\backslash\)param [out] \_outIsVibrating Is a reference to a bool to store whether a controller is vibrating.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00231}00231 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00232}00232 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FEATURE\_UNSUPPORTED    Vibration for the current controller type is not supported.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00233}00233 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT       \_controllerIndex was out of range.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00234}00234 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY            The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00235}00235 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                The out-\/param was successfully filled out}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00236}00236 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00237}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}{00237}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}{IsVibrating}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex, \textcolor{keywordtype}{bool}\& \_outIsVibrating) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00238}00238 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00239}00239 \textcolor{comment}{            //! Used to stop a controller from vibrating }}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00240}00240 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00241}00241 \textcolor{comment}{            *   \(\backslash\)param [in] \_controllerIndex The controller index to stop}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00242}00242 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00243}00243 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT       \_controllerIndex was out of range.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00244}00244 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FEATURE\_UNSUPPORTED    Vibration for the current controller type is not supported.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00245}00245 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY            The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00246}00246 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                The vibration was stop}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00247}00247 \textcolor{comment}{            *   \(\backslash\)retval GReturn::REDUNDANT              The controller was not vibrating.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00248}00248 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00249}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}{00249}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}{StopVibration}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_controllerIndex) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00250}00250 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00251}00251 \textcolor{comment}{            //! Stops all currently vibrating controllers}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00252}00252 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00253}00253 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FEATURE\_UNSUPPORTED Vibration for the current controller type is not supported.}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00254}00254 \textcolor{comment}{            *   \(\backslash\)retval GReturn::EMPTY\_PROXY    The proxy is empty}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00255}00255 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS All vibrations were stopped}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00256}00256 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00257}\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}{00257}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}{StopAllVibrations}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00258}00258 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00259}00259         \};}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00260}00260     \}\textcolor{comment}{// end SYSTEM namespace}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00261}00261 \}\textcolor{comment}{// end GW namespace}}
+\DoxyCodeLine{\Hypertarget{_g_controller_8h_source_l00262}00262 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \#endif GCONTROLLER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,127 @@
+\hypertarget{_g_audio3_d_8h_source}{}\doxysection{GAudio3\+D.\+h}
+\label{_g_audio3_d_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GAudio3D.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GAudio3D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GAUDIO3D\_H}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GAUDIO3D\_H}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00005}00005 \textcolor{comment}{    File: GAudio3D.h}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that handles spacial sounds and music.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: GAudio}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00008}00008 \textcolor{comment}{    Author: Jacob Pendleton}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Alexandr Kozyrev (new arch), Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00011}00011 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00012}00012 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00013}00013 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}GAudio.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../Math/GVector.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}../Math/GMatrix.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00018}00018 \textcolor{preprocessor}{\#include "{}../Math/GQuaternion.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00020}00020 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00022}00022     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00023}00023     \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00024}00024         \textcolor{keyword}{class }GAudio3DInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GAudioInterface}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00026}00026         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00027}00027             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00028}00028             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00029}00029                 UPDATE\_LISTENER,}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00030}00030                 UPDATE\_TRANSFORM\_AND\_SPATIALIZE}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00031}00031             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00033}00033             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00034}00034             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00035}00035                 \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} position;}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00036}00036                 \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_q_u_a_t_e_r_n_i_o_n_f}{GW::MATH::GQUATERNIONF}} quaternion;}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00037}00037             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00039}00039             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Update3DListener(\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} \_position, \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_q_u_a_t_e_r_n_i_o_n_f}{GW::MATH::GQUATERNIONF}} \_orientation) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00040}00040         \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00044}00044 \textcolor{preprocessor}{\#include "{}../../Source/Audio/GAudio3D/GAudio3D.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00045}00045 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00046}00046 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00047}00047 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00048}00048 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00049}00049 \textcolor{comment}{    //! The namespace to which all Gateware audio libraries must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00050}00050 \textcolor{comment}{}    \textcolor{keyword}{namespace }AUDIO}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00051}00051     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00052}00052 \textcolor{comment}{        //! A Gateware interface that handles spacial sounds and music}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00053}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{00053}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GAudio3D}} final }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00054}00054             : \textcolor{keyword}{public} I::GProxy<I::GAudio3DInterface, I::GAudio3DImplementation>}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00055}00055         \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00056}00056         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00057}00057             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00058}00058 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00059}00059 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GAudio3D}})}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00060}00060             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_ac7ba3d2a571b39b2f101c58e79769674}{Events}})}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00061}00061             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}})}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00062}00062             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_a9bc6040f4176914525d05ab64c085b6f}{Update3DListener}})}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00064}00064             \textcolor{comment}{// reimplemented from base class}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00065}00065             GATEWARE\_FUNCTION(SetMasterVolume)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00066}00066             GATEWARE\_FUNCTION(SetGlobalSoundVolume)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00067}00067             GATEWARE\_FUNCTION(SetGlobalMusicVolume)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00068}00068             GATEWARE\_FUNCTION(SetSoundsChannelVolumes)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00069}00069             GATEWARE\_FUNCTION(SetMusicChannelVolumes)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00070}00070             GATEWARE\_FUNCTION(PlaySounds)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00071}00071             GATEWARE\_FUNCTION(PauseSounds)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00072}00072             GATEWARE\_FUNCTION(ResumeSounds)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00073}00073             GATEWARE\_FUNCTION(StopSounds)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00074}00074             GATEWARE\_FUNCTION(PlayMusic)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00075}00075             GATEWARE\_FUNCTION(PauseMusic)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00076}00076             GATEWARE\_FUNCTION(ResumeMusic)}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00077}00077             GATEWARE\_FUNCTION(StopMusic)\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00078}00078 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00079}00079 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00080}00080             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00081}00081 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00082}00082 \textcolor{comment}{            //! Creates a GAudio3D proxy}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00083}00083 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00084}00084 \textcolor{comment}{            *   Creates a GAudio3D proxy which can be used to control GSound/GMusic.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00085}00085 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00086}00086 \textcolor{comment}{            *  \(\backslash\)retval FAILURE Internal objects could not be created.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00087}00087 \textcolor{comment}{            *  \(\backslash\)retval SUCCESS Succesfully created the proxy.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00088}00088 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00089}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_ae8e8c3865fb614c0ad68ff5955912055}{00089}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_ae8e8c3865fb614c0ad68ff5955912055}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00090}00090 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00091}00091 \textcolor{comment}{            //! Events generated by GAudio3D (only)}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00092}00092 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00093}00093 \textcolor{comment}{            *   These messages are used to notify observers when Update3DListener is called.    }}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00094}00094 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00095}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_ac7ba3d2a571b39b2f101c58e79769674}{00095}}             \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_ac7ba3d2a571b39b2f101c58e79769674}{Events}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00096}00096             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00097}00097                 UPDATE\_LISTENER, \textcolor{comment}{//!< Notifies connected GMusic3D and GSound3D about updated listener matrix.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00098}00098                 UPDATE\_TRANSFORM\_AND\_SPATIALIZE \textcolor{comment}{//!< Notifies connected GMusic3D and GSound3D about new transform and Spatialize call.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00099}00099             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00100}00100 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00101}00101 \textcolor{comment}{            /*! EVENT\_DATA provided by GAudio3D */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00102}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a}{00102}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00103}00103             \{}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00104}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a_a4b1e1075267dd10cb7d51fedc6f8eb38}{00104}}                 \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} \mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a_a4b1e1075267dd10cb7d51fedc6f8eb38}{position}}; \textcolor{comment}{/*!< Position vector of the transfered matrix. */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00105}\mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a_a1690611211488db5a231bfe5cfa19eec}{00105}}                 \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_q_u_a_t_e_r_n_i_o_n_f}{GW::MATH::GQUATERNIONF}} \mbox{\hyperlink{struct_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_1_1_e_v_e_n_t___d_a_t_a_a1690611211488db5a231bfe5cfa19eec}{quaternion}}; \textcolor{comment}{/*!< Rotational data of the transfered matrix (in quaternion form). */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00106}00106             \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00107}00107 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00108}00108 \textcolor{comment}{            //! Updates the position and orientation of the listener object}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00109}00109 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00110}00110 \textcolor{comment}{            *   \(\backslash\)param [in] \_position       The position of the listener as a GVECTORF.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00111}00111 \textcolor{comment}{            *   \(\backslash\)param [in] \_orientation    The orientation of the listener as a GQUATERNIONF.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00112}00112 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00113}00113 \textcolor{comment}{            *   \(\backslash\)retval INVALID\_ARGUMENT if \_position and/or \_orientation is nullptr.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS if \_position and \_orientation were successfully set.}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00115}00115 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00116}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_a9bc6040f4176914525d05ab64c085b6f}{00116}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d_a9bc6040f4176914525d05ab64c085b6f}{Update3DListener}}(\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} \_position, \mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_q_u_a_t_e_r_n_i_o_n_f}{GW::MATH::GQUATERNIONF}} \_orientation) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00117}00117 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00118}00118         \};}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00120}00120 \}}
+\DoxyCodeLine{\Hypertarget{_g_audio3_d_8h_source_l00121}00121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GAUDIO3D\_H}}
+
+\end{DoxyCode}

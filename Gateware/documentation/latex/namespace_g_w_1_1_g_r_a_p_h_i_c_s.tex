@@ -1,0 +1,80 @@
+\hypertarget{namespace_g_w_1_1_g_r_a_p_h_i_c_s}{}\doxysection{GW\+::GRAPHICS Namespace Reference}
+\label{namespace_g_w_1_1_g_r_a_p_h_i_c_s}\index{GW::GRAPHICS@{GW::GRAPHICS}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_blitter}{GBlitter}}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x11_surface}{GDirect\+X11\+Surface}}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_direct_x12_surface}{GDirect\+X12\+Surface}}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_open_g_l_surface}{GOpen\+GLSurface}}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRaster\+Surface}}
+\item 
+class \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_vulkan_surface}{GVulkan\+Surface}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___graphics_options_gafbd9d6f65375744d2338ce060d42c85b}{GGraphics\+Init\+Options}} \{ \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba955a3a5f0ed41c744182916c5bf68e15}{COLOR\+\_\+10\+\_\+\+BIT}} = 0x1
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba1bade4c85d55718f2b27dcc38c332a3a}{DEPTH\+\_\+\+BUFFER\+\_\+\+SUPPORT}} = 0x2
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85bacac34b90e4af450189dd5e824cbbd452}{DEPTH\+\_\+\+STENCIL\+\_\+\+SUPPORT}} = 0X4
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85bae59cf357d12d379a206c08211dedc57f}{OPENGL\+\_\+\+ES\+\_\+\+SUPPORT}} = 0x8
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba9c847baaca0bdcb897b2332cc8d3b5dc}{DIRECT2\+D\+\_\+\+SUPPORT}} = 0x10
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba26756a8662caa5ed1af6ae3ea9bff13c}{TRIPLE\+\_\+\+BUFFER}} = 0x20
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85bacd1ba51f580d76c6477711f1b35925e4}{MSAA\+\_\+2\+X\+\_\+\+SUPPORT}} = 0x40
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85bae75ec8bcb8a76ddf8368814ce5295c84}{MSAA\+\_\+4\+X\+\_\+\+SUPPORT}} = 0x80
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba836d11bfaca0de0690b0cb9e880fe6d4}{MSAA\+\_\+8\+X\+\_\+\+SUPPORT}} = 0x100
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba12831f67a9f4ccb05f79f7b3bf3a04a4}{MSAA\+\_\+16\+X\+\_\+\+SUPPORT}} = 0x200
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85ba2d581990783657a7c3b59958fa801fa3}{MSAA\+\_\+32\+X\+\_\+\+SUPPORT}} = 0x400
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggafbd9d6f65375744d2338ce060d42c85baa93f0fc5295eef947bbb61611afbb1cb}{MSAA\+\_\+64\+X\+\_\+\+SUPPORT}} = 0x800
+ \}
+\item 
+enum \mbox{\hyperlink{group___graphics_options_gacec2571afa2fef3364743fa6ad83bb70}{GRaster\+Update\+Flags}} \{ \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a3811be39c2923866bac85b73eca54918}{ALIGN\+\_\+\+X\+\_\+\+LEFT}} = 0x1
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70aefaa586597da036be44058acb7b51e18}{ALIGN\+\_\+\+X\+\_\+\+CENTER}} = 0x2
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a00ed541f1e49938f5671b7648c8ddfe8}{ALIGN\+\_\+\+X\+\_\+\+RIGHT}} = 0x4
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70aa47c0239f353678f2ad90d93df860a9d}{ALIGN\+\_\+\+Y\+\_\+\+TOP}} = 0x8
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a45f07a7fe4f9a16b82cb4a3774dc641e}{ALIGN\+\_\+\+Y\+\_\+\+CENTER}} = 0x10
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a75c17e96442142dfd5f281500a429293}{ALIGN\+\_\+\+Y\+\_\+\+BOTTOM}} = 0x20
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a93edb40ece072242d8e49102d10400b0}{UPSCALE\+\_\+2X}} = 0x40
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a4d4f75df6ce2fa6549ff9f4c5666ab2c}{UPSCALE\+\_\+3X}} = 0x80
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70ac1befa27dee64158ef8204429974a160}{UPSCALE\+\_\+4X}} = 0x100
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70aad6b1b92fab183873daaeb156f30edef}{UPSCALE\+\_\+8X}} = 0x200
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70ab820d39a5e10562f8ad1ddf05d4ebaeb}{UPSCALE\+\_\+16X}} = 0x400
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70acac9d7886d69cb51025ef5ac5cf7d540}{STRETCH\+\_\+\+TO\+\_\+\+FIT}} = 0x800
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a8b450c68814cecdf7520dcf0a874a8d1}{INTERPOLATE\+\_\+\+NEAREST}} = 0x1000
+, \newline
+\mbox{\hyperlink{group___graphics_options_ggacec2571afa2fef3364743fa6ad83bb70a29bd05cf614e076661a1c1005cc140d8}{INTERPOLATE\+\_\+\+BILINEAR}} = 0x2000
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The namespace to which all Gateware graphics interfaces must belong. 

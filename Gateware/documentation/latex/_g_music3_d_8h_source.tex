@@ -1,0 +1,117 @@
+\hypertarget{_g_music3_d_8h_source}{}\doxysection{GMusic3\+D.\+h}
+\label{_g_music3_d_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GMusic3D.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GMusic3D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GMUSIC3D\_H}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GMUSIC3D\_H}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00005}00005 \textcolor{comment}{    File: GMusic3D.h}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that handles spacial music.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: GMusic}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00008}00008 \textcolor{comment}{    Author: Jacob Pendleton}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Alexandr Kozyrev (new arch), Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00011}00011 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00012}00012 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00013}00013 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}GMusic.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}GAudio3D.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}GAudioDefines.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00019}00019 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00021}00021     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00023}00023         \textcolor{keyword}{class }GMusic3DInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GMusicInterface}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00024}00024         \{}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00025}00025         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00026}00026             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UpdatePosition(\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} \_position) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UpdateAttenuation(\textcolor{keywordtype}{float} \_minRadius, \textcolor{keywordtype}{float} \_maxRadius, \mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW::AUDIO::GATTENUATION}} \_attenuation) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00028}00028         \};}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00032}00032 \textcolor{preprocessor}{\#include "{}../../Source/Audio/GAudio3D/GMusic3D.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00033}00033 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00034}00034 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00035}00035 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00036}00036 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00037}00037 \textcolor{comment}{    //! The namespace to which all Gateware audio libraries must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00038}00038 \textcolor{comment}{}    \textcolor{keyword}{namespace }AUDIO}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00039}00039     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00040}00040 \textcolor{comment}{        //! A Gateware interface that handles spacial music}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00041}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d}{00041}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d}{GMusic3D}} final }
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00042}00042             : \textcolor{keyword}{public} I::GProxy<I::GMusic3DInterface, I::GMusic3DImplementation, const char*, float, float, GW::AUDIO::GATTENUATION, GW::AUDIO::GAudio3D>}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00043}00043         \{}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00044}00044         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00045}00045             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00046}00046 \textcolor{comment}{            //! \(\backslash\)cond }}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00047}00047 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d}{GMusic3D}})}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00048}00048             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_adf9c13abf19d20d857184188186e6a9f}{UpdatePosition}})}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00049}00049             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_a59f15e2fcad222acd628878e166c8e43}{UpdateAttenuation}})}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00051}00051             \textcolor{comment}{// reimplemented from base class}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00052}00052             GATEWARE\_FUNCTION(SetChannelVolumes)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00053}00053             GATEWARE\_FUNCTION(SetVolume)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00054}00054             GATEWARE\_FUNCTION(Play)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00055}00055             GATEWARE\_FUNCTION(Pause)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00056}00056             GATEWARE\_FUNCTION(Resume)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00057}00057             GATEWARE\_FUNCTION(Stop)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00058}00058             GATEWARE\_CONST\_FUNCTION(GetSourceChannels)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00059}00059             GATEWARE\_CONST\_FUNCTION(GetOutputChannels)}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00060}00060             GATEWARE\_CONST\_FUNCTION(isPlaying)\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00061}00061 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00062}00062 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00063}00063             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00064}00064 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00065}00065 \textcolor{comment}{            //! Creates a proxy to GMusic3D an internally fills out a GMusic with data from provided .wav file.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00066}00066 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00067}00067 \textcolor{comment}{            *   Creates a GMusic to return, attempts to initallize internal variables, and loads header information from .wav file for setup.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00068}00068 \textcolor{comment}{            *   Supports 16/32 bit uncompressed CD-\/quality .WAV format.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00069}00069 \textcolor{comment}{            *   The sample has to be STEREO or better for surround to work (2+ channels). A mono sample can be easily transformed to Stereo by duplicating the track in L and R channels.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00070}00070 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00071}00071 \textcolor{comment}{            *   \(\backslash\)param [in] \_path A char array to the .wav path.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00072}00072 \textcolor{comment}{            *   \(\backslash\)param [in] \_minRadius The radius at which the music is at max volume.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00073}00073 \textcolor{comment}{            *   \(\backslash\)param [in] \_maxRadius The radius at which the music is silent.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00074}00074 \textcolor{comment}{            *   \(\backslash\)param [in] \_attenuation The type of curve between \_minRadius and \_maxRadius.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00075}00075 \textcolor{comment}{            *   \(\backslash\)param [in] \_audio3D A pointer to the GAudio3D handle.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00076}00076 \textcolor{comment}{            *   \(\backslash\)param [in] \_volume (OPTIONAL) parameter to set music volume (set to 1 by default).}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00077}00077 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00078}00078 \textcolor{comment}{            *   \(\backslash\)retval INVALID\_ARGUMENT \_path is a nullptr, \_audio3D is an EMPTY\_PROXY, or \_volume is outside of 0.0f to 1.0f range.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00079}00079 \textcolor{comment}{            *   \(\backslash\)retval FAILURE Failed to create base GMusic instance, or failed to initialize internal variables. See Below for Platform}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00080}00080 \textcolor{comment}{            *   -\/ On Linux}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00081}00081 \textcolor{comment}{            *       + pa\_main\_loop or pa\_context could not be created, pa\_context could not be connected, pa\_channel\_map could not be created, pa\_stream could not be created, or pa\_stream could not be connected.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00082}00082 \textcolor{comment}{            *   -\/ On Mac}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00083}00083 \textcolor{comment}{            *       + AvAudioPlayerNode could not be created or AvAudioPCMBuffers could not be initialized}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00084}00084 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully created GMusic3D instance and proxy.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00085}00085 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00086}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_a6d480e3830bc8ce6251b68db95a06d44}{00086}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_a6d480e3830bc8ce6251b68db95a06d44}{Create}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_path, \textcolor{keywordtype}{float} \_minRadius, \textcolor{keywordtype}{float} \_maxRadius, \mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW::AUDIO::GATTENUATION}} \_attenuation, \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GW::AUDIO::GAudio3D}} \_audio3D, \textcolor{keywordtype}{float} \_volume = 1.0f);}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00087}00087 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00088}00088 \textcolor{comment}{            //! Updates the position of the music source}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00089}00089 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00090}00090 \textcolor{comment}{            *   \(\backslash\)param [in] \_position The position of the music as a GVECTORF.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00091}00091 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00092}00092 \textcolor{comment}{            *   \(\backslash\)retval FAILURE Failed to spatialize/set correct volume.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00093}00093 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Position was successfully set and volume updated.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00094}00094 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00095}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_adf9c13abf19d20d857184188186e6a9f}{00095}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_adf9c13abf19d20d857184188186e6a9f}{UpdatePosition}}(\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW::MATH::GVECTORF}} \_position) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00096}00096 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00097}00097 \textcolor{comment}{            //! Updates the attenuation curve of the music between \_minRadius and \_maxRadius}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00098}00098 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00099}00099 \textcolor{comment}{            *    \(\backslash\)param [in] \_minRadius The radius at which the music is at max volume.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00100}00100 \textcolor{comment}{            *    \(\backslash\)param [in] \_maxRadius The radius at which the music is silent.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00101}00101 \textcolor{comment}{            *    \(\backslash\)param [in] \_attenuation The type of curve between \_minRadius and \_maxRadius.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00102}00102 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00103}00103 \textcolor{comment}{            *    \(\backslash\)retval INVALID\_ARGUMENT \_attenuation is not a defined GATTENUATION, \_minRadius is greater than \_maxRadius.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00104}00104 \textcolor{comment}{            *    \(\backslash\)retval SUCCESS          The attenuation was successfully set and volume updated.}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00105}00105 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00106}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_a59f15e2fcad222acd628878e166c8e43}{00106}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music3_d_a59f15e2fcad222acd628878e166c8e43}{UpdateAttenuation}}(\textcolor{keywordtype}{float} \_minRadius, \textcolor{keywordtype}{float} \_maxRadius, \mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW::AUDIO::GATTENUATION}} \_attenuation) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00107}00107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00108}00108         \};}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00109}00109     \}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00110}00110 \}}
+\DoxyCodeLine{\Hypertarget{_g_music3_d_8h_source_l00111}00111 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GMUSIC3D\_H}}
+
+\end{DoxyCode}

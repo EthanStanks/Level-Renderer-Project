@@ -1,0 +1,198 @@
+\hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{}\doxysection{GW\+::SYSTEM\+::GLog Class Reference}
+\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+
+
+{\ttfamily \#include $<$GLog.\+h$>$}
+
+Inheritance diagram for GW\+::SYSTEM\+::GLog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a2bec61a449453d5e6d3c0724638f4ab1}{Create}} (const char $\ast$const \+\_\+file\+Name)
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a40a288e9cd3084060f316fbecba80838}{Create}} (\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} \+\_\+file)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a9e21e702d012065fe799b4c49f7ac670}{Log}} (const char $\ast$const \+\_\+log)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_ac5f0a8ff17e62879bc99e0746aead561}{Log\+Categorized}} (const char $\ast$const \+\_\+category, const char $\ast$const \+\_\+log)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_adea469091bba33b419f7e88a9c2c3049}{Enable\+Verbose\+Logging}} (bool \+\_\+value)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a1eb651aa3d5b6b8baac389be284a569d}{Enable\+Console\+Logging}} (bool \+\_\+value)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a07147c15ecb17caa1c83974b3c54f7d4}{Flush}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} inherits directly from GMulti\+Threaded, therefore its implementation must be thread safe. 
+
+Definition at line \mbox{\hyperlink{_g_log_8h_source_l00045}{45}} of file \mbox{\hyperlink{_g_log_8h_source}{GLog.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a2bec61a449453d5e6d3c0724638f4ab1}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a2bec61a449453d5e6d3c0724638f4ab1}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!Create@{Create}}
+\index{Create@{Create}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Create (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{\+\_\+file\+Name }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} object. 
+
+This function will create a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} object with the log file being created in the directory the program was ran from. If you want to control where the log file is going to be created then use the custom function below to pass in a GFile$\ast$ that is pre set the way you want it. Reference count of created object is initialized to one.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+file\+Name} & The name of the log file.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & Either one or both arguments are nullptrs. \\
+\hline
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} was not created. \+\_\+out\+Log will be null. \\
+\hline
+{\em SUCCESS} & \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} was successfully created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a40a288e9cd3084060f316fbecba80838}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a40a288e9cd3084060f316fbecba80838}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!Create@{Create}}
+\index{Create@{Create}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}}}]{\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} object. 
+
+This function will create a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} object with the \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} object that was passed in. This is so you can have more control over your log by setting up a \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} in advance. The \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} object should already have a file open for text writing. Created \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} object will have its reference count initialized to one.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+file} & The \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} object that this log will use.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & Either one or both the arguments are nullptr. \\
+\hline
+{\em FAILURE} & \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} was not created. \+\_\+out\+Log will be null. \\
+\hline
+{\em SUCCESS} & \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log}{GLog}} was successfully created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a9e21e702d012065fe799b4c49f7ac670}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a9e21e702d012065fe799b4c49f7ac670}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!Log@{Log}}
+\index{Log@{Log}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{\+\_\+log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Logs a null terminated string. 
+
+Date, Time, and thread ID will be appended to the front of the message unless specified otherwise (See Enable\+Verbose\+Logging). A new line character will be appended to the end of the string so your log messages do not require a new line. The string is logged to the internal \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+log} & The message to log out.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & A nullptr was passed in. \\
+\hline
+{\em FAILURE} & The queue has reached maximum size (call flush). \\
+\hline
+{\em SUCCESS} & Successfully queued the message to the log. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_ac5f0a8ff17e62879bc99e0746aead561}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_ac5f0a8ff17e62879bc99e0746aead561}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!LogCategorized@{LogCategorized}}
+\index{LogCategorized@{LogCategorized}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{LogCategorized()}{LogCategorized()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Log\+Categorized (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{\+\_\+category,  }\item[{const char $\ast$const}]{\+\_\+log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Logs a null terminated string with a category. 
+
+Date, Time, and thread ID will be appended to the front of the message unless specified otherwise (See Enable\+Verbose\+Logging). A new line character will be appended to the end of the string so your log messages do not require a new line. The string is logged to the internal \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_file}{GFile}} object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+category} & The user-\/defined category the log belongs to. ie\+: ERROR, WARNING, INFO, etc. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+log} & The message to log out.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & Either \+\_\+category or \+\_\+log are nullptr. \\
+\hline
+{\em FAILURE} & The queue has reached maximum size (call flush). \\
+\hline
+{\em SUCCESS} & Successfully queued the message to the log. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_adea469091bba33b419f7e88a9c2c3049}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_adea469091bba33b419f7e88a9c2c3049}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!EnableVerboseLogging@{EnableVerboseLogging}}
+\index{EnableVerboseLogging@{EnableVerboseLogging}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{EnableVerboseLogging()}{EnableVerboseLogging()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Enable\+Verbose\+Logging (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Turns verbose logging on or off. 
+
+Use this function to ensure or prevent the addition of date, time, and thread\+ID to your log messages.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+value} & true to turn on or false to turn off. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a1eb651aa3d5b6b8baac389be284a569d}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a1eb651aa3d5b6b8baac389be284a569d}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!EnableConsoleLogging@{EnableConsoleLogging}}
+\index{EnableConsoleLogging@{EnableConsoleLogging}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{EnableConsoleLogging()}{EnableConsoleLogging()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Enable\+Console\+Logging (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Turns console logging on or off. 
+
+Use this function to ensure or prevent the additional console logging.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+value} & true to turn on or false to turn off. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a07147c15ecb17caa1c83974b3c54f7d4}\label{class_g_w_1_1_s_y_s_t_e_m_1_1_g_log_a07147c15ecb17caa1c83974b3c54f7d4}} 
+\index{GW::SYSTEM::GLog@{GW::SYSTEM::GLog}!Flush@{Flush}}
+\index{Flush@{Flush}!GW::SYSTEM::GLog@{GW::SYSTEM::GLog}}
+\doxysubsubsection{\texorpdfstring{Flush()}{Flush()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+SYSTEM\+::\+GLog\+::\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Forces a log dump to file. 
+
+This will force a log dump from memory to disk and clear the log queue.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & Most likely a file corruption or a file is not open. \\
+\hline
+{\em SUCCESS} & Successfully dumped the logs. \\
+\hline
+\end{DoxyRetVals}

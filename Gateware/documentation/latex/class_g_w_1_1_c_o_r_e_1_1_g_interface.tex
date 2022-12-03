@@ -1,0 +1,95 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_interface}{}\doxysection{GW\+::CORE\+::GInterface Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_interface}\index{GW::CORE::GInterface@{GW::CORE::GInterface}}
+
+
+{\ttfamily \#include $<$GInterface.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GInterface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_c_o_r_e_1_1_g_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a42b7b64c7e41b05e3a9a5629a6856794}{Create}} ()
+\item 
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_abd779fa8304afb36b9f1c8f897b40a8c}{Share}} () const
+\item 
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_ada67a040adb9755a631ae19eda3ebcbd}{Relinquish}} ()
+\item 
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface_a6e112efa1f87f7d3bf3f04cbc72f24ed}{Mirror}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The only purpose of this proxy is to store Gateware Objects and enable run-\/time polymorphisim. 
+
+Definition at line \mbox{\hyperlink{_g_interface_8h_source_l00049}{49}} of file \mbox{\hyperlink{_g_interface_8h_source}{GInterface.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_interface_a42b7b64c7e41b05e3a9a5629a6856794}\label{class_g_w_1_1_c_o_r_e_1_1_g_interface_a42b7b64c7e41b05e3a9a5629a6856794}} 
+\index{GW::CORE::GInterface@{GW::CORE::GInterface}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GInterface@{GW::CORE::GInterface}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GInterface\+::\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Alloctaes a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}}. 
+
+A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} has no real functionality on its own other than being able to be used to track object lifetime.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & This always succeeds. (unless you run out of memory) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_interface_abd779fa8304afb36b9f1c8f897b40a8c}\label{class_g_w_1_1_c_o_r_e_1_1_g_interface_abd779fa8304afb36b9f1c8f897b40a8c}} 
+\index{GW::CORE::GInterface@{GW::CORE::GInterface}!Share@{Share}}
+\index{Share@{Share}!GW::CORE::GInterface@{GW::CORE::GInterface}}
+\doxysubsubsection{\texorpdfstring{Share()}{Share()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} GW\+::\+CORE\+::\+GInterface\+::\+Share (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Shares ownership of a Proxy (if possible). 
+
+By default when proxies are copied they do not share ownership, this allows them to. After sharing, a Proxy retains shared ownership of memory.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} An owned proxy, if this proxy does not own the object it will be invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_interface_ada67a040adb9755a631ae19eda3ebcbd}\label{class_g_w_1_1_c_o_r_e_1_1_g_interface_ada67a040adb9755a631ae19eda3ebcbd}} 
+\index{GW::CORE::GInterface@{GW::CORE::GInterface}!Relinquish@{Relinquish}}
+\index{Relinquish@{Relinquish}!GW::CORE::GInterface@{GW::CORE::GInterface}}
+\doxysubsubsection{\texorpdfstring{Relinquish()}{Relinquish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} GW\+::\+CORE\+::\+GInterface\+::\+Relinquish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gives ownership of one Proxy to another (if possible). 
+
+Allows a Proxy to yield its ownership to another Proxy. If a Proxy does not have ownership of its memory then it can not yield it. After a successful yield this Proxy will still retain access but not memory ownership.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} Proxy owning internal memory or an invalid handle if it cannot be yielded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_interface_a6e112efa1f87f7d3bf3f04cbc72f24ed}\label{class_g_w_1_1_c_o_r_e_1_1_g_interface_a6e112efa1f87f7d3bf3f04cbc72f24ed}} 
+\index{GW::CORE::GInterface@{GW::CORE::GInterface}!Mirror@{Mirror}}
+\index{Mirror@{Mirror}!GW::CORE::GInterface@{GW::CORE::GInterface}}
+\doxysubsubsection{\texorpdfstring{Mirror()}{Mirror()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} GW\+::\+CORE\+::\+GInterface\+::\+Mirror (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Copies a Proxy while retaining it\textquotesingle{}s ownership state. 
+
+Allows a Proxy to be Shared but unlike \char`\"{}\+Share()\char`\"{} it will not fail if the object is not owned. An unowned Proxy will transfer normally while an owned proxy will share ownership.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} Proxy refrencing same object with same ownership model perserved. 
+\end{DoxyReturn}

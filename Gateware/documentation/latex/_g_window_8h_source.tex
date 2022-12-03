@@ -1,0 +1,354 @@
+\hypertarget{_g_window_8h_source}{}\doxysection{GWindow.\+h}
+\label{_g_window_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GWindow.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/System/GWindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GWINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GWINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00005}00005 \textcolor{comment}{    File: GWindow.h}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that creates a window and handles its properties.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00007}00007 \textcolor{comment}{    Author: Nic Russell}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00008}00008 \textcolor{comment}{    Contributors: ShuoYi Chang, Andre Reid, Kai Huang, Ozzie Mercado, Ryan Powser}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00009}00009 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00010}00010 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00011}00011 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00012}00012 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}../Core/GEventGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00015}00015 \textcolor{preprocessor}{\#include "{}../System/GSystemDefines.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00017}00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00019}00019     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00020}00020     \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00021}00021         \textcolor{keyword}{class }GWindowInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GEventGeneratorInterface}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00023}00023         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00024}00024             \textcolor{keyword}{enum class} Events}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00025}00025             \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00026}00026                 MINIMIZE,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00027}00027                 MAXIMIZE,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00028}00028                 RESIZE,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00029}00029                 MOVE,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00030}00030                 DISPLAY\_CLOSED,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00031}00031                 EVENTS\_PROCESSED,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00032}00032                 DESTROY,}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00033}00033             \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00035}00035             \textcolor{keyword}{struct }EVENT\_DATA}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00036}00036             \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00037}00037                 Events eventFlags;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00038}00038                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00039}00039                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00040}00040                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} clientHeight;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00041}00041                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} clientWidth;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00042}00042                 \textcolor{keywordtype}{int} windowX;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00043}00043                 \textcolor{keywordtype}{int} windowY;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00044}00044                 \textcolor{keywordtype}{void}* windowHandle;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00045}00045             \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00047}00047             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ProcessWindowEvents() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00048}00048             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ReconfigureWindow(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y, \textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height, \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW::SYSTEM::GWindowStyle}} \_style) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00049}00049             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetWindowName(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_newName) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00050}00050             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetIcon(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_argbPixels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00051}00051             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} MoveWindow(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00052}00052             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ResizeWindow(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00053}00053             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Maximize() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00054}00054             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Minimize() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00055}00055             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} ChangeWindowStyle(\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW::SYSTEM::GWindowStyle}} \_style) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00056}00056             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetWidth(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outWidth) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00057}00057             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetHeight(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outHeight) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00058}00058             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetClientWidth(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outClientWidth) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00059}00059             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetClientHeight(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outClientHeight) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00060}00060             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetX(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outX) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00061}00061             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  GetY(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outY) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00062}00062             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetClientTopLeft(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outX, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outY) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00063}00063             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetWindowHandle(\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW::SYSTEM::UNIVERSAL\_WINDOW\_HANDLE}}\& \_outUniversalWindowHandle) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00064}00064             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} IsFullscreen(\textcolor{keywordtype}{bool}\& \_outIsFullscreen) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00065}00065             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} IsFocus(\textcolor{keywordtype}{bool}\& \_outIsFocus) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00066}00066         \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00070}00070 \textcolor{preprocessor}{\#include "{}../../Source/System/GWindow/GWindow.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00071}00071 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00072}00072 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00073}00073 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00074}00074 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00075}00075 \textcolor{comment}{    //! The namespace to which all Gateware system interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00076}00076 \textcolor{comment}{}    \textcolor{keyword}{namespace }SYSTEM}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00077}00077     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00078}00078 \textcolor{comment}{        //! A Gateware interface that creates a window and handles its properties.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00079}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{00079}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GWindow}} final}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00080}00080             : \textcolor{keyword}{public} I::GProxy<I::GWindowInterface, I::GWindowImplementation, int, int, int, int, GW::SYSTEM::GWindowStyle>}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00081}00081         \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00082}00082         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00083}00083             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00084}00084 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00085}00085 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GWindow}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00086}00086             GATEWARE\_TYPEDEF(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{Events}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00087}00087             GATEWARE\_TYPEDEF(\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00088}00088             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}{ProcessWindowEvents}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00089}00089             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}{ReconfigureWindow}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00090}00090             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}{SetWindowName}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00091}00091             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}{SetIcon}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00092}00092             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}{MoveWindow}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00093}00093             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}{ResizeWindow}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00094}00094             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}{Maximize}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00095}00095             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}{Minimize}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00096}00096             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}{ChangeWindowStyle}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00097}00097             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}{GetWidth}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00098}00098             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}{GetHeight}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00099}00099             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}{GetClientWidth}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00100}00100             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}{GetClientHeight}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00101}00101             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}{GetX}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00102}00102             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}{GetY}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00103}00103             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}{GetClientTopLeft}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00104}00104             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}{GetWindowHandle}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00105}00105             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}{IsFullscreen}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00106}00106             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}{IsFocus}})}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00108}00108             \textcolor{comment}{// reimplemented functions from GEventGenerator}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00109}00109             GATEWARE\_FUNCTION(Register)}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00110}00110             GATEWARE\_CONST\_FUNCTION(Observers)}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00111}00111             GATEWARE\_FUNCTION(Push)\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00112}00112 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00113}00113 \textcolor{comment}{}            }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00115}00115             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00116}00116 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00117}00117 \textcolor{comment}{            //! Creates a valid GWindow object. }}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00118}00118 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00119}00119 \textcolor{comment}{            *   \(\backslash\)param [in] \_x      X position of the window}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00120}00120 \textcolor{comment}{            *   \(\backslash\)param [in] \_y      Y position of the window}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00121}00121 \textcolor{comment}{            *   \(\backslash\)param [in] \_width  Client width of the window}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00122}00122 \textcolor{comment}{            *   \(\backslash\)param [in] \_height Client height of the window}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00123}00123 \textcolor{comment}{            *   \(\backslash\)param [in] \_style  Style of the window. See \(\backslash\)ref GWindowStyle for more info.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00124}00124 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00125}00125 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS    This always succeeds. (unless you run out of memory)}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00126}00126 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00127}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2d7548a2f9671c801293a64b9ecca207}{00127}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2d7548a2f9671c801293a64b9ecca207}{Create}}(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y, \textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height, \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW::SYSTEM::GWindowStyle}} \_style);}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00128}00128 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00129}00129 \textcolor{comment}{            //! Events holds the possible events a GWindow window can broadcast.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00130}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{00130}} \textcolor{comment}{}            \textcolor{keyword}{enum class} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{Events}} \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00131}00131                 MINIMIZE,           \textcolor{comment}{//!< Window was minimized.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00132}00132                 MAXIMIZE,           \textcolor{comment}{//!< Window was maximized.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00133}00133                 RESIZE,             \textcolor{comment}{//!< Window was resized in some way.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00134}00134                 MOVE,               \textcolor{comment}{//!< Window was moved.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00135}00135                 DISPLAY\_CLOSED,     \textcolor{comment}{//!< Linux only message that is fired after XCloseDisplay() but before XCloseWindow() }}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00136}00136                 EVENTS\_PROCESSED,   \textcolor{comment}{//!< Notifies users that all queued window events have been processed }}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00137}00137                 DESTROY,            \textcolor{comment}{//!< Window was closed.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00138}00138             \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00139}00139 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00140}00140 \textcolor{comment}{            /*! EVENT\_DATA holds the properties of the window the event was sent from. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00141}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a}{00141}}             \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a}{EVENT\_DATA}} \{}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00142}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ae83c8e777941fc3fb901b96de4cb273d}{00142}}                 \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a1c15f56e0f77fd4aaf6261b990f66139}{Events}} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ae83c8e777941fc3fb901b96de4cb273d}{eventFlags}};          \textcolor{comment}{/*!< The type of GWindow::Events this EVENT\_DATA belongs to. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00143}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ad546a17597a47d0b7fbfc7b82a23b605}{00143}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ad546a17597a47d0b7fbfc7b82a23b605}{height}};      \textcolor{comment}{/*!< The total height of the window including borders. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00144}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ae5266e3c40801aaac08de269d88a0c9f}{00144}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_ae5266e3c40801aaac08de269d88a0c9f}{width}};            \textcolor{comment}{/*!< The total width of the window includeing borders. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00145}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_aa11db18f759c8dfdc5c205d5f3415d39}{00145}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_aa11db18f759c8dfdc5c205d5f3415d39}{clientHeight}};  \textcolor{comment}{/*!< The height of the client area. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00146}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_af71086f83234cea6d6e7a59b3c196cd6}{00146}}                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_af71086f83234cea6d6e7a59b3c196cd6}{clientWidth}};    \textcolor{comment}{/*!< The width of the client area. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00147}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a6b1cbfb3b2a9cc9d52cf122b808caf59}{00147}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a6b1cbfb3b2a9cc9d52cf122b808caf59}{windowX}};             \textcolor{comment}{/*!< The X position of the top left corner of the window in pixels. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00148}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a13fc3db5d3f380d2caf6d8f2187ab741}{00148}}                 \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a13fc3db5d3f380d2caf6d8f2187ab741}{windowY}};             \textcolor{comment}{/*!< The Y position of the top left corner of the window in pixels. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00149}\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a3f18263562c4702a66f92d9131664865}{00149}}                 \textcolor{keywordtype}{void}* \mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_g_window_1_1_e_v_e_n_t___d_a_t_a_a3f18263562c4702a66f92d9131664865}{windowHandle}};         \textcolor{comment}{/*!< A handle to the native OS window. */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00150}00150             \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00151}00151 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00152}00152 \textcolor{comment}{            //! Flushes and processes all messages from the window's event queue.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00153}00153 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00154}00154 \textcolor{comment}{            *   This function is meant to be called once a frame in an application's}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00155}00155 \textcolor{comment}{            *   main loop. This function will break when all waiting messages have}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00156}00156 \textcolor{comment}{            *   been processed and the event queue is empty.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00157}00157 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00158}00158 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid or is about to be invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00159}00159 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The messages were successfully processed and removed}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00160}00160 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00161}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}{00161}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a6c7db60db04436ac21cba3147f287e84}{ProcessWindowEvents}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00162}00162 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00163}00163 \textcolor{comment}{            //! Gives the currently opened window the specified size, position and style.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00164}00164 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00165}00165 \textcolor{comment}{            *   If width and height are equal to or greater than the native resolution, the passed in}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00166}00166 \textcolor{comment}{            *   GWindowStyle will be overwritten to be the fullscreen version if it is not already.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00167}00167 \textcolor{comment}{            *   If position parameters are less than 0 then 0 will be used. If position parameters}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00168}00168 \textcolor{comment}{            *   are greater than native resoultion, maximum native resolution parameters will be used.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00169}00169 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00170}00170 \textcolor{comment}{            *   \(\backslash\)param [in] \_x The x position on screen to place the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00171}00171 \textcolor{comment}{            *   \(\backslash\)param [in] \_y The y position on screen to place the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00172}00172 \textcolor{comment}{            *   \(\backslash\)param [in] \_width The width to resize the client area of the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00173}00173 \textcolor{comment}{            *   \(\backslash\)param [in] \_height The height to resize the client area of the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00174}00174 \textcolor{comment}{            *   \(\backslash\)param [in] \_style The style to give to the window. (see \(\backslash\)ref GWindowStyle for style options)}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00175}00175 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00176}00176 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00177}00177 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00178}00178 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00179}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}{00179}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a71c015d7ac4d71f81e73367fcec464ea}{ReconfigureWindow}}(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y, \textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height, \mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW::SYSTEM::GWindowStyle}} \_style) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00180}00180 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00181}00181 \textcolor{comment}{            //! Changes the text displayed at the top bar of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00182}00182 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00183}00183 \textcolor{comment}{            *   \(\backslash\)param [in] \_newName The new name to give to the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00184}00184 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00185}00185 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT The string passed in contains invalid characters or is null.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00186}00186 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00187}00187 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00188}00188 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00189}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}{00189}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7363e8eec8aebed1634d97706b4f391f}{SetWindowName}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_newName) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00190}00190 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00191}00191 \textcolor{comment}{            //! Changes the icon displayed in the title bar of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00192}00192 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00193}00193 \textcolor{comment}{            *   \(\backslash\)param [in] \_width The width of the icon.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00194}00194 \textcolor{comment}{            *   \(\backslash\)param [in] \_height The height of the icon.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00195}00195 \textcolor{comment}{            *   \(\backslash\)param [in] \_argbPixels An array of ARGB formatted pixels that represent the new icon.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00196}00196 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00197}00197 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT One of the arguments is less than 1 or a nullptr}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00198}00198 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window or pixel array is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00199}00199 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00200}00200 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00201}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}{00201}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ad350ab949dbab74780c47c54b8906be3}{SetIcon}}(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_argbPixels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00202}00202 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00203}00203 \textcolor{comment}{            //! Repositions the top left corner of the window to the specified x and y coordinates on screen.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00204}00204 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00205}00205 \textcolor{comment}{            *   If position parameters are less than 0, then 0 will be used. If position parameters}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00206}00206 \textcolor{comment}{            *   are greater than native resolution, maximum native resolution parameters will be used.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00207}00207 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00208}00208 \textcolor{comment}{            *   \(\backslash\)param [in] \_x The x position on screen to move the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00209}00209 \textcolor{comment}{            *   \(\backslash\)param [in] \_y The y position on screen to move the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00210}00210 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00211}00211 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00212}00212 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00213}00213 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00214}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}{00214}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a9fc043b893f26c35e6ba965adcc17edb}{MoveWindow}}(\textcolor{keywordtype}{int} \_x, \textcolor{keywordtype}{int} \_y) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00215}00215 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00216}00216 \textcolor{comment}{            //! Resizes the currently opened window to the specified width and height.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00217}00217 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00218}00218 \textcolor{comment}{            *   If width and height are greater than the native resolution, the GWindowStyle}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00219}00219 \textcolor{comment}{            *   will be overwritten to be the fullscreen version if it is not already.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00220}00220 \textcolor{comment}{            *   If position parameters are less than 0 then 0 will be used. If position parameters}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00221}00221 \textcolor{comment}{            *   are greater than native resoultion, maximum native resolution parameters will be used.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00222}00222 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00223}00223 \textcolor{comment}{            *   \(\backslash\)param [in] \_width The width to resize the client area of the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00224}00224 \textcolor{comment}{            *   \(\backslash\)param [in] \_height The height to resize the client area of the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00225}00225 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00226}00226 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00227}00227 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00228}00228 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00229}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}{00229}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a92633707248f32e4c166f27f03690d6d}{ResizeWindow}}(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00230}00230 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00231}00231 \textcolor{comment}{            //! Maximize the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00232}00232 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00233}00233 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00234}00234 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00235}00235 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00236}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}{00236}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a06b5f092e742baca82a0bfc2cbaef153}{Maximize}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00237}00237 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00238}00238 \textcolor{comment}{            //! Minimizes the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00239}00239 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00240}00240 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00241}00241 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00242}00242 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00243}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}{00243}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a2cced61a323dac10535904c3899563d8}{Minimize}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00244}00244 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00245}00245 \textcolor{comment}{            //! Sets the currently opened window's style to the specified style.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00246}00246 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00247}00247 \textcolor{comment}{            *   \(\backslash\)param [in] \_style The \(\backslash\)ref GWindowStyle to change the window to.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00248}00248 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00249}00249 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00250}00250 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00251}00251 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00252}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}{00252}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a0a0bdaae275c5ee616972e8431238d00}{ChangeWindowStyle}}(\mbox{\hyperlink{group___system_defines_gad117891e556631f842625c348d36a071}{GW::SYSTEM::GWindowStyle}} \_style) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00253}00253 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00254}00254 \textcolor{comment}{            //! Gets the width in pixels of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00255}00255 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00256}00256 \textcolor{comment}{            *   \(\backslash\)param [out] \_outWidth Width of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00257}00257 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00258}00258 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00259}00259 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00260}00260 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00261}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}{00261}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a616497a3faa787d3b22f0146db7a1645}{GetWidth}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outWidth) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00262}00262 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00263}00263 \textcolor{comment}{            //! Gets the height in pixels of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00264}00264 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00265}00265 \textcolor{comment}{            *   \(\backslash\)param [out] \_outHeight Height of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00266}00266 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00267}00267 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00268}00268 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00269}00269 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00270}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}{00270}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a216573d26f053c9b8e8cfb71f8fb16f9}{GetHeight}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outHeight) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00271}00271 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00272}00272 \textcolor{comment}{            //! Gets the client width in pixels of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00273}00273 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00274}00274 \textcolor{comment}{            *   \(\backslash\)param [out] \_outClientWidth Client width of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00275}00275 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00276}00276 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00277}00277 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00278}00278 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00279}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}{00279}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_acc9e7305d5f1e2f793184718023d0f25}{GetClientWidth}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outClientWidth) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00280}00280 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00281}00281 \textcolor{comment}{            //! Gets the client height in pixels of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00282}00282 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00283}00283 \textcolor{comment}{            *   \(\backslash\)param [out] \_outClientHeight Client height of the currently opened window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00284}00284 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00285}00285 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00286}00286 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00287}00287 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00288}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}{00288}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a036e77988a33af4e85f6f904879d2d1f}{GetClientHeight}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outClientHeight) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00289}00289 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00290}00290 \textcolor{comment}{            //! Gets the X position in screen coordinates of the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00291}00291 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00292}00292 \textcolor{comment}{            *   \(\backslash\)param [out] \_outX X position in screen coordinates of the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00293}00293 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00294}00294 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00295}00295 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00296}00296 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00297}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}{00297}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a81a25fe9b7507c21c580477d31fe7eee}{GetX}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outX) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00298}00298 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00299}00299 \textcolor{comment}{            //! Gets the Y position in screen coordinates of the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00300}00300 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00301}00301 \textcolor{comment}{            *   \(\backslash\)param [out] \_outY Y position in screen coordinates of the top left corner of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00302}00302 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00303}00303 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00304}00304 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00305}00305 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00306}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}{00306}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}}  \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a326d51c22d4fee456ef9377d85a3786c}{GetY}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outY) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00307}00307 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00308}00308 \textcolor{comment}{            //! Gets the location of the top-\/left corner of the client area of the window.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00309}00309 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00310}00310 \textcolor{comment}{            *   \(\backslash\)param [out] \_outX X location of the top-\/left corner of the client area.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00311}00311 \textcolor{comment}{            *   \(\backslash\)param [out] \_outY Y location of the top-\/left corner of the client area.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00312}00312 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00313}00313 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00314}00314 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00315}00315 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00316}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}{00316}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_ae784e20597fa93105a311f832166062e}{GetClientTopLeft}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outX, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outY) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00317}00317 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00318}00318 \textcolor{comment}{            //! Gets a UNIVERSAL\_WINDOW\_HANDLE containing castable void pointers to the platform specific window handle and display.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00319}00319 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00320}00320 \textcolor{comment}{            *   \(\backslash\)param [out] \_outUniversalWindowHandle Contains information for handles}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00321}00321 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00322}00322 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00323}00323 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00324}00324 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00325}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}{00325}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a64ea90e2bc439c7af74dbf536bc3bd59}{GetWindowHandle}}(\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW::SYSTEM::UNIVERSAL\_WINDOW\_HANDLE}}\& \_outUniversalWindowHandle) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00326}00326 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00327}00327 \textcolor{comment}{            //! Gets a bool specifying whether or not the currently opened window is fullscreen.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00328}00328 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00329}00329 \textcolor{comment}{            *   \(\backslash\)param [out] \_outIsFullscreen True if fullscreen, false otherwise.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00330}00330 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00331}00331 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00332}00332 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00333}00333 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00334}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}{00334}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_af8bb7372c94d3ef5e42983265613c286}{IsFullscreen}}(\textcolor{keywordtype}{bool}\& \_outIsFullscreen) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00335}00335 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00336}00336 \textcolor{comment}{            //! Gets a bool specifying whether or not the window has input focus.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00337}00337 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00338}00338 \textcolor{comment}{            *   \(\backslash\)param [out] \_outIsFocus True if in focus, false otherwise.}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00339}00339 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00340}00340 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE The window is invalid}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00341}00341 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS The operation is successful}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00342}00342 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00343}\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}{00343}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window_a7d9ed8b19dc4c5f7e9dd93701ce943a3}{IsFocus}}(\textcolor{keywordtype}{bool}\& \_outIsFocus) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00344}00344 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00345}00345         \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00346}00346     \};}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00347}00347 \}}
+\DoxyCodeLine{\Hypertarget{_g_window_8h_source_l00348}00348 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GWINDOW\_H}}
+
+\end{DoxyCode}

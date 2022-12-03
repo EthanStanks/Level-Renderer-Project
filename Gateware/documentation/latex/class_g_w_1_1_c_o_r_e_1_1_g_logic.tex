@@ -1,0 +1,96 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_logic}{}\doxysection{GW\+::CORE\+::GLogic Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_logic}\index{GW::CORE::GLogic@{GW::CORE::GLogic}}
+
+
+{\ttfamily \#include $<$GLogic.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GLogic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_c_o_r_e_1_1_g_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_aae7d313b10cf887f264e60896542b6d8}{Create}} (std\+::function$<$ void()$>$ \+\_\+logic)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}{Assign}} (std\+::function$<$ void()$>$ \+\_\+new\+Logic)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{Invoke}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}} Interface stores and allows safe swapping of user logic (including \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} handlers). It combines the lifetime tracking of a GInterface(via Proxy) with the flexibility of std\+::function. 
+
+Definition at line \mbox{\hyperlink{_g_logic_8h_source_l00046}{46}} of file \mbox{\hyperlink{_g_logic_8h_source}{GLogic.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_logic_aae7d313b10cf887f264e60896542b6d8}\label{class_g_w_1_1_c_o_r_e_1_1_g_logic_aae7d313b10cf887f264e60896542b6d8}} 
+\index{GW::CORE::GLogic@{GW::CORE::GLogic}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GLogic@{GW::CORE::GLogic}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GLogic\+::\+Create (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{\+\_\+logic }\end{DoxyParamCaption})}
+
+
+
+Allocates \& Intializes a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}}. 
+
+A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}} is capable of storing and swapping an std\+::function which you can safely Invoke. During the function\textquotesingle{}s invocation you are garunteed the Proxy will remain valid and the logic will not be swapped or recursively overwritten.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+logic} & The function or lambda you wish to be invoked when \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{Invoke()}} is called. (optional can pass nullptr). May be invoked from a different thread.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The provided logic was stored within this Proxy. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}\label{class_g_w_1_1_c_o_r_e_1_1_g_logic_a20a9804db79009bbf13c48f26e6970cd}} 
+\index{GW::CORE::GLogic@{GW::CORE::GLogic}!Assign@{Assign}}
+\index{Assign@{Assign}!GW::CORE::GLogic@{GW::CORE::GLogic}}
+\doxysubsubsection{\texorpdfstring{Assign()}{Assign()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GLogic\+::\+Assign (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{\+\_\+new\+Logic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ovewrites the current logic assigned to this Proxy (if any) 
+
+Assigns new user provided logic (nullptr\mbox{[}no logic\mbox{]} is a valid argument). Cannot be done within provided logic as the class garuntees the logic stack will remain valid for the duration of \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}{Invoke()}}. $\ast$$\ast$\+Deadlocks will only be detected/prevented in Debug builds, check your logic for errors$\ast$$\ast$
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+new\+Logic} & The function or lambda you wish to overwrite the exsiting logic.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a8f35b656de87c54e18710fc94d73a614}{GReturn\+::\+DEADLOCK}}} & You have attempted to modify the logic during it\textquotesingle{}s own executetion. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Stored logic was successfully overwritten. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}\label{class_g_w_1_1_c_o_r_e_1_1_g_logic_adbaa5aadc75682ade76b801ee45e8fc2}} 
+\index{GW::CORE::GLogic@{GW::CORE::GLogic}!Invoke@{Invoke}}
+\index{Invoke@{Invoke}!GW::CORE::GLogic@{GW::CORE::GLogic}}
+\doxysubsubsection{\texorpdfstring{Invoke()}{Invoke()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GLogic\+::\+Invoke (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Invokes the stored function/lamda from the current thread. 
+
+Calls the stored logic on this thread, during the invocation the logic and proxy will remian valid. During the operation Recursive calls are permitted but swapping the logic of your own proxy is not.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No internal logic has been assigned to this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_logic}{GLogic}}. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & Function is valid and was called. \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,119 @@
+\hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d}{}\doxysection{GW\+::AUDIO\+::GSound3D Class Reference}
+\label{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d}\index{GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}}
+
+
+{\ttfamily \#include $<$GSound3\+D.\+h$>$}
+
+Inheritance diagram for GW\+::AUDIO\+::GSound3D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.297798cm]{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_aa5fe98dae9e3c13780b8deb077d74b28}{Create}} (const char $\ast$\+\_\+path, float \+\_\+min\+Radius, float \+\_\+max\+Radius, \mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW\+::\+AUDIO\+::\+GATTENUATION}} \+\_\+attenuation, \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GW\+::\+AUDIO\+::\+GAudio3D}} \+\_\+audio3D, float \+\_\+volume=1.\+0f)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_a2dcfe476a709638d72ebe648cced8d83}{Update\+Position}} (\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW\+::\+MATH\+::\+GVECTORF}} \+\_\+position)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_ad3d2834742e64663b25a73bd82f73225}{Update\+Attenuation}} (float \+\_\+min\+Radius, float \+\_\+max\+Radius, \mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW\+::\+AUDIO\+::\+GATTENUATION}} \+\_\+attenuation)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_sound3_d_8h_source_l00041}{41}} of file \mbox{\hyperlink{_g_sound3_d_8h_source}{GSound3\+D.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_aa5fe98dae9e3c13780b8deb077d74b28}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_aa5fe98dae9e3c13780b8deb077d74b28}} 
+\index{GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}!Create@{Create}}
+\index{Create@{Create}!GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GSound3\+D\+::\+Create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+path,  }\item[{float}]{\+\_\+min\+Radius,  }\item[{float}]{\+\_\+max\+Radius,  }\item[{\mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW\+::\+AUDIO\+::\+GATTENUATION}}}]{\+\_\+attenuation,  }\item[{\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GW\+::\+AUDIO\+::\+GAudio3D}}}]{\+\_\+audio3D,  }\item[{float}]{\+\_\+volume = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+
+
+Creates a handle to \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d}{GSound3D}} an internally fills out a \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound}{GSound}} with data from provided .wav file. 
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound}{GSound}} to return, attempts to initallize internal variables, and loads audio fully into memory. Supports 16/32 bit uncompressed CD-\/quality .WAV format. The sample has to be STEREO or better for surround to work (2+ channels). A mono sample can be easily transformed to Stereo by duplicating the track in L and R channels.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+path} & A char array to the .wav path. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+min\+Radius} & The radius at which the sound is at max volume. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+max\+Radius} & The radius at which the sound is silent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+attenuation} & The type of curve between \+\_\+min\+Radius and \+\_\+max\+Radius. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+audio3D} & A pointer to the \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio3_d}{GAudio3D}} handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+volume} & (OPTIONAL) parameter to set sound volume (set to 1 by default).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & \+\_\+path is a nullptr, \+\_\+audio3D is an EMPTY\+\_\+\+PROXY, or \+\_\+volume is outside of 0.\+0f to 1.\+0f range. \\
+\hline
+{\em FAILURE} & Failed to create base \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}} instance, or failed to initialize internal variables. See Below for Platform
+\begin{DoxyItemize}
+\item On Linux + pa\+\_\+main\+\_\+loop or pa\+\_\+context could not be created, pa\+\_\+context could not be connected, pa\+\_\+channel\+\_\+map could not be created, pa\+\_\+stream could not be created, or pa\+\_\+stream could not be connected.
+\item On Mac + Av\+Audio\+Player\+Node could not be created or could not read in file. 
+\end{DoxyItemize}\\
+\hline
+{\em SUCCESS} & Successfully created \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d}{GSound3D}} instance and proxy. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_a2dcfe476a709638d72ebe648cced8d83}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_a2dcfe476a709638d72ebe648cced8d83}} 
+\index{GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}!UpdatePosition@{UpdatePosition}}
+\index{UpdatePosition@{UpdatePosition}!GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}}
+\doxysubsubsection{\texorpdfstring{UpdatePosition()}{UpdatePosition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GSound3\+D\+::\+Update\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_w_1_1_m_a_t_h_1_1_g_v_e_c_t_o_r_f}{GW\+::\+MATH\+::\+GVECTORF}}}]{\+\_\+position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the position of the sound source. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+position} & The position of the music as a GVECTORF.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em FAILURE} & Failed to spatialize/set correct volume. \\
+\hline
+{\em SUCCESS} & Position was successfully set and volume updated. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_ad3d2834742e64663b25a73bd82f73225}\label{class_g_w_1_1_a_u_d_i_o_1_1_g_sound3_d_ad3d2834742e64663b25a73bd82f73225}} 
+\index{GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}!UpdateAttenuation@{UpdateAttenuation}}
+\index{UpdateAttenuation@{UpdateAttenuation}!GW::AUDIO::GSound3D@{GW::AUDIO::GSound3D}}
+\doxysubsubsection{\texorpdfstring{UpdateAttenuation()}{UpdateAttenuation()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+AUDIO\+::\+GSound3\+D\+::\+Update\+Attenuation (\begin{DoxyParamCaption}\item[{float}]{\+\_\+min\+Radius,  }\item[{float}]{\+\_\+max\+Radius,  }\item[{\mbox{\hyperlink{group___audio_options_gaba9b072bf0fe2efe52a0c5a541d86faa}{GW\+::\+AUDIO\+::\+GATTENUATION}}}]{\+\_\+attenuation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the attenuation curve of the sound between \+\_\+min\+Radius and \+\_\+max\+Radius. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+min\+Radius} & The radius at which the sound is at max volume. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+max\+Radius} & The radius at which the sound is silent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+attenuation} & The type of curve between \+\_\+min\+Radius and \+\_\+max\+Radius.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em INVALID\+\_\+\+ARGUMENT} & \+\_\+attenuation is not a defined GATTENUATION, or \+\_\+min\+Radius is greater than \+\_\+max\+Radius. \\
+\hline
+{\em SUCCESS} & The attenuation was successfully set and volume updated. \\
+\hline
+\end{DoxyRetVals}

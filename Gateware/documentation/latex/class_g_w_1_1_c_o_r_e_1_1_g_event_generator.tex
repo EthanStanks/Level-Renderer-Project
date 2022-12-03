@@ -1,0 +1,236 @@
+\hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{}\doxysection{GW\+::CORE\+::GEvent\+Generator Class Reference}
+\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+
+
+{\ttfamily \#include $<$GEvent\+Generator.\+h$>$}
+
+Inheritance diagram for GW\+::CORE\+::GEvent\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_c_o_r_e_1_1_g_event_generator_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{Events}} \{ \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}{NON\+\_\+\+EVENT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a05f5ef11b70cb8b01b074fe609cedec1}{Create}} ()
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}{Register}} (\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{CORE\+::\+GEvent\+Cache}} \+\_\+recorder)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a2abae4b860f8a447c576f350abdcbbf6}{Register}} (\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{CORE\+::\+GEvent\+Responder}} \+\_\+responder)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a1053b01e1a428e4dd2f3906d8b5b678e}{Register}} (\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}} \+\_\+observer, void($\ast$\+\_\+callback)(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&, \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}} \&))=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}{Deregister}} (\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}} \+\_\+observer)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}{Observers}} (unsigned int \&\+\_\+out\+Count) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}{Push}} (const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&\+\_\+new\+Event)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Can be used as a handle to any derived generator type. You can also use this Proxy to push custom events to create your own messaging system. Any Registered observers are not filtered so be careful to add them only once otherwise they will receive duplicate events.(you can use \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}{Deregister()}} as a detection filter if needed) 
+
+Definition at line \mbox{\hyperlink{_g_event_generator_8h_source_l00068}{68}} of file \mbox{\hyperlink{_g_event_generator_8h_source}{GEvent\+Generator.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Events@{Events}}
+\index{Events@{Events}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Events}{Events}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6e}{GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Events}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+A sample event enum, all event generators have them. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NON\_EVENT@{NON\_EVENT}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!NON\_EVENT@{NON\_EVENT}}}\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a5aa714d022727161889ed3803330de6ea1f3bbf71195d403dd913aa86caefa0e8}} 
+NON\+\_\+\+EVENT&An example event, not actually used. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_event_generator_8h_source_l00096}{96}} of file \mbox{\hyperlink{_g_event_generator_8h_source}{GEvent\+Generator.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a05f5ef11b70cb8b01b074fe609cedec1}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a05f5ef11b70cb8b01b074fe609cedec1}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Create@{Create}}
+\index{Create@{Create}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates an \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. 
+
+This proxy is a general implementation of how Gateware communicates events. If you would like to create your own communication system, you can use this object to spawn a \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}}. This Proxy is meant to be used with \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} and \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}}. (however both are optional)
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & This always succeeds. (unless you run out of memory) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a472cedc940e7a2cb258b9e84d6b70adf}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Register@{Register}}
+\index{Register@{Register}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{CORE\+::\+GEvent\+Cache}}}]{\+\_\+recorder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Enables limited storage of all events pushed by this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. 
+
+Links a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} to save any event Pushed by this generator for later processing. This is useful when you need to process the events of this generator but don\textquotesingle{}t want to handle them immediately on the thread that caused them to occur. An INVALID \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} will automatically be removed. The Generator will respect the ownership granted (if any) by the provided Proxy. (ex\+: Share/\+Relinquish)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+recorder} & The \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} you wish to record any events generated by this instance.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & An empty/expired proxy was provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The provided \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} proxy will Append any new events. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a2abae4b860f8a447c576f350abdcbbf6}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a2abae4b860f8a447c576f350abdcbbf6}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Register@{Register}}
+\index{Register@{Register}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{CORE\+::\+GEvent\+Responder}}}]{\+\_\+responder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Enables immediate interchangable response to events pushed by this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. 
+
+Links a \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} to react to any event Pushed by this generator for immediate processing. You may swap the internal logic of \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}}. An INVALID \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} will automatically be removed. The Generator will respect the ownership granted (if any) by the provided Proxy. (ex\+: Share/\+Relinquish)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+responder} & The \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_responder}{GEvent\+Responder}} you need to react to all events generated by this instance.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & An empty/expired proxy was provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The provided \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_cache}{GEvent\+Cache}} proxy will Append any new events. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a1053b01e1a428e4dd2f3906d8b5b678e}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_a1053b01e1a428e4dd2f3906d8b5b678e}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Register@{Register}}
+\index{Register@{Register}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}}}]{\+\_\+observer,  }\item[{void($\ast$)(const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&, \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}} \&)}]{\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Listen for all events pushed by this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. 
+
+Links a specific static function callback to be triggered on any event pushed to this generator. A \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{GInterface}} is required to control the lifetime of the linked function. Sharing will make it permanent.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+observer} & Any valid Gateware Proxy object, used to control the lifetime of this listener. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+callback} & Static callback function that accepts a reference to the \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \& active observer.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & An empty/expired proxy or null callback were provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The provided callback and proxy object will be informed of any new events. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_afa3b7b2a2556ab0f238c92e9bff11377}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Deregister@{Deregister}}
+\index{Deregister@{Deregister}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Deregister()}{Deregister()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Deregister (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_interface}{CORE\+::\+GInterface}}}]{\+\_\+observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prematurely removes an observer from this \mbox{\hyperlink{class_g_w_1_1_c_o_r_e_1_1_g_event_generator}{GEvent\+Generator}}. 
+
+Generally end users don\textquotesingle{}t need to call this routine as any expired proxy is automatically removed. Only the first occurance of an observer will be removed if it has been registered multiple times.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+observer} & Any valid Gateware proxy that was previously registered.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & An empty/expired proxy was provided. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Could not find the observer specified, nothing was removed. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The provided proxy will no longer receive GEvents from this class. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ac80bc422255361ed13e41a69076e29b2}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Observers@{Observers}}
+\index{Observers@{Observers}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Observers()}{Observers()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Observers (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Count }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the amount of proxies observing this generator. 
+
+Counts the amount of valid proxies which have been registered to receive events from this system.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Count} & The number of valid proxies registered to receive events.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & This operation will always succeed. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}\label{class_g_w_1_1_c_o_r_e_1_1_g_event_generator_ad656b45b4d327e86774ea6e7c4a4b0eb}} 
+\index{GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}!Push@{Push}}
+\index{Push@{Push}!GW::CORE::GEventGenerator@{GW::CORE::GEventGenerator}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+CORE\+::\+GEvent\+Generator\+::\+Push (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} \&}]{\+\_\+new\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Push a new \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} to all registered \& valid listeners. 
+
+Broadcasts a new event to all proxy objects who are actively observing this Event Generator.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+new\+Event} & The \mbox{\hyperlink{struct_g_w_1_1_g_event}{GEvent}} you want all listeners to receive. (first come first serve)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The event was successfully delivered to all non-\/empty proxies. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & There is no one currently registered to listen for these events. \\
+\hline
+\end{DoxyRetVals}

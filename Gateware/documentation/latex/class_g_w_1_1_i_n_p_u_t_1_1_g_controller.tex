@@ -1,0 +1,390 @@
+\hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{}\doxysection{GW\+::INPUT\+::GController Class Reference}
+\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}\index{GW::INPUT::GController@{GW::INPUT::GController}}
+
+
+{\ttfamily \#include $<$GController.\+h$>$}
+
+Inheritance diagram for GW\+::INPUT\+::GController\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_w_1_1_i_n_p_u_t_1_1_g_controller_1_1_e_v_e_n_t___d_a_t_a}{EVENT\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}{Events}} \{ \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ac3e98949a16a1e02a918eca36e59377a}{CONTROLLERBUTTONVALUECHANGED}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ad819e0300a72112dc8f2f6f4bc2630c8}{CONTROLLERAXISVALUECHANGED}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405af8e5517c129659e2f5cf09a8ba6a92fd}{CONTROLLERCONNECTED}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405a7f2de8e6751bf519fe5d366ffbeececc}{CONTROLLERDISCONNECTED}}
+ \}
+\item 
+enum class \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{Dead\+Zone\+Types}} \{ \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a6490fbad8d07efa691073120af3912a1}{DEADZONESQUARE}}
+, \newline
+\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a67f94d7f1182134abbf4d8c6214fdaf4}{DEADZONECIRCLE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a4828658b15d525473b626fbd37bac43c}{Create}} ()
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}{Get\+State}} (unsigned int \+\_\+controller\+Index, int \+\_\+input\+Code, float \&\+\_\+out\+State)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}{Is\+Connected}} (unsigned int \+\_\+controller\+Index, bool \&\+\_\+out\+Is\+Connected)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}{Get\+Max\+Index}} (int \&\+\_\+out\+Max)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}{Get\+Num\+Connected}} (int \&\+\_\+out\+Connected\+Count)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}{Set\+Dead\+Zone}} (\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{Dead\+Zone\+Types}} \+\_\+type, float \+\_\+deadzone\+Percentage)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}{Start\+Vibration}} (unsigned int \+\_\+controller\+Index, float \+\_\+pan, float \+\_\+duration, float \+\_\+strength)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}{Is\+Vibrating}} (unsigned int \+\_\+controller\+Index, bool \&\+\_\+out\+Is\+Vibrating)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}{Stop\+Vibration}} (unsigned int \+\_\+controller\+Index)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}{Stop\+All\+Vibrations}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This library can be used to poll the current state of connected controllers. The controllers are assigned indices in a array for the lifetime that they are connected. It also provides events for controller connections and disconnections, which a GListener can be writen to receive. 
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00076}{76}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!Events@{Events}}
+\index{Events@{Events}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{Events}{Events}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405}{GW\+::\+INPUT\+::\+GController\+::\+Events}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+GController\+Events holds the possible events that can be sent from \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLERBUTTONVALUECHANGED@{CONTROLLERBUTTONVALUECHANGED}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!CONTROLLERBUTTONVALUECHANGED@{CONTROLLERBUTTONVALUECHANGED}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ac3e98949a16a1e02a918eca36e59377a}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ac3e98949a16a1e02a918eca36e59377a}} 
+CONTROLLERBUTTONVALUECHANGED&Input event for button value change. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLERAXISVALUECHANGED@{CONTROLLERAXISVALUECHANGED}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!CONTROLLERAXISVALUECHANGED@{CONTROLLERAXISVALUECHANGED}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ad819e0300a72112dc8f2f6f4bc2630c8}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405ad819e0300a72112dc8f2f6f4bc2630c8}} 
+CONTROLLERAXISVALUECHANGED&Input event for axis value changed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLERCONNECTED@{CONTROLLERCONNECTED}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!CONTROLLERCONNECTED@{CONTROLLERCONNECTED}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405af8e5517c129659e2f5cf09a8ba6a92fd}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405af8e5517c129659e2f5cf09a8ba6a92fd}} 
+CONTROLLERCONNECTED&Connection event for a controller being connected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLERDISCONNECTED@{CONTROLLERDISCONNECTED}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!CONTROLLERDISCONNECTED@{CONTROLLERDISCONNECTED}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405a7f2de8e6751bf519fe5d366ffbeececc}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a571539d6dfd766b0c1fb774286d24405a7f2de8e6751bf519fe5d366ffbeececc}} 
+CONTROLLERDISCONNECTED&Connection event for a controller being disconnected. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00114}{114}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!DeadZoneTypes@{DeadZoneTypes}}
+\index{DeadZoneTypes@{DeadZoneTypes}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{DeadZoneTypes}{DeadZoneTypes}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{GW\+::\+INPUT\+::\+GController\+::\+Dead\+Zone\+Types}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+GController\+Deadzone\+Types holds the diffrent type of deadzone calculations. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEADZONESQUARE@{DEADZONESQUARE}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!DEADZONESQUARE@{DEADZONESQUARE}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a6490fbad8d07efa691073120af3912a1}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a6490fbad8d07efa691073120af3912a1}} 
+DEADZONESQUARE&Calulates the deadzone of x and y separately. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEADZONECIRCLE@{DEADZONECIRCLE}!GW::INPUT::GController@{GW::INPUT::GController}}\index{GW::INPUT::GController@{GW::INPUT::GController}!DEADZONECIRCLE@{DEADZONECIRCLE}}}\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a67f94d7f1182134abbf4d8c6214fdaf4}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760a67f94d7f1182134abbf4d8c6214fdaf4}} 
+DEADZONECIRCLE&Calulates the deadzone of x and y as a single magnitude. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_g_controller_8h_source_l00123}{123}} of file \mbox{\hyperlink{_g_controller_8h_source}{GController.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a4828658b15d525473b626fbd37bac43c}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a4828658b15d525473b626fbd37bac43c}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!Create@{Create}}
+\index{Create@{Create}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}} object. 
+
+Initializes a handle to a \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}} object. Created \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}} object will have its reference count initialized to one.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em SUCCESS} & \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller}{GController}} was successfully created \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a6bf5110fc281e3deb3d07cd50a8d8404}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!GetState@{GetState}}
+\index{GetState@{GetState}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Get\+State (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+controller\+Index,  }\item[{int}]{\+\_\+input\+Code,  }\item[{float \&}]{\+\_\+out\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Used to poll the current state of a button or axis on a controller. 
+
+Use an Inputcode to check the state of a button or axis on the controller at the selected index. If a button is being checked the \+\_\+out\+State will be 0 for up and 1 for down. If a axis is being checked the \+\_\+out\+State will be between -\/1 and 1 inclusively.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+controller\+Index} & The controller index to check \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+input\+Code} & The input code for the button/axis to check \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+State} & A reference to a float to store the state.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & Ether \+\_\+controller\+Index is out of range or \+\_\+input\+Code is invaild. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & No controller is connected at the chosen index. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The button/axis state was was successfully stored in the out-\/param \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a9f5c5e889ea2cf8e17e64e4649c433b5}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Is\+Connected (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+controller\+Index,  }\item[{bool \&}]{\+\_\+out\+Is\+Connected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Used to check if a controller is connected at a specified index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+controller\+Index} & The controller index to check. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Is\+Connected} & A reference to a bool to store whether a controller is at the index.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+controller\+Index was out of range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The out-\/param was successfully filled out \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_ae4b140429727877ae4bac0152b67c0b5}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!GetMaxIndex@{GetMaxIndex}}
+\index{GetMaxIndex@{GetMaxIndex}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{GetMaxIndex()}{GetMaxIndex()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Get\+Max\+Index (\begin{DoxyParamCaption}\item[{int \&}]{\+\_\+out\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Outputs the max index of the array of controllers. 
+
+The controllers will be stored in a constant array where the size of the array is the maxium amnout of supported controllers.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Max} & A reference to a int to store the max index.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The max index was successfully stored in the out-\/param \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0c7159012d5f6b1609ba2de4ea40899a}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!GetNumConnected@{GetNumConnected}}
+\index{GetNumConnected@{GetNumConnected}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{GetNumConnected()}{GetNumConnected()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Get\+Num\+Connected (\begin{DoxyParamCaption}\item[{int \&}]{\+\_\+out\+Connected\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Outputs the number of controllers connected. 
+
+The number returned will be how many controllers are currently stored in the controller array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Connected\+Count} & A reference to a int to store the count of connected controllers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The count of connected controllers was successfully stored in the out-\/param \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a87572337406664233a299d857b5b8234}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!SetDeadZone@{SetDeadZone}}
+\index{SetDeadZone@{SetDeadZone}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{SetDeadZone()}{SetDeadZone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Set\+Dead\+Zone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a027e7c369bd0b37949d3df255986f760}{Dead\+Zone\+Types}}}]{\+\_\+type,  }\item[{float}]{\+\_\+deadzone\+Percentage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set how the stick deadzones should be calculated. 
+
+Default deadzone is \+\_\+type = DEADZONESQUARE, \+\_\+deadzone\+Percentage = .2f
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+type} & Specifies the dead zone calculation to be used. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+deadzone\+Percentage} & The size of the deadzone.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+deadzone\+Percentage is invaild \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The deadzone was set to the new parameters \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a92b7fba8b7903679df2918e06bcef6d0}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!StartVibration@{StartVibration}}
+\index{StartVibration@{StartVibration}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{StartVibration()}{StartVibration()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Start\+Vibration (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+controller\+Index,  }\item[{float}]{\+\_\+pan,  }\item[{float}]{\+\_\+duration,  }\item[{float}]{\+\_\+strength }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start vibration in selected controller. 
+
+This will not replace a currently running vibration, the previous vibration must end or be stopped first. Controllers have diffrent start up times and strengths this method does not account for this.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+controller\+Index} & The controller to vibrate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+pan} & -\/1 to 1 ratio where -\/1 is full left motor, 1 is full right motor. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+duration} & In seconds how long the vibration will run. \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+strength} & 0 to 1 ratio of how strong the vibration will be.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ab2a458b4cd30043189c97da3172fbc53}{GReturn\+::\+FEATURE\+\_\+\+UNSUPPORTED}}} & Vibration for the current controller type is not supported. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & One or more arguments are out of range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Controller is currently vibrating. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The vibration has been started in the selected controller. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a0dbb35de56fb78910f1c882dabe4d186}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!IsVibrating@{IsVibrating}}
+\index{IsVibrating@{IsVibrating}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{IsVibrating()}{IsVibrating()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Is\+Vibrating (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+controller\+Index,  }\item[{bool \&}]{\+\_\+out\+Is\+Vibrating }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Used to check if a controller is currently vibrating. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+controller\+Index} & The controller index to check. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Is\+Vibrating} & Is a reference to a bool to store whether a controller is vibrating.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ab2a458b4cd30043189c97da3172fbc53}{GReturn\+::\+FEATURE\+\_\+\+UNSUPPORTED}}} & Vibration for the current controller type is not supported. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+controller\+Index was out of range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The out-\/param was successfully filled out \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a75d342b3f664b5072f68f302bc2c208e}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!StopVibration@{StopVibration}}
+\index{StopVibration@{StopVibration}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{StopVibration()}{StopVibration()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Stop\+Vibration (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+controller\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Used to stop a controller from vibrating. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+controller\+Index} & The controller index to stop\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & \+\_\+controller\+Index was out of range. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ab2a458b4cd30043189c97da3172fbc53}{GReturn\+::\+FEATURE\+\_\+\+UNSUPPORTED}}} & Vibration for the current controller type is not supported. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & The vibration was stop \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & The controller was not vibrating. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_controller_a5717f7834cf31d639bb48d8c4d91e6a5}} 
+\index{GW::INPUT::GController@{GW::INPUT::GController}!StopAllVibrations@{StopAllVibrations}}
+\index{StopAllVibrations@{StopAllVibrations}!GW::INPUT::GController@{GW::INPUT::GController}}
+\doxysubsubsection{\texorpdfstring{StopAllVibrations()}{StopAllVibrations()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GController\+::\+Stop\+All\+Vibrations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stops all currently vibrating controllers. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ab2a458b4cd30043189c97da3172fbc53}{GReturn\+::\+FEATURE\+\_\+\+UNSUPPORTED}}} & Vibration for the current controller type is not supported. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a83badd50cc7839e4bf5a26db49ca4fb4}{GReturn\+::\+EMPTY\+\_\+\+PROXY}}} & The proxy is empty \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & All vibrations were stopped \\
+\hline
+\end{DoxyRetVals}

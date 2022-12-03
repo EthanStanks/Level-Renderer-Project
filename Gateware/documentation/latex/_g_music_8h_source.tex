@@ -1,0 +1,219 @@
+\hypertarget{_g_music_8h_source}{}\doxysection{GMusic.\+h}
+\label{_g_music_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GMusic.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Audio/GMusic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GMUSIC\_H}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GMUSIC\_H}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00005}00005 \textcolor{comment}{    File: GMusic.h}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware internal interface that handles music.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: GAudio, GFile, AUDIO, SYSTEM}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00008}00008 \textcolor{comment}{    Author: TJay Cargle, Alexandr Kozyrev (new architecture), Ryan Powser (GFile I/O)}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00009}00009 \textcolor{comment}{    Contributors: Jacob Pendleton}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00010}00010 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00011}00011 \textcolor{comment}{    Asynchronous: Yes}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../Core/GEventReceiver.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}GAudio.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00018}00018 \textcolor{preprocessor}{\#include "{}../System/GConcurrent.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00019}00019 \textcolor{preprocessor}{\#include "{}../System/GFile.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00021}00021 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00023}00023     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00024}00024     \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00025}00025         \textcolor{keyword}{class }GMusicInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GInterfaceInterface}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00026}00026         \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00027}00027         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00028}00028             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetChannelVolumes(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00029}00029             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SetVolume(\textcolor{keywordtype}{float} \_newVolume) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Play(\textcolor{keywordtype}{bool} \_loop = \textcolor{keyword}{false}) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00031}00031             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Pause() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00032}00032             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Resume() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00033}00033             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Stop() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00034}00034             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetSourceChannels(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& returnedChannelNum) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00035}00035             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GetOutputChannels(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& returnedChannelNum) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00036}00036             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} isPlaying(\textcolor{keywordtype}{bool}\& \_returnedBool) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00037}00037             \textcolor{comment}{//virtual GReturn SetPCMShader(const char* \_data) = 0; // not implemented yet}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00038}00038         \};}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00042}00042 \textcolor{preprocessor}{\#include "{}../../Source/Audio/GAudio/GMusic.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00043}00043 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00044}00044 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00045}00045 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00046}00046 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00047}00047 \textcolor{comment}{    //! The namespace to which all Gateware audio libraries must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00048}00048 \textcolor{comment}{}    \textcolor{keyword}{namespace }AUDIO}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00049}00049     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00050}00050 \textcolor{comment}{        //! A Gateware internal interface that handles music}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00051}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{00051}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}} final }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00052}00052             : \textcolor{keyword}{public} I::GProxy<I::GMusicInterface,  I::GMusicImplementation, const char*, GAudio, float>}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00053}00053         \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00054}00054             \textcolor{comment}{// End users please feel free to ignore this struct, it is temporary and only used for internal API wiring.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00055}00055             \textcolor{keyword}{struct }init\_callback}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00056}00056             \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00057}00057                 init\_callback()}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00058}00058                 \{}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00059}00059                     internal\_gw::event\_receiver\_callback = internal\_gw::event\_receiver\_logic<CORE::GEventReceiver>;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00060}00060                 \}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00061}00061             \}init; \textcolor{comment}{// hopefully your compiler will optimize this out}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00063}00063             \textcolor{comment}{// All Gateware API interfaces contain no variables \& are pure virtual.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00064}00064         \textcolor{keyword}{public}:\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00065}00065 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00066}00066 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music}{GMusic}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00067}00067             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}{SetChannelVolumes}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00068}00068             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}{SetVolume}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00069}00069             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}{Play}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00070}00070             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}{Pause}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00071}00071             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}{Resume}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00072}00072             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}{Stop}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00073}00073             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}{GetSourceChannels}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00074}00074             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}{GetOutputChannels}})}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00075}00075             GATEWARE\_CONST\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}{isPlaying}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00076}00076 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00077}00077 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00078}00078             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00079}00079 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00080}00080 \textcolor{comment}{            //! Fills out a GMusic with data from provided .wav file.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00081}00081 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00082}00082 \textcolor{comment}{            *   Creates a GMusic to return, attempts to initialize internal variables, and loads header information from .wav file for setup.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00083}00083 \textcolor{comment}{            *   Supports 16/32 bit uncompressed CD-\/quality .WAV format.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00084}00084 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00085}00085 \textcolor{comment}{            *   \(\backslash\)param [in] \_path A char array to the .wav path.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00086}00086 \textcolor{comment}{            *   \(\backslash\)param [in] \_audio A pointer to the GAudio handle.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00087}00087 \textcolor{comment}{            *   \(\backslash\)param [in] \_volume (OPTIONAL) parameter to set music volume (set to 1 by default).}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00088}00088 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00089}00089 \textcolor{comment}{            *   \(\backslash\)retval INVALID\_ARGUMENT \_path is a nullptr, \_audio is an EMPTY\_PROXY, or \_volume is outside of 0.0f to 1.0f range.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00090}00090 \textcolor{comment}{            *   \(\backslash\)retval FAILURE An error occurred during loading of header information, internal objects could not be created (On Windows these are the source voice and submix voice, on other platforms this is all in GSound's init), or failed to initialize internal variables. See Below for Platform}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00091}00091 \textcolor{comment}{            *   -\/ On Linux}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00092}00092 \textcolor{comment}{            *       + pa\_main\_loop or pa\_context could not be created, pa\_context could not be connected, pa\_channel\_map could not be created, pa\_stream could not be created, or pa\_stream could not be connected.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00093}00093 \textcolor{comment}{            *   -\/ On Mac}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00094}00094 \textcolor{comment}{            *       + AvAudioPlayerNode could not be created or AvAudioPCMBuffers could not be initialized}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00095}00095 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS None of the above errors occurred.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00096}00096 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00097}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a64111a599d5620b6875114d21244175e}{00097}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a64111a599d5620b6875114d21244175e}{Create}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_path, \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_audio}{GW::AUDIO::GAudio}} \_audio, \textcolor{keywordtype}{float} \_volume = 1.0f);}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00098}00098 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00099}00099 \textcolor{comment}{            //! Attempts to set the output volume for the specified number of outputs to the passed in values.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00100}00100 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00101}00101 \textcolor{comment}{            * The amount of values in \_values that will be used is based on \_numChannels.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00102}00102 \textcolor{comment}{            * If you attempt to set the volume of an output your hardware does not support, it will be ignored.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00103}00103 \textcolor{comment}{            * Automatically applies all the master volume ratios.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00104}00104 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00105}00105 \textcolor{comment}{            * Channels: Supports up to 6 channels AKA 5.1 Audio:}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00106}00106 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00107}00107 \textcolor{comment}{            *       INDEX[0] = Left,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00108}00108 \textcolor{comment}{            *       INDEX[1] = Right,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00109}00109 \textcolor{comment}{            *       INDEX[2] = Front Center,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00110}00110 \textcolor{comment}{            *       INDEX[3] = LFE,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00111}00111 \textcolor{comment}{            *       INDEX[4] = Rear Left,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00112}00112 \textcolor{comment}{            *       INDEX[5] = Rear Right,}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00113}00113 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)param [in] \_values The output volumes to be set.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00115}00115 \textcolor{comment}{            *   \(\backslash\)param [in] \_numChannels The number of channels affected.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00116}00116 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00117}00117 \textcolor{comment}{            *   \(\backslash\)retval FAILURE \_numChannels is less than 1, internal object encountered an error which could occur if GAudio's number of outputs changed during runtime, \_values is NULL, or \_values tried to read garbage data -\/ (\_numChannels > amount of values in \_values)}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00118}00118 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00119}00119 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00120}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}{00120}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a2f478018da407c7af36502eb18cdce69}{SetChannelVolumes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}* \_values, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numChannels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00121}00121 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00122}00122 \textcolor{comment}{            //! Attempts to change the overall volume.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00123}00123 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00124}00124 \textcolor{comment}{            * Automatically applies all the master volume ratios.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00125}00125 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00126}00126 \textcolor{comment}{            *   \(\backslash\)param [in] \_newVolume The output volume to be set.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00127}00127 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00128}00128 \textcolor{comment}{            *   \(\backslash\)retval FAILURE GAudio has not filled out this object with GAudio's function: "{}CreateMusicStream"{}, \_newVolume is less than Zero, or internal object encountered an error. Unlikely to occur if GAudio's "{}CreateMusicStream"{} did not return an error upon filling out this object.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00129}00129 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00130}00130 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00131}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}{00131}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a3a98aa8e77a9db8e9d1c735c4740391d}{SetVolume}}(\textcolor{keywordtype}{float} \_newVolume) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00132}00132 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00133}00133 \textcolor{comment}{            //! Attempts to start a music stream.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00134}00134 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00135}00135 \textcolor{comment}{            * Currently only supports .wav files.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00136}00136 \textcolor{comment}{            * Upon Succession will launch a new thread that will continuously read in audio data from file.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00137}00137 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00138}00138 \textcolor{comment}{            *   \(\backslash\)retval FAILURE GAudio has not filled out this object with GAudio's function: "{}CreateMusicStream"{}, specified .wav file could not be found or encountered an error upon reading in data (This happens when "{}CreateMusicStream"{} fills out data), or internal object encountered an error. Unlikely to occur if GAudio's "{}CreateMusicStream"{} did not return an error upon filling out this object.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00139}00139 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00140}00140 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00141}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}{00141}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79a68db636b8b36b3a4ee8a0e8360590}{Play}}(\textcolor{keywordtype}{bool} \_loop = \textcolor{keyword}{false}) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00142}00142 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00143}00143 \textcolor{comment}{            //! Attempts to pause a currently playing music stream.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00144}00144 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00145}00145 \textcolor{comment}{            * Currently only supports .wav files.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00146}00146 \textcolor{comment}{            * If a stream is currently paused, will not attempt to pause playback without returning an error.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00147}00147 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00148}00148 \textcolor{comment}{            *   \(\backslash\)param [in] \_loop (OPTIONAL) Bool for whether or not should play looping.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00149}00149 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00150}00150 \textcolor{comment}{            *   \(\backslash\)retval FAILURE GAudio has not filled out this object with GAudio's function: "{}CreateMusicStream"{}, specified .wav file could not be found or encountered an error upon reading in data (This happens when "{}CreateMusicStream"{} fills out data), or internal object encountered an error. Unlikely to occur if GAudio's "{}CreateMusicStream"{} did not return an error upon filling out this object.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00151}00151 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00152}00152 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00153}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}{00153}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a79dbf66ba47ac16b523171a165e9a09a}{Pause}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00154}00154 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00155}00155 \textcolor{comment}{            //! Attempts to resume a currently paused music stream.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00156}00156 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00157}00157 \textcolor{comment}{            * Currently only supports .wav files.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00158}00158 \textcolor{comment}{            * If a music stream is currently playing, will not attempt to play file without returning an error.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00159}00159 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00160}00160 \textcolor{comment}{            *   \(\backslash\)retval FAILURE If internal object encounters an error.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00161}00161 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00162}00162 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00163}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}{00163}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ab1d4f55bd40314e4f7eecb8a5363bafc}{Resume}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00164}00164 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00165}00165 \textcolor{comment}{            //! Attempts to stop playback of a music stream and reset it to beginning for future use.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00166}00166 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00167}00167 \textcolor{comment}{            * Currently only supports .wav files.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00168}00168 \textcolor{comment}{            * Tells the previously launched thread to stop, calls join on it, and resets thread for future use.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00169}00169 \textcolor{comment}{            * Will attempt to completely stop playback regardless of whether or not music is playing or paused.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00170}00170 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00171}00171 \textcolor{comment}{            *   \(\backslash\)retval FAILURE If internal object encounters an error.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00172}00172 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00173}00173 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00174}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}{00174}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_ac71de54f276f08737f90610ebba6a878}{Stop}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00175}00175 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00176}00176 \textcolor{comment}{            //! Stores the .wav files internal amount of channels the sound was recorded with into the passed in unsigned int.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00177}00177 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00178}00178 \textcolor{comment}{            * This value is read and stored upon creation of GMusic.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00179}00179 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00180}00180 \textcolor{comment}{            *   \(\backslash\)param [out] \_outChannelNum The unsigned int which will be stored with the value.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00181}00181 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00182}00182 \textcolor{comment}{            *   \(\backslash\)retval FAILURE GAudio has not filled out this object with GAudio's function: "{}CreateMusicStream"{}.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00183}00183 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00184}00184 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00185}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}{00185}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a0fb92055092c252d88576759648544ca}{GetSourceChannels}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outChannelNum) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00186}00186 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00187}00187 \textcolor{comment}{            //! Stores the number of specified outputs into the passed in unsigned int.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00188}00188 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00189}00189 \textcolor{comment}{            * This value is obtained from G\_NUM\_OF\_OUTPUTS macro.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00190}00190 \textcolor{comment}{            * By default the number of output channels is 6 unless GAudio was created with a different amount (Currently Linux set to 2).}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00191}00191 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00192}00192 \textcolor{comment}{            *   \(\backslash\)param [out] \_outChannelNum The unsigned int which will be stored with the value.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00193}00193 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00194}00194 \textcolor{comment}{            *   \(\backslash\)retval FAILURE GAudio has not filled out this object with GAudio's function: "{}CreateMusicStream"{}.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00195}00195 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Successfully ran without running into any of the above issues.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00196}00196 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00197}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}{00197}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a491bad78c180403f30419ce8d3b4d7a9}{GetOutputChannels}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\& \_outChannelNum) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00198}00198 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00199}00199 \textcolor{comment}{            //! Fills out the passed in bool with information as to if the music stream is playing or not.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00200}00200 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00201}00201 \textcolor{comment}{            * GMusic internally keeps track of whether or not it playing via the launched thread, as well as the Start/Pause/Resume/Stop functions.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00202}00202 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00203}00203 \textcolor{comment}{            *   \(\backslash\)param [out] \_outBool The bool which will be stored with the value.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00204}00204 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00205}00205 \textcolor{comment}{            *   \(\backslash\)retval SUCCESS Always, boolean passed in will tell you if music is playing or not.}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00206}00206 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00207}\mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}{00207}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_a_u_d_i_o_1_1_g_music_a944865365f6e99374aacaaa037ff7f8b}{isPlaying}}(\textcolor{keywordtype}{bool}\& \_outBool) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00208}00208 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00209}00209         \};}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00210}00210     \}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00211}00211 \}}
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{_g_music_8h_source_l00213}00213 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GMUSIC\_H}}
+
+\end{DoxyCode}

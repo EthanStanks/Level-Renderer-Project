@@ -1,0 +1,203 @@
+\hypertarget{_g_raster_surface_8h_source}{}\doxysection{GRaster\+Surface.\+h}
+\label{_g_raster_surface_8h_source}\index{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Graphics/GRasterSurface.h@{C:/GitLab-\/Runner/builds/GgJRnGYR/0/gateware-\/development/gcompiler/Gateware-\/Development/Interface/Graphics/GRasterSurface.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GRASTERSURFACE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GRASTERSURFACE\_H}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00003}00003 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00004}00004 \textcolor{comment}{/*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00005}00005 \textcolor{comment}{    File: GRasterSurface.h}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00006}00006 \textcolor{comment}{    Purpose: A Gateware interface that allows efficiently drawing a raster to a window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00007}00007 \textcolor{comment}{    Dependencies: win32[] linux[] apple[]}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00008}00008 \textcolor{comment}{    Asynchronous: YES}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00009}00009 \textcolor{comment}{    Author: Artemis Kelsie Frost}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00010}00010 \textcolor{comment}{    Contributors: Ryan Powser, Ozzie Mercado}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00011}00011 \textcolor{comment}{    Interface Status: Beta}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00012}00012 \textcolor{comment}{    Copyright: 7thGate Software LLC.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00013}00013 \textcolor{comment}{    License: MIT}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00014}00014 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}../System/GWindow.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00020}00020     \textcolor{keyword}{namespace }I}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00022}00022         \textcolor{keyword}{class }GRasterSurfaceInterface : \textcolor{keyword}{public} \textcolor{keyword}{virtual} GEventResponderInterface}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00023}00023         \{}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00024}00024         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00025}00025             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Clear(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_xrgbColor) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00026}00026             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UpdateSurface(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numPixels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00027}00027             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UpdateSurfaceSubset(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_numRows, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowStride, \textcolor{keywordtype}{int} \_destX, \textcolor{keywordtype}{int} \_destY) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00028}00028             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} SmartUpdateSurface(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_drawOptionFlags) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00029}00029             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} LockUpdateBufferWrite(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}** \_outMemoryBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outHeight) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00030}00030             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} LockUpdateBufferRead(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}** \_outMemoryBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outHeight) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00031}00031             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UnlockUpdateBufferWrite() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00032}00032             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} UnlockUpdateBufferRead() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00033}00033             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} Present() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00034}00034         \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00035}00035     \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00036}00036 \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00038}00038 \textcolor{comment}{// Implementation Source link, will be search-\/replaced in single header version.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00039}00039 \textcolor{preprocessor}{\#include "{}../../Source/Graphics/GRasterSurface/GRasterSurface.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00040}00040 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00041}00041 \textcolor{comment}{//! The core namespace to which all Gateware interfaces/structures/defines must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00042}00042 \textcolor{comment}{}\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_w}{GW}}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00043}00043 \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00044}00044 \textcolor{comment}{    //! The namespace to which all Gateware Graphics library interfaces must belong.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00045}00045 \textcolor{comment}{}    \textcolor{keyword}{namespace }GRAPHICS}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00046}00046     \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00047}00047 \textcolor{comment}{        //! A Gateware interface that allows efficiently drawing a raster to a window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00048}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{00048}} \textcolor{comment}{}        \textcolor{keyword}{class }\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRasterSurface}} final}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00049}00049             : \textcolor{keyword}{public} I::GProxy<I::GRasterSurfaceInterface, I::GRasterSurfaceImplementation, GW::SYSTEM::GWindow>}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00050}00050         \{}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00051}00051         \textcolor{keyword}{public}: \textcolor{comment}{// Only public functions are exposed via Proxy, never protected or private operations}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00052}00052             \textcolor{comment}{// proxy functions should be ignored by doxygen}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00053}00053 \textcolor{comment}{            //! \(\backslash\)cond}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00054}00054 \textcolor{comment}{}            GATEWARE\_PROXY\_CLASS(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface}{GRasterSurface}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00055}00055             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}{Clear}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00056}00056             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}{UpdateSurface}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00057}00057             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}{UpdateSurfaceSubset}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00058}00058             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}{SmartUpdateSurface}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00059}00059             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}{LockUpdateBufferWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00060}00060             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}{LockUpdateBufferRead}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00061}00061             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}{UnlockUpdateBufferWrite}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00062}00062             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}{UnlockUpdateBufferRead}})}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00063}00063             GATEWARE\_FUNCTION(\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}{Present}})\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00064}00064 \textcolor{comment}{            //! \(\backslash\)endcond}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00065}00065 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00066}00066             \textcolor{comment}{// This area does not contain actual code, it is only for the benefit of documentation generation.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00067}00067 \textcolor{preprocessor}{\#ifdef DOXYGEN\_ONLY}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00068}00068 \textcolor{comment}{            //! Allocates and initializes a GRasterSurface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00069}00069 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00070}00070 \textcolor{comment}{            *   Creates a GRasterSurface proxy which enables you to draw pixel data to a window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00071}00071 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00072}00072 \textcolor{comment}{            *   \(\backslash\)param [in] \_gWindow                        An existing GWindow object to bind the surface to.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00073}00073 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00074}00074 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           An invalid GWindow was passed.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00075}00075 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    GRasterSurface created successfully, ready to draw to window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00076}00076 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00077}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_acc4f92bfc3e71232b07c9af5e0c7e733}{00077}}             \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_acc4f92bfc3e71232b07c9af5e0c7e733}{Create}}(\mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW::SYSTEM::GWindow}} \_gWindow);}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00078}00078 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00079}00079 \textcolor{comment}{            //! Clears the surface to the specified color.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00080}00080 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00081}00081 \textcolor{comment}{            *   \(\backslash\)param [in] \_xrgbColor                      The color to clear the surface to.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00082}00082 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00083}00083 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00084}00084 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00085}00085 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    The surface was cleared.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00086}00086 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00087}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}{00087}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a07cf654c7b368c188a927671c0e879e2}{Clear}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_xrgbColor) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00088}00088 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00089}00089 \textcolor{comment}{            //! Draws a raster to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00090}00090 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00091}00091 \textcolor{comment}{            *   \(\backslash\)param [in] \_xrgbPixels                     The raster to draw to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00092}00092 \textcolor{comment}{            *   \(\backslash\)param [in] \_numPixels                      The number of pixels in the raster.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00093}00093 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00094}00094 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00095}00095 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00096}00096 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           Raster was nullptr and/or pixel count was greater than surface pixel count.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00097}00097 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Pixel data was drawn to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00098}00098 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00099}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}{00099}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5b0d10660557635f03ffc0e83cf7ac25}{UpdateSurface}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numPixels) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00100}00100 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00101}00101 \textcolor{comment}{            //! Draws raster data to a rectangular subset region of the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00102}00102 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00103}00103 \textcolor{comment}{            *   Notes:}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00104}00104 \textcolor{comment}{            *       To draw a subset region from source data, pass \&sourcePixels[sourceX + (sourceY * sourceWidth)] as \_xrgbPixels and sourceWidth as \_rowStride.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00105}00105 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00106}00106 \textcolor{comment}{            *   \(\backslash\)param [in] \_xrgbPixels                     The start of the raster data to draw to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00107}00107 \textcolor{comment}{            *   \(\backslash\)param [in] \_numRows                        The number of rows in the subset region.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00108}00108 \textcolor{comment}{            *   \(\backslash\)param [in] \_rowWidth                       The width of each row in the subset region.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00109}00109 \textcolor{comment}{            *   \(\backslash\)param [in] \_rowStride                      The pixel stride length between rows in the subset region. (Pass 0 to use \_rowWidth as stride.)}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00110}00110 \textcolor{comment}{            *   \(\backslash\)param [in] \_destX                          The x coordinate in the surface to draw to.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00111}00111 \textcolor{comment}{            *   \(\backslash\)param [in] \_destY                          The y coordinate in the surface to draw to.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00112}00112 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00113}00113 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00114}00114 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00115}00115 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           Raster was nullptr, row count was < 1, row width was < 1, and/or row stride was less than row width.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00116}00116 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Pixel data was drawn to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00117}00117 \textcolor{comment}{            *   \(\backslash\)retval GReturn::REDUNDANT                  The region to draw was entirely outside the surface's bounds, so drawing was unnecessary.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00118}00118 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00119}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}{00119}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a865c5fb39a27ab3eafd749758cd72c5e}{UpdateSurfaceSubset}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_numRows, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowStride, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_destX, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_destY) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00120}00120 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00121}00121 \textcolor{comment}{            //! Processes pixel data from a raster and draws it to the surface in the manner specified by draw option bitflags.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00122}00122 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00123}00123 \textcolor{comment}{            *   \(\backslash\)param [in] \_xrgbPixels                     The raster to draw to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00124}00124 \textcolor{comment}{            *   \(\backslash\)param [in] \_numPixels                      The number of pixels in the raster.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00125}00125 \textcolor{comment}{            *   \(\backslash\)param [in] \_rowWidth                       The width of each row in the raster.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00126}00126 \textcolor{comment}{            *   \(\backslash\)param [in] \_drawOptionFlags                A bit flag set specifying how to process the pixel data before drawing.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00127}00127 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00128}00128 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00129}00129 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00130}00130 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           Raster was nullptr, pixel count was greater than surface pixel count, raster width was greater than surface width, and/or conflicting bit flags were passed.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00131}00131 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Pixel data was drawn to the surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00132}00132 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00133}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}{00133}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a5c8089edfb751064944d2b9d62691b1a}{SmartUpdateSurface}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \_xrgbPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_numPixels, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \_rowWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \_drawOptionFlags) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00134}00134 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00135}00135 \textcolor{comment}{            //! Locks drawing to surface and gives access to internal memory for writing.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00136}00136 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00137}00137 \textcolor{comment}{            *   Blocks reading and writing access until unlocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00138}00138 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00139}00139 \textcolor{comment}{            *   \(\backslash\)param [out] \_outMemoryBuffer               A pointer to the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00140}00140 \textcolor{comment}{            *   \(\backslash\)param [out] \_outWidth                      The width of the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00141}00141 \textcolor{comment}{            *   \(\backslash\)param [out] \_outHeight                     The height of the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00142}00142 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00143}00143 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00144}00144 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00145}00145 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           Memory buffer pointer was nullptr.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00146}00146 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE                    A write lock was already active.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00147}00147 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Access was given to internal memory and reading/writing was blocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00148}00148 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00149}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}{00149}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa1978a7759a006d8916fa1b690ca7f7f}{LockUpdateBufferWrite}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}** \_outMemoryBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outHeight) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00150}00150 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00151}00151 \textcolor{comment}{            //! Locks drawing to surface and gives access to internal memory for reading.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00152}00152 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00153}00153 \textcolor{comment}{            *   Blocks reading and writing access until unlocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00154}00154 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00155}00155 \textcolor{comment}{            *   \(\backslash\)param [out] \_outMemoryBuffer               A pointer to the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00156}00156 \textcolor{comment}{            *   \(\backslash\)param [out] \_outWidth                      The width of the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00157}00157 \textcolor{comment}{            *   \(\backslash\)param [out] \_outHeight                     The height of the internal memory array.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00158}00158 \textcolor{comment}{            *}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00159}00159 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00160}00160 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00161}00161 \textcolor{comment}{            *   \(\backslash\)retval GReturn::INVALID\_ARGUMENT           Memory buffer pointer was nullptr.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00162}00162 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE                    A read lock was already active.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00163}00163 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Access was given to internal memory and reading/writing was blocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00164}00164 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00165}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}{00165}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a342e7dfffe9b48fc9e0bd324a12da6c7}{LockUpdateBufferRead}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}** \_outMemoryBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outWidth, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& \_outHeight) = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00166}00166 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00167}00167 \textcolor{comment}{            //! Releases a write lock and reallows drawing to surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00168}00168 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00169}00169 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00170}00170 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00171}00171 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Reading/writing was unblocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00172}00172 \textcolor{comment}{            *   \(\backslash\)retval GReturn::REDUNDANT                  No write locks were active.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00173}00173 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00174}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}{00174}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a8404cfab95a3c450c32ac0ed0cd91674}{UnlockUpdateBufferWrite}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00175}00175 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00176}00176 \textcolor{comment}{            //! Releases a read lock and reallows drawing to surface.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00177}00177 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00178}00178 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00179}00179 \textcolor{comment}{            *   \(\backslash\)retval GReturn::UNEXPECTED\_RESULT          Internal API failure. This should not happen, please report this.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00180}00180 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    Reading/writing was unblocked.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00181}00181 \textcolor{comment}{            *   \(\backslash\)retval GReturn::REDUNDANT                  No read locks were active.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00182}00182 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00183}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}{00183}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_a91f8633c867baef5c93e0cdbc5821d9e}{UnlockUpdateBufferRead}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00184}00184 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00185}00185 \textcolor{comment}{            //! Draws the surface to the window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00186}00186 \textcolor{comment}{}\textcolor{comment}{            /*!}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00187}00187 \textcolor{comment}{            *   \(\backslash\)retval GReturn::PREMATURE\_DEALLOCATION     The associated GWindow was deallocated and the surface is now invalid.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00188}00188 \textcolor{comment}{            *   \(\backslash\)retval GReturn::FAILURE                    The surface failed to draw to the window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00189}00189 \textcolor{comment}{            *   \(\backslash\)retval GReturn::SUCCESS                    The surface was drawn to the window.}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00190}00190 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00191}\mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}{00191}}             \textcolor{keyword}{virtual} \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_g_r_a_p_h_i_c_s_1_1_g_raster_surface_aa5ec73dc30398c73a7b809bf8f4b1e94}{Present}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00192}00192 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DOXYGEN\_ONLY}}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00193}00193         \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00194}00194     \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00195}00195 \};}
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_g_raster_surface_8h_source_l00197}00197 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GRASTERSURFACE\_H}}
+
+\end{DoxyCode}

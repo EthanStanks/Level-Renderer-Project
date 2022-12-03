@@ -1,0 +1,190 @@
+\hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input}{}\doxysection{GW\+::INPUT\+::GInput Class Reference}
+\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input}\index{GW::INPUT::GInput@{GW::INPUT::GInput}}
+
+
+{\ttfamily \#include $<$GInput.\+h$>$}
+
+Inheritance diagram for GW\+::INPUT\+::GInput\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.851240cm]{class_g_w_1_1_i_n_p_u_t_1_1_g_input}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_ac3a85d0f822cb35c7d71d053011e0455}{Create}} (\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW\+::\+SYSTEM\+::\+UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE}} \+\_\+window\+Handle)
+\item 
+\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a38d83717c284320e8c8c6a43b5a6a75b}{Create}} (const \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}} \+\_\+g\+Window)
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_afce9cbf893882301d6cd18946637c7cb}{Get\+State}} (int \+\_\+key\+Code, float \&\+\_\+out\+State)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_af1f113bfaac18bc5a918c9db9abcb4c0}{Get\+Mouse\+Delta}} (float \&\+\_\+x, float \&\+\_\+y)=0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a91abef4f1274cffcad91f9053866de79}{Get\+Mouse\+Position}} (float \&\+\_\+x, float \&\+\_\+y) const =0
+\item 
+virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a862a6bceea030fbe2bb0df3bb00c3060}{Get\+Key\+Mask}} (unsigned int \&\+\_\+out\+Key\+Mask) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_g_input_8h_source_l00044}{44}} of file \mbox{\hyperlink{_g_input_8h_source}{GInput.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_ac3a85d0f822cb35c7d71d053011e0455}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_ac3a85d0f822cb35c7d71d053011e0455}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!Create@{Create}}
+\index{Create@{Create}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_w_1_1_s_y_s_t_e_m_1_1_u_n_i_v_e_r_s_a_l___w_i_n_d_o_w___h_a_n_d_l_e}{GW\+::\+SYSTEM\+::\+UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE}}}]{\+\_\+window\+Handle }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input}{GInput}} Object. 
+
+Initializes a handle to a window based on the passed in universal handle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+window\+Handle} & A universal window handle (defined in \mbox{\hyperlink{_g_system_defines_8h_source}{GSystem\+Defines.\+h}}) that contains a handle to a window (any platform).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617af295a0c3e37c94f078e1c5476479132d}{GReturn\+::\+INVALID\+\_\+\+ARGUMENT}}} & A window handle in UNIVERSAL\+\_\+\+WINDOW\+\_\+\+HANDLE was a nullptr. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Could not make an Input Object. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & No problems found. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a38d83717c284320e8c8c6a43b5a6a75b}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a38d83717c284320e8c8c6a43b5a6a75b}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!Create@{Create}}
+\index{Create@{Create}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_g_w_1_1_s_y_s_t_e_m_1_1_g_window}{GW\+::\+SYSTEM\+::\+GWindow}}}]{\+\_\+g\+Window }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{class_g_w_1_1_i_n_p_u_t_1_1_g_input}{GInput}} Object. 
+
+Initializes a handle to a window based on the reference to a GWindow.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+g\+Window} & A reference to a GWindow proxy.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617a36fc6065a3e970bc3e6b2e59da52bf2a}{GReturn\+::\+FAILURE}}} & Failed to obtain a window handle from GWindow. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & No problems found. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_afce9cbf893882301d6cd18946637c7cb}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_afce9cbf893882301d6cd18946637c7cb}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!GetState@{GetState}}
+\index{GetState@{GetState}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Get\+State (\begin{DoxyParamCaption}\item[{int}]{\+\_\+key\+Code,  }\item[{float \&}]{\+\_\+out\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the current state of any key. 
+
+Use keycodes in GInput\+Defines as input to this function to check the state of a particular key or button.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+key\+Code} & The key code of the key to check. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+State} & value \texorpdfstring{$>$}{>} 0 if the key was pressed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & no problems found. Values stored \+\_\+out\+State \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_af1f113bfaac18bc5a918c9db9abcb4c0}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_af1f113bfaac18bc5a918c9db9abcb4c0}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!GetMouseDelta@{GetMouseDelta}}
+\index{GetMouseDelta@{GetMouseDelta}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{GetMouseDelta()}{GetMouseDelta()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Get\+Mouse\+Delta (\begin{DoxyParamCaption}\item[{float \&}]{\+\_\+x,  }\item[{float \&}]{\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the change in mouse position. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} result = input.GetMouseDelta(x, y);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (GPASS(result) \&\& result != \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn::REDUNDANT}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// do cool stuff}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+x} & A reference to a float to store the mouse delta position x. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+y} & A reference to a float to store the mouse delta position y.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & No problems found. Values stored in \+\_\+x and \+\_\+y. \\
+\hline
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad6c0451a905c94474bcde8100cedb84c}{GReturn\+::\+REDUNDANT}}} & There was no change in mouse position. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a91abef4f1274cffcad91f9053866de79}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a91abef4f1274cffcad91f9053866de79}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!GetMousePosition@{GetMousePosition}}
+\index{GetMousePosition@{GetMousePosition}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{GetMousePosition()}{GetMousePosition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Get\+Mouse\+Position (\begin{DoxyParamCaption}\item[{float \&}]{\+\_\+x,  }\item[{float \&}]{\+\_\+y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the most recent mouse position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+x} & a reference to a float to store the mouse position x. \\
+\hline
+\mbox{\texttt{ out}}  & {\em \+\_\+y} & a reference to a float to store the mouse position y.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & no problems found. Values stored in \+\_\+x and \+\_\+y. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a862a6bceea030fbe2bb0df3bb00c3060}\label{class_g_w_1_1_i_n_p_u_t_1_1_g_input_a862a6bceea030fbe2bb0df3bb00c3060}} 
+\index{GW::INPUT::GInput@{GW::INPUT::GInput}!GetKeyMask@{GetKeyMask}}
+\index{GetKeyMask@{GetKeyMask}!GW::INPUT::GInput@{GW::INPUT::GInput}}
+\doxysubsubsection{\texorpdfstring{GetKeyMask()}{GetKeyMask()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{group___g_return_values_gaf46a07bcad99edbe1e92a9fc99078617}{GReturn}} GW\+::\+INPUT\+::\+GInput\+::\+Get\+Key\+Mask (\begin{DoxyParamCaption}\item[{unsigned int \&}]{\+\_\+out\+Key\+Mask }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the key mask. 
+
+The key mask lets the input object know which of the functions below are active by manipulating individual bits of an unsigned int. Values for G\+\_\+\+MASK can be found in GInput\+Defines.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+out\+Key\+Mask} & G\+\_\+\+MASK (\+\_\+\+SHIFT, \+\_\+\+CONTROL, \+\_\+\+CAPS\+\_\+\+LOCK, \+\_\+\+NUM\+\_\+\+LOCK, \+\_\+\+SCROLL\+\_\+\+LOCK).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{group___g_return_values_ggaf46a07bcad99edbe1e92a9fc99078617ad0749aaba8b833466dfcbb0428e4f89c}{GReturn\+::\+SUCCESS}}} & no problems found. \\
+\hline
+\end{DoxyRetVals}
