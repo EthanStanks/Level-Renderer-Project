@@ -1,3 +1,0 @@
-F:/School/Dev4/Project Repo/Level-Renderer-Project/Code/build/CMakeFiles/Assignment_2_Vulkan.dir
-F:/School/Dev4/Project Repo/Level-Renderer-Project/Code/build/CMakeFiles/ALL_BUILD.dir
-F:/School/Dev4/Project Repo/Level-Renderer-Project/Code/build/CMakeFiles/ZERO_CHECK.dir
