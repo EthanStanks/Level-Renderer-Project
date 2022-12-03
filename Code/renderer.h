@@ -1,6 +1,7 @@
 // minimalistic code to draw a single triangle, this is not part of the API.
 // TODO: Part 1b
 #include "FSLogo.h"
+#include "LoadLevelData.h"
 #include "shaderc/shaderc.h" // needed for compiling shaders at runtime
 #include <chrono>
 #ifdef _WIN32 // must use MT platform DLL libraries on windows
@@ -91,6 +92,8 @@ class Renderer
 
 	GW::MATH::GMatrix math;
 	GW::INPUT::GInput input;
+
+	LoadLevelData loadLevelData;
 public:
 	struct Vertex {
 		float pos[3];
@@ -152,7 +155,6 @@ public:
 
 		lightColor = GW::MATH::GVECTORF { 0.9f, 0.9f, 1, 1 };
 
-		// TODO: Part 2b
 		shaderData.projectionMatrix = mProjection;
 		shaderData.viewMatrix = mCamera;
 		shaderData.materials[0] = FSLogo_materials[0].attrib;
@@ -166,7 +168,6 @@ public:
 		sunAmbient = GW::MATH::GVECTORF{ 0.25f, 0.25f, 0.35f};
 		shaderData.sunAmbient = sunAmbient;
 		shaderData.pixelShaderReturn = 6;
-		// TODO: part 3b
 
 		/***************** GEOMETRY INTIALIZATION ******************/
 		// Grab the device & physical device so we can allocate some stuff
@@ -174,7 +175,9 @@ public:
 		vlk.GetDevice((void**)&device);
 		vlk.GetPhysicalDevice((void**)&physicalDevice);
 
-		// TODO: Part 1c
+		loadLevelData.LoadData("../GameLevel.txt");
+		
+
 		// Create Vertex Buffer
 		Vertex verts[3885];
 		ReplaceData1C(verts);

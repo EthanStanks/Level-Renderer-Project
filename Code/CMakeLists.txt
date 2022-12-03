@@ -9,7 +9,7 @@ ADD_DEFINITIONS(-D_UNICODE)
 if (WIN32)
 	# shaderc_combined.lib in Vulkan requires this for debug & release (runtime shader compiling)
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MD")
-	add_executable (Assignment_2_Vulkan main.cpp renderer.h FSLogo.h VShader3D.hlsl PShader3D.hlsl)
+	add_executable (Assignment_2_Vulkan main.cpp renderer.h FSLogo.h VShader3D.hlsl PShader3D.hlsl LoadLevelData.h)
 	set_source_files_properties( VShader3D.hlsl PROPERTIES
         VS_SHADER_TYPE Vertex 
         VS_SHADER_MODEL 5.0
