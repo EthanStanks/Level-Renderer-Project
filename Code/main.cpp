@@ -12,6 +12,10 @@
 #define GATEWARE_DISABLE_GOPENGLSURFACE // we have another template for this
 // With what we want & what we don't defined we can include the API
 #include "../Gateware/Gateware.h"
+#include "h2bParser.h"
+#include "LoadLevelData.h"
+#include "ManageRenderer.h"
+#include "Model.h"
 #include "renderer.h"
 // open some namespaces to compact the code a bit
 using namespace GW;
@@ -24,10 +28,10 @@ int main()
 	GWindow win;
 	GEventResponder msgs;
 	GVulkanSurface vulkan;
-	if (+win.Create(0, 0, 800, 600, GWindowStyle::WINDOWEDBORDERED))
+	if (+win.Create(0, 0, 1920, 1080, GWindowStyle::WINDOWEDBORDERED))
 	{
 		// TODO: Part 1a
-		win.SetWindowName("Ethan Stanks Vulkan (Assignment 2)");
+		win.SetWindowName("Ethan Stanks Vulkan Level Renderer");
 		VkClearValue clrAndDepth[2];
 		clrAndDepth[0].color = { {0.25f, 0, 0.75f, 1} };
 		clrAndDepth[1].depthStencil = { 1.0f, 0u };
@@ -43,7 +47,7 @@ int main()
 			//"VK_LAYER_LUNARG_standard_validation", // add if not on MacOS
 			//"VK_LAYER_RENDERDOC_Capture" // add this if you have installed RenderDoc
 		};
-		if (+vulkan.Create(	win, GW::GRAPHICS::DEPTH_BUFFER_SUPPORT, 
+		if (+vulkan.Create(	win, GW::GRAPHICS::DEPTH_BUFFER_SUPPORT | DEPTH_STENCIL_SUPPORT,
 							sizeof(debugLayers)/sizeof(debugLayers[0]),
 							debugLayers, 0, nullptr, 0, nullptr, false))
 #else

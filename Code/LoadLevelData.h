@@ -1,7 +1,10 @@
+#pragma once
+// includes
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <cctype>
+
 using namespace std;
 
 struct Matrix
@@ -12,7 +15,7 @@ struct Matrix
 	float row4[4];
 };
 
-struct Mesh
+struct TempMesh
 {
 	Matrix meshMatrix;
 	string meshName;
@@ -35,23 +38,40 @@ class LoadLevelData
 {
 public:
 	
-	vector<Mesh> meshes;
+	vector<TempMesh> meshes;
 	vector<Light> lights;
 	vector<Camera> cameras;
 
 	LoadLevelData()
 	{
-		meshes = vector<Mesh>();
-		lights = vector<Light>();
-		cameras = vector<Camera>();
+		meshes =  vector<TempMesh>();
+		lights =  vector<Light>();
+		cameras =  vector<Camera>();
 	}
-	void LoadData(string fileName)
+	void LoadData(string fileName, bool isPrintToConsole)
 	{
-		ReadFile(fileName);
+		ReadFile(fileName, isPrintToConsole);
 	}
-	
+	~LoadLevelData()
+	{
+		ClearData();
+	}
 private:
+	void ClearData()
+	{
+		vector<TempMesh> temp1;
+		meshes.clear();
+		meshes = temp1;
 
+		vector<Light> temp2;
+		lights.clear();
+		lights = temp2;
+
+		vector<Camera> temp3;
+		cameras.clear();
+		cameras = temp3;
+
+	}
 	void PrintMatrix(Matrix _printMe)
 	{
 		cout << "<Matrix 4x4 (" << _printMe.row1[0] << ", " << _printMe.row1[1] << ", " << _printMe.row1[2] << ", " << _printMe.row1[3] << ")" << endl;
@@ -59,7 +79,7 @@ private:
 		cout << "            (" << _printMe.row3[0] << ", " << _printMe.row3[1] << ", " << _printMe.row3[2] << ", " << _printMe.row3[3] << ")" << endl;
 		cout << "            (" << _printMe.row4[0] << ", " << _printMe.row4[1] << ", " << _printMe.row4[2] << ", " << _printMe.row4[3] << ")" << endl;
 	}
-	void PrintFile(vector<Mesh> _meshes, vector<Light> _lights, vector<Camera> _cameras)
+	void PrintFile(vector<TempMesh> _meshes, vector<Light> _lights, vector<Camera> _cameras)
 	{
 		for (int i = 0; i < _cameras.size(); ++i)
 		{
@@ -80,7 +100,39 @@ private:
 			PrintMatrix(_meshes[i].meshMatrix);
 		}
 	}
-	void ReadFile(string fileName)
+	void RetrieveName(string& _tempName, bool isMesh)
+	{
+		if (isMesh)
+		{
+			bool hitEnd = false;
+			for (int i = 0; i < _tempName.size(); ++i)
+			{
+				if (_tempName[i] == '.' || hitEnd)
+				{
+					hitEnd = true;
+					_tempName[i] = ' ';
+				}
+			}
+			_tempName.erase(remove_if(_tempName.begin(), _tempName.end(), isspace), _tempName.end()); // remove unwanted white space in the name
+			_tempName = _tempName + ".h2b";
+		}
+	}
+	void RetrieveMatrix(Matrix& _tempMatrix, ifstream& _inputFile)
+	{
+		char bufferMatrixLine1[256];
+		char bufferMatrixLine2[256];
+		char bufferMatrixLine3[256];
+		char bufferMatrixLine4[256];
+		_inputFile.getline(bufferMatrixLine1, 256); // read in the first matrix line
+		_inputFile.getline(bufferMatrixLine2, 256); // read in the second matrix line
+		_inputFile.getline(bufferMatrixLine3, 256); // read in the third matrix line
+		_inputFile.getline(bufferMatrixLine4, 256); // read in the fourth matrix line
+		sscanf_s(bufferMatrixLine1, "<Matrix 4x4 (%f, %f,  %f, %f)", &_tempMatrix.row1[0], &_tempMatrix.row1[1], &_tempMatrix.row1[2], &_tempMatrix.row1[3]); // takes in each float from the line and stores them
+		sscanf_s(bufferMatrixLine2, "            (%f, %f, %f, %f)", &_tempMatrix.row2[0], &_tempMatrix.row2[1], &_tempMatrix.row2[2], &_tempMatrix.row2[3]); // takes in each float from the line and stores them
+		sscanf_s(bufferMatrixLine3, "            (%f, %f,  %f, %f)", &_tempMatrix.row3[0], &_tempMatrix.row3[1], &_tempMatrix.row3[2], &_tempMatrix.row3[3]); // takes in each float from the line and stores them
+		sscanf_s(bufferMatrixLine4, "            (%f, %f,  %f, %f)>", &_tempMatrix.row4[0], &_tempMatrix.row4[1], &_tempMatrix.row4[2], &_tempMatrix.row4[3]); // takes in each float from the line and stores them
+	}
+	void ReadFile(string fileName, bool isPrintToConsole)
 	{
 		ifstream inputFile;
 		//inputFile = ifstream(fileName);
@@ -97,70 +149,35 @@ private:
 				{
 					if (buffer[0] == 'M') // MESH
 					{
-						Mesh mesh;
+						TempMesh mesh;
 						inputFile.getline(buffer, 256); // read the name of the mesh
-
-						mesh.meshName = buffer; // takes the char and sets them to the name
-						mesh.meshName.erase(remove_if(mesh.meshName.begin(), mesh.meshName.end(), isspace), mesh.meshName.end()); // remove unwanted white space in the name
-						char bufferMatrixLine1[256];
-						char bufferMatrixLine2[256];
-						char bufferMatrixLine3[256];
-						char bufferMatrixLine4[256];
-						inputFile.getline(bufferMatrixLine1, 256); // read in the first matrix line
-						inputFile.getline(bufferMatrixLine2, 256); // read in the second matrix line
-						inputFile.getline(bufferMatrixLine3, 256); // read in the third matrix line
-						inputFile.getline(bufferMatrixLine4, 256); // read in the fourth matrix line
-						sscanf_s(bufferMatrixLine1, "<Matrix 4x4 (%f, %f,  %f, %f)", &mesh.meshMatrix.row1[0], &mesh.meshMatrix.row1[1], &mesh.meshMatrix.row1[2], &mesh.meshMatrix.row1[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine2, "            (%f, %f, %f, %f)", &mesh.meshMatrix.row2[0], &mesh.meshMatrix.row2[1], &mesh.meshMatrix.row2[2], &mesh.meshMatrix.row2[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine3, "            (%f, %f,  %f, %f)", &mesh.meshMatrix.row3[0], &mesh.meshMatrix.row3[1], &mesh.meshMatrix.row3[2], &mesh.meshMatrix.row3[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine4, "            (%f, %f,  %f, %f)>", &mesh.meshMatrix.row4[0], &mesh.meshMatrix.row4[1], &mesh.meshMatrix.row4[2], &mesh.meshMatrix.row4[3]); // takes in each float from the line and stores them
+						mesh.meshName = buffer;
+						RetrieveName(mesh.meshName, true); // takes the temp string and sets them to the name
+						RetrieveMatrix(mesh.meshMatrix, inputFile);
 						meshes.push_back(mesh);
 					}
 					else if (buffer[0] == 'L') // LIGHT
 					{
 						Light light;
 						inputFile.getline(buffer, 256); // read the name of the light
-						light.lightName = buffer; // takes the char and sets them to the name
-						light.lightName.erase(remove_if(light.lightName.begin(), light.lightName.end(), isspace), light.lightName.end()); // remove unwanted white space in the name
-
-						char bufferMatrixLine1[256];
-						char bufferMatrixLine2[256];
-						char bufferMatrixLine3[256];
-						char bufferMatrixLine4[256];
-						inputFile.getline(bufferMatrixLine1, 256); // read in the first matrix line
-						inputFile.getline(bufferMatrixLine2, 256); // read in the second matrix line
-						inputFile.getline(bufferMatrixLine3, 256); // read in the third matrix line
-						inputFile.getline(bufferMatrixLine4, 256); // read in the fourth matrix line
-						sscanf_s(bufferMatrixLine1, "<Matrix 4x4 (%f, %f,  %f, %f)", &light.lightMatrix.row1[0], &light.lightMatrix.row1[1], &light.lightMatrix.row1[2], &light.lightMatrix.row1[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine2, "            (%f, %f, %f, %f)", &light.lightMatrix.row2[0], &light.lightMatrix.row2[1], &light.lightMatrix.row2[2], &light.lightMatrix.row2[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine3, "            (%f, %f,  %f, %f)", &light.lightMatrix.row3[0], &light.lightMatrix.row3[1], &light.lightMatrix.row3[2], &light.lightMatrix.row3[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine4, "            (%f, %f,  %f, %f)>", &light.lightMatrix.row4[0], &light.lightMatrix.row4[1], &light.lightMatrix.row4[2], &light.lightMatrix.row4[3]); // takes in each float from the line and stores them
+						light.lightName = buffer;
+						RetrieveName(light.lightName, false); // takes the temp string and sets them to the name
+						RetrieveMatrix(light.lightMatrix, inputFile);
 						lights.push_back(light);
 					}
 					else if (buffer[0] == 'C') // CAMERA
 					{
 						Camera camera;
 						inputFile.getline(buffer, 256); // read the name of the camera
-						camera.cameraName = buffer; // takes the char and sets them to the name
-						camera.cameraName.erase(remove_if(camera.cameraName.begin(), camera.cameraName.end(), isspace), camera.cameraName.end()); // remove unwanted white space in the name
-						char bufferMatrixLine1[256];
-						char bufferMatrixLine2[256];
-						char bufferMatrixLine3[256];
-						char bufferMatrixLine4[256];
-						inputFile.getline(bufferMatrixLine1, 256); // read in the first matrix line
-						inputFile.getline(bufferMatrixLine2, 256); // read in the second matrix line
-						inputFile.getline(bufferMatrixLine3, 256); // read in the third matrix line
-						inputFile.getline(bufferMatrixLine4, 256); // read in the fourth matrix line
-						sscanf_s(bufferMatrixLine1, "<Matrix 4x4 (%f, %f,  %f, %f)", &camera.cameraMatrix.row1[0], &camera.cameraMatrix.row1[1], &camera.cameraMatrix.row1[2], &camera.cameraMatrix.row1[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine2, "            (%f, %f, %f, %f)", &camera.cameraMatrix.row2[0], &camera.cameraMatrix.row2[1], &camera.cameraMatrix.row2[2], &camera.cameraMatrix.row2[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine3, "            (%f, %f,  %f, %f)", &camera.cameraMatrix.row3[0], &camera.cameraMatrix.row3[1], &camera.cameraMatrix.row3[2], &camera.cameraMatrix.row3[3]); // takes in each float from the line and stores them
-						sscanf_s(bufferMatrixLine4, "            (%f, %f,  %f, %f)>", &camera.cameraMatrix.row4[0], &camera.cameraMatrix.row4[1], &camera.cameraMatrix.row4[2], &camera.cameraMatrix.row4[3]); // takes in each float from the line and stores them
+						camera.cameraName = buffer;
+						RetrieveName(camera.cameraName, false); // takes the temp string and sets them to the name
+						RetrieveMatrix(camera.cameraMatrix, inputFile);
 						cameras.push_back(camera);
 					}
 				}
 			}
 			inputFile.close();
-			PrintFile(meshes, lights, cameras);
+			if(isPrintToConsole) PrintFile(meshes, lights, cameras);
 		}
 	}
 };

@@ -1,29 +1,39 @@
 #pragma pack_matrix(row_major)
 // an ultra simple hlsl vertex shader
 #define MAX_SUBMESH_PER_DRAW 1024
-struct _OBJ_ATTRIBUTES_
+struct Attributes
 {
-	float3 Kd;			// 12 bytes
-	float d;			// 4 bytes
-	float3 Ks;			// 12 bytes
-	float Ns;			// 4 bytes
-	float3 Ka;			// 12 bytes
-	float sharpness;	// 4 bytes
-	float3 Tf;			// 12 bytes
-	float Ni;			// 4 bytes
-	float3 Ke;			// 12 bytes
-	uint illum;			// 4 bytes
+	float3 Kd; float d;
+	float3 Ks; float Ns;
+	float3 Ka; float sharpness;
+	float3 Tf; float Ni;
+	float3 Ke; uint illum;
+};
+struct Material
+{
+	Attributes attrib;
+	/*char name;
+	char map_Kd;
+	char map_Ks;
+	char map_Ka;
+	char map_Ke;
+	char map_Ns;
+	char map_d;
+	char disp;
+	char decal;
+	char bump;
+	char padding[2];*/
 };
 struct SHADER_MODEL_DATA
 {
 	float4 sunDirection;								// 16 bytes
 	float4 sunColor;									// 16 bytes
-	float3 sunAmbient;
+	float4 sunAmbient;
 	float4 cameraPosition;
 	float4x4 viewMatrix;								// 64 bytes
 	float4x4 projectionMatrix;							// 64 bytes
 	float4x4 matricies[MAX_SUBMESH_PER_DRAW];			// 64 bytes
-	_OBJ_ATTRIBUTES_ materials[MAX_SUBMESH_PER_DRAW];	// 80 bytes
+	Material materials[MAX_SUBMESH_PER_DRAW];	// 80 bytes
 	int pixelShaderReturn;
 };
 StructuredBuffer<SHADER_MODEL_DATA> SceneData;
@@ -44,9 +54,9 @@ OUTPUT_TO_RASTERIZER main(float3 inputVertex : POSITION, float3 uvw : UVW, float
 {
 	OUTPUT_TO_RASTERIZER output;
 	float4 posInput = float4(inputVertex, 1);
-	float4 posMain = mul(posInput, SceneData[0].matricies[mesh_ID]);
+	float4 posMain = mul(posInput, SceneData[0].matricies[0]);
 	float4 posWorld = posMain;
-	float3 outNormal = mul(float4(nrm,0), SceneData[0].matricies[mesh_ID]).xyz;
+	float3 outNormal = mul(float4(nrm,0), SceneData[0].matricies[0]).xyz;
 	posMain = mul(posMain, SceneData[0].viewMatrix);
 	posMain = mul(posMain, SceneData[0].projectionMatrix);
 	output.posH = posMain;

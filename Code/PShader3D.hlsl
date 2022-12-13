@@ -1,27 +1,37 @@
 #define MAX_SUBMESH_PER_DRAW 1024
-struct _OBJ_ATTRIBUTES_
+struct Attributes
 {
-	float3 Kd;			// 12 bytes
-	float d; 			// 4 bytes
-	float3 Ks;			// 12 bytes
-	float Ns;			// 4 bytes
-	float3 Ka;			// 12 bytes
-	float sharpness;	// 4 bytes
-	float3 Tf;			// 12 bytes
-	float Ni;			// 4 bytes
-	float3 Ke;			// 12 bytes
-	uint illum;			// 4 bytes
+	float3 Kd; float d;
+	float3 Ks; float Ns;
+	float3 Ka; float sharpness;
+	float3 Tf; float Ni;
+	float3 Ke; uint illum;
+};
+struct Material
+{
+	Attributes attrib;
+	/*char name;
+	char map_Kd;
+	char map_Ks;
+	char map_Ka;
+	char map_Ke;
+	char map_Ns;
+	char map_d;
+	char disp;
+	char decal;
+	char bump;
+	char padding[2];*/
 };
 struct SHADER_MODEL_DATA
 {
 	float4 sunDirection;								// 16 bytes
 	float4 sunColor;									// 16 bytes
-	float3 sunAmbient;
+	float4 sunAmbient;
 	float4 cameraPosition;
 	float4x4 viewMatrix;								// 64 bytes
 	float4x4 projectionMatrix;							// 64 bytes
 	float4x4 matricies[MAX_SUBMESH_PER_DRAW];			// 64 bytes
-	_OBJ_ATTRIBUTES_ materials[MAX_SUBMESH_PER_DRAW];	// 80 bytes
+	Material materials[MAX_SUBMESH_PER_DRAW];	// 80 bytes
 	uint pixelShaderReturn;
 };
 StructuredBuffer<SHADER_MODEL_DATA> SceneData;
@@ -43,10 +53,10 @@ float4 main(OUTPUT_TO_RASTERIZER output) : SV_TARGET
 	float3 nrm = normalize(output.nrm);
 	float lightIntensity = 1;
 	float3 lightDirecion = float3(SceneData[0].sunDirection.xyz * -1);
-	float3 lightEmmision = SceneData[0].materials[mesh_ID].Ke;
-	float3 materialColor = SceneData[0].materials[mesh_ID].Kd;
-	float specularExponent = SceneData[0].materials[mesh_ID].Ns;
-	float3 specularReflectivity = SceneData[0].materials[mesh_ID].Ks;
+	float3 lightEmmision = SceneData[0].materials[mesh_ID].attrib.Ke;
+	float3 materialColor = SceneData[0].materials[mesh_ID].attrib.Kd;
+	float specularExponent = SceneData[0].materials[mesh_ID].attrib.Ns;
+	float3 specularReflectivity = SceneData[0].materials[mesh_ID].attrib.Ks;
 	float3 cameraPosition = SceneData[0].cameraPosition.xyz;
 	float3 sunColor = SceneData[0].sunColor;
 	float3 worldPosition = output.posW;
@@ -88,7 +98,7 @@ float4 main(OUTPUT_TO_RASTERIZER output) : SV_TARGET
 	}
 	else if (pixelShaderReturn == 6) // Material Color with No Light
 	{
-		return float4(materialColor, 1);
+		return float4(materialColor, SceneData[0].materials[mesh_ID].attrib.d);
 	}
 
 };
