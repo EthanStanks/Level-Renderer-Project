@@ -1,3 +1,5 @@
+#include <commdlg.h>
+
 #ifdef _WIN32 // must use MT platform DLL libraries on windows
 #pragma comment(lib, "shaderc_combined.lib") 
 #endif
@@ -29,19 +31,25 @@ class Renderer
 	std::vector<Model> activeLevel;
 
 	bool isLevelLoaded = false;
+
+	
+
 public:
+	
 	bool LoadLevel(std::string pathtoGameLevel, std::string pathToH2BFiles, std::vector<Model>& modelStoage, GW::MATH::GMATRIXF mProjection)
 	{
-		modelStoage.clear();
-		LoadLevelData matrixLoader;
+		CleanUpLevel(); // clear all the models from the CPU and GPU
+		modelStoage.clear(); // clear the storage vector for the new models
+		LoadLevelData matrixLoader = LoadLevelData();
 		matrixLoader.LoadData(pathtoGameLevel, false); // loads text file
 		int meshCount = matrixLoader.meshes.size();
 		for (int i = 0; i < meshCount; ++i) // for each mesh in the text file
 		{
-			Model model; // create temp model
+			Model model = Model(); // create temp model
 			bool isLoaded = model.LoadModel(pathToH2BFiles + matrixLoader.meshes[i].meshName, vlk, win, device); // load the .h2b file of that model
 			if (isLoaded) // if opening the model worked
 			{
+				model.modelName = matrixLoader.meshes[i].meshName;
 				GW::MATH::GVECTORF _sunDirection = { -1, -1, 2 };
 				GW::MATH::GVECTORF _sunColor = { 0.9f, 0.9f, 1, 1 };
 				GW::MATH::GVECTORF _sunAmbiant = { 0.25f, 0.25f, 0.35f };
@@ -66,7 +74,9 @@ public:
 	{
 		for (int i = 0; i < modelStorage.size(); ++i)
 		{
+			std::cout << "Setup STARTING for model: " + modelStorage[i].modelName << std::endl;
 			modelStorage[i].ModelRenderSetup();
+			std::cout << "Setup COMPLETE for model: " + modelStorage[i].modelName << std::endl;
 		}
 	}
 	void DrawLevel(std::vector<Model>& modelStoage, VkCommandBuffer& commandBuffer, unsigned int currentBuffer, VkViewport& viewport, VkRect2D& scissor)
@@ -85,7 +95,6 @@ public:
 		input.Create(_win);
 		math.Create();
 
-		std::cout << "Press F1 to Load a Level" << std::endl;
 
 		math.IdentityF(mProjection);
 		FOV = G_DEGREE_TO_RADIAN(65);
@@ -95,7 +104,6 @@ public:
 		lightColor = GW::MATH::GVECTORF{ 0.9f, 0.9f, 1, 1 };
 		lightDirection = manager.VectorNormalize(lightDirection.x, lightDirection.y, lightDirection.z);
 		sunAmbient = GW::MATH::GVECTORF{ 0.25f, 0.25f, 0.35f };
-
 
 		/***************** CLEANUP / SHUTDOWN ******************/
 		// GVulkanSurface will inform us when to release any allocated resources
@@ -123,231 +131,9 @@ public:
 		if (isLevelLoaded)
 			DrawLevel(activeLevel, commandBuffer, currentBuffer, viewport, scissor);
 	}
-	// hot swapping multiple levels without restart
-	void NewLevel()
-	{
-		string pathtoMatrixData;
-		string pathtoH2BFolder;
-		string levelName;
-		while (true)
-		{
-			std::cout << "Enter the name of the matrix text file without the extension. Ex.'GameLevel'" << std::endl;
-			string pathTextFile = "../";
-			string input;
-			std::cin >> input;
-			pathTextFile = pathTextFile + input + ".txt";
-			std::cout << "Does this file path look correct? ->\t" << pathTextFile << std::endl;
-			std::cout << "a) Yes\tb) No" << std::endl;
-			char charInput;
-			std::cin >> charInput;
-			if (charInput == 'a' || charInput == 'A')
-			{
-				pathtoMatrixData = input;
-				break;
-			}
-			else if (charInput == 'b' || charInput == 'B')
-			{
-				system("CLS");
-			}
-			else cout << "\nInput is incorrect...\nAccepted input is 'a'/'A' or 'b'/'B'\n\n";
-		}
-		system("CLS");
-		while (true)
-		{
-			std::cout << "Enter the name of the folder that stores this level's .H2B files. Ex.'MainBuilding'" << std::endl;
-			string pathH2BFolder = "../H2B/";
-			string input;
-			std::cin >> input;
-			pathH2BFolder = pathH2BFolder + input + "/";
-			std::cout << "Does this file path look correct? ->\t" << pathH2BFolder << std::endl;
-			std::cout << "a) Yes\tb) No" << std::endl;
-			char charInput;
-			cin >> charInput;
-			if (charInput == 'a' || charInput == 'A')
-			{
-				pathtoH2BFolder = input;
-				break;
-			}
-			else if (charInput == 'b' || charInput == 'B')
-			{
-				system("CLS");
-			}
-			else cout << "\nInput is incorrect...\nAccepted input is 'a'/'A' or 'b'/'B'\n\n";
-		}
-		system("CLS");
-		while (true)
-		{
-			std::cout << "Enter a name for this level (No Spaces). Ex.'MyMainLevel'" << std::endl;
-			string input;
-			std::cin >> input;
-			std::cout << "Is this the correct name you'd like to name this level? ->\t" << input << std::endl;
-			std::cout << "a) Yes\tb) No" << std::endl;
-			char charInput;
-			cin >> charInput;
-			if (charInput == 'a' || charInput == 'A')
-			{
-				levelName = input;
-				break;
-			}
-			else if (charInput == 'b' || charInput == 'B')
-			{
-				system("CLS");
-			}
-			else cout << "\nInput is incorrect...\nAccepted input is 'a'/'A' or 'b'/'B'\n\n";
-		}
-		std::ofstream writer;
-		writer.open("../SavedLevel.txt", ios::app);
-		if (writer)
-		{
-			string writeLine = "\n{" + levelName + ":" + pathtoMatrixData + ":" + pathtoH2BFolder + "}";
-			writer << writeLine;
-			system("CLS");
-			cout << "Succesfully saved Level." << std::endl;
-			writer.close();
-		}
-		else std::cout << "Error opening: ../SavedLevel.txt";
-		pathtoMatrixData = "../" + pathtoMatrixData + ".txt";
-		pathtoH2BFolder = "../H2B/" + pathtoH2BFolder + "/";
-		if (LoadLevel(pathtoMatrixData, pathtoH2BFolder, activeLevel, mProjection))
-		{
-			LevelRenderSetup(activeLevel);
-			isLevelLoaded = true;
-			cout <<"\n" + levelName + " has been successfully loaded." << std::endl;
-		}
-		else std::cout << "Failed to load new level.\nPress F1 to Load a Level" << std::endl;
-	}
-	void SavedLevels()
-	{
-		vector<SavedLevel> levelOptions;
-		ifstream inputFile;
-		inputFile.open("../SavedLevel.txt");
-		if (inputFile.is_open())
-		{
-			while (!inputFile.eof())
-			{
-				char buffer[256];
-				inputFile.getline(buffer, 256);
-				if (buffer[0] == '{')
-				{
-					SavedLevel level;
-					int i = 1;
-					for (i; i < sizeof(buffer); ++i)
-					{
-						if (buffer[i] == ':') break;
-						else
-							level.levelName = level.levelName + buffer[i];
-					}
-					++i;
-					for (i; i < sizeof(buffer); ++i)
-					{
-						if (buffer[i] == ':')
-						{
-							level.pathtoMatrixData = level.pathtoMatrixData + ".txt";
-							break;
-						}
-						else
-							level.pathtoMatrixData = level.pathtoMatrixData + buffer[i];
-					}
-					++i;
-					for (i; i < sizeof(buffer); ++i)
-					{
-						if (buffer[i] == '}')
-						{
-							level.pathtoH2BFolder = level.pathtoH2BFolder + "/";
-							break;
-						}
-						else
-							level.pathtoH2BFolder = level.pathtoH2BFolder + buffer[i];
-					}
-					levelOptions.push_back(level);
-				}
-			}
-			inputFile.close();
-			if (levelOptions.size() == 0) {
-				system("CLS");
-				std::cout << "There are currently no saved levels." << std::endl;
-				std::cout << "Press F1 to Load a Level" << std::endl;
-			}
-			else {
-				system("CLS");
-				char userInput;
-				while (true)
-				{
-					std::cout << "Select a saved level to load:" << std::endl;
-					int levelCount = levelOptions.size();
-					char lastChar;
-					for (int i = 0; i < levelCount; ++i)
-					{
-						lastChar = char(i + 97);
-						std::cout << lastChar << ") " + levelOptions[i].levelName << std::endl;
-					}
-					std::cout << "\n";
-					char input;
-					std::cin >> input;
-					if (int(input) < 97 || int(input) > int(lastChar)) {
-						system("CLS");
-						if (levelCount > 1)
-						{
-							std::cout << "Incorrect input. Enter a value between 'a-" + lastChar << "'." <<std::endl;
-						}
-						else if (levelCount == 1) std::cout << "Your only option is 'a'.";
-					}
-					else
-					{
-						userInput = input;
-						break;
-					}
-				}
-				int loadIndex = (int)userInput - 97;
-				if (LoadLevel(levelOptions[loadIndex].pathtoMatrixData, levelOptions[loadIndex].pathtoH2BFolder, activeLevel, mProjection))
-				{
-					LevelRenderSetup(activeLevel);
-					isLevelLoaded = true;
-					cout << "\n" + levelOptions[loadIndex].levelName + " has been successfully loaded." << std::endl;
-				}
-				else {
-					std::cout << "Failed to load level.\nCheck file paths relatated to level " + levelOptions[loadIndex].levelName + "." << std::endl;
-				}
-			}
-		}
-		else
-		{
-			std::cout << "Could not open: ../SavedLevel.txt\nIf no levels are saved create a new one!" << std::endl;
-			return false;
-		}
-
-		return true;
-	}
 	void LevelChanger()
 	{
-		system("CLS");
-		isLevelLoaded = false;
-		char loadInput;
-		while (true)
-		{
-			std::cout << "Would you like to LOAD a:\na) NEW LEVEL\tb) SAVED LEVEL" << std::endl;
-			char input;
-			std::cin >> input;
-			if (input == 'a' || input == 'A' || input == 'b' || input == 'B')
-			{
-				loadInput = input;
-				break;
-			}
-			else
-			{
-				std::cout << "\nInput is incorrect...\nAccepted input is 'a'/'A' or 'b'/'B'\n\n";
-			}
-		}
-		system("CLS");
-		if (loadInput == 'a' || loadInput == 'A')
-		{
-			NewLevel();
-		}
-		else if (loadInput == 'b' || loadInput == 'B')
-		{
-			SavedLevels();
-		}
-
+		OpenFileDialog();
 	}
 	void UpdateCamera()
 	{
@@ -362,16 +148,14 @@ public:
 		{
 			LevelChanger();
 		}
-		if (false)
+		if (true)
 		{
-
-
 			math.Create();
 			math.IdentityF(mCameraCopy);
 			math.InverseF(mCamera, mCameraCopy);
 
-			const float cameraSpeed = 0.03f;
-			const float fastSpeed = 0.08f;
+			const float cameraSpeed = 0.32f;
+			const float fastSpeed = 0.64f;
 			float moveXAmount = 0;
 			float moveYAmount = 0;
 			float moveZAmount = 0;
@@ -391,17 +175,19 @@ public:
 			input.GetState(G_KEY_A, valA);
 			input.GetState(G_KEY_S, valS);
 			input.GetState(G_KEY_R, valR);
-			input.GetMouseDelta(valMouseXDelta, valMouseYDelta);
+			auto mouseDeltaResult = input.GetMouseDelta(valMouseXDelta, valMouseYDelta);
 
-			// up and down
-			moveYAmount = valSpace - valLeftShift;
-			mCameraCopy.row4.y += moveYAmount * cameraSpeed * secondsPassed;
 
 			// foward backwards side to side
 			float frameSpeed = 0;
 			if (valR == 0)
 				frameSpeed = cameraSpeed * secondsPassed;
 			else frameSpeed = fastSpeed * secondsPassed; // pressing r makes the camera fly around faster
+
+			// up and down
+			moveYAmount = valSpace - valLeftShift;
+			mCameraCopy.row4.y += moveYAmount * frameSpeed;//* secondsPassed;
+
 
 			moveZAmount = valW - valS;
 			moveXAmount = valD - valA;
@@ -411,32 +197,141 @@ public:
 			math.TranslateLocalF(translateMatix, translateXZ, translateMatix);
 			math.MultiplyMatrixF(translateMatix, mCameraCopy, mCameraCopy);
 
-			unsigned int ScreenHeight, ScreenWidth;
-			manager.GetDimensions(win, ScreenWidth, ScreenHeight);
-			// tilt camera up and down
-			float thumbSpeed = G_PI * secondsPassed;
-			float totalPitch = FOV * valMouseYDelta / ScreenHeight * (-1 * thumbSpeed);
-			GW::MATH::GMATRIXF mPitch;
-			math.IdentityF(mPitch);
-			math.RotateXLocalF(mPitch, G_DEGREE_TO_RADIAN(totalPitch), mPitch);
-			math.MultiplyMatrixF(mPitch, mCameraCopy, mCameraCopy);
+			if (G_PASS(mouseDeltaResult) && mouseDeltaResult != GW::GReturn::REDUNDANT)
+			{
+				// rotating code goes in here
+				unsigned int ScreenHeight, ScreenWidth;
+				manager.GetDimensions(win, ScreenWidth, ScreenHeight);
+				// tilt camera up and down
+				float thumbSpeed = G_PI * secondsPassed;
+				float totalPitch = FOV * valMouseYDelta / ScreenHeight;
+				GW::MATH::GMATRIXF mPitch;
+				math.IdentityF(mPitch);
+				math.RotateXLocalF(mPitch, (totalPitch), mPitch);
+				math.MultiplyMatrixF(mPitch, mCameraCopy, mCameraCopy);
 
-			// turn left and right
-			float totalYaw = FOV * AspectRatio * valMouseXDelta / ScreenWidth * thumbSpeed;
-			GW::MATH::GMATRIXF mYaw;
-			math.IdentityF(mYaw);
-			math.RotateYLocalF(mYaw, G_DEGREE_TO_RADIAN(totalYaw), mYaw);
-			GW::MATH::GVECTORF SavedPosition = mCameraCopy.row4.xyzw();
-			math.MultiplyMatrixF(mCameraCopy, mYaw, mCameraCopy);
-			mCameraCopy.row4.x = SavedPosition.x;
-			mCameraCopy.row4.y = SavedPosition.y;
-			mCameraCopy.row4.z = SavedPosition.z;
-			mCameraCopy.row4.w = SavedPosition.w;
+				// turn left and right
+				float totalYaw = FOV * AspectRatio * valMouseXDelta / ScreenWidth;
+				GW::MATH::GMATRIXF mYaw;
+				math.IdentityF(mYaw);
+				math.RotateYLocalF(mYaw, (totalYaw), mYaw);
+				GW::MATH::GVECTORF SavedPosition = mCameraCopy.row4.xyzw();
+				math.MultiplyMatrixF(mCameraCopy, mYaw, mCameraCopy);
+				mCameraCopy.row4.x = SavedPosition.x;
+				mCameraCopy.row4.y = SavedPosition.y;
+				mCameraCopy.row4.z = SavedPosition.z;
+				mCameraCopy.row4.w = SavedPosition.w;
+			}
 
 			math.InverseF(mCameraCopy, mCamera);
 		}
 	}
 private:
+	void OpenFileDialog()
+	{
+		if (MessageBox(NULL, L"Would you like to load a new level?", L"Hot-Swap Level", MB_YESNO) == IDYES)
+		{
+			// If they say yes to loading a new level
+			// common dialog box structure, setting all fields to 0 is important
+			OPENFILENAME ofn = { 0 };
+			TCHAR szFile[260] = { 0 };
+			// Initialize remaining fields of OPENFILENAME structure
+			ofn.lStructSize = sizeof(ofn);
+			ofn.hwndOwner = NULL;
+			ofn.lpstrFile = szFile;
+			ofn.nMaxFile = sizeof(szFile);
+			ofn.lpstrFilter = TEXT("All\0*.*\0Text\0*.TXT\0");
+			ofn.nFilterIndex = 1;
+			ofn.lpstrFileTitle = NULL;
+			ofn.nMaxFileTitle = 0;
+			ofn.lpstrInitialDir = NULL;
+			ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
+			std::cout << "----------------- Level Loader has been hit -----------------\n\n" << std::endl;
+			if (GetOpenFileName(&ofn) == TRUE)
+			{
+				std::cout << "Retrieved Level File from open file (OpenFileDialog() -> renderer.h)" << std::endl;
+				// use ofn.lpstrFile here
+				std::wstring filePath = szFile;
+				//setup converter
+				using convert_type = std::codecvt_utf8<wchar_t>;
+				std::wstring_convert<convert_type, wchar_t> converter;
+
+				//use converter (.to_bytes: wstr->str, .from_bytes: str->wstr)
+				std::string converted_str = converter.to_bytes(filePath);
+				OpenLevel(converted_str);
+			}
+		}
+	}
+	void OpenLevel(string filePath)
+	{
+		ifstream inputFile;
+		string pathtoMatrixData = exetension + "MatrixTextFiles/";
+		string pathtoH2BFolder = exetension + "H2B/";
+		string levelName;
+		inputFile.open(filePath.c_str());
+		std::cout << "Attempting to open " + filePath + " (OpenLevel()->renderer.h)" << std::endl;
+		if (inputFile.is_open())
+		{
+			std::cout << "Successfully opened " + filePath + " (OpenLevel()->renderer.h)" << std::endl;
+			while (!inputFile.eof())
+			{
+				char buffer[256];
+				inputFile.getline(buffer, 256);
+				if (buffer[0] == '{')
+				{
+					int i = 1;
+					for (i; i < sizeof(buffer); ++i)
+					{
+						if (buffer[i] == ':') break;
+						else
+							levelName = levelName + buffer[i];
+					}
+					++i;
+					for (i; i < sizeof(buffer); ++i)
+					{
+						if (buffer[i] == ':')
+						{
+							pathtoMatrixData = pathtoMatrixData + ".txt";
+							break;
+						}
+						else
+							pathtoMatrixData = pathtoMatrixData + buffer[i];
+					}
+					++i;
+					for (i; i < sizeof(buffer); ++i)
+					{
+						if (buffer[i] == '}')
+						{
+							pathtoH2BFolder = pathtoH2BFolder + "/";
+							break;
+						}
+						else
+							pathtoH2BFolder = pathtoH2BFolder + buffer[i];
+					}
+				}
+			}
+			inputFile.close();
+			std::cout << "Closed " + filePath + " (OpenLevel()->renderer.h)" << std::endl;
+			cout << pathtoMatrixData + "\n" + pathtoH2BFolder << std::endl;
+			std::cout << "\n\n----------------- Starting to Load Level -----------------" << std::endl;
+			if (LoadLevel(pathtoMatrixData, pathtoH2BFolder, activeLevel, mProjection))
+			{
+				std::cout << "----------------- Level Loaded (Model Count: ";
+				std::cout << activeLevel.size(); 
+				std::cout << ")------------------ " << std::endl;
+				std::cout << "\n\n----------------- Setup Level Renderer Start -----------------" << std::endl;
+				LevelRenderSetup(activeLevel);
+				std::cout << "----------------- Setup Level Renderer Complete -----------------\n" << std::endl;
+				isLevelLoaded = true;
+				std::cout << "\n----------------- " + levelName + " Level Loaded and Rendered -----------------" << std::endl;
+			}
+			else {
+				std::cout << "Failed to load level.\nCheck file paths relatated to level " + levelName + "." << std::endl;
+			}
+
+		}
+		else std::cout << "Failed to open " + filePath + " (OpenLevel()->renderer.h)" << std::endl;
+	}
 	void CleanUpLevel()
 	{
 		for (int i = 0; i < activeLevel.size(); ++i)

@@ -137,9 +137,10 @@ private:
 		ifstream inputFile;
 		//inputFile = ifstream(fileName);
 		inputFile.open(fileName.c_str()); // tries to open the file
-
+		std::cout << "Attempting to open " + fileName + " (ReadFile()->LoadLevelData.h)" << std::endl;
 		if (inputFile.is_open()) // check to see if the file is open
 		{
+			std::cout << "Sucessfully opened " + fileName + " (ReadFile()->LoadLevelData.h)" << std::endl;
 			while (!inputFile.eof()) // while the file hasn't reach the end
 			{
 				char buffer[256]; // container for the info being read in
@@ -177,7 +178,9 @@ private:
 				}
 			}
 			inputFile.close();
+			std::cout << "Closed " + fileName + " (ReadFile()->LoadLevelData.h)" << std::endl;
 			if(isPrintToConsole) PrintFile(meshes, lights, cameras);
 		}
+		else std::cout << "Failed to open " + fileName + " (ReadFile()->LoadLevelData.h)" << std::endl;
 	}
 };

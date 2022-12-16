@@ -1,0 +1,2 @@
+#This file contains the saved information for opening a level in the level loader menu
+{Cars:CarScene:Cars}

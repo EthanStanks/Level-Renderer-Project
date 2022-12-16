@@ -17,12 +17,9 @@ GW::MATH::GMATRIXF mCamera;
 GW::MATH::GMATRIXF mCameraCopy;
 
 
-struct SavedLevel
-{
-	string pathtoMatrixData = "../";
-	string pathtoH2BFolder = "../H2B/";
-	string levelName;
-};
+//string exetension = "../Code/";
+string exetension = "../";
+
 struct Vector
 {
 	float x, y, z;
@@ -153,7 +150,7 @@ private:
 	{
 		_multisample_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
 		_multisample_create_info.sampleShadingEnable = VK_FALSE;
-		_multisample_create_info.rasterizationSamples = VK_SAMPLE_COUNT_1_BIT;
+		_multisample_create_info.rasterizationSamples = VK_SAMPLE_COUNT_8_BIT;
 		_multisample_create_info.minSampleShading = 1.0f;
 		_multisample_create_info.pSampleMask = VK_NULL_HANDLE;
 		_multisample_create_info.alphaToCoverageEnable = VK_FALSE;

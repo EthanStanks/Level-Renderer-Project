@@ -170,6 +170,7 @@ private:
 	}
 
 public:
+	string modelName;
 	void ModelRenderSetup()
 	{
 		GeometryInitialization();
@@ -178,8 +179,11 @@ public:
 	}
 	bool LoadModel(std::string h2bFilePath, GW::GRAPHICS::GVulkanSurface _surfaceReference, GW::SYSTEM::GWindow _window, VkDevice _device)
 	{
+		std::cout << "Attempting to open " + h2bFilePath + " (LoadModel()->Model.h)" << std::endl;
 		if (readModel.Parse(h2bFilePath.c_str()))
 		{
+			std::cout << "Sucessfully opened " + h2bFilePath + " (LoadModel()->Model.h)" << std::endl;
+			std::cout << "Closed " + h2bFilePath + " (LoadModel()->Model.h)" << std::endl;
 			// tranfer from CPU(Parser) to GPU aka the API(VkBuffer)
 			ParserToModel(readModel);
 			surfaceReference = _surfaceReference;
@@ -189,7 +193,7 @@ public:
 		}
 		else
 		{
-			std::cout << h2bFilePath << " is not a valid file path. Please check the .h2b name associated with this path...\n" << std::endl;
+			std::cout << "Failed to open " + h2bFilePath + " (LoadModel()->Model.h)" << std::endl;
 			return false;
 		}
 
