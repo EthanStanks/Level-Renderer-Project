@@ -11,15 +11,15 @@ Select an API of your choice* and write a Level_Renderer C++ class. This class s
 You are required to use Gateware as the base code for this assignment in some capacity.
 
 Controls:
-(W): Forwards
-(S): Backwards
-(A): Left
-(D): Right
-(Space): Up
-(Left_Shift): Down
-(Mouse): Tilts up and down / Turns left and right
-(R): Speeds Up Camera Speed
-(F1): Load saved levels
+- (W): Forwards
+- (S): Backwards
+- (A): Left
+- (D): Right
+- (Space): Up
+- (Left_Shift): Down
+- (Mouse): Tilts up and down / Turns left and right
+- (R): Speeds Up Camera Speed
+- (F1): Load saved levels
 
 How to load a level:
 - Press F1
